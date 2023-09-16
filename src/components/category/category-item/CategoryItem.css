@@ -1,0 +1,13 @@
+.btn-category:hover {
+  color: burlywood;
+  background-color: darkslateblue;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.btn-category {
+  color: darkslateblue;
+  background-color: burlywood;
+  padding: 15px;
+  text-decoration: none;
+}
