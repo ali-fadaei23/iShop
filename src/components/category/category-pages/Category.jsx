@@ -1,4 +1,4 @@
-import ProductList from "../category-list/CategoryList";
+import ProductList from "../../product-list/ProductList";
 import { Typography } from "@mui/material";
 import "./Category.css";
 import { useEffect, useState } from "react";
@@ -11,6 +11,7 @@ const Category = ({ categoryPages }) => {
         `https://fakestoreapi.com/products/category/${categoryPages}`
       );
       const responseData = await response.json();
+      console.log(responseData);
       setCategory(responseData);
     };
     sendRequest();
@@ -21,7 +22,7 @@ const Category = ({ categoryPages }) => {
   };
 
   return (
-    <div className={`${categoryPages}`}>
+    <div className={`${categoryPages} category-container`}>
       <Typography
         variant="h1"
         textAlign={"center"}

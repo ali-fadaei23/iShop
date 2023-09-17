@@ -5,7 +5,6 @@ import { Typography } from "@mui/material";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-
   useEffect(() => {
     const sendRequest = async () => {
       const response = await fetch("https://fakestoreapi.com/products");

@@ -1,7 +1,7 @@
 import CategoryItem from "../category-item/CategoryItem";
 import "./CategoryList.css";
 
-const Category = ({ categories }) => {
+const CategoryList = ({ categories }) => {
   return (
     <>
       {categories.map((item, index) => {
@@ -15,4 +15,4 @@ const Category = ({ categories }) => {
   );
 };
 
-export default Category;
+export default CategoryList;

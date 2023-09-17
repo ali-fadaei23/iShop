@@ -52,9 +52,9 @@ const ProductItem = ({ product, onDelete }) => {
           variant="outlined"
           color="error"
           startIcon={<DeleteIcon />}
-          onClick={() => onDelete(product.id)}
+          onClick={() => {}}
         >
-          Delete
+          Add To Cart
         </Button>
       </CardActions>
     </Card>

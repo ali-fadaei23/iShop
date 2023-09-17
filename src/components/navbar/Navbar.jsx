@@ -6,14 +6,15 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [category, setCategory] = useState([]);
+  const [categoryItem, setCategoryItem] = useState([]);
   useEffect(() => {
     const sendRequest = async () => {
       const response = await fetch(
         "https://fakestoreapi.com/products/categories"
       );
       const responseData = await response.json();
-      setCategory(responseData);
+      console.log("asdasd", responseData);
+      setCategoryItem(responseData);
     };
     sendRequest();
   }, []);
@@ -32,7 +33,7 @@ const Navbar = () => {
               </IconButton>
             </Link>
             <div className="categories">
-              <CategoryList categories={category} />
+              <CategoryList categories={categoryItem} />
             </div>
           </Toolbar>
         </AppBar>

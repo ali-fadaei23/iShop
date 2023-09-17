@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-const loading = createContext()
+const data = createContext()
 
 
-export default loading
+export default data
