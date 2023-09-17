@@ -2,6 +2,7 @@
   color: burlywood;
   background-color: darkslateblue;
   padding: 15px;
+  border-radius: 5px;
   text-decoration: none;
 }
 
@@ -9,5 +10,6 @@
   color: darkslateblue;
   background-color: burlywood;
   padding: 15px;
+  border-radius: 5px;
   text-decoration: none;
 }

@@ -22,7 +22,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="main-app">
+      <div className="main">
         <Typography
           variant="h1"
           textAlign={"center"}

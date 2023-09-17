@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import CategoryItem from "../category-item/CategoryItem";
 import "./CategoryList.css";
 
@@ -7,11 +7,9 @@ const Category = ({ categories }) => {
     <>
       {categories.map((item, index) => {
         return (
-          <Link to={`/${item}`}>
-            <div className="category" key={index}>
-              <CategoryItem category={item} />
-            </div>
-          </Link>
+          <div className="category" key={index}>
+            <CategoryItem category={item} />
+          </div>
         );
       })}
     </>
