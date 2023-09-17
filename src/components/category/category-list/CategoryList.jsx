@@ -1,4 +1,3 @@
-// import { Link } from "react-router-dom";
 import CategoryItem from "../category-item/CategoryItem";
 import "./CategoryList.css";
 

@@ -1,15 +1,12 @@
 import "./Navbar.css";
 import { AppBar, Box, Toolbar, IconButton } from "@mui/material";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
-// import Button from "@mui/material/Button";
 import CategoryList from "../category/category-list/CategoryList";
-import { useContext, useEffect, useState } from "react";
-import LoadingContext from '../../context-api/loadingContext'
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [category, setCategory] = useState([]);
-  const {loadingData} = useContext()
   useEffect(() => {
     const sendRequest = async () => {
       const response = await fetch(
