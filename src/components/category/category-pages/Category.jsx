@@ -1,9 +1,9 @@
-import ProductList from "../../../product-list/ProductList";
+import ProductList from "../category-list/CategoryList";
 import { Typography } from "@mui/material";
-import "./Electronics.css";
+import "./Category.css";
 import { useEffect, useState } from "react";
 
-const Electronics = ({ categoryPages }) => {
+const Category = ({ categoryPages }) => {
   const [category, setCategory] = useState([]);
   useEffect(() => {
     const sendRequest = async () => {
@@ -36,4 +36,4 @@ const Electronics = ({ categoryPages }) => {
   );
 };
 
-export default Electronics;
+export default Category;
