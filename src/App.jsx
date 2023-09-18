@@ -31,7 +31,7 @@ const App = () => {
         <Cart open={open} handleCloseCart={handleCloseCart} />
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home stCountOrder={handleCountOrder} />} />
           <Route
             path="/electronics"
             element={

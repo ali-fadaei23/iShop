@@ -1,9 +1,10 @@
-import { Drawer, Typography } from "@mui/material";
+import { Button, Drawer, Typography } from "@mui/material";
 import "./Cart.css";
 
 const Cart = ({ open, handleCloseCart }) => {
   return (
     <Drawer sx={{ maxWidth: 350 }} open={open} onClose={handleCloseCart}>
+      <Button onClick={handleCloseCart}>Remove</Button>
       <Typography paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus

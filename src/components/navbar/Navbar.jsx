@@ -1,13 +1,69 @@
 import "./Navbar.css";
-import { AppBar, Box, Toolbar, IconButton, Badge } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Badge,
+  Slide,
+  CssBaseline,
+  useScrollTrigger,
+  Fade,
+  Fab,
+} from "@mui/material";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CategoryList from "../category/category-list/CategoryList";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-const Navbar = ({ CountOrder, handleOpenCart }) => {
-  const [categoryItem, setCategoryItem] = useState([]);
 
+function ScrollTop({ children, window }) {
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+    disableHysteresis: true,
+    threshold: 100,
+  });
+
+  // const anchor = document.getElementById("back-to-top-anchor");
+  const handleClick = (e) => {
+    const anchor = (e.target.ownerDocument || document).querySelector(
+      "#back-to-top-anchor"
+    );
+
+    if (anchor) {
+      anchor.scrollIntoView({
+        block: "center",
+        behavior: "smooth",
+      });
+    }
+  };
+
+  return (
+    <Fade in={trigger}>
+      <Box
+        onClick={handleClick}
+        sx={{ position: "fixed", bottom: 16, right: 16 }}
+      >
+        {children}
+      </Box>
+    </Fade>
+  );
+}
+
+const HideOnScroll = ({ children, window }) => {
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+};
+
+const Navbar = ({ CountOrder, handleOpenCart, props }) => {
+  const [categoryItem, setCategoryItem] = useState([]);
   useEffect(() => {
     const sendRequest = async () => {
       const response = await fetch(
@@ -23,33 +79,40 @@ const Navbar = ({ CountOrder, handleOpenCart }) => {
   return (
     <>
       <Box textAlign={"center"} sx={{ flexGrow: 1 }}>
-        <AppBar
-          position="static"
-          sx={{ display: "flex", alignItems: "center" }}
-        >
-          <Toolbar sx={{ width: "100%" }}>
-            <Link to="/" title="Home">
-              <IconButton size="large" color="inherit">
-                <LocalMallIcon fontSize="30px" className="icon" />
-              </IconButton>
-            </Link>
-            <Badge
-              color="secondary"
-              badgeContent={CountOrder}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-            >
-              <IconButton aria-label="cart" onClick={handleOpenCart}>
-                <ShoppingCartIcon className="icon" />
-              </IconButton>
-            </Badge>
-            <div className="categories">
-              <CategoryList categories={categoryItem} />
-            </div>
-          </Toolbar>
-        </AppBar>
+        <CssBaseline />
+        <HideOnScroll {...props}>
+          <AppBar sx={{ display: "flex", alignItems: "center" }}>
+            <Toolbar sx={{ width: "100%" }}>
+              <Link to="/" title="Home">
+                <IconButton size="large" color="inherit">
+                  <LocalMallIcon fontSize="30px" className="icon" />
+                </IconButton>
+              </Link>
+              <Badge
+                color="secondary"
+                badgeContent={CountOrder}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+              >
+                <IconButton aria-label="cart" onClick={handleOpenCart}>
+                  <ShoppingCartIcon className="icon" />
+                </IconButton>
+              </Badge>
+              <div className="categories">
+                <CategoryList categories={categoryItem} />
+              </div>
+            </Toolbar>
+          </AppBar>
+        </HideOnScroll>
+        <Toolbar id="back-to-top-anchor">
+          <ScrollTop {...props}>
+            <Fab size="small" aria-label="scroll back to top">
+              <KeyboardArrowUpIcon />
+            </Fab>
+          </ScrollTop>
+        </Toolbar>
       </Box>
     </>
   );

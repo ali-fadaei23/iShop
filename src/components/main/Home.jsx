@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ProductList from "../product-list/ProductList";
 import { Typography } from "@mui/material";
 
-const Home = () => {
+const Home = ({stCountOrder}) => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const sendRequest = async () => {
@@ -30,7 +30,7 @@ const Home = () => {
           All Products
         </Typography>
         <div className="product">
-          <ProductList products={products} onDelete={deleteProduct} />
+          <ProductList count={stCountOrder} products={products} onDelete={deleteProduct} />
         </div>
       </div>
     </>
