@@ -1,12 +1,13 @@
 import "./Navbar.css";
-import { AppBar, Box, Toolbar, IconButton } from "@mui/material";
+import { AppBar, Box, Toolbar, IconButton, Badge } from "@mui/material";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CategoryList from "../category/category-list/CategoryList";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-const Navbar = () => {
+const Navbar = ({ CountOrder }) => {
   const [categoryItem, setCategoryItem] = useState([]);
+
   useEffect(() => {
     const sendRequest = async () => {
       const response = await fetch(
@@ -32,6 +33,18 @@ const Navbar = () => {
                 <LocalMallIcon fontSize="30px" className="icon" />
               </IconButton>
             </Link>
+            <Badge
+              color="secondary"
+              badgeContent={CountOrder}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+            >
+              <IconButton aria-label="cart">
+                <ShoppingCartIcon className="icon" />
+              </IconButton>
+            </Badge>
             <div className="categories">
               <CategoryList categories={categoryItem} />
             </div>

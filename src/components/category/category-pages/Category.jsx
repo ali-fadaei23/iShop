@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 import "./Category.css";
 import { useEffect, useState } from "react";
 
-const Category = ({ categoryPages }) => {
+const Category = ({ categoryPages, stCountOrder }) => {
   const [category, setCategory] = useState([]);
   useEffect(() => {
     const sendRequest = async () => {
@@ -31,7 +31,11 @@ const Category = ({ categoryPages }) => {
         {categoryPages}
       </Typography>
       <div className="product">
-        <ProductList products={category} onDelete={deleteProduct} />
+        <ProductList
+          count={stCountOrder}
+          products={category}
+          onDelete={deleteProduct}
+        />
       </div>
     </div>
   );

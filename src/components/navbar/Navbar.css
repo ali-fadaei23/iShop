@@ -1,3 +1,8 @@
+.MuiBadge-badge.MuiBadge-standard {
+  top: 8px;
+  right: 5px;
+}
+
 .categories {
   width: 100%;
   display: flex;
