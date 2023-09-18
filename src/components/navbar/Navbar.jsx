@@ -5,7 +5,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CategoryList from "../category/category-list/CategoryList";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-const Navbar = ({ CountOrder }) => {
+const Navbar = ({ CountOrder, handleOpenCart }) => {
   const [categoryItem, setCategoryItem] = useState([]);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const Navbar = ({ CountOrder }) => {
                 horizontal: "right",
               }}
             >
-              <IconButton aria-label="cart">
+              <IconButton aria-label="cart" onClick={handleOpenCart}>
                 <ShoppingCartIcon className="icon" />
               </IconButton>
             </Badge>
