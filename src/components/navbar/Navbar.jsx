@@ -15,7 +15,8 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CategoryList from "../category/category-list/CategoryList";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { CartContext } from "../../shared/context/CartContext";
 import { Link } from "react-router-dom";
 
 function ScrollTop({ children, window }) {
@@ -62,20 +63,19 @@ const HideOnScroll = ({ children, window }) => {
   );
 };
 
-const Navbar = ({ CountOrder, handleOpenCart, props }) => {
+const Navbar = ({ handleOpenCart }, props) => {
   const [categoryItem, setCategoryItem] = useState([]);
+  const { cartItems } = useContext(CartContext);
   useEffect(() => {
     const sendRequest = async () => {
       const response = await fetch(
         "https://fakestoreapi.com/products/categories"
       );
       const responseData = await response.json();
-      console.log("asdasd", responseData);
       setCategoryItem(responseData);
     };
     sendRequest();
   }, []);
-
   return (
     <>
       <Box textAlign={"center"} sx={{ flexGrow: 1 }}>
@@ -88,9 +88,10 @@ const Navbar = ({ CountOrder, handleOpenCart, props }) => {
                   <LocalMallIcon fontSize="30px" className="icon" />
                 </IconButton>
               </Link>
+
               <Badge
                 color="secondary"
-                badgeContent={CountOrder}
+                badgeContent={cartItems.length}
                 anchorOrigin={{
                   vertical: "top",
                   horizontal: "right",
@@ -100,6 +101,7 @@ const Navbar = ({ CountOrder, handleOpenCart, props }) => {
                   <ShoppingCartIcon className="icon" />
                 </IconButton>
               </Badge>
+
               <div className="categories">
                 <CategoryList categories={categoryItem} />
               </div>

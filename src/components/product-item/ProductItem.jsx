@@ -1,17 +1,47 @@
+import { useContext, useState } from "react";
 import "./ProductItem.css";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import CardActions from "@mui/material/CardActions";
-import Button from "@mui/material/Button";
-// import { ButtonGroup } from "@mui/material";
-// import Badge from "@mui/material/Badge";
+import { CartContext } from "../../shared/context/CartContext";
+import {
+  ButtonGroup,
+  Card,
+  CardMedia,
+  Button,
+  CardActions,
+  CardContent,
+  Typography,
+} from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-// import RemoveIcon from "@mui/icons-material/Remove";
-// import DeleteIcon from "@mui/icons-material/Delete";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
+import RemoveIcon from "@mui/icons-material/Remove";
 
-const ProductItem = ({ product, onAdd, handleCount }) => {
+const ProductItem = ({ product }) => {
+  const { setCartItems } = useContext(CartContext);
+  const [count, setCount] = useState(0);
+
+  const addToCart = () => {
+    const cart = {
+      id: product.id,
+      num: count + 1,
+      category: product.category,
+      image: product.image,
+      title: product.title,
+      price: product.price,
+    };
+
+    setCount((prevCount) => prevCount + 1);
+
+    setCartItems((currState) => {
+      return [...currState, cart];
+    });
+  };
+
+  const addOrder = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  const removeOrder = () => {
+    setCount((prevCount) => prevCount - 1);
+  };
+
   return (
     <Card className="card card-product" sx={{ marginBottom: 20, width: 300 }}>
       <CardMedia
@@ -51,30 +81,29 @@ const ProductItem = ({ product, onAdd, handleCount }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        {/* <ButtonGroup>
-            <Button
-              aria-label="reduce"
-              onClick={() => {
-                setCount(Math.max(count - 1, 0));
-              }}
-            >
+        {count <= 0 ? (
+          " "
+        ) : (
+          <ButtonGroup>
+            <Button id="reduce" aria-label="reduce" onClick={removeOrder}>
               <RemoveIcon fontSize="small" />
             </Button>
-            <Button
-              aria-label="increase"
-              onClick={() => {
-                setCount(count + 1);
-              }}
-            >
+            <div>
+              <Typography sx={{ margin: 1 }}>{count}</Typography>
+            </div>
+
+            <Button id="increase" aria-label="increase" onClick={addOrder}>
               <AddIcon fontSize="small" />
             </Button>
-          </ButtonGroup> */}
+          </ButtonGroup>
+        )}
+
         <Button
           className="btn-delete"
           variant="contained"
           color="error"
           startIcon={<AddIcon fontSize="small" />}
-          onClick={handleCount}
+          onClick={addToCart}
         >
           Add To Cart
         </Button>

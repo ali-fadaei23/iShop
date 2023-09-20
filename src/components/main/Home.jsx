@@ -1,10 +1,12 @@
 import "./Home.css";
 import { useEffect, useState } from "react";
 import ProductList from "../product-list/ProductList";
+// import { CartContext } from "../../shared/context/CartContext";
 import { Typography } from "@mui/material";
 
-const Home = ({stCountOrder}) => {
+const Home = () => {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     const sendRequest = async () => {
       const response = await fetch("https://fakestoreapi.com/products");
@@ -14,10 +16,6 @@ const Home = ({stCountOrder}) => {
     };
     sendRequest();
   }, []);
-
-  const deleteProduct = (id) => {
-    setProducts(products.filter((item) => item.id !== id));
-  };
 
   return (
     <>
@@ -30,7 +28,7 @@ const Home = ({stCountOrder}) => {
           All Products
         </Typography>
         <div className="product">
-          <ProductList count={stCountOrder} products={products} onDelete={deleteProduct} />
+          <ProductList products={products} />
         </div>
       </div>
     </>
