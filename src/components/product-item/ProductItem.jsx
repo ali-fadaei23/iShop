@@ -13,35 +13,38 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
+const reducer = (...arr) => {
+  const res = [];
+  arr.forEach((v) => {
+    const i = res.findIndex((u) => u.id === v.id);
+    if (!res[i]) res.push(v);
+    else res[i].num++;
+  });
+  return res;
+};
+
 const ProductItem = ({ product }) => {
-  const { setCartItems } = useContext(CartContext);
-  const [count, setCount] = useState(0);
+  const { cartItems, setCartItems } = useContext(CartContext);
+  const count = cartItems.find((v) => v.id === product.id)?.num ?? 0;
+  const cart = {
+    id: product.id,
+    num: 1,
+    category: product.category,
+    image: product.image,
+    title: product.title,
+    price: product.price,
+  };
+  const addToCart = () => setCartItems((prev) => reducer(...prev, cart));
 
-  const addToCart = () => {
-    const cart = {
-      id: product.id,
-      num: count + 1,
-      category: product.category,
-      image: product.image,
-      title: product.title,
-      price: product.price,
-    };
-
-    setCount((prevCount) => prevCount + 1);
-
-    setCartItems((currState) => {
-      return [...currState, cart];
+  const removeAtCart = () => {
+    setCartItems((prev) => {
+      const state = prev.map((v) => ({ ...v }));
+      const i = state.findIndex((v) => v.id === cart.id);
+      if (state[i]?.num > 1) state[i].num--;
+      else if (state[i]?.num === 1) state.splice(i, 1);
+      return state;
     });
   };
-
-  const addOrder = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
-
-  const removeOrder = () => {
-    setCount((prevCount) => prevCount - 1);
-  };
-
   return (
     <Card className="card card-product" sx={{ marginBottom: 20, width: 300 }}>
       <CardMedia
@@ -85,14 +88,14 @@ const ProductItem = ({ product }) => {
           " "
         ) : (
           <ButtonGroup>
-            <Button id="reduce" aria-label="reduce" onClick={removeOrder}>
+            <Button id="reduce" aria-label="reduce" onClick={removeAtCart}>
               <RemoveIcon fontSize="small" />
             </Button>
             <div>
               <Typography sx={{ margin: 1 }}>{count}</Typography>
             </div>
 
-            <Button id="increase" aria-label="increase" onClick={addOrder}>
+            <Button id="increase" aria-label="increase" onClick={addToCart}>
               <AddIcon fontSize="small" />
             </Button>
           </ButtonGroup>

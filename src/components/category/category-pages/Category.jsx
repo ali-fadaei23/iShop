@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 import "./Category.css";
 import { useEffect, useState } from "react";
 
-const Category = ({ categoryPages, addOrder, removeOrder }) => {
+const Category = ({ categoryPages }) => {
   const [category, setCategory] = useState([]);
   useEffect(() => {
     const sendRequest = async () => {
@@ -17,9 +17,9 @@ const Category = ({ categoryPages, addOrder, removeOrder }) => {
     sendRequest();
   }, [categoryPages]);
 
-  const deleteProduct = (id) => {
-    setCategory(category.filter((item) => item.id !== id));
-  };
+  // const deleteProduct = (id) => {
+  //   setCategory(category.filter((item) => item.id !== id));
+  // };
 
   return (
     <div className={`${categoryPages} category-container`}>
@@ -31,12 +31,7 @@ const Category = ({ categoryPages, addOrder, removeOrder }) => {
         {categoryPages}
       </Typography>
       <div className="product">
-        <ProductList
-          removeDashOrder={removeOrder}
-          addDashOrder={addOrder}
-          products={category}
-          onDelete={deleteProduct}
-        />
+        <ProductList products={category} />
       </div>
     </div>
   );
