@@ -10,10 +10,13 @@ import {
   CardContent,
   Typography,
   IconButton,
+  Snackbar,
 } from "@mui/material";
+import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import RemoveIcon from "@mui/icons-material/Remove";
+import CloseIcon from "@mui/icons-material/Close";
 
 const reducer = (...arr) => {
   const res = [];
@@ -27,6 +30,7 @@ const reducer = (...arr) => {
 
 const ProductItem = ({ product }) => {
   const { cartItems, setCartItems, setWishlist } = useContext(CartContext);
+  const [openSnackbar, setOpenSnackbar] = useState(false);
   const count = cartItems.find((v) => v.id === product.id)?.num ?? 0;
   const cart = {
     id: product.id,
@@ -47,19 +51,49 @@ const ProductItem = ({ product }) => {
       return state;
     });
   };
-
+  // Wishlist
+  const wishlist = {
+    id: product.id,
+    category: product.category,
+    image: product.image,
+    title: product.title,
+    price: product.price,
+    description: product.description,
+  };
   const addToWishlist = () => {
-    const wishlist = {
-      id: product.id,
-      category: product.category,
-      image: product.image,
-      title: product.title,
-      price: product.price,
-      description: product.description,
-    };
-
+    setOpenSnackbar(true);
     setWishlist((prev) => reducer(...prev, wishlist));
   };
+
+  const removeAtWishlist = () => {
+    setOpenSnackbar(false);
+    setWishlist((prev) => {
+      const state = prev.map((u) => ({ ...u }));
+      const i = state.findIndex((v) => v.id === wishlist.id);
+      if (state[i]?.num > 0) state[i].num--;
+      else if (state[i]?.num === 0) state.splice(i, 1);
+      return state;
+    });
+  };
+
+  const handleCloseSnackbar = () => setOpenSnackbar(false);
+
+  const action = (
+    <>
+      <Button color="secondary" size="small" onClick={removeAtWishlist}>
+        UNDO
+      </Button>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleCloseSnackbar}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </>
+  );
+
   return (
     <Card className="card card-product" sx={{ marginBottom: 20, width: 300 }}>
       <CardMedia
@@ -129,6 +163,13 @@ const ProductItem = ({ product }) => {
           <IconButton onClick={addToWishlist}>
             <TurnedInIcon />
           </IconButton>
+          <Snackbar
+            open={openSnackbar}
+            autoHideDuration={6000}
+            onClose={removeAtWishlist}
+            message="Add To Wishlist"
+            action={action}
+          />
         </div>
       </CardActions>
     </Card>

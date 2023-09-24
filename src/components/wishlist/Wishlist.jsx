@@ -21,7 +21,13 @@ const Wishlist = () => {
   return (
     <>
       <div>
-        <Typography variant="h1">Wishlist</Typography>
+        <Typography
+          variant="h1"
+          textAlign={"center"}
+          sx={{ fontWeight: 900, padding: 10 }}
+        >
+          Wishlist
+        </Typography>
       </div>
       <Box>
         <>
