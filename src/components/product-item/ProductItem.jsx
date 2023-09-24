@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import "./ProductItem.css";
 import { CartContext } from "../../shared/context/CartContext";
 import {
@@ -26,8 +26,7 @@ const reducer = (...arr) => {
 };
 
 const ProductItem = ({ product }) => {
-  const { cartItems, setCartItems, wishlist, setWishlist } =
-    useContext(CartContext);
+  const { cartItems, setCartItems, setWishlist } = useContext(CartContext);
   const count = cartItems.find((v) => v.id === product.id)?.num ?? 0;
   const cart = {
     id: product.id,
