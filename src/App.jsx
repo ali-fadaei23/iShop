@@ -6,6 +6,7 @@ import Navbar from "./components/navbar/Navbar";
 import Category from "./components/category/category-pages/Category";
 import Cart from "./components/cart/Cart";
 import { CartProvider } from "./shared/context/CartContext";
+import Wishlist from "./components/wishlist/Wishlist";
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -47,6 +48,7 @@ const App = () => {
               path="/women's clothing"
               element={<Category categoryPages={"women's clothing"} />}
             />
+            <Route path="/wishlist" element={<Wishlist />} />
           </Routes>
         </>
       </CartProvider>

@@ -16,10 +16,12 @@ import {
 // import InboxIcon from "@mui/icons-material/Inbox";
 // import DraftsIcon from "@mui/icons-material/Drafts";
 import PersonAdd from "@mui/icons-material/PersonAdd";
+import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import "./ProfileList.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ProfileList = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -93,17 +95,19 @@ const ProfileList = () => {
           <Avatar /> My account
         </MenuItem>
         <Divider />
+        <Link className="link-wishlist" to={"/wishlist"}>
+          <MenuItem>
+            <ListItemIcon>
+              <TurnedInIcon fontSize="small" />
+            </ListItemIcon>
+            Wishlist
+          </MenuItem>
+        </Link>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
             <PersonAdd fontSize="small" />
           </ListItemIcon>
           Add another account
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Settings
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>

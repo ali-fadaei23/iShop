@@ -14,3 +14,42 @@
   text-align: justify;
   justify-content: center;
 }
+
+.btn-product {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-add-remove {
+  font-size: small;
+}
+
+.btn-add {
+  font-size: medium;
+}
+
+#reduce {
+  width: 3px;
+  border: 1px solid;
+  border-radius: 50%;
+}
+#reduce:hover {
+  width: 3px;
+  border: 3px solid;
+  border-radius: 50%;
+  color: darkslateblue;
+}
+
+#increase {
+  width: 3px;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+#increase:hover {
+  color: darkslateblue;
+  border: 3px solid;
+  border-radius: 50%;
+}

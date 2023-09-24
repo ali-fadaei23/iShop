@@ -9,8 +9,10 @@ import {
   CardActions,
   CardContent,
   Typography,
+  IconButton,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
+import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import RemoveIcon from "@mui/icons-material/Remove";
 
 const reducer = (...arr) => {
@@ -24,7 +26,8 @@ const reducer = (...arr) => {
 };
 
 const ProductItem = ({ product }) => {
-  const { cartItems, setCartItems } = useContext(CartContext);
+  const { cartItems, setCartItems, wishlist, setWishlist } =
+    useContext(CartContext);
   const count = cartItems.find((v) => v.id === product.id)?.num ?? 0;
   const cart = {
     id: product.id,
@@ -44,6 +47,19 @@ const ProductItem = ({ product }) => {
       else if (state[i]?.num === 1) state.splice(i, 1);
       return state;
     });
+  };
+
+  const addToWishlist = () => {
+    const wishlist = {
+      id: product.id,
+      category: product.category,
+      image: product.image,
+      title: product.title,
+      price: product.price,
+      description: product.description,
+    };
+
+    setWishlist((prev) => reducer(...prev, wishlist));
   };
   return (
     <Card className="card card-product" sx={{ marginBottom: 20, width: 300 }}>
@@ -87,7 +103,7 @@ const ProductItem = ({ product }) => {
         {count <= 0 ? (
           " "
         ) : (
-          <ButtonGroup>
+          <ButtonGroup className="btn-add-remove">
             <Button id="reduce" aria-label="reduce" onClick={removeAtCart}>
               <RemoveIcon fontSize="small" />
             </Button>
@@ -100,16 +116,21 @@ const ProductItem = ({ product }) => {
             </Button>
           </ButtonGroup>
         )}
-
-        <Button
-          className="btn-delete"
-          variant="contained"
-          color="error"
-          startIcon={<AddIcon fontSize="small" />}
-          onClick={addToCart}
-        >
-          Add To Cart
-        </Button>
+        <div className="btn-product">
+          <Button
+            className="btn-add"
+            variant="contained"
+            color="success"
+            size="medium"
+            startIcon={<AddIcon fontSize="small" />}
+            onClick={addToCart}
+          >
+            Add To Cart
+          </Button>
+          <IconButton onClick={addToWishlist}>
+            <TurnedInIcon />
+          </IconButton>
+        </div>
       </CardActions>
     </Card>
   );
