@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import "./ProductItem.css";
+import { useState } from "react";
 import { CartContext } from "../../shared/context/CartContext";
 import {
   ButtonGroup,
@@ -10,13 +11,11 @@ import {
   CardContent,
   Typography,
   IconButton,
-  Snackbar,
 } from "@mui/material";
-import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
+import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import RemoveIcon from "@mui/icons-material/Remove";
-import CloseIcon from "@mui/icons-material/Close";
 
 const reducer = (...arr) => {
   const res = [];
@@ -30,7 +29,7 @@ const reducer = (...arr) => {
 
 const ProductItem = ({ product }) => {
   const { cartItems, setCartItems, setWishlist } = useContext(CartContext);
-  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [show, setShow] = useState(false);
   const count = cartItems.find((v) => v.id === product.id)?.num ?? 0;
   const cart = {
     id: product.id,
@@ -52,7 +51,7 @@ const ProductItem = ({ product }) => {
     });
   };
   // Wishlist
-  const wishlist = {
+  const wishlistCard = {
     id: product.id,
     category: product.category,
     image: product.image,
@@ -60,37 +59,21 @@ const ProductItem = ({ product }) => {
     price: product.price,
     description: product.description,
   };
+
   const addToWishlist = () => {
-    setOpenSnackbar(true);
     setWishlist((prev) => {
       const state = prev.map((u) => ({ ...u }));
-      const i = state.findIndex((v) => v.id === wishlist.id);
-      if (state[i]?.id === wishlist.id) {
+      const i = state.findIndex((v) => v.id === wishlistCard.id);
+      if (state[i]?.id === wishlistCard.id) {
+        setShow(false);
         state.splice(i, 1);
       } else {
-        return [...prev, wishlist];
+        setShow(true);
+        return [...prev, wishlistCard];
       }
       return state;
     });
   };
-
-  const handleCloseSnackbar = () => setOpenSnackbar(false);
-
-  const action = (
-    <>
-      <Button color="secondary" size="small" onClick={addToWishlist}>
-        UNDO
-      </Button>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleCloseSnackbar}
-      >
-        <CloseIcon fontSize="small" />
-      </IconButton>
-    </>
-  );
 
   return (
     <Card className="card card-product" sx={{ marginBottom: 20, width: 300 }}>
@@ -157,15 +140,8 @@ const ProductItem = ({ product }) => {
             Add To Cart
           </Button>
           <IconButton onClick={addToWishlist}>
-            <TurnedInIcon />
+            {show ? <TurnedInIcon /> : <TurnedInNotIcon />}
           </IconButton>
-          <Snackbar
-            open={openSnackbar}
-            autoHideDuration={6000}
-            onClose={addToWishlist}
-            message="Add To Wishlist"
-            action={action}
-          />
         </div>
       </CardActions>
     </Card>
