@@ -1,15 +1,15 @@
-.btn-category:hover {
-  color: burlywood;
-  background-color: darkslateblue;
-  padding: 15px;
+.MuiButtonBase-root.css-1q39md6-MuiButtonBase-root-MuiButton-root {
+  font-weight: 900;
+  color: cornflowerblue;
+}
+
+.MuiButtonBase-root.css-1q39md6-MuiButtonBase-root-MuiButton-root:hover {
+  font-weight: 900;
+  background-color: cornflowerblue;
   border-radius: 5px;
-  text-decoration: none;
+  color: white;
 }
 
 .btn-category {
-  color: darkslateblue;
-  background-color: burlywood;
-  padding: 15px;
-  border-radius: 5px;
   text-decoration: none;
 }

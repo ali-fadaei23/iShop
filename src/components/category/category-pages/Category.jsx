@@ -11,7 +11,6 @@ const Category = ({ categoryPages }) => {
         `https://fakestoreapi.com/products/category/${categoryPages}`
       );
       const responseData = await response.json();
-      console.log(responseData);
       setCategory(responseData);
     };
     sendRequest();

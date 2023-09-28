@@ -11,3 +11,9 @@
   flex-wrap: wrap;
   margin: auto;
 }
+
+.MuiTypography-root.MuiTypography-h1 {
+  font-size: 110px;
+  font-weight: 900;
+  color: royalblue;
+}

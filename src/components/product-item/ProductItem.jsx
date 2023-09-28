@@ -62,16 +62,14 @@ const ProductItem = ({ product }) => {
   };
   const addToWishlist = () => {
     setOpenSnackbar(true);
-    setWishlist((prev) => reducer(...prev, wishlist));
-  };
-
-  const removeAtWishlist = () => {
-    setOpenSnackbar(false);
     setWishlist((prev) => {
       const state = prev.map((u) => ({ ...u }));
       const i = state.findIndex((v) => v.id === wishlist.id);
-      if (state[i]?.num > 0) state[i].num--;
-      else if (state[i]?.num === 0) state.splice(i, 1);
+      if (state[i]?.id === wishlist.id) {
+        state.splice(i, 1);
+      } else {
+        return [...prev, wishlist];
+      }
       return state;
     });
   };
@@ -80,7 +78,7 @@ const ProductItem = ({ product }) => {
 
   const action = (
     <>
-      <Button color="secondary" size="small" onClick={removeAtWishlist}>
+      <Button color="secondary" size="small" onClick={addToWishlist}>
         UNDO
       </Button>
       <IconButton
@@ -153,8 +151,6 @@ const ProductItem = ({ product }) => {
           <Button
             className="btn-add"
             variant="contained"
-            color="success"
-            size="medium"
             startIcon={<AddIcon fontSize="small" />}
             onClick={addToCart}
           >
@@ -166,7 +162,7 @@ const ProductItem = ({ product }) => {
           <Snackbar
             open={openSnackbar}
             autoHideDuration={6000}
-            onClose={removeAtWishlist}
+            onClose={addToWishlist}
             message="Add To Wishlist"
             action={action}
           />

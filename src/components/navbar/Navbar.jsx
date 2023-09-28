@@ -84,10 +84,13 @@ const Navbar = ({ handleOpenCart }, props) => {
       <Box textAlign={"center"} sx={{ flexGrow: 1 }}>
         <CssBaseline />
         <HideOnScroll {...props}>
-          <AppBar sx={{ display: "flex", alignItems: "center" }}>
+          <AppBar
+            color="inherit"
+            sx={{ display: "flex", alignItems: "center" }}
+          >
             <Toolbar sx={{ width: "100%" }}>
               <Link to="/" title="Home">
-                <IconButton size="large" color="inherit">
+                <IconButton size="large">
                   <LocalMallIcon fontSize="30px" className="icon" />
                 </IconButton>
               </Link>

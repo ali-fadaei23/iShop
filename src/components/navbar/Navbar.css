@@ -5,12 +5,13 @@
 
 .categories {
   width: 100%;
+  margin-left: 20px;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .icon {
-  color: burlywood;
+  color: cornflowerblue;
 }
