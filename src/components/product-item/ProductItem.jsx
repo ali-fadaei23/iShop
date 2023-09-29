@@ -9,6 +9,7 @@ import {
   Button,
   CardActions,
   CardContent,
+  CardActionArea,
   Typography,
   IconButton,
 } from "@mui/material";
@@ -16,6 +17,7 @@ import AddIcon from "@mui/icons-material/Add";
 import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { Link } from "react-router-dom";
 
 const reducer = (...arr) => {
   const res = [];
@@ -39,17 +41,17 @@ const ProductItem = ({ product }) => {
     title: product.title,
     price: product.price,
   };
-  const addToCart = () => setCartItems((prev) => reducer(...prev, cart));
+  // const addToCart = () => setCartItems((prev) => reducer(...prev, cart));
 
-  const removeAtCart = () => {
-    setCartItems((prev) => {
-      const state = prev.map((v) => ({ ...v }));
-      const i = state.findIndex((v) => v.id === cart.id);
-      if (state[i]?.num > 1) state[i].num--;
-      else if (state[i]?.num === 1) state.splice(i, 1);
-      return state;
-    });
-  };
+  // const removeAtCart = () => {
+  //   setCartItems((prev) => {
+  //     const state = prev.map((v) => ({ ...v }));
+  //     const i = state.findIndex((v) => v.id === cart.id);
+  //     if (state[i]?.num > 1) state[i].num--;
+  //     else if (state[i]?.num === 1) state.splice(i, 1);
+  //     return state;
+  //   });
+  // };
   // Wishlist
   const wishlistCard = {
     id: product.id,
@@ -77,44 +79,48 @@ const ProductItem = ({ product }) => {
 
   return (
     <Card className="card card-product" sx={{ marginBottom: 20, width: 300 }}>
-      <CardMedia
-        component="img"
-        alt="green iguana"
-        sx={{ width: 200 }}
-        image={product.image}
-        title={product.title}
-      />
-      <CardContent className="text">
-        <Typography
-          gutterBottom
-          variant="body1"
-          sx={{ color: "darkblue" }}
-          component="div"
-        >
-          {product.title}
-        </Typography>
-        <Typography
-          gutterBottom
-          variant="caption"
-          sx={{ color: "CaptionText" }}
-          component="div"
-        >
-          {product.category}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
+      <CardActionArea>
+      <Link className="link-products" to={'/electronics'}>
+        <CardMedia
+          component="img"
+          alt="green iguana"
+          sx={{ width: 200 }}
+          image={product.image}
+          title={product.title}
+        />
+        <CardContent className="text">
+          <Typography
+            gutterBottom
+            variant="caption"
+            sx={{ color: "CaptionText" }}
+            component="div"
+          >
+            {product.category}
+          </Typography>
+          <Typography
+            gutterBottom
+            variant="body1"
+            sx={{ color: "darkblue" }}
+            component="div"
+          >
+            {product.title}
+          </Typography>
+          {/* <Typography variant="body2" color="text.secondary">
           {product.description}
-        </Typography>
-        <Typography
-          gutterBottom
-          variant="h6"
-          sx={{ color: "tomato", marginTop: 5 }}
-          component="div"
-        >
-          {product.price + " $"}
-        </Typography>
-      </CardContent>
+        </Typography> */}
+          <Typography
+            gutterBottom
+            variant="caption"
+            sx={{ color: "tomato", marginTop: 1 }}
+            component="div"
+          >
+            {product.price + " $"}
+          </Typography>
+        </CardContent>
+        </Link>
+      </CardActionArea>
       <CardActions>
-        {count <= 0 ? (
+        {/* {count <= 0 ? (
           " "
         ) : (
           <ButtonGroup className="btn-add-remove">
@@ -129,18 +135,23 @@ const ProductItem = ({ product }) => {
               <AddIcon fontSize="small" />
             </Button>
           </ButtonGroup>
-        )}
+        )} */}
         <div className="btn-product">
-          <Button
+          {/* <Button
             className="btn-add"
             variant="contained"
             startIcon={<AddIcon fontSize="small" />}
             onClick={addToCart}
           >
-            Add To Cart
-          </Button>
+            Buy
+          </Button> */}
           <IconButton onClick={addToWishlist}>
-            {show ? <TurnedInIcon /> : <TurnedInNotIcon />}
+            {show ? (
+              <TurnedInIcon fontSize="small" />
+            ) : (
+              <TurnedInNotIcon fontSize="small" />
+            )}{" "}
+            Wishlist
           </IconButton>
         </div>
       </CardActions>

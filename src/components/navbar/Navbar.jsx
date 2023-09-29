@@ -10,6 +10,7 @@ import {
   useScrollTrigger,
   Fade,
   Fab,
+  Button,
 } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
@@ -109,6 +110,17 @@ const Navbar = ({ handleOpenCart }, props) => {
               <ProfileList />
               <div className="categories">
                 <CategoryList categories={categoryItem} />
+              </div>
+              <div className="login">
+                <Button
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                  }}
+                >
+                  Login
+                </Button>
               </div>
             </Toolbar>
           </AppBar>
