@@ -15,9 +15,9 @@ import {
 } from "@mui/material";
 // import InboxIcon from "@mui/icons-material/Inbox";
 // import DraftsIcon from "@mui/icons-material/Drafts";
-import PersonAdd from "@mui/icons-material/PersonAdd";
+// import PersonAdd from "@mui/icons-material/PersonAdd";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
-import Settings from "@mui/icons-material/Settings";
+// import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import "./ProfileList.css";
 import { useState } from "react";

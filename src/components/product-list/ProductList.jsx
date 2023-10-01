@@ -7,8 +7,8 @@ const ProductList = ({ products }) => {
     <>
       {products.map((item, index) => {
         return (
-          <SnackbarProvider maxSnack={2}>
-            <ProductItem key={index} product={item} />
+          <SnackbarProvider key={index} maxSnack={2}>
+            <ProductItem product={item} />
           </SnackbarProvider>
         );
       })}

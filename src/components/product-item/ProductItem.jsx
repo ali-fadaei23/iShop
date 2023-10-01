@@ -1,46 +1,58 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import "./ProductItem.css";
-import { useState } from "react";
 import { CartContext } from "../../shared/context/CartContext";
 import {
-  ButtonGroup,
+  // ButtonGroup,
   Card,
   CardMedia,
-  Button,
+  // Button,
   CardActions,
   CardContent,
   CardActionArea,
   Typography,
   IconButton,
 } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
+// import AddIcon from "@mui/icons-material/Add";
 import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
-import RemoveIcon from "@mui/icons-material/Remove";
+// import RemoveIcon from "@mui/icons-material/Remove";
 import { Link } from "react-router-dom";
 
-const reducer = (...arr) => {
-  const res = [];
-  arr.forEach((v) => {
-    const i = res.findIndex((u) => u.id === v.id);
-    if (!res[i]) res.push(v);
-    else res[i].num++;
-  });
-  return res;
-};
+// const reducer = (...arr) => {
+//   const res = [];
+//   arr.forEach((v) => {
+//     const i = res.findIndex((u) => u.id === v.id);
+//     if (!res[i]) res.push(v);
+//     else res[i].num++;
+//   });
+//   return res;
+// };
 
 const ProductItem = ({ product }) => {
-  const { cartItems, setCartItems, setWishlist } = useContext(CartContext);
+  const { setWishlist } = useContext(CartContext);
   const [show, setShow] = useState(false);
-  const count = cartItems.find((v) => v.id === product.id)?.num ?? 0;
-  const cart = {
-    id: product.id,
-    num: 1,
-    category: product.category,
-    image: product.image,
-    title: product.title,
-    price: product.price,
-  };
+
+  // useEffect(() => {
+  //   const sendRequest = async () => {
+  //     const response = await fetch(
+  //       `https://fakestoreapi.com/products/${product.id}`
+  //     );
+
+  //     const responseData = await response.json();
+  //     setCartItems(responseData);
+  //   };
+  //   sendRequest();
+  // }, []);
+
+  // const count = cartItems.find((v) => v.id === product.id)?.num ?? 0;
+  // const cart = {
+  //   id: product.id,
+  //   num: 1,
+  //   category: product.category,
+  //   image: product.image,
+  //   title: product.title,
+  //   price: product.price,
+  // };
   // const addToCart = () => setCartItems((prev) => reducer(...prev, cart));
 
   // const removeAtCart = () => {
@@ -80,43 +92,43 @@ const ProductItem = ({ product }) => {
   return (
     <Card className="card card-product" sx={{ marginBottom: 20, width: 300 }}>
       <CardActionArea>
-      <Link className="link-products" to={'/electronics'}>
-        <CardMedia
-          component="img"
-          alt="green iguana"
-          sx={{ width: 200 }}
-          image={product.image}
-          title={product.title}
-        />
-        <CardContent className="text">
-          <Typography
-            gutterBottom
-            variant="caption"
-            sx={{ color: "CaptionText" }}
-            component="div"
-          >
-            {product.category}
-          </Typography>
-          <Typography
-            gutterBottom
-            variant="body1"
-            sx={{ color: "darkblue" }}
-            component="div"
-          >
-            {product.title}
-          </Typography>
-          {/* <Typography variant="body2" color="text.secondary">
+        <Link className="link-products" to={`/products/${product.id}`}>
+          <CardMedia
+            component="img"
+            alt="green iguana"
+            sx={{ width: 140, height: 180 }}
+            image={product.image}
+            title={product.title}
+          />
+          <CardContent className="text">
+            <Typography
+              gutterBottom
+              variant="caption"
+              sx={{ color: "CaptionText" }}
+              component="div"
+            >
+              {product.category}
+            </Typography>
+            <Typography
+              gutterBottom
+              variant="body1"
+              sx={{ color: "darkblue" }}
+              component="div"
+            >
+              {product.title}
+            </Typography>
+            {/* <Typography variant="body2" color="text.secondary">
           {product.description}
         </Typography> */}
-          <Typography
-            gutterBottom
-            variant="caption"
-            sx={{ color: "tomato", marginTop: 1 }}
-            component="div"
-          >
-            {product.price + " $"}
-          </Typography>
-        </CardContent>
+            <Typography
+              gutterBottom
+              variant="caption"
+              sx={{ color: "tomato", marginTop: 1 }}
+              component="div"
+            >
+              {"$ " + product.price}
+            </Typography>
+          </CardContent>
         </Link>
       </CardActionArea>
       <CardActions>

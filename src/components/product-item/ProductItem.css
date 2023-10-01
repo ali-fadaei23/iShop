@@ -2,10 +2,13 @@
   text-decoration: none;
 }
 
-.card-product {
+.MuiCardMedia-root.MuiCardMedia-media.MuiCardMedia-img {
+  object-fit: contain;
+}
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   flex-wrap: wrap;
   justify-content: center;
   margin: 10px;

@@ -27,12 +27,6 @@
   text-align: left;
 }
 
-.card.card-product {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
 .MuiCardActions-root.MuiCardActions-spacing {
   width: 100%;
   display: flex;
