@@ -1,0 +1,103 @@
+/* card */
+.MuiPaper-root.MuiPaper-rounded.css-1y5u69t-MuiPaper-root-MuiCard-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+}
+
+.container-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+/* wishlist */
+.btn-wishlist {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+/* Price */
+.MuiTypography-root.MuiTypography-h2.MuiTypography-gutterBottom {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: bold;
+}
+
+/* Add and Remove */
+
+#reduce {
+  width: 3px;
+  border: 1px solid;
+  border-radius: 50%;
+}
+#reduce:hover {
+  width: 3px;
+  border: 3px solid slateblue;
+  border-radius: 50%;
+  color: darkslateblue;
+}
+
+#increase {
+  width: 3px;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+#increase:hover {
+  color: darkslateblue;
+  border: 3px solid slateblue;
+  border-radius: 50%;
+}
+
+.btn-product {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.btn-add-remove {
+  font-size: small;
+}
+
+.btn-add.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  background-color: slateblue;
+  font-weight: 900;
+  text-align: center;
+  font-size: x-small;
+  width: 100px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.MuiTypography-root.rate-text {
+  margin-left: 10px;
+}
+
+.MuiTypography-root.count {
+  margin-left: 5px;
+}
+
+.MuiTypography-root.rate {
+  font-weight: 900;
+  font-size: small;
+  margin-bottom: 0;
+}

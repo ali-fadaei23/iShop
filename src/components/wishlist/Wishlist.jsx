@@ -31,8 +31,8 @@ const Wishlist = () => {
       </div>
       <Box>
         <>
-          {wishlist.map((item) => {
-            return <ProductItem product={item} />;
+          {wishlist.map((item, index) => {
+            return <ProductItem key={index} product={item} />;
           })}
         </>
       </Box>

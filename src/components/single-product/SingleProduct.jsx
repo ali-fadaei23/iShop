@@ -9,9 +9,13 @@ import {
   Button,
   CardActions,
   CardContent,
-  CardActionArea,
   Typography,
   IconButton,
+  Rating,
+  Stack,
+  Backdrop,
+  CircularProgress,
+  Box,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
@@ -30,6 +34,7 @@ const reducer = (...arr) => {
 
 const SingleProduct = () => {
   const [show, setShow] = useState(false);
+  const [open, setOpen] = useState(true);
   const { cartItems, setCartItems, setWishlist } = useContext(CartContext);
   const [singleProduct, setSingleProduct] = useState({});
   let { productId } = useParams();
@@ -40,11 +45,22 @@ const SingleProduct = () => {
         `https://fakestoreapi.com/products/${productId}`
       );
       const responseData = await response.json();
+
       setSingleProduct(responseData);
+      setOpen(false);
     })();
-    // console.log(singleProduct.rating.rate);
   }, [productId, singleProduct]);
 
+  useEffect(() => {
+    const id = setTimeout(() => {
+      setShow(true);
+      console.log("Ali");
+    }, 10000);
+    return () => {
+      console.log("timeout clear");
+      clearTimeout(id);
+    };
+  }, []);
   const count = cartItems.find((v) => v.id === singleProduct.id)?.num ?? 0;
   const cart = {
     id: singleProduct.id,
@@ -90,91 +106,159 @@ const SingleProduct = () => {
     });
   };
 
-  return (
-    <Card className="card card-product" sx={{ marginBottom: 20 }}>
-      <div>
-        <IconButton onClick={addToWishlist}>
-          {show ? (
-            <TurnedInIcon fontSize="small" />
-          ) : (
-            <TurnedInNotIcon fontSize="small" />
-          )}{" "}
-          Wishlist
-        </IconButton>
-      </div>
-      <CardMedia
-        component="img"
-        alt="green iguana"
-        sx={{ width: 140, height: 180 }}
-        image={singleProduct.image}
-        title={singleProduct.title}
-      />
-      <CardContent className="text">
-        <Typography
-          gutterBottom
-          variant="caption"
-          sx={{ color: "CaptionText" }}
-          component="div"
-        >
-          {singleProduct.category}
-        </Typography>
-        <Typography
-          gutterBottom
-          variant="body1"
-          sx={{ color: "darkblue" }}
-          component="div"
-        >
-          {singleProduct.title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {singleProduct.description}
-        </Typography>
-        <Typography
-          gutterBottom
-          variant="caption"
-          sx={{ color: "tomato", marginTop: 1 }}
-          component="div"
-        >
-          {"$ " + singleProduct.price}
-        </Typography>
-        {/* <Typography
-          gutterBottom
-          variant="caption"
-          sx={{ color: "CaptionText" }}
-          component="div"
-        >
-          {singleProduct.rating}
-        </Typography> */}
-      </CardContent>
-      <CardActions>
-        {count <= 0 ? (
-          " "
-        ) : (
-          <ButtonGroup className="btn-add-remove">
-            <Button id="reduce" aria-label="reduce" onClick={removeAtCart}>
-              <RemoveIcon fontSize="small" />
-            </Button>
-            <div>
-              <Typography sx={{ margin: 1 }}>{count}</Typography>
-            </div>
+  // const handleLoading = () => {
+  //   if (singleProduct === undefined || singleProduct === null) {
+  //     setOpen(true);
+  //   } else {
+  //     setOpen(false);
+  //   }
+  // };
 
-            <Button id="increase" aria-label="increase" onClick={addToCart}>
-              <AddIcon fontSize="small" />
-            </Button>
-          </ButtonGroup>
-        )}
-        <div className="btn-product">
-          <Button
-            className="btn-add"
-            variant="contained"
-            startIcon={<AddIcon fontSize="small" />}
-            onClick={addToCart}
+  return (
+    <>
+      {open ? (
+        <div>
+          <Backdrop
+            sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            open={open}
           >
-            Buy
-          </Button>
+            <CircularProgress color="inherit" />
+          </Backdrop>
         </div>
-      </CardActions>
-    </Card>
+      ) : (
+        <div className="container-card">
+          <Card className="card card-product" sx={{ marginBottom: 20 }}>
+            <div className="btn-wishlist">
+              <IconButton onClick={addToWishlist}>
+                {show ? (
+                  <TurnedInIcon fontSize="small" />
+                ) : (
+                  <TurnedInNotIcon fontSize="small" />
+                )}
+              </IconButton>
+            </div>
+            <CardMedia
+              component="img"
+              alt="green iguana"
+              sx={{ width: 140, height: 180 }}
+              image={singleProduct.image}
+              title={singleProduct.title}
+            />
+            <CardContent className="text">
+              <Typography
+                gutterBottom
+                variant="caption"
+                sx={{ color: "CaptionText" }}
+                component="div"
+              >
+                {singleProduct.category}
+              </Typography>
+              <Typography
+                gutterBottom
+                variant="body1"
+                sx={{ color: "darkblue" }}
+                component="div"
+              >
+                {singleProduct.title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {singleProduct.description}
+              </Typography>
+              <Typography
+                gutterBottom
+                variant="caption"
+                sx={{ color: "CaptionText" }}
+                component="div"
+              >
+                Rating:
+              </Typography>
+
+              <div className="rating">
+                <Stack spacing={1}>
+                  <Rating
+                    name="half-rating-read"
+                    value={
+                      singleProduct.rating === undefined
+                        ? 0
+                        : singleProduct.rating["rate"]
+                    }
+                    precision={0.1}
+                    readOnly
+                  />
+                </Stack>
+                <Typography
+                  className="rate rate-text"
+                  gutterBottom
+                  sx={{ color: "CaptionText" }}
+                  component="div"
+                >
+                  {singleProduct.rating === undefined
+                    ? 0
+                    : singleProduct.rating["rate"]}
+                </Typography>
+                <Typography
+                  className="rate count"
+                  gutterBottom
+                  sx={{ color: "CaptionText" }}
+                  component="div"
+                >
+                  ({" "}
+                  {singleProduct.rating === undefined
+                    ? 0
+                    : singleProduct.rating["count"]}
+                  {" user "})
+                </Typography>
+              </div>
+            </CardContent>
+            <CardActions>
+              <Typography
+                gutterBottom
+                variant="h2"
+                sx={{ color: "tomato" }}
+                component="span"
+              >
+                {"$ " + singleProduct.price}
+              </Typography>
+              {count <= 0 ? (
+                " "
+              ) : (
+                <ButtonGroup className="btn-add-remove">
+                  <Button
+                    id="reduce"
+                    aria-label="reduce"
+                    onClick={removeAtCart}
+                  >
+                    <RemoveIcon fontSize="small" />
+                  </Button>
+                  <div>
+                    <Typography sx={{ margin: 1 }}>{count}</Typography>
+                  </div>
+
+                  <Button
+                    id="increase"
+                    aria-label="increase"
+                    onClick={addToCart}
+                  >
+                    <AddIcon fontSize="small" />
+                  </Button>
+                </ButtonGroup>
+              )}
+
+              <div className="btn-product">
+                <Button
+                  className="btn-add"
+                  variant="contained"
+                  startIcon={<AddIcon fontSize="small" />}
+                  onClick={addToCart}
+                >
+                  Buy
+                </Button>
+              </div>
+            </CardActions>
+          </Card>
+        </div>
+      )}
+    </>
   );
 };
 

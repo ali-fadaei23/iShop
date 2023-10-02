@@ -16,7 +16,7 @@ import {
 import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 // import RemoveIcon from "@mui/icons-material/Remove";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 // const reducer = (...arr) => {
 //   const res = [];
@@ -31,7 +31,6 @@ import { Link } from "react-router-dom";
 const ProductItem = ({ product }) => {
   const { setWishlist } = useContext(CartContext);
   const [show, setShow] = useState(false);
-
   // useEffect(() => {
   //   const sendRequest = async () => {
   //     const response = await fetch(
