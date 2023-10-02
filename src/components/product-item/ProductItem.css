@@ -23,13 +23,10 @@
   justify-content: center;
 }
 
-
-
 .MuiButtonBase-root.css-78trlr-MuiButtonBase-root-MuiIconButton-root {
   font-size: medium;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
-

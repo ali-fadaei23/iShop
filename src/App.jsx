@@ -23,9 +23,7 @@ const App = () => {
   return (
     <Router>
       <CartProvider>
-      <div>
         <Navbar handleOpenCart={handleOpen} />
-      </div>
         <>
           <Cart openDrawerOrder={open} handleCloseCart={handleClose} />
 

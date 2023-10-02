@@ -1,4 +1,5 @@
 import "./Cart.css";
+import OrderNotFound from "../../assets/img/empty-cart-yellow.png";
 import {
   Box,
   Button,
@@ -12,7 +13,6 @@ import {
   Step,
   StepLabel,
   Typography,
-  AppBar,
 } from "@mui/material";
 // import AddIcon from "@mui/icons-material/Add";
 // import RemoveIcon from "@mui/icons-material/Remove";
@@ -34,9 +34,9 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
 
-  const isStepOptional = (step) => {
-    return step === 1;
-  };
+  // const isStepOptional = (step) => {
+  //   return step === 1;
+  // };
 
   const isStepSkipped = (step) => {
     return skipped.has(step);
@@ -57,18 +57,18 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleSkip = () => {
-    if (!isStepOptional(activeStep)) {
-      throw new Error("You can't skip a step that isn't optional.");
-    }
+  // const handleSkip = () => {
+  //   if (!isStepOptional(activeStep)) {
+  //     throw new Error("You can't skip a step that isn't optional.");
+  //   }
 
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped((prevSkipped) => {
-      const newSkipped = new Set(prevSkipped.values());
-      newSkipped.add(activeStep);
-      return newSkipped;
-    });
-  };
+  //   setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  //   setSkipped((prevSkipped) => {
+  //     const newSkipped = new Set(prevSkipped.values());
+  //     newSkipped.add(activeStep);
+  //     return newSkipped;
+  //   });
+  // };
 
   // const handleReset = () => {
   //   setActiveStep(0);
@@ -198,10 +198,8 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
           </div>
         </>
       ) : (
-        <div>
-          <Typography variant="h4" sx={{ margin: 2 }}>
-            Order Not Found...
-          </Typography>
+        <div className="empty-cart">
+          <img className="img-empty-cart" src={OrderNotFound} alt="Empty Cart" loading="lazy" />
         </div>
       )}
     </Drawer>

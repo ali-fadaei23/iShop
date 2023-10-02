@@ -10,3 +10,13 @@
 .MuiStepper-root.MuiStepper-horizontal {
   margin-top: 5px;
 }
+
+.img-empty-cart {
+  width: 350px;
+  padding: 35px;
+  margin: 10px;
+}
+
+.empty-cart {
+  margin: auto;
+}

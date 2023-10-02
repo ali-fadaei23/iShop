@@ -116,9 +116,6 @@ const ProductItem = ({ product }) => {
             >
               {product.title}
             </Typography>
-            {/* <Typography variant="body2" color="text.secondary">
-          {product.description}
-        </Typography> */}
             <Typography
               gutterBottom
               variant="caption"
@@ -131,31 +128,7 @@ const ProductItem = ({ product }) => {
         </Link>
       </CardActionArea>
       <CardActions>
-        {/* {count <= 0 ? (
-          " "
-        ) : (
-          <ButtonGroup className="btn-add-remove">
-            <Button id="reduce" aria-label="reduce" onClick={removeAtCart}>
-              <RemoveIcon fontSize="small" />
-            </Button>
-            <div>
-              <Typography sx={{ margin: 1 }}>{count}</Typography>
-            </div>
-
-            <Button id="increase" aria-label="increase" onClick={addToCart}>
-              <AddIcon fontSize="small" />
-            </Button>
-          </ButtonGroup>
-        )} */}
         <div className="btn-product">
-          {/* <Button
-            className="btn-add"
-            variant="contained"
-            startIcon={<AddIcon fontSize="small" />}
-            onClick={addToCart}
-          >
-            Buy
-          </Button> */}
           <IconButton onClick={addToWishlist}>
             {show ? (
               <TurnedInIcon fontSize="small" />

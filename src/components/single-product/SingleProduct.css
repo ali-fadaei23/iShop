@@ -101,3 +101,8 @@
   font-size: small;
   margin-bottom: 0;
 }
+
+.detail-product {
+  display: flex;
+  align-items: flex-start;
+}

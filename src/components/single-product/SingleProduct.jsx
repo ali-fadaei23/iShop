@@ -128,30 +128,36 @@ const SingleProduct = () => {
                 )}
               </IconButton>
             </div>
-            <CardMedia
-              component="img"
-              alt="green iguana"
-              sx={{ width: 140, height: 180 }}
-              image={singleProduct.image}
-              title={singleProduct.title}
-            />
             <CardContent className="text">
-              <Typography
-                gutterBottom
-                variant="caption"
-                sx={{ color: "CaptionText" }}
-                component="div"
-              >
-                {singleProduct.category}
-              </Typography>
-              <Typography
-                gutterBottom
-                variant="body1"
-                sx={{ color: "darkblue" }}
-                component="div"
-              >
-                {singleProduct.title}
-              </Typography>
+              <div className="detail-product">
+                <div className="datail-img">
+                  <CardMedia
+                    component="img"
+                    alt="green iguana"
+                    sx={{ width: 200, height: 240 }}
+                    image={singleProduct.image}
+                    title={singleProduct.title}
+                  />
+                </div>
+                <div className="datail-text">
+                  <Typography
+                    gutterBottom
+                    variant="caption"
+                    sx={{ color: "CaptionText" }}
+                    component="div"
+                  >
+                    {singleProduct.category}
+                  </Typography>
+                  <Typography
+                    gutterBottom
+                    variant="body1"
+                    sx={{ color: "darkblue" }}
+                    component="div"
+                  >
+                    {singleProduct.title}
+                  </Typography>
+                </div>
+              </div>
               <Typography variant="body2" color="text.secondary">
                 {singleProduct.description}
               </Typography>
