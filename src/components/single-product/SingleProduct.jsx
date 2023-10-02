@@ -15,7 +15,6 @@ import {
   Stack,
   Backdrop,
   CircularProgress,
-  Box,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
@@ -51,16 +50,16 @@ const SingleProduct = () => {
     })();
   }, [productId, singleProduct]);
 
-  useEffect(() => {
-    const id = setTimeout(() => {
-      setShow(true);
-      console.log("Ali");
-    }, 10000);
-    return () => {
-      console.log("timeout clear");
-      clearTimeout(id);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const id = setTimeout(() => {
+  //     setShow(true);
+  //     console.log("Ali");
+  //   }, 10000);
+  //   return () => {
+  //     console.log("timeout clear");
+  //     clearTimeout(id);
+  //   };
+  // }, []);
   const count = cartItems.find((v) => v.id === singleProduct.id)?.num ?? 0;
   const cart = {
     id: singleProduct.id,
@@ -105,14 +104,6 @@ const SingleProduct = () => {
       return state;
     });
   };
-
-  // const handleLoading = () => {
-  //   if (singleProduct === undefined || singleProduct === null) {
-  //     setOpen(true);
-  //   } else {
-  //     setOpen(false);
-  //   }
-  // };
 
   return (
     <>

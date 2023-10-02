@@ -1,3 +1,7 @@
+.MuiToolbar-root.MuiToolbar-gutters {
+  display: flex;
+}
+
 .MuiBadge-badge.MuiBadge-standard {
   top: 8px;
   right: 5px;

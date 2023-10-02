@@ -16,7 +16,7 @@ import {
 import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 // import RemoveIcon from "@mui/icons-material/Remove";
-import { Link, useParams } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 // const reducer = (...arr) => {
 //   const res = [];
@@ -161,8 +161,8 @@ const ProductItem = ({ product }) => {
               <TurnedInIcon fontSize="small" />
             ) : (
               <TurnedInNotIcon fontSize="small" />
-            )}{" "}
-            Wishlist
+            )}{" Wishlist"}
+           
           </IconButton>
         </div>
       </CardActions>

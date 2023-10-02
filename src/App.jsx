@@ -1,10 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/main/Home";
 import Navbar from "./components/navbar/Navbar";
 import Category from "./components/category/category-pages/Category";
@@ -27,15 +23,15 @@ const App = () => {
   return (
     <Router>
       <CartProvider>
+      <div>
+        <Navbar handleOpenCart={handleOpen} />
+      </div>
         <>
-          <div>
-            <Navbar handleOpenCart={handleOpen} />
-          </div>
           <Cart openDrawerOrder={open} handleCloseCart={handleClose} />
 
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path={`products/:productId`} element={<SingleProduct  />} />
+            <Route path={`products/:productId`} element={<SingleProduct />} />
 
             <Route
               path="electronics"
