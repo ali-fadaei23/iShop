@@ -1,5 +1,10 @@
-.MuiToolbar-root.MuiToolbar-gutters {
+/* .MuiToolbar-root.MuiToolbar-gutters.css-p57pv6-MuiToolbar-root {
   display: flex;
+  z-index: 5200;
+} */
+
+.MuiPaper-root.navbar {
+  z-index: 1205;
 }
 
 .MuiBadge-badge.MuiBadge-standard {

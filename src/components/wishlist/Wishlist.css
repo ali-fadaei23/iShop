@@ -5,3 +5,22 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.img-empty-wishlist {
+  width: 340px;
+}
+
+.empty-wishlist {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* Text Wishlist Empty */
+/* .MuiTypography-root.css-gepadz-MuiTypography-root {
+  font-weight: 900;
+  text-align: center;
+  font-family: sans-serif;
+  color: crimson;
+} */

@@ -23,10 +23,10 @@ const App = () => {
   return (
     <Router>
       <CartProvider>
-        <Navbar handleOpenCart={handleOpen} />
+          <Navbar handleOpenCart={handleOpen} />
         <>
-          <Cart openDrawerOrder={open} handleCloseCart={handleClose} />
 
+          <Cart openDrawerOrder={open} handleCloseCart={handleClose} />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path={`products/:productId`} element={<SingleProduct />} />

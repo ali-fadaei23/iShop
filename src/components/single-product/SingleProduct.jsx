@@ -15,6 +15,11 @@ import {
   Stack,
   Backdrop,
   CircularProgress,
+  InputLabel,
+  MenuItem,
+  FormHelperText,
+  FormControl,
+  Select,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
@@ -34,8 +39,10 @@ const reducer = (...arr) => {
 const SingleProduct = () => {
   const [show, setShow] = useState(false);
   const [open, setOpen] = useState(true);
-  const { cartItems, setCartItems, setWishlist } = useContext(CartContext);
+  const { cartItems, setCartItems, setWishlist, categoryItem } =
+    useContext(CartContext);
   const [singleProduct, setSingleProduct] = useState({});
+  const [size, setSize] = useState("");
   let { productId } = useParams();
 
   useEffect(() => {
@@ -50,17 +57,12 @@ const SingleProduct = () => {
     })();
   }, [productId, singleProduct]);
 
-  // useEffect(() => {
-  //   const id = setTimeout(() => {
-  //     setShow(true);
-  //     console.log("Ali");
-  //   }, 10000);
-  //   return () => {
-  //     console.log("timeout clear");
-  //     clearTimeout(id);
-  //   };
-  // }, []);
+  const handleSize = (e) => {
+    setSize(e.target.value);
+  };
+
   const count = cartItems.find((v) => v.id === singleProduct.id)?.num ?? 0;
+
   const cart = {
     id: singleProduct.id,
     num: 1,
@@ -69,6 +71,7 @@ const SingleProduct = () => {
     title: singleProduct.title,
     price: singleProduct.price,
   };
+
   const addToCart = () => setCartItems((prev) => reducer(...prev, cart));
 
   const removeAtCart = () => {
@@ -156,8 +159,33 @@ const SingleProduct = () => {
                   >
                     {singleProduct.title}
                   </Typography>
+                  {singleProduct.category === "electronics" ? null : (
+                    <div>
+                      <FormControl sx={{ m: 1, minWidth: 120 }}>
+                        <InputLabel id="demo-simple-select-helper-label">
+                          Size
+                        </InputLabel>
+                        <Select
+                          labelId="demo-simple-select-helper-label"
+                          id="demo-simple-select-helper"
+                          value={size}
+                          label="Size"
+                          onChange={handleSize}
+                        >
+                          <MenuItem value="">
+                            <em>None</em>
+                          </MenuItem>
+                          <MenuItem value={"S"}>S</MenuItem>
+                          <MenuItem value={"M"}>M</MenuItem>
+                          <MenuItem value={"L"}>L</MenuItem>
+                          <MenuItem value={"XL"}>XL</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </div>
+                  )}
                 </div>
               </div>
+
               <Typography variant="body2" color="text.secondary">
                 {singleProduct.description}
               </Typography>

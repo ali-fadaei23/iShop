@@ -1,12 +1,13 @@
 .MuiButtonBase-root.css-1q39md6-MuiButtonBase-root-MuiButton-root {
   font-weight: 900;
   color: cornflowerblue;
+  border-radius: 30px;
 }
 
 .MuiButtonBase-root.css-1q39md6-MuiButtonBase-root-MuiButton-root:hover {
   font-weight: 900;
   background-color: cornflowerblue;
-  border-radius: 5px;
+  border-radius: 30px;
   color: white;
 }
 

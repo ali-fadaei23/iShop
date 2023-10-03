@@ -67,8 +67,7 @@ const HideOnScroll = ({ children, window }) => {
 };
 
 const Navbar = ({ handleOpenCart }, props) => {
-  const [categoryItem, setCategoryItem] = useState([]);
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, categoryItem, setCategoryItem } = useContext(CartContext);
   useEffect(() => {
     const sendRequest = async () => {
       const response = await fetch(
@@ -78,7 +77,7 @@ const Navbar = ({ handleOpenCart }, props) => {
       setCategoryItem(responseData);
     };
     sendRequest();
-  }, []);
+  }, [setCategoryItem]);
 
   return (
     <>
@@ -86,6 +85,7 @@ const Navbar = ({ handleOpenCart }, props) => {
         <CssBaseline />
         <HideOnScroll {...props}>
           <AppBar
+            className="navbar"
             color="inherit"
             sx={{ display: "flex", alignItems: "center" }}
           >

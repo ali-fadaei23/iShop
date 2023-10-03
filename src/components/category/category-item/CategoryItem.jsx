@@ -19,10 +19,6 @@ const CategoryItem = ({ category }) => {
           </Button>
         </Link>
       </Box>
-
-      {/* <Link to={category} className="btn btn-category">
-        <span>{category}</span>
-      </Link> */}
     </>
   );
 };
