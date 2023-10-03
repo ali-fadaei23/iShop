@@ -245,7 +245,16 @@ const SingleProduct = () => {
                 {"$ " + singleProduct.price}
               </Typography>
               {count <= 0 ? (
-                " "
+                <div className="btn-product">
+                  <Button
+                    className="btn-add"
+                    variant="contained"
+                    startIcon={<AddIcon fontSize="small" />}
+                    onClick={addToCart}
+                  >
+                    Buy
+                  </Button>
+                </div>
               ) : (
                 <ButtonGroup className="btn-add-remove">
                   <Button
@@ -268,17 +277,6 @@ const SingleProduct = () => {
                   </Button>
                 </ButtonGroup>
               )}
-
-              <div className="btn-product">
-                <Button
-                  className="btn-add"
-                  variant="contained"
-                  startIcon={<AddIcon fontSize="small" />}
-                  onClick={addToCart}
-                >
-                  Buy
-                </Button>
-              </div>
             </CardActions>
           </Card>
         </div>
