@@ -8,6 +8,7 @@ import Cart from "./components/cart/Cart";
 import { CartProvider } from "./shared/context/CartContext";
 import Wishlist from "./components/wishlist/Wishlist";
 import SingleProduct from "./components/single-product/SingleProduct";
+import { SnackbarProvider } from "notistack";
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -23,13 +24,20 @@ const App = () => {
   return (
     <Router>
       <CartProvider>
-          <Navbar handleOpenCart={handleOpen} />
+        <Navbar handleOpenCart={handleOpen} />
         <>
-
           <Cart openDrawerOrder={open} handleCloseCart={handleClose} />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path={`products/:productId`} element={<SingleProduct />} />
+
+            <Route
+              path={`products/:productId`}
+              element={
+                <SnackbarProvider autoHideDuration={2000} maxSnack={3}>
+                  <SingleProduct />
+                </SnackbarProvider>
+              }
+            />
 
             <Route
               path="electronics"

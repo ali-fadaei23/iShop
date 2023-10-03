@@ -12,11 +12,40 @@
 }
 
 .img-empty-cart {
-  width: 270px;
-  padding: 25px;
+  width: 360px;
+  padding: 30px;
   margin: 10px;
 }
 
 .empty-cart {
   margin: auto;
+}
+
+/* Cart Container */
+
+.MuiPaper-root.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+  width: 550px;
+  z-index: 2;
+}
+
+.MuiPaper-root.card-product.css-2qzc5r-MuiPaper-root-MuiCard-root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: auto;
+}
+
+.MuiCardMedia-root.MuiCardMedia-img.css-lo17od-MuiCardMedia-root {
+  width: 110px;
+}
+
+/* Total Price */
+
+.MuiTypography-root.MuiTypography-h6.css-1bpcvbx-MuiTypography-root {
+  font-weight: bold;
+  font-size: x-large;
+  margin: 0;
+  margin-top: 15px;
+  color: cornflowerblue;
 }

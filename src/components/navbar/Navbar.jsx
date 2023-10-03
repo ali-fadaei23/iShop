@@ -17,7 +17,7 @@ import LocalMallIcon from "@mui/icons-material/LocalMall";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 // import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import CategoryList from "../category/category-list/CategoryList";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { CartContext } from "../../shared/context/CartContext";
 import { Link } from "react-router-dom";
 import ProfileList from "./profile/ProfileList";

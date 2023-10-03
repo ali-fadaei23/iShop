@@ -42,3 +42,8 @@
 .MuiCardMedia-root.MuiCardMedia-media {
   margin: 0 auto;
 }
+
+/* Loading */
+.MuiBackdrop-root.css-1ji7omv-MuiBackdrop-root {
+  z-index: 0;
+}

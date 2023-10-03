@@ -1,23 +1,23 @@
 import "./Cart.css";
 import OrderNotFound from "../../assets/img/empty-cart-yellow.png";
 import {
-  Box,
-  Button,
+  // Box,
+  // Button,
   Drawer,
   Card,
   CardMedia,
   // CardActions,
   //   ButtonGroup,
   CardContent,
-  Stepper,
-  Step,
-  StepLabel,
+  // Stepper,
+  // Step,
+  // StepLabel,
   Typography,
 } from "@mui/material";
 // import AddIcon from "@mui/icons-material/Add";
 // import RemoveIcon from "@mui/icons-material/Remove";
 import { CartContext } from "../../shared/context/CartContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 const Cart = ({ openDrawerOrder, handleCloseCart }) => {
   const { cartItems } = useContext(CartContext);
@@ -30,32 +30,32 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
     return prevValue + currValue.price * currValue.num;
   }, 0);
 
-  const steps = ["Add To Cart", "Payment"];
-  const [activeStep, setActiveStep] = useState(0);
-  const [skipped, setSkipped] = useState(new Set());
+  // const steps = ["Add To Cart", "Payment"];
+  // const [activeStep, setActiveStep] = useState(0);
+  // const [skipped, setSkipped] = useState(new Set());
 
   // const isStepOptional = (step) => {
   //   return step === 1;
   // };
 
-  const isStepSkipped = (step) => {
-    return skipped.has(step);
-  };
+  // const isStepSkipped = (step) => {
+  //   return skipped.has(step);
+  // };
 
-  const handleNext = () => {
-    let newSkipped = skipped;
-    if (isStepSkipped(activeStep)) {
-      newSkipped = new Set(newSkipped.value());
-      newSkipped.delete(activeStep);
-    }
+  // const handleNext = () => {
+  //   let newSkipped = skipped;
+  //   if (isStepSkipped(activeStep)) {
+  //     newSkipped = new Set(newSkipped.value());
+  //     newSkipped.delete(activeStep);
+  //   }
 
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped(newSkipped);
-  };
+  //   setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  //   setSkipped(newSkipped);
+  // };
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
+  // const handleBack = () => {
+  //   setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  // };
 
   // const handleSkip = () => {
   //   if (!isStepOptional(activeStep)) {
@@ -82,7 +82,7 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
     >
       {cartItems.length > 0 ? (
         <>
-          <Box sx={{ width: "100%", margin: 3 }}>
+          {/* <Box sx={{ width: "100%", margin: 3 }}>
             <Stepper activeStep={activeStep}>
               {steps.map((label, index) => {
                 const stepProps = {};
@@ -122,8 +122,8 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                 </Box>
               </>
             )}
-          </Box>
-          <div>
+          </Box> */}
+          <div style={{ textAlign: "left", marginLeft: "20px" }}>
             <Typography
               gutterBottom
               variant="h6"
@@ -163,7 +163,7 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                         sx={{ color: "darkblue" }}
                         component="div"
                       >
-                        {item.category}
+                        Category: {item.category}
                       </Typography>
                       <Typography
                         gutterBottom
@@ -171,7 +171,7 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                         sx={{ color: "darkblue" }}
                         component="div"
                       >
-                        {item.title}
+                        Title: {item.title}
                       </Typography>
                       <Typography
                         gutterBottom
@@ -179,7 +179,15 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                         sx={{ color: "darkblue" }}
                         component="div"
                       >
-                        {item.num}
+                        Size: {item.size}
+                      </Typography>
+                      <Typography
+                        gutterBottom
+                        variant="body1"
+                        sx={{ color: "darkblue" }}
+                        component="div"
+                      >
+                        Count: {item.num}
                       </Typography>
 
                       <Typography
@@ -188,7 +196,7 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                         sx={{ color: "tomato", marginTop: 5 }}
                         component="div"
                       >
-                        {item.price + " $"}
+                        Price: {item.price + " $"}
                       </Typography>
                     </CardContent>
                   </Card>
@@ -199,7 +207,12 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
         </>
       ) : (
         <div className="empty-cart">
-          <img className="img-empty-cart" src={OrderNotFound} alt="Empty Cart" loading="lazy" />
+          <img
+            className="img-empty-cart"
+            src={OrderNotFound}
+            alt="Empty Cart"
+            loading="lazy"
+          />
         </div>
       )}
     </Drawer>

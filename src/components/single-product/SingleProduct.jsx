@@ -17,14 +17,17 @@ import {
   CircularProgress,
   InputLabel,
   MenuItem,
-  FormHelperText,
+  // FormHelperText,
   FormControl,
   Select,
+  Alert,
+  AlertTitle,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { SnackbarProvider, useSnackbar } from "notistack";
 
 const reducer = (...arr) => {
   const res = [];
@@ -39,8 +42,9 @@ const reducer = (...arr) => {
 const SingleProduct = () => {
   const [show, setShow] = useState(false);
   const [open, setOpen] = useState(true);
-  const { cartItems, setCartItems, setWishlist, categoryItem } =
-    useContext(CartContext);
+  const [error, setError] = useState(false);
+  const { enqueueSnackbar } = useSnackbar();
+  const { cartItems, setCartItems, setWishlist } = useContext(CartContext);
   const [singleProduct, setSingleProduct] = useState({});
   const [size, setSize] = useState("");
   let { productId } = useParams();
@@ -66,13 +70,22 @@ const SingleProduct = () => {
   const cart = {
     id: singleProduct.id,
     num: 1,
+    size: size,
     category: singleProduct.category,
     image: singleProduct.image,
     title: singleProduct.title,
     price: singleProduct.price,
   };
 
-  const addToCart = () => setCartItems((prev) => reducer(...prev, cart));
+  const addToCart = (variant) => {
+    if (!size) {
+      enqueueSnackbar("Please select a Size!", { variant });
+      setError(true);
+    } else {
+      setError(false);
+      setCartItems((prev) => reducer(...prev, cart));
+    }
+  };
 
   const removeAtCart = () => {
     setCartItems((prev) => {
@@ -161,7 +174,7 @@ const SingleProduct = () => {
                   </Typography>
                   {singleProduct.category === "electronics" ? null : (
                     <div>
-                      <FormControl sx={{ m: 1, minWidth: 120 }}>
+                      <FormControl required sx={{ m: 1, minWidth: 120 }}>
                         <InputLabel id="demo-simple-select-helper-label">
                           Size
                         </InputLabel>
@@ -172,7 +185,7 @@ const SingleProduct = () => {
                           label="Size"
                           onChange={handleSize}
                         >
-                          <MenuItem value="">
+                          <MenuItem value="a">
                             <em>None</em>
                           </MenuItem>
                           <MenuItem value={"S"}>S</MenuItem>
@@ -250,7 +263,7 @@ const SingleProduct = () => {
                     className="btn-add"
                     variant="contained"
                     startIcon={<AddIcon fontSize="small" />}
-                    onClick={addToCart}
+                    onClick={() => addToCart("error")}
                   >
                     Buy
                   </Button>
@@ -267,11 +280,10 @@ const SingleProduct = () => {
                   <div>
                     <Typography sx={{ margin: 1 }}>{count}</Typography>
                   </div>
-
                   <Button
                     id="increase"
                     aria-label="increase"
-                    onClick={addToCart}
+                    onClick={() => addToCart("error")}
                   >
                     <AddIcon fontSize="small" />
                   </Button>
@@ -279,6 +291,14 @@ const SingleProduct = () => {
               )}
             </CardActions>
           </Card>
+          {/* {error ? (
+            <>
+              <Alert severity="error">
+                <AlertTitle>Error</AlertTitle>
+                This is an error alert — <strong>check it out!</strong>
+              </Alert>
+            </>
+          ) : null} */}
         </div>
       )}
     </>
