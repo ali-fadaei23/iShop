@@ -2,12 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5px;
+}
+
+.info {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .avatar {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .user-password {
@@ -23,4 +30,22 @@
 .MuiFormLabel-root.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
   top: -5px;
   height: 100%;
+}
+
+/* input  */
+.MuiInputBase-root.MuiOutlinedInput-root.css-hjtp1-MuiInputBase-root-MuiOutlinedInput-root {
+  margin-right: 10px;
+}
+
+.location {
+  width: 100%;
+}
+
+/* btn edit */
+
+.btn-update.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  width: 20%;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: small;
 }
