@@ -20,7 +20,7 @@ import CategoryList from "../category/category-list/CategoryList";
 import { useEffect, useContext } from "react";
 import { CartContext } from "../../shared/context/CartContext";
 import { Link } from "react-router-dom";
-import ProfileList from "./profile/ProfileList";
+import ProfileList from "./profile/profile-list/ProfileList";
 
 function ScrollTop({ children, window }) {
   const trigger = useScrollTrigger({
@@ -81,7 +81,7 @@ const Navbar = ({ handleOpenCart }, props) => {
 
   return (
     <>
-      <Box textAlign={"center"} sx={{ flexGrow: 1 }}>
+     
         <CssBaseline />
         <HideOnScroll {...props}>
           <AppBar
@@ -132,7 +132,7 @@ const Navbar = ({ handleOpenCart }, props) => {
             </Fab>
           </ScrollTop>
         </Toolbar>
-      </Box>
+   
     </>
   );
 };

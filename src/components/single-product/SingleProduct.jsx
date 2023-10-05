@@ -78,7 +78,7 @@ const SingleProduct = () => {
   };
 
   const addToCart = (variant) => {
-    if (!size) {
+    if (!size && singleProduct.category !== "electronics") {
       enqueueSnackbar("Please select a Size!", { variant });
       setError(true);
     } else {
@@ -175,24 +175,53 @@ const SingleProduct = () => {
                   {singleProduct.category === "electronics" ? null : (
                     <div>
                       <FormControl required sx={{ m: 1, minWidth: 120 }}>
-                        <InputLabel id="demo-simple-select-helper-label">
-                          Size
-                        </InputLabel>
-                        <Select
-                          labelId="demo-simple-select-helper-label"
-                          id="demo-simple-select-helper"
-                          value={size}
-                          label="Size"
-                          onChange={handleSize}
-                        >
-                          <MenuItem value="a">
-                            <em>None</em>
-                          </MenuItem>
-                          <MenuItem value={"S"}>S</MenuItem>
-                          <MenuItem value={"M"}>M</MenuItem>
-                          <MenuItem value={"L"}>L</MenuItem>
-                          <MenuItem value={"XL"}>XL</MenuItem>
-                        </Select>
+                        {!error ? (
+                          <>
+                            <InputLabel id="demo-simple-select-helper-label">
+                              Size
+                            </InputLabel>
+                            <Select
+                              labelId="demo-simple-select-helper-label"
+                              id="demo-simple-select-helper"
+                              value={size}
+                              label="Size"
+                              onChange={handleSize}
+                            >
+                              <MenuItem value="a">
+                                <em>None</em>
+                              </MenuItem>
+                              <MenuItem value={"S"}>S</MenuItem>
+                              <MenuItem value={"M"}>M</MenuItem>
+                              <MenuItem value={"L"}>L</MenuItem>
+                              <MenuItem value={"XL"}>XL</MenuItem>
+                            </Select>
+                          </>
+                        ) : (
+                          <>
+                            <InputLabel
+                              error
+                              id="demo-simple-select-helper-label"
+                            >
+                              Size
+                            </InputLabel>
+                            <Select
+                              error
+                              labelId="demo-simple-select-helper-label"
+                              id="demo-simple-select-helper"
+                              value={size}
+                              label="Size"
+                              onChange={handleSize}
+                            >
+                              <MenuItem value="a">
+                                <em>None</em>
+                              </MenuItem>
+                              <MenuItem value={"S"}>S</MenuItem>
+                              <MenuItem value={"M"}>M</MenuItem>
+                              <MenuItem value={"L"}>L</MenuItem>
+                              <MenuItem value={"XL"}>XL</MenuItem>
+                            </Select>
+                          </>
+                        )}
                       </FormControl>
                     </div>
                   )}
@@ -280,6 +309,7 @@ const SingleProduct = () => {
                   <div>
                     <Typography sx={{ margin: 1 }}>{count}</Typography>
                   </div>
+
                   <Button
                     id="increase"
                     aria-label="increase"

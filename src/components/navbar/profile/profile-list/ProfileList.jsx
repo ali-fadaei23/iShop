@@ -90,9 +90,11 @@ const ProfileList = () => {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
-        </MenuItem>
+        <Link className="link-profile" to={"/profile"}>
+          <MenuItem onClick={handleClose}>
+            <Avatar /> Profile
+          </MenuItem>
+        </Link>
         <MenuItem onClick={handleClose}>
           <Avatar /> My account
         </MenuItem>

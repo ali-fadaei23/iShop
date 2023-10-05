@@ -8,6 +8,7 @@ import Cart from "./components/cart/Cart";
 import { CartProvider } from "./shared/context/CartContext";
 import Wishlist from "./components/wishlist/Wishlist";
 import SingleProduct from "./components/single-product/SingleProduct";
+import Profile from "./components/navbar/profile/profile-page/Profile";
 import { SnackbarProvider } from "notistack";
 
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
               path="electronics"
               element={<Category categoryPages={"electronics"} />}
             />
+            <Route path="profile" element={<Profile />} />
 
             <Route
               path="jewelery"

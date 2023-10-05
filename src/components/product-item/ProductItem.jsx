@@ -2,67 +2,22 @@ import { useContext, useState } from "react";
 import "./ProductItem.css";
 import { CartContext } from "../../shared/context/CartContext";
 import {
-  // ButtonGroup,
   Card,
   CardMedia,
-  // Button,
   CardActions,
   CardContent,
   CardActionArea,
   Typography,
   IconButton,
 } from "@mui/material";
-// import AddIcon from "@mui/icons-material/Add";
 import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
-// import RemoveIcon from "@mui/icons-material/Remove";
-import { Link} from "react-router-dom";
-
-// const reducer = (...arr) => {
-//   const res = [];
-//   arr.forEach((v) => {
-//     const i = res.findIndex((u) => u.id === v.id);
-//     if (!res[i]) res.push(v);
-//     else res[i].num++;
-//   });
-//   return res;
-// };
+import { Link } from "react-router-dom";
 
 const ProductItem = ({ product }) => {
   const { setWishlist } = useContext(CartContext);
   const [show, setShow] = useState(false);
-  // useEffect(() => {
-  //   const sendRequest = async () => {
-  //     const response = await fetch(
-  //       `https://fakestoreapi.com/products/${product.id}`
-  //     );
 
-  //     const responseData = await response.json();
-  //     setCartItems(responseData);
-  //   };
-  //   sendRequest();
-  // }, []);
-
-  // const count = cartItems.find((v) => v.id === product.id)?.num ?? 0;
-  // const cart = {
-  //   id: product.id,
-  //   num: 1,
-  //   category: product.category,
-  //   image: product.image,
-  //   title: product.title,
-  //   price: product.price,
-  // };
-  // const addToCart = () => setCartItems((prev) => reducer(...prev, cart));
-
-  // const removeAtCart = () => {
-  //   setCartItems((prev) => {
-  //     const state = prev.map((v) => ({ ...v }));
-  //     const i = state.findIndex((v) => v.id === cart.id);
-  //     if (state[i]?.num > 1) state[i].num--;
-  //     else if (state[i]?.num === 1) state.splice(i, 1);
-  //     return state;
-  //   });
-  // };
   // Wishlist
   const wishlistCard = {
     id: product.id,
@@ -89,7 +44,10 @@ const ProductItem = ({ product }) => {
   };
 
   return (
-    <Card className="card card-product" sx={{ marginBottom: 20, width: 300 }}>
+    <Card
+      className="card card-product"
+      sx={{ marginBottom: 20, width: 300}}
+    >
       <CardActionArea>
         <Link className="link-products" to={`/products/${product.id}`}>
           <CardMedia
@@ -134,8 +92,8 @@ const ProductItem = ({ product }) => {
               <TurnedInIcon fontSize="small" />
             ) : (
               <TurnedInNotIcon fontSize="small" />
-            )}{" Wishlist"}
-           
+            )}
+            {" Wishlist"}
           </IconButton>
         </div>
       </CardActions>

@@ -28,12 +28,14 @@
   z-index: 2;
 }
 
-.MuiPaper-root.card-product.css-2qzc5r-MuiPaper-root-MuiCard-root {
+.MuiCard-root.cart.css-2qzc5r-MuiPaper-root-MuiCard-root {
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
   width: auto;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .MuiCardMedia-root.MuiCardMedia-img.css-lo17od-MuiCardMedia-root {
@@ -48,4 +50,10 @@
   margin: 0;
   margin-top: 15px;
   color: cornflowerblue;
+}
+
+/* img */
+
+.MuiCardMedia-root.MuiCardMedia-media.MuiCardMedia-img.css-lo17od-MuiCardMedia-root.img-cart {
+  margin-left: 20px;
 }

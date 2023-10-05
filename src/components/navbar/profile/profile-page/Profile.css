@@ -1,0 +1,26 @@
+.card-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-password {
+  margin-top: 25px;
+  display: flex;
+}
+
+.password {
+  width: 245px;
+}
+
+/* input label */
+.MuiFormLabel-root.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+  top: -5px;
+  height: 100%;
+}

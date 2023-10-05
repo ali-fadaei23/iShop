@@ -144,12 +144,10 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
           <div>
             {cartItems.map((item, index) => {
               return (
-                <div key={index}>
-                  <Card
-                    className="card card-product"
-                    sx={{ marginBottom: 20, width: 300 }}
-                  >
+                <div key={index} style={{ margin: "0 15px" }}>
+                  <Card className="cart" sx={{ marginBottom: 20, width: 300 }}>
                     <CardMedia
+                    className="img-cart"
                       component="img"
                       alt="green iguana"
                       sx={{ width: 200 }}

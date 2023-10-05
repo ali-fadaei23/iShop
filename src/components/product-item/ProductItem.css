@@ -5,7 +5,7 @@
 .MuiCardMedia-root.MuiCardMedia-media.MuiCardMedia-img {
   object-fit: contain;
 }
-.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded {
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.card {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
