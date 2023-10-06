@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./SingleProduct.css";
-import { CartContext } from "../../shared/context/CartContext";
+import {  Context } from "../../shared/context/Context";
 import {
   ButtonGroup,
   Card,
@@ -41,7 +41,7 @@ const SingleProduct = () => {
   const [open, setOpen] = useState(true);
   const [error, setError] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
-  const { cartItems, setCartItems, setWishlist } = useContext(CartContext);
+  const { cartItems, setCartItems, setWishlist } = useContext(Context);
   const [singleProduct, setSingleProduct] = useState({});
   const [size, setSize] = useState("");
   let { productId } = useParams();

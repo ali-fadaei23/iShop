@@ -4,7 +4,6 @@ import {
   Card,
   CardContent,
   Avatar,
-  CardActions,
   Typography,
   IconButton,
   Button,
@@ -25,7 +24,10 @@ const Profile = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
-  const [location, setLocation] = useState("");
+  const [city, setCity] = useState("");
+  const [street, setStreet] = useState("");
+  const [number, setNumber] = useState(0);
+  const [zipCode, setZipCode] = useState("");
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => {
@@ -56,20 +58,37 @@ const Profile = () => {
     setEmail(e.target.value);
   };
 
-  const handleLocation = (e) => {
-    setLocation(e.target.value);
+  const handleCity = (e) => {
+    setCity(e.target.value);
+  };
+  const handleStreet = (e) => {
+    setStreet(e.target.value);
+  };
+  const handleNumber = (e) => {
+    setNumber(e.target.value);
+  };
+  const handleZipCode = (e) => {
+    setZipCode(e.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log({
-      firstname: firstName,
-      lastname: lastName,
-      phone: phoneNumber,
-      password: password,
-      username: userName,
-      location: location,
+      id: 1,
       email: email,
+      username: userName,
+      password: password,
+      phone: phoneNumber,
+      name: {
+        firstname: firstName,
+        lastname: lastName,
+      },
+      address: {
+        city: city,
+        street: street,
+        number: number,
+        zipcode: zipCode,
+      },
     });
   };
 
@@ -230,35 +249,91 @@ const Profile = () => {
                 </FormControl>
               </div>
               <div className="location">
-                <FormControl sx={{ width: "100%", marginTop: "25px" }}>
-                  <InputLabel htmlFor="outlined-adornment-location">
-                    Location
-                  </InputLabel>
-                  <OutlinedInput
-                    // startAdornment={
+                <div className="location-row">
+                  <FormControl sx={{ width: "100%", marginTop: "25px" }}>
+                    <InputLabel htmlFor="outlined-adornment-city">
+                      City
+                    </InputLabel>
+                    <OutlinedInput
+                      // startAdornment={
 
-                    // }
-                    value={location}
-                    onChange={handleLocation}
-                    id="outlined-adornment-location"
-                    type="text"
-                    size="small"
-                    label="Location"
-                    color="secondary"
-                  />
-                </FormControl>
+                      // }
+                      value={city}
+                      onChange={handleCity}
+                      id="outlined-adornment-city"
+                      type="text"
+                      size="small"
+                      label="city"
+                      color="secondary"
+                    />
+                  </FormControl>
+                  <FormControl sx={{ width: "100%", marginTop: "25px" }}>
+                    <InputLabel htmlFor="outlined-adornment-street">
+                      Street
+                    </InputLabel>
+                    <OutlinedInput
+                      // startAdornment={
+
+                      // }
+                      value={street}
+                      onChange={handleStreet}
+                      id="outlined-adornment-street"
+                      type="text"
+                      size="small"
+                      label="Street"
+                      color="secondary"
+                    />
+                  </FormControl>
+                </div>
+                <div className="location-row">
+                  <FormControl sx={{ width: "100%", marginTop: "25px" }}>
+                    <InputLabel htmlFor="outlined-adornment-number">
+                      Number
+                    </InputLabel>
+                    <OutlinedInput
+                      // startAdornment={
+
+                      // }
+                      value={number}
+                      onChange={handleNumber}
+                      id="outlined-adornment-number"
+                      type="number"
+                      size="small"
+                      label="Number"
+                      color="secondary"
+                    />
+                  </FormControl>
+                  <FormControl sx={{ width: "100%", marginTop: "25px" }}>
+                    <InputLabel htmlFor="outlined-adornment-zip-code">
+                      ZipCode
+                    </InputLabel>
+                    <OutlinedInput
+                      // startAdornment={
+
+                      // }
+                      value={zipCode}
+                      onChange={handleZipCode}
+                      id="outlined-adornment-zip-code"
+                      type="text"
+                      size="small"
+                      label="Zip Code"
+                      color="secondary"
+                    />
+                  </FormControl>
+                </div>
               </div>
-              <Button
-                type="submit"
-                className="btn-update"
-                variant="contained"
-                startIcon={<EditIcon fontSize="small" />}
-              >
-                Edit
-              </Button>
+              <div className="btn-submit">
+                <Button
+                  type="submit"
+                  className="btn-update"
+                  variant="contained"
+                  startIcon={<EditIcon fontSize="small" />}
+                >
+                  Edit
+                </Button>
+              </div>
             </form>
           </CardContent>
-          <CardActions></CardActions>
         </Card>
       </div>
     </>

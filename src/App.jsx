@@ -5,7 +5,7 @@ import Home from "./components/main/Home";
 import Navbar from "./components/navbar/Navbar";
 import Category from "./components/category/category-pages/Category";
 import Cart from "./components/cart/Cart";
-import { CartProvider } from "./shared/context/CartContext";
+import { ContextProvider } from "./shared/context/Context";
 import Wishlist from "./components/wishlist/Wishlist";
 import SingleProduct from "./components/single-product/SingleProduct";
 import Profile from "./components/navbar/profile/profile-page/Profile";
@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <Router>
-      <CartProvider>
+      <ContextProvider>
         <Navbar handleOpenCart={handleOpen} />
         <>
           <Cart openDrawerOrder={open} handleCloseCart={handleClose} />
@@ -62,7 +62,7 @@ const App = () => {
             <Route path="wishlist" element={<Wishlist />} />
           </Routes>
         </>
-      </CartProvider>
+      </ContextProvider>
     </Router>
   );
 };

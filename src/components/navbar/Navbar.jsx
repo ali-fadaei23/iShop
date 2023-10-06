@@ -18,7 +18,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 // import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import CategoryList from "../category/category-list/CategoryList";
 import { useEffect, useContext } from "react";
-import { CartContext } from "../../shared/context/CartContext";
+import { Context } from "../../shared/context/Context";
 import { Link } from "react-router-dom";
 import ProfileList from "./profile/profile-list/ProfileList";
 
@@ -67,7 +67,7 @@ const HideOnScroll = ({ children, window }) => {
 };
 
 const Navbar = ({ handleOpenCart }, props) => {
-  const { cartItems, categoryItem, setCategoryItem } = useContext(CartContext);
+  const { cartItems, categoryItem, setCategoryItem } = useContext(Context);
   useEffect(() => {
     const sendRequest = async () => {
       const response = await fetch(

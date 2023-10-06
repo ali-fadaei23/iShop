@@ -12,13 +12,13 @@ import {
 // import TurnedInIcon from "@mui/icons-material/TurnedIn";
 // import RemoveIcon from "@mui/icons-material/Remove";
 import "./Wishlist.css";
-import { CartContext } from "../../shared/context/CartContext";
+import { Context } from "../../shared/context/Context";
 import { useContext } from "react";
 import ProductItem from "../product-item/ProductItem";
 import EmptyWishlist from "../../assets/img/empty-wishlist.png";
 
 const Wishlist = () => {
-  const { wishlist } = useContext(CartContext);
+  const { wishlist } = useContext(Context);
   return (
     <>
       <div>

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import "./ProductItem.css";
-import { CartContext } from "../../shared/context/CartContext";
+import { Context } from "../../shared/context/Context";
 import {
   Card,
   CardMedia,
@@ -15,7 +15,7 @@ import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import { Link } from "react-router-dom";
 
 const ProductItem = ({ product }) => {
-  const { setWishlist } = useContext(CartContext);
+  const { setWishlist } = useContext(Context);
   const [show, setShow] = useState(false);
 
   // Wishlist

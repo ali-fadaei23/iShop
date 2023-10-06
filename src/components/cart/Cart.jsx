@@ -16,11 +16,11 @@ import {
 } from "@mui/material";
 // import AddIcon from "@mui/icons-material/Add";
 // import RemoveIcon from "@mui/icons-material/Remove";
-import { CartContext } from "../../shared/context/CartContext";
+import { Context } from "../../shared/context/Context";
 import { useContext } from "react";
 
 const Cart = ({ openDrawerOrder, handleCloseCart }) => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems } = useContext(Context);
 
   const totalItems = cartItems.reduce((prevItem, currItem) => {
     return prevItem + currItem.num;
@@ -147,7 +147,7 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                 <div key={index} style={{ margin: "0 15px" }}>
                   <Card className="cart" sx={{ marginBottom: 20, width: 300 }}>
                     <CardMedia
-                    className="img-cart"
+                      className="img-cart"
                       component="img"
                       alt="green iguana"
                       sx={{ width: 200 }}
