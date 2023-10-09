@@ -1,5 +1,5 @@
 import "./App.css";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/main/Home";
 import Navbar from "./components/navbar/Navbar";
@@ -65,7 +65,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </>
-        <Footer />
+      <Footer />
     </Router>
   );
 };

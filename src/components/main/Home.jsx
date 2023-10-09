@@ -1,9 +1,8 @@
 import "./Home.css";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import ProductList from "../product-list/ProductList";
-import { Context } from "../../shared/context/Context";
+// import { Context } from "../../shared/context/Context";
 import { Typography, Backdrop, CircularProgress } from "@mui/material";
-import Footer from "../footer/Footer";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
