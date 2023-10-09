@@ -2,6 +2,16 @@
   top: 80px;
 } */
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+}
+
 .main-app {
   display: flex;
   flex-direction: column;

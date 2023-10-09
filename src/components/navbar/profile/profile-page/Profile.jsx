@@ -106,10 +106,10 @@ const Profile = () => {
       <div className="card-profile">
         <Card>
           <div className="avatar">
-            <Avatar sx={{ width: 64, height: 64, bgcolor: "steelblue" }}>
+            <Avatar sx={{ width: 80, height: 80, bgcolor: "steelblue" }}>
               A
             </Avatar>
-            <div className="info">
+            {/* <div className="info">
               <Typography
                 className="info-text"
                 variant="h6"
@@ -124,7 +124,7 @@ const Profile = () => {
               >
                 Hosseini
               </Typography>
-            </div>
+            </div> */}
           </div>
           <CardContent>
             <form onSubmit={handleSubmit}>

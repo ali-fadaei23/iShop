@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 const ProductItem = ({ product }) => {
   const { setWishlist } = useContext(Context);
-  const [show, setShow] = useState(false);
+  const [showBtn, setShowBtn] = useState(false);
 
   // Wishlist
   const wishlistCard = {
@@ -33,10 +33,10 @@ const ProductItem = ({ product }) => {
       const state = prev.map((u) => ({ ...u }));
       const i = state.findIndex((v) => v.id === wishlistCard.id);
       if (state[i]?.id === wishlistCard.id) {
-        setShow(false);
+        setShowBtn(false);
         state.splice(i, 1);
       } else {
-        setShow(true);
+        setShowBtn(true);
         return [...prev, wishlistCard];
       }
       return state;
@@ -44,10 +44,7 @@ const ProductItem = ({ product }) => {
   };
 
   return (
-    <Card
-      className="card card-product"
-      sx={{ marginBottom: 20, width: 300}}
-    >
+    <Card className="card card-product" sx={{ marginBottom: 20, width: 300 }}>
       <CardActionArea>
         <Link className="link-products" to={`/products/${product.id}`}>
           <CardMedia
@@ -88,7 +85,7 @@ const ProductItem = ({ product }) => {
       <CardActions>
         <div className="btn-product">
           <IconButton onClick={addToWishlist}>
-            {show ? (
+            {showBtn ? (
               <TurnedInIcon fontSize="small" />
             ) : (
               <TurnedInNotIcon fontSize="small" />

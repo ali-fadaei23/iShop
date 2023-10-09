@@ -24,7 +24,7 @@
   margin: 20px 15px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .user-password {
@@ -75,5 +75,3 @@
   align-items: center;
   justify-content: center;
 }
-
-

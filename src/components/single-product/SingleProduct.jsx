@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./SingleProduct.css";
-import {  Context } from "../../shared/context/Context";
+import { Context } from "../../shared/context/Context";
 import {
   ButtonGroup,
   Card,
@@ -37,11 +37,12 @@ const reducer = (...arr) => {
 };
 
 const SingleProduct = () => {
-  const [show, setShow] = useState(false);
-  const [open, setOpen] = useState(true);
+  const [showBtn, setShowBtn] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
-  const { cartItems, setCartItems, setWishlist } = useContext(Context);
+  const { cartItems, setCartItems, setWishlist, setShowEl } =
+    useContext(Context);
   const [singleProduct, setSingleProduct] = useState({});
   const [size, setSize] = useState("");
   let { productId } = useParams();
@@ -54,9 +55,10 @@ const SingleProduct = () => {
       const responseData = await response.json();
 
       setSingleProduct(responseData);
-      setOpen(false);
+      setLoading(false);
+      setShowEl(true);
     })();
-  }, [productId, singleProduct]);
+  }, [productId, singleProduct, setShowEl]);
 
   const handleSize = (e) => {
     setSize(e.target.value);
@@ -108,10 +110,10 @@ const SingleProduct = () => {
       const state = prev.map((u) => ({ ...u }));
       const i = state.findIndex((v) => v.id === wishlistCard.id);
       if (state[i]?.id === wishlistCard.id) {
-        setShow(false);
+        setShowBtn(false);
         state.splice(i, 1);
       } else {
-        setShow(true);
+        setShowBtn(true);
         return [...prev, wishlistCard];
       }
       return state;
@@ -120,11 +122,11 @@ const SingleProduct = () => {
 
   return (
     <>
-      {open ? (
+      {loading ? (
         <div>
           <Backdrop
             sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-            open={open}
+            open={loading}
           >
             <CircularProgress color="inherit" />
           </Backdrop>
@@ -134,7 +136,7 @@ const SingleProduct = () => {
           <Card className="card card-product" sx={{ marginBottom: 20 }}>
             <div className="btn-wishlist">
               <IconButton onClick={addToWishlist}>
-                {show ? (
+                {showBtn ? (
                   <TurnedInIcon fontSize="small" />
                 ) : (
                   <TurnedInNotIcon fontSize="small" />

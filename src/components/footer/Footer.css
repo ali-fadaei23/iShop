@@ -1,0 +1,83 @@
+.footer-position {
+  clear: both;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .box {
+  margin-top: 5px;
+} */
+
+.box-footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 50px;
+}
+
+/* container footer */
+.MuiContainer-root.MuiContainer-maxWidthSm.css-cuefkz-MuiContainer-root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.github {
+  text-decoration: none;
+  color: inherit;
+}
+/* link developer */
+.MuiSvgIcon-root.github-icon {
+  font-size: 80px;
+}
+
+.link-footer {
+  text-decoration: none;
+  font-size: 30px;
+  color: black;
+}
+
+.link-footer:hover {
+  text-decoration: none;
+  font-size: 30px;
+  color: cornflowerblue;
+}
+
+.MuiTypography-root.MuiTypography-body1.css-ahj2mt-MuiTypography-root {
+  font-size: x-large;
+  color: royalblue;
+  font-weight: bold;
+}
+
+.MuiSvgIcon-root.github-icon {
+  color: royalblue;
+  font-size: 100px;
+}
+
+.MuiSvgIcon-root.github-icon:hover {
+  color: indigo;
+}
+
+.link-site {
+  text-decoration: none;
+  font-size: larger;
+  color: initial;
+  margin: 0 10px;
+  font-weight: bold;
+  color: royalblue;
+}
+
+.link-site:hover {
+  color: indigo;
+  text-decoration: none;
+  font-size: larger;
+  margin: 0 10px;
+  font-weight: bold;
+}

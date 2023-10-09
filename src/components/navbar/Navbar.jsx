@@ -81,58 +81,56 @@ const Navbar = ({ handleOpenCart }, props) => {
 
   return (
     <>
-     
-        <CssBaseline />
-        <HideOnScroll {...props}>
-          <AppBar
-            className="navbar"
-            color="inherit"
-            sx={{ display: "flex", alignItems: "center" }}
-          >
-            <Toolbar sx={{ width: "100%" }}>
-              <Link to="/" title="Home">
-                <IconButton size="large">
-                  <LocalMallIcon fontSize="30px" className="icon" />
-                </IconButton>
-              </Link>
-              <Badge
-                color="secondary"
-                badgeContent={cartItems.length}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
+      <CssBaseline />
+      <HideOnScroll {...props}>
+        <AppBar
+          className="navbar"
+          color="inherit"
+          sx={{ display: "flex", alignItems: "center" }}
+        >
+          <Toolbar sx={{ width: "100%" }}>
+            <Link to={"/"} title="Home">
+              <IconButton size="large">
+                <LocalMallIcon fontSize="30px" className="icon" />
+              </IconButton>
+            </Link>
+            <Badge
+              color="secondary"
+              badgeContent={cartItems.length}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+            >
+              <IconButton aria-label="cart" onClick={handleOpenCart}>
+                <ShoppingCartIcon className="icon" />
+              </IconButton>
+            </Badge>
+            <ProfileList />
+            <div className="categories">
+              <CategoryList categories={categoryItem} />
+            </div>
+            <div className="login">
+              <Button
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
                 }}
               >
-                <IconButton aria-label="cart" onClick={handleOpenCart}>
-                  <ShoppingCartIcon className="icon" />
-                </IconButton>
-              </Badge>
-              <ProfileList />
-              <div className="categories">
-                <CategoryList categories={categoryItem} />
-              </div>
-              <div className="login">
-                <Button
-                  sx={{
-                    my: 2,
-                    color: "white",
-                    display: "block",
-                  }}
-                >
-                  Login
-                </Button>
-              </div>
-            </Toolbar>
-          </AppBar>
-        </HideOnScroll>
-        <Toolbar id="back-to-top-anchor">
-          <ScrollTop {...props}>
-            <Fab size="small" aria-label="scroll back to top">
-              <KeyboardArrowUpIcon />
-            </Fab>
-          </ScrollTop>
-        </Toolbar>
-   
+                Login
+              </Button>
+            </div>
+          </Toolbar>
+        </AppBar>
+      </HideOnScroll>
+      <Toolbar id="back-to-top-anchor">
+        <ScrollTop {...props}>
+          <Fab size="small" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollTop>
+      </Toolbar>
     </>
   );
 };
