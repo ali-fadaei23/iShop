@@ -4,6 +4,7 @@
   align-items: inherit;
   justify-content: center;
   flex-wrap: wrap;
+  padding-bottom: 300px;
 }
 
 .img-empty-wishlist {

@@ -1,6 +1,13 @@
 import "./App.css";
 import { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  // Redirect,
+  // useHistory,
+  // useLocation,
+} from "react-router-dom";
 import Home from "./components/main/Home";
 import Navbar from "./components/navbar/Navbar";
 import Category from "./components/category/category-pages/Category";
@@ -11,6 +18,7 @@ import Profile from "./components/navbar/profile/profile-page/Profile";
 import NotFound from "./components/not-found/NotFound";
 import { SnackbarProvider } from "notistack";
 import Footer from "./components/footer/Footer";
+import PrivateRouth from "./components/private-routh/PrivateRouth";
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -45,7 +53,10 @@ const App = () => {
             path="electronics"
             element={<Category categoryPages={"electronics"} />}
           />
-          <Route path="profile" element={<Profile />} />
+          <PrivateRouth>
+            <Route path="profile" element={<Profile />} />
+            <Route path="wishlist" element={<Wishlist />} />
+          </PrivateRouth>
 
           <Route
             path="jewelery"
@@ -60,7 +71,6 @@ const App = () => {
             path="women's clothing"
             element={<Category categoryPages={"women's clothing"} />}
           />
-          <Route path="wishlist" element={<Wishlist />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

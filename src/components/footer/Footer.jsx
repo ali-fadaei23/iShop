@@ -11,7 +11,7 @@ const Footer = () => {
           <Typography variant="body1">
             Designed by ali hosseiny fadaei.{" "}
             <Link className="github" to={"https://github.com/ali-fadaei23"}>
-              <GitHubIcon sx={{fontSize: "100px"}} className="github-icon" />
+              <GitHubIcon className="github-icon" />
             </Link>
           </Typography>
           <Copyright />
