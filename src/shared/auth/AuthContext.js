@@ -18,23 +18,28 @@ const useProvideAuth = () => {
     const [user, setUser] = useState(null)
     const [errors, setErrors] = useState([])
     const [loading, setLoading] = useState(false)
-    let { userId } = useParams()
+    // let { userId } = useParams()
 
     const signIn = async (username, password) => {
         setLoading(true)
         const response = await fetch('https://fakestoreapi.com/auth/login', {
             method: "POST", headers: {
                 "Content-Type": "application/json",
-            }, body: JSON.stringify({ username, password })
+            }, body: JSON.stringify({ username: username, password: password })
         })
         setLoading(false)
-        const responseData = await response.json().then((err) => {
-            if (!response.ok) {
-                setErrors(err.errors)
-            }
-        })
+        const responseData = await response.json()
+
+
+
+        if (!response.ok) {
+            setErrors(errors)
+        }
+
 
         setUser(responseData)
+
+        console.log("........................", responseData);
 
     }
 
@@ -50,18 +55,19 @@ const useProvideAuth = () => {
 
         setLoading(false)
 
-        const responseData = await response.json().then((err) => {
-            if (!response.ok) {
-                setErrors(err.errors)
-            }
-        })
+        const responseData = await response.json()
+
+        if (!response.ok) {
+            setErrors(errors)
+        }
+
 
         setUser(responseData)
 
     }
-
+    // userId for Sign Out
     const signOut = async () => {
-        const response = await fetch(`https://fakestoreapi.com/users/${userId}`, {
+        const response = await fetch(`https://fakestoreapi.com/users/2`, {
             method: "DELETE",
         })
         if (response.ok) {

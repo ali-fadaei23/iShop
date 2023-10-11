@@ -18,7 +18,8 @@ import Profile from "./components/navbar/profile/profile-page/Profile";
 import NotFound from "./components/not-found/NotFound";
 import { SnackbarProvider } from "notistack";
 import Footer from "./components/footer/Footer";
-import PrivateRouth from "./components/private-routh/PrivateRouth";
+import Login from "./components/auth/login/Login";
+import PrivateRoute from "./components/private-routh/PrivateRoute";
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -38,7 +39,12 @@ const App = () => {
         <Cart openDrawerOrder={open} handleCloseCart={handleClose} />
 
         <Routes>
-          <Route path={"/"} element={<Home />} />
+          <Route path="/" element={<Home />} />
+
+          <Route path="/" element={<PrivateRoute />}>
+            <Route path="profile" element={<Profile />} />
+            <Route path="wishlist" element={<Wishlist />} />
+          </Route>
 
           <Route
             path={`products/:productId`}
@@ -53,10 +59,8 @@ const App = () => {
             path="electronics"
             element={<Category categoryPages={"electronics"} />}
           />
-          <PrivateRouth>
-            <Route path="profile" element={<Profile />} />
-            <Route path="wishlist" element={<Wishlist />} />
-          </PrivateRouth>
+
+          <Route path="login" element={<Login />} />
 
           <Route
             path="jewelery"

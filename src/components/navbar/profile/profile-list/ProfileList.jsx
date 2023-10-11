@@ -21,9 +21,11 @@ import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import Logout from "@mui/icons-material/Logout";
 import "./ProfileList.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../../../shared/auth/AuthContext";
 const ProfileList = () => {
+  let auth = useAuth();
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -33,6 +35,14 @@ const ProfileList = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+//  handle btn Sign Out
+  const handleSignOut = () => {
+    auth.signOut();
+    if (auth.user === null) {
+      navigate("/wishlist");
+    }
+    console.log(auth.user, "..");
   };
 
   return (
@@ -107,7 +117,7 @@ const ProfileList = () => {
             Wishlist
           </MenuItem>
         </Link>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleSignOut}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>

@@ -111,15 +111,17 @@ const Navbar = ({ handleOpenCart }, props) => {
               <CategoryList categories={categoryItem} />
             </div>
             <div className="login">
-              <Button
-                sx={{
-                  my: 2,
-                  color: "white",
-                  display: "block",
-                }}
-              >
-                Login
-              </Button>
+              <Link to={"/login"}>
+                <Button
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                  }}
+                >
+                  Login
+                </Button>
+              </Link>
             </div>
           </Toolbar>
         </AppBar>
