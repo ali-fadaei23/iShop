@@ -42,8 +42,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
 
           <Route path="/" element={<PrivateRoute />}>
-            <Route path="profile" element={<Profile />} />
-            <Route path="wishlist" element={<Wishlist />} />
+            <Route path="profile/:userId" element={<Profile />} />
+            <Route path="wishlist/:userId" element={<Wishlist />} />
           </Route>
 
           <Route

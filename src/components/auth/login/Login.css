@@ -1,6 +1,29 @@
-.MuiGrid-root MuiGrid-container.css-1jrn2fe-MuiGrid-root {
+.MuiGrid-root.MuiGrid-container.css-1jrn2fe-MuiGrid-root {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.MuiGrid-root..css-11lq3yg-MuiGrid-root {
+  display: flex;
+  justify-content: center;
+}
+
+.MuiBox-root.css-1y8ugea {
+  width: 50%;
+  align-items: center;
+}
+
+.MuiGrid-root.css-vj1n65-MuiGrid-root {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 200px;
+}
+/* FormControlLabel */
+.MuiTypography-root.MuiFormControlLabel-label.css-ahj2mt-MuiTypography-root {
+  font-size: small;
+  font-weight: 400;
 }

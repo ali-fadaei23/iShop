@@ -23,9 +23,11 @@ import "./ProfileList.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../../shared/auth/AuthContext";
+import { useParams } from "react-router-dom";
 const ProfileList = () => {
   let auth = useAuth();
   const navigate = useNavigate();
+  let { userId } = useParams();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -36,7 +38,7 @@ const ProfileList = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-//  handle btn Sign Out
+  //  handle btn Sign Out
   const handleSignOut = () => {
     auth.signOut();
     if (auth.user === null) {
@@ -100,7 +102,7 @@ const ProfileList = () => {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <Link className="link-profile" to={"/profile"}>
+        <Link className="link-profile" to={`/profile/${userId}`}>
           <MenuItem onClick={handleClose}>
             <Avatar /> Profile
           </MenuItem>

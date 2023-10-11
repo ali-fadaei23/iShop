@@ -94,6 +94,7 @@ const Login = () => {
               sx={{ mt: 1 }}
             >
               <TextField
+                size="small"
                 value={userName}
                 onChange={handleUserName}
                 margin="normal"
@@ -107,6 +108,7 @@ const Login = () => {
                 autoFocus
               />
               <TextField
+                size="small"
                 value={password}
                 onChange={handlePassword}
                 margin="normal"
@@ -119,7 +121,9 @@ const Login = () => {
                 autoComplete="current-password"
               />
               <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
+                control={
+                  <Checkbox value="remember" size="small" color="primary" />
+                }
                 label="Remember me"
               />
               <Button
