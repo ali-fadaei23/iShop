@@ -41,14 +41,14 @@ const SingleProduct = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
-  const { cartItems, setCartItems, setWishlist, setShowEl } =
-    useContext(Context);
+  const { cartItems, setCartItems, setWishlist } = useContext(Context);
   const [singleProduct, setSingleProduct] = useState({});
   const [size, setSize] = useState("");
   let { productId } = useParams();
 
   useEffect(() => {
     (async () => {
+      // setLoading(true);
       const response = await fetch(
         `https://fakestoreapi.com/products/${productId}`
       );
@@ -56,9 +56,8 @@ const SingleProduct = () => {
 
       setSingleProduct(responseData);
       setLoading(false);
-      setShowEl(true);
     })();
-  }, [productId, singleProduct, setShowEl]);
+  }, [productId, singleProduct]);
 
   const handleSize = (e) => {
     setSize(e.target.value);

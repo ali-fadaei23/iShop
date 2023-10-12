@@ -7,11 +7,11 @@ import { ProvideAuth } from './shared/auth/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ContextProvider>
-    <ProvideAuth>
+  <ProvideAuth>
+    <ContextProvider>
       <React.StrictMode>
         <App />
       </React.StrictMode>
-    </ProvideAuth>
-  </ContextProvider>
+    </ContextProvider>
+  </ProvideAuth>
 );

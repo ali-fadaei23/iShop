@@ -12,6 +12,7 @@ import {
   Link,
   Box,
   Grid,
+  CircularProgress,
 } from "@mui/material";
 import { useState } from "react";
 import { useAuth } from "../../../shared/auth/AuthContext";
@@ -52,11 +53,11 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    auth.signIn(userName, password);
-    if (auth.user) {
-      navigate("/");
-    }
-    console.log("Login........", auth.user);
+    auth.handleLogin(userName, password);
+
+    // if (auth.user && !auth.loading) {
+    //   navigate("/");
+    // }
   };
 
   return (
@@ -126,14 +127,36 @@ const Login = () => {
                 }
                 label="Remember me"
               />
-              <Button
+              {/* <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
                 Sign In
+              </Button> */}
+
+              <Button
+                type="submit"
+                variant="contained"
+                fullWidth
+                sx={{ mt: 3, mb: 2 }}
+                disabled={auth.loading}
+              >
+                Accept terms
               </Button>
+              {auth.loading && (
+                <CircularProgress
+                  size={24}
+                  sx={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    marginTop: "-12px",
+                    marginLeft: "-12px",
+                  }}
+                />
+              )}
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">

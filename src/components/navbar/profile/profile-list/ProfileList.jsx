@@ -13,6 +13,7 @@ import {
   IconButton,
   //   Typography,
 } from "@mui/material";
+import * as jose from "jose";
 // import InboxIcon from "@mui/icons-material/Inbox";
 // import DraftsIcon from "@mui/icons-material/Drafts";
 // import PersonAdd from "@mui/icons-material/PersonAdd";
@@ -25,9 +26,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../../shared/auth/AuthContext";
 import { useParams } from "react-router-dom";
 const ProfileList = () => {
-  let auth = useAuth();
-  const navigate = useNavigate();
   let { userId } = useParams();
+  let auth = useAuth();
+  // const userId = jose.decodeJwt(auth.user.token);
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -42,9 +44,8 @@ const ProfileList = () => {
   const handleSignOut = () => {
     auth.signOut();
     if (auth.user === null) {
-      navigate("/wishlist");
+      navigate("/");
     }
-    console.log(auth.user, "..");
   };
 
   return (
@@ -102,7 +103,7 @@ const ProfileList = () => {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <Link className="link-profile" to={`/profile/${userId}`}>
+        <Link className="link-profile" to={`/profile`}>
           <MenuItem onClick={handleClose}>
             <Avatar /> Profile
           </MenuItem>
@@ -111,7 +112,7 @@ const ProfileList = () => {
           <Avatar /> My account
         </MenuItem>
         <Divider />
-        <Link className="link-wishlist" to={"/wishlist"}>
+        <Link className="link-wishlist" to={`/wishlist`}>
           <MenuItem>
             <ListItemIcon>
               <TurnedInIcon fontSize="small" />

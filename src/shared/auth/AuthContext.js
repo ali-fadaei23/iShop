@@ -1,9 +1,8 @@
 import React, { createContext, useState, useContext } from "react";
 import * as jose from 'jose'
-import { useParams } from "react-router-dom";
+// import { useNavigate, useParams } from "react-router-dom";
 
 const authContext = createContext()
-
 
 export const ProvideAuth = ({ children }) => {
     const auth = useProvideAuth()
@@ -14,55 +13,46 @@ export const useAuth = () => {
     return useContext(authContext)
 }
 
-
 const useProvideAuth = () => {
-    const [userInfo, setUserInfo] = useState({})
+    const [userInfo, setUserInfo] = useState(null)
     const [user, setUser] = useState(null)
+    const [userId, setUserId] = useState(null)
     const [errors, setErrors] = useState([])
     const [loading, setLoading] = useState(false)
 
-
-
-
-
-
     const signIn = async (username, password) => {
-        setLoading(true)
         const response = await fetch('https://fakestoreapi.com/auth/login', {
             method: "POST", headers: {
                 "Content-Type": "application/json",
             }, body: JSON.stringify({ username: username, password: password })
         })
-        setLoading(false)
         const responseData = await response.json()
-        const userId = jose.decodeJwt(responseData.token)
-
-
-
-        if (!response.ok) {
-            setErrors(errors)
-        }
-
-
-        setUser(responseData)
-
-
-        const getUserInfo = async () => {
-            setLoading(true)
-            const response = await fetch(`https://fakestoreapi.com/users/${userId.sub}`)
-            setLoading(false)
-            const responseData = await response.json()
-
-            setUserInfo(responseData)
-            console.log("............USER INFO............", responseData);
-        }
-        getUserInfo()
-
+        return responseData
     }
 
+    const getUserInfo = async (user) => {
+        console.log(user);
+        const id = jose.decodeJwt(user.token)
+        const response = await fetch(`https://fakestoreapi.com/users/${id.sub}`)
+        const responseData = await response.json()
 
+        return responseData
+    }
 
-
+    const handleLogin = async (username, password) => {
+        try {
+            setLoading(true)
+            const responseSignIn = await signIn(username, password)
+            setUser(responseSignIn)
+            const responseUserInfo = await getUserInfo(responseSignIn)
+            setUserInfo(responseUserInfo)
+            console.log(responseUserInfo);
+            setUserId(responseSignIn)
+            setLoading(false)
+        } catch (error) {
+            setErrors(error)
+        }
+    }
 
     const signUp = async (signUpData) => {
         setErrors([])
@@ -73,32 +63,28 @@ const useProvideAuth = () => {
             }, body: JSON.stringify(signUpData)
         })
 
-        setLoading(false)
-
-        const responseData = await response.json()
-
         if (!response.ok) {
             setErrors(errors)
         }
 
+        const responseData = await response.json()
 
         setUser(responseData)
-
+        setLoading(false)
     }
 
-
-
-    // userId for Sign Out
     const signOut = async () => {
         const response = await fetch(`https://fakestoreapi.com/users/${userInfo.id}`, {
             method: "DELETE",
         })
+
         if (response.ok) {
             setUser(null)
         }
     }
+
     return {
-        user, userInfo, signIn, signOut, signUp, errors, loading
+        handleLogin, userId, user, userInfo, signOut, signUp, errors, loading
     }
 
 
