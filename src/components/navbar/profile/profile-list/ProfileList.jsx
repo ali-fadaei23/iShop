@@ -26,9 +26,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../../shared/auth/AuthContext";
 import { useParams } from "react-router-dom";
 const ProfileList = () => {
-  let { userId } = useParams();
+  // let {userId} = useParams()
   let auth = useAuth();
-  // const userId = jose.decodeJwt(auth.user.token);
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -103,7 +102,7 @@ const ProfileList = () => {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <Link className="link-profile" to={`/profile`}>
+        <Link className="link-profile" to={`/profile/${auth.userId}`}>
           <MenuItem onClick={handleClose}>
             <Avatar /> Profile
           </MenuItem>
@@ -112,7 +111,7 @@ const ProfileList = () => {
           <Avatar /> My account
         </MenuItem>
         <Divider />
-        <Link className="link-wishlist" to={`/wishlist`}>
+        <Link className="link-wishlist" to={`/wishlist/${auth.userId}`}>
           <MenuItem>
             <ListItemIcon>
               <TurnedInIcon fontSize="small" />

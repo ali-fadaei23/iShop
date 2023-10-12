@@ -7,6 +7,8 @@ import {
   // Redirect,
   // useHistory,
   // useLocation,
+  RouterProvider,
+  createBrowserRouter,
 } from "react-router-dom";
 import Home from "./components/main/Home";
 import Navbar from "./components/navbar/Navbar";
@@ -18,10 +20,12 @@ import Profile from "./components/navbar/profile/profile-page/Profile";
 import NotFound from "./components/not-found/NotFound";
 import { SnackbarProvider } from "notistack";
 import Footer from "./components/footer/Footer";
-import Login from "./components/auth/login/Login";
-import PrivateRoute from "./components/private-routh/PrivateRoute";
+import Login from "./components/auth-components/login/Login";
+import PrivateRoutes from "./components/route/private-routes/PrivateRoutes";
+import { useAuth } from "./shared/auth/AuthContext";
 
 const App = () => {
+  let auth = useAuth();
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -41,7 +45,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
 
-          <Route path="/" element={<PrivateRoute />}>
+          <Route path="/" element={<PrivateRoutes />}>
             <Route path="profile/:userId" element={<Profile />} />
             <Route path="wishlist/:userId" element={<Wishlist />} />
           </Route>

@@ -30,10 +30,9 @@ const useProvideAuth = () => {
         return responseData
     }
 
-    const getUserInfo = async (user) => {
-        console.log(user);
-        const id = jose.decodeJwt(user.token)
-        const response = await fetch(`https://fakestoreapi.com/users/${id.sub}`)
+    const getUserInfo = async (userId) => {
+        // const id = jose.decodeJwt(user.token)
+        const response = await fetch(`https://fakestoreapi.com/users/${userId}`)
         const responseData = await response.json()
 
         return responseData
@@ -44,10 +43,10 @@ const useProvideAuth = () => {
             setLoading(true)
             const responseSignIn = await signIn(username, password)
             setUser(responseSignIn)
-            const responseUserInfo = await getUserInfo(responseSignIn)
+            const id = jose.decodeJwt(responseSignIn.token)
+            setUserId(id.sub)
+            const responseUserInfo = await getUserInfo(id.sub)
             setUserInfo(responseUserInfo)
-            console.log(responseUserInfo);
-            setUserId(responseSignIn)
             setLoading(false)
         } catch (error) {
             setErrors(error)
@@ -74,9 +73,10 @@ const useProvideAuth = () => {
     }
 
     const signOut = async () => {
-        const response = await fetch(`https://fakestoreapi.com/users/${userInfo.id}`, {
+        const response = await fetch(`https://fakestoreapi.com/users/${userId}`, {
             method: "DELETE",
         })
+        console.log(userId, user);
 
         if (response.ok) {
             setUser(null)
