@@ -21,6 +21,7 @@ import { useEffect, useContext } from "react";
 import { Context } from "../../shared/context/Context";
 import { Link } from "react-router-dom";
 import ProfileList from "./profile/profile-list/ProfileList";
+import { useAuth } from "../../shared/auth/AuthContext";
 
 function ScrollTop({ children, window }) {
   const trigger = useScrollTrigger({
@@ -67,7 +68,9 @@ const HideOnScroll = ({ children, window }) => {
 };
 
 const Navbar = ({ handleOpenCart }, props) => {
+  let auth = useAuth();
   const { cartItems, categoryItem, setCategoryItem } = useContext(Context);
+
   useEffect(() => {
     const sendRequest = async () => {
       const response = await fetch(
@@ -106,23 +109,27 @@ const Navbar = ({ handleOpenCart }, props) => {
                 <ShoppingCartIcon className="icon" />
               </IconButton>
             </Badge>
-            <ProfileList />
             <div className="categories">
               <CategoryList categories={categoryItem} />
             </div>
-            <div className="login">
-              <Link to={"/login"}>
-                <Button
-                  sx={{
-                    my: 2,
-                    color: "white",
-                    display: "block",
-                  }}
-                >
-                  Login
-                </Button>
-              </Link>
-            </div>
+            {auth.user ? (
+              <ProfileList />
+            ) : (
+              <div className="login">
+                <Link style={{ textDecoration: "none" }} to={"/login"}>
+                  <Button
+                  className="btn-login"
+                    sx={{
+                      my: 2,
+                      color: "white",
+                      display: "block",
+                    }}
+                  >
+                    Sign In
+                  </Button>
+                </Link>
+              </div>
+            )}
           </Toolbar>
         </AppBar>
       </HideOnScroll>

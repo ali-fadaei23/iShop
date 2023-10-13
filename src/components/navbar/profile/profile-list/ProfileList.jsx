@@ -21,7 +21,7 @@ import TurnedInIcon from "@mui/icons-material/TurnedIn";
 // import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import "./ProfileList.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../../shared/auth/AuthContext";
 import { useParams } from "react-router-dom";
@@ -42,10 +42,13 @@ const ProfileList = () => {
   //  handle btn Sign Out
   const handleSignOut = () => {
     auth.signOut();
+  };
+
+  useEffect(() => {
     if (auth.user === null) {
       navigate("/");
     }
-  };
+  }, [navigate, auth.user]);
 
   return (
     <div>
@@ -123,7 +126,7 @@ const ProfileList = () => {
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          Logout
+          Sign Out
         </MenuItem>
       </Menu>
     </div>

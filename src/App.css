@@ -12,6 +12,11 @@ body {
   position: relative;
 }
 
+/* btn transform */
+.MuiButtonBase-root.MuiButton-root {
+  text-transform: capitalize;
+}
+
 .main-app {
   display: flex;
   flex-direction: column;

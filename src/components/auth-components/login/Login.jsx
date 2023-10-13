@@ -14,7 +14,7 @@ import {
   Grid,
   CircularProgress,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../../../shared/auth/AuthContext";
 
 const Copyright = (props) => {
@@ -54,11 +54,13 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     auth.handleLogin(userName, password);
-
-    // if (auth.user && !auth.loading) {
-    //   navigate("/");
-    // }
   };
+
+  useEffect(() => {
+    if (auth.user && !auth.loading) {
+      navigate("/");
+    }
+  }, [auth.user, auth.loading, navigate]);
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -127,15 +129,6 @@ const Login = () => {
                 }
                 label="Remember me"
               />
-              {/* <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Sign In
-              </Button> */}
-
               <Button
                 type="submit"
                 variant="contained"
@@ -144,19 +137,16 @@ const Login = () => {
                 disabled={auth.loading}
               >
                 Accept terms
+                {auth.loading && (
+                  <CircularProgress
+                    size={24}
+                    sx={{
+                      position: "absolute",
+                    }}
+                  />
+                )}
               </Button>
-              {auth.loading && (
-                <CircularProgress
-                  size={24}
-                  sx={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    marginTop: "-12px",
-                    marginLeft: "-12px",
-                  }}
-                />
-              )}
+
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">

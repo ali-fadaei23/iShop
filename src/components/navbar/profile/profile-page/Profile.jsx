@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./Profile.css";
 import {
-  Card,
-  CardContent,
+  // Card,
+  // CardContent,
   Avatar,
   Typography,
   IconButton,
@@ -12,11 +12,22 @@ import {
   InputAdornment,
   FormHelperText,
   FormControl,
+  Box,
+  Grid,
+  Link,
+  CircularProgress,
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import EditIcon from "@mui/icons-material/Edit";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useAuth } from "../../../../shared/auth/AuthContext";
+
+const defaultTheme = createTheme();
+
 const Profile = () => {
+  let auth = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -28,7 +39,6 @@ const Profile = () => {
   const [street, setStreet] = useState("");
   const [number, setNumber] = useState(0);
   const [zipCode, setZipCode] = useState("");
-console.log("aliasdasd");
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
@@ -93,50 +103,43 @@ console.log("aliasdasd");
   };
 
   return (
-    <>
-      <div>
-        <Typography
-          variant="h1"
-          textAlign={"center"}
-          sx={{ fontWeight: 900, padding: 5 }}
-        >
-          Profile
-        </Typography>
-      </div>
-      <div className="card-profile">
-        <Card>
-          <div className="avatar">
-            <Avatar sx={{ width: 80, height: 80, bgcolor: "steelblue" }}>
-              A
+    <ThemeProvider theme={defaultTheme}>
+      <Grid container>
+        <Grid
+          sx={{
+            backgroundImage:
+              "url(https://source.unsplash.com/random?wallpapers)",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <Grid>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+              <LockOutlinedIcon />
             </Avatar>
-            {/* <div className="info">
-              <Typography
-                className="info-text"
-                variant="h6"
-                textAlign={"center"}
-              >
-                Ali
-              </Typography>
-              <Typography
-                className="info-text"
-                variant="h6"
-                textAlign={"center"}
-              >
-                Hosseini
-              </Typography>
-            </div> */}
-          </div>
-          <CardContent>
-            <form onSubmit={handleSubmit}>
-              <div>
+            <Typography component="h1" variant="h5">
+              Sign in
+            </Typography>
+            <Box
+              component="form"
+              noValidate
+              onSubmit={handleSubmit}
+              sx={{ mt: 1 }}
+            >
+              <div className="form-family">
                 <FormControl>
                   <InputLabel htmlFor="outlined-adornment-firstname">
                     First Name
                   </InputLabel>
                   <OutlinedInput
-                    // startAdornment={
-
-                    // }
                     value={firstName}
                     onChange={handleFirstName}
                     id="outlined-adornment-firstname"
@@ -322,21 +325,29 @@ console.log("aliasdasd");
                   </FormControl>
                 </div>
               </div>
-              <div className="btn-submit">
-                <Button
-                  type="submit"
-                  className="btn-update"
-                  variant="contained"
-                  startIcon={<EditIcon fontSize="small" />}
-                >
-                  Edit
-                </Button>
-              </div>
-            </form>
-          </CardContent>
-        </Card>
-      </div>
-    </>
+              <Button
+                type="submit"
+                variant="contained"
+                fullWidth
+                sx={{ mt: 3, mb: 2 }}
+                disabled={auth.loading}
+                startIcon={<EditIcon fontSize="small" />}
+              >
+                Edit
+                {auth.loading && (
+                  <CircularProgress
+                    size={24}
+                    sx={{
+                      position: "absolute",
+                    }}
+                  />
+                )}
+              </Button>
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+    </ThemeProvider>
   );
 };
 

@@ -1,36 +1,8 @@
-.card-profile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 300px;
-}
-
-/* info */
-.MuiTypography-root.info-text {
-  font-size: 15px;
-  margin: 0;
-  padding: 0;
-  margin-left: 10px;
-}
-
-.info {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.avatar {
-  margin: 20px 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .user-password {
   margin-top: 25px;
   display: flex;
 }
+
 
 .password {
   width: 245px;
