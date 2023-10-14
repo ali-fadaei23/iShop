@@ -17,7 +17,7 @@ import LocalMallIcon from "@mui/icons-material/LocalMall";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 // import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import CategoryList from "../category/category-list/CategoryList";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { Context } from "../../shared/context/Context";
 import { Link } from "react-router-dom";
 import ProfileList from "./profile/profile-list/ProfileList";
@@ -56,14 +56,23 @@ function ScrollTop({ children, window }) {
   );
 }
 
-const HideOnScroll = ({ children, window }) => {
+const HideOnScroll = ({ children, window }, props) => {
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
   });
   return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {children}
-    </Slide>
+    <>
+      <Slide appear={false} direction="down" in={!trigger}>
+        {children}
+      </Slide>
+      <Toolbar id="back-to-top-anchor">
+        <ScrollTop {...props}>
+          <Fab size="small" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollTop>
+      </Toolbar>
+    </>
   );
 };
 
@@ -118,7 +127,7 @@ const Navbar = ({ handleOpenCart }, props) => {
               <div className="login">
                 <Link style={{ textDecoration: "none" }} to={"/login"}>
                   <Button
-                  className="btn-login"
+                    className="btn-login"
                     sx={{
                       my: 2,
                       color: "white",
@@ -133,13 +142,6 @@ const Navbar = ({ handleOpenCart }, props) => {
           </Toolbar>
         </AppBar>
       </HideOnScroll>
-      <Toolbar id="back-to-top-anchor">
-        <ScrollTop {...props}>
-          <Fab size="small" aria-label="scroll back to top">
-            <KeyboardArrowUpIcon />
-          </Fab>
-        </ScrollTop>
-      </Toolbar>
     </>
   );
 };

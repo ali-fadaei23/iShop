@@ -21,15 +21,6 @@ const Wishlist = () => {
   const { wishlist } = useContext(Context);
   return (
     <>
-      <div>
-        <Typography
-          variant="h1"
-          textAlign={"center"}
-          sx={{ fontWeight: 900, paddingTop: 10 }}
-        >
-          Wishlist
-        </Typography>
-      </div>
       <Box>
         {wishlist.length <= 0 ? (
           <div className="empty-wishlist">
@@ -39,7 +30,6 @@ const Wishlist = () => {
               alt="Empty Wishlist"
               loading="lazy"
             />
-            {/* <Typography variant="h3">Your Wishlist Is Empty</Typography> */}
           </div>
         ) : (
           <>

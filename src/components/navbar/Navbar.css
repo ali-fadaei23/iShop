@@ -24,3 +24,8 @@
   padding: 6px;
   width: 100%;
 }
+
+/* back to top */
+.css-mgur8 {
+  z-index: 2;
+}

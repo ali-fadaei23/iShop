@@ -11,22 +11,14 @@ import {
   MenuItem,
   Tooltip,
   IconButton,
-  //   Typography,
 } from "@mui/material";
-import * as jose from "jose";
-// import InboxIcon from "@mui/icons-material/Inbox";
-// import DraftsIcon from "@mui/icons-material/Drafts";
-// import PersonAdd from "@mui/icons-material/PersonAdd";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
-// import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import "./ProfileList.css";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../../shared/auth/AuthContext";
-import { useParams } from "react-router-dom";
 const ProfileList = () => {
-  // let {userId} = useParams()
   let auth = useAuth();
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);

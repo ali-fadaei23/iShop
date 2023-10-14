@@ -1,8 +1,13 @@
+.profile-options {
+  width: 100%;
+  display: flex;
+  margin-top: 15px;
+}
+
 .user-password {
   margin-top: 25px;
   display: flex;
 }
-
 
 .password {
   width: 245px;

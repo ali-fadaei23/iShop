@@ -2,14 +2,26 @@
   top: 80px;
 } */
 
+#root {
+  margin-top: auto;
+  /* height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column; */
+}
+
 html {
   height: 100%;
   box-sizing: border-box;
 }
 
 body {
-  min-height: 100%;
-  position: relative;
+  /* min-height: 100%;
+  position: relative; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* btn transform */

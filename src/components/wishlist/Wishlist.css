@@ -4,7 +4,6 @@
   align-items: inherit;
   justify-content: center;
   flex-wrap: wrap;
-  padding-bottom: 300px;
 }
 
 .img-empty-wishlist {
@@ -18,10 +17,3 @@
   align-items: center;
   justify-content: center;
 }
-/* Text Wishlist Empty */
-/* .MuiTypography-root.css-gepadz-MuiTypography-root {
-  font-weight: 900;
-  text-align: center;
-  font-family: sans-serif;
-  color: crimson;
-} */
