@@ -2,25 +2,25 @@ import "./Cart.css";
 import OrderNotFound from "../../assets/img/empty-cart-yellow.png";
 import {
   // Box,
-  // Button,
+  Button,
   Drawer,
   Card,
   CardMedia,
-  // CardActions,
-  //   ButtonGroup,
+  ButtonGroup,
   CardContent,
   // Stepper,
   // Step,
   // StepLabel,
   Typography,
+  CardActions,
 } from "@mui/material";
-// import AddIcon from "@mui/icons-material/Add";
-// import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 import { Context } from "../../shared/context/Context";
 import { useContext } from "react";
 
 const Cart = ({ openDrawerOrder, handleCloseCart }) => {
-  const { cartItems } = useContext(Context);
+  const { cartItems, setCartItems } = useContext(Context);
 
   const totalItems = cartItems.reduce((prevItem, currItem) => {
     return prevItem + currItem.num;
@@ -73,6 +73,30 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
   // const handleReset = () => {
   //   setActiveStep(0);
   // };
+
+  const removeAtCart = (id) => {
+    setCartItems((prev) => {
+      const state = prev.map((v) => ({ ...v }));
+      const i = state.findIndex((v) => v.id === id);
+      if (state[i]?.num > 1) state[i].num--;
+      else if (state[i]?.num === 1) state.splice(i, 1);
+      return state;
+    });
+  };
+
+  const reducer = (...arr) => {
+    const res = [];
+    arr.forEach((v) => {
+      const i = res.findIndex((u) => u.id === v.id);
+      if (!res[i]) res.push(v);
+      else res[i].num++;
+    });
+    return res;
+  };
+
+  const addToCart = (cart) => {
+    setCartItems((prev) => reducer(...prev, cart));
+  };
 
   return (
     <Drawer
@@ -171,14 +195,19 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                       >
                         Title: {item.title}
                       </Typography>
-                      <Typography
-                        gutterBottom
-                        variant="body1"
-                        sx={{ color: "darkblue" }}
-                        component="div"
-                      >
-                        Size: {item.size}
-                      </Typography>
+                      {item.category === "electronics" ? (
+                        ""
+                      ) : (
+                        <Typography
+                          gutterBottom
+                          variant="body1"
+                          sx={{ color: "darkblue" }}
+                          component="div"
+                        >
+                          Size: {item.size}
+                        </Typography>
+                      )}
+
                       <Typography
                         gutterBottom
                         variant="body1"
@@ -197,6 +226,28 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                         Price: {item.price + " $"}
                       </Typography>
                     </CardContent>
+                    <CardActions>
+                      <ButtonGroup className="btn-add-remove">
+                        <Button
+                          id="reduce"
+                          aria-label="reduce"
+                          onClick={() => removeAtCart(item.id)}
+                        >
+                          <RemoveIcon fontSize="small" />
+                        </Button>
+                        <div>
+                          <Typography sx={{ margin: 1 }}>{item.num}</Typography>
+                        </div>
+
+                        <Button
+                          id="increase"
+                          aria-label="increase"
+                          onClick={() => addToCart(item)}
+                        >
+                          <AddIcon fontSize="small" />
+                        </Button>
+                      </ButtonGroup>
+                    </CardActions>
                   </Card>
                 </div>
               );

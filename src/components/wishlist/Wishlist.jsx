@@ -1,6 +1,7 @@
 import {
-  Typography,
   Box,
+  Card,
+  CardContent,
   // Card,
   // CardMedia,
   // CardContent,
@@ -22,22 +23,38 @@ const Wishlist = () => {
   return (
     <>
       <Box>
-        {wishlist.length <= 0 ? (
-          <div className="empty-wishlist">
-            <img
-              className="img-empty-wishlist"
-              src={EmptyWishlist}
-              alt="Empty Wishlist"
-              loading="lazy"
-            />
-          </div>
-        ) : (
-          <>
-            {wishlist.map((item, index) => {
-              return <ProductItem key={index} product={item} />;
-            })}
-          </>
-        )}
+        <Card
+          sx={{
+            overflow: "auto",
+            height: "550px",
+            margin: "0 100px",
+          }}
+          className="card-wishlist"
+        >
+          <CardContent
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+            }}
+          >
+            {wishlist.length <= 0 ? (
+              <div className="empty-wishlist">
+                <img
+                  className="img-empty-wishlist"
+                  src={EmptyWishlist}
+                  alt="Empty Wishlist"
+                  loading="lazy"
+                />
+              </div>
+            ) : (
+              <>
+                {wishlist.map((item, index) => {
+                  return <ProductItem key={index} product={item} />;
+                })}
+              </>
+            )}
+          </CardContent>
+        </Card>
       </Box>
     </>
   );

@@ -54,22 +54,27 @@ const useProvideAuth = () => {
     }
 
     const signUp = async (signUpData) => {
-        setErrors([])
-        setLoading(true)
         const response = await fetch('https://fakestoreapi.com/users', {
             method: "POST", headers: {
                 "Content-Type": "application/json",
             }, body: JSON.stringify(signUpData)
         })
-
-        if (!response.ok) {
-            setErrors(errors)
-        }
-
         const responseData = await response.json()
+        return responseData
+    }
 
-        setUser(responseData)
-        setLoading(false)
+    const handleSignUp = async (signUpData) => {
+        try {
+            setErrors([])
+            setLoading(true)
+            const responseSignUp = await signUp(signUpData)
+            setUser(responseSignUp)
+            setLoading(false)
+        } catch (error) {
+            setErrors(error)
+        }
+        
+       
     }
 
     const signOut = async () => {
@@ -81,10 +86,13 @@ const useProvideAuth = () => {
         if (response.ok) {
             setUser(null)
         }
+        if (userId === null) {
+            setUser(null)
+        }
     }
 
     return {
-        handleLogin, userId, user, userInfo, signOut, signUp, errors, loading
+        handleSignUp, handleLogin, userId, user, userInfo, signOut, signUp, errors, loading
     }
 
 

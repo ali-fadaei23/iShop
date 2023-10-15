@@ -5,6 +5,12 @@
   height: 100%;
 }
 
+#vertical-tab-0,
+#vertical-tab-1,
+#vertical-tab-2 {
+  font-weight: bold;
+}
+
 .MuiTabs-root.tabs-profile {
   height: 100%;
 }

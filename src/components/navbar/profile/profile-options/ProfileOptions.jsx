@@ -1,9 +1,19 @@
 import "./ProfileOptions.css";
-import { Box, Tabs, Tab, Typography } from "@mui/material";
+import {
+  Box,
+  Tabs,
+  Tab,
+  Typography,
+  Card,
+  CardMedia,
+  CardContent,
+} from "@mui/material";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import EditProfile from "../edit-profile/EditProfile";
 import Wishlist from "../../../wishlist/Wishlist";
+import { Context } from "../../../../shared/context/Context";
+import OrderNotFound from "../../../../assets/img/empty-cart-yellow.png";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -48,6 +58,7 @@ function a11yProps(index) {
 }
 
 const ProfileOptions = () => {
+  const { cartItems } = useContext(Context);
   const [value, setValue] = useState(0);
 
   const handleChangeTab = (event, newValue) => {
@@ -82,7 +93,78 @@ const ProfileOptions = () => {
         <Wishlist />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        {cartItems.length > 0 ? (
+          <div>
+            {cartItems.map((item, index) => {
+              return (
+                <div key={index} style={{ margin: "0 15px" }}>
+                  <Card className="cart" sx={{ marginBottom: 20, width: 300 }}>
+                    <CardMedia
+                      className="img-cart"
+                      component="img"
+                      alt="green iguana"
+                      sx={{ width: 200 }}
+                      image={item.image}
+                      title={item.title}
+                    />
+                    <CardContent className="text">
+                      <Typography
+                        gutterBottom
+                        variant="caption"
+                        sx={{ color: "darkblue" }}
+                        component="div"
+                      >
+                        Category: {item.category}
+                      </Typography>
+                      <Typography
+                        gutterBottom
+                        variant="body1"
+                        sx={{ color: "darkblue" }}
+                        component="div"
+                      >
+                        Title: {item.title}
+                      </Typography>
+                      <Typography
+                        gutterBottom
+                        variant="body1"
+                        sx={{ color: "darkblue" }}
+                        component="div"
+                      >
+                        Size: {item.size}
+                      </Typography>
+                      <Typography
+                        gutterBottom
+                        variant="body1"
+                        sx={{ color: "darkblue" }}
+                        component="div"
+                      >
+                        Count: {item.num}
+                      </Typography>
+
+                      <Typography
+                        gutterBottom
+                        variant="h6"
+                        sx={{ color: "tomato", marginTop: 5 }}
+                        component="div"
+                      >
+                        Price: {item.price + " $"}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="empty-cart">
+            <img
+              className="img-empty-cart"
+              src={OrderNotFound}
+              alt="Empty Cart"
+              loading="lazy"
+            />
+          </div>
+        )}
       </TabPanel>
     </Box>
   );

@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./SingleProduct.css";
 import { Context } from "../../shared/context/Context";
 import {
@@ -25,6 +25,7 @@ import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useSnackbar } from "notistack";
+import { useAuth } from "../../shared/auth/AuthContext";
 
 const reducer = (...arr) => {
   const res = [];
@@ -37,6 +38,8 @@ const reducer = (...arr) => {
 };
 
 const SingleProduct = () => {
+  let auth = useAuth();
+  const navigate = useNavigate();
   const [showBtn, setShowBtn] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -73,15 +76,22 @@ const SingleProduct = () => {
     image: singleProduct.image,
     title: singleProduct.title,
     price: singleProduct.price,
+    count: count,
   };
 
   const addToCart = (variant) => {
-    if (!size && singleProduct.category !== "electronics") {
-      enqueueSnackbar("Please select a Size!", { variant });
-      setError(true);
-    } else {
+    if (auth.user && size) {
       setError(false);
       setCartItems((prev) => reducer(...prev, cart));
+    } else if (!size && singleProduct.category !== "electronics") {
+      enqueueSnackbar("Please select a size!", { variant });
+      setError(true);
+    } else if (auth.user && singleProduct.category === "electronics") {
+      setError(false);
+      setCartItems((prev) => reducer(...prev, cart));
+    } else {
+      setError(true);
+      enqueueSnackbar("You must log in!", { variant });
     }
   };
 
@@ -319,14 +329,6 @@ const SingleProduct = () => {
               )}
             </CardActions>
           </Card>
-          {/* {error ? (
-            <>
-              <Alert severity="error">
-                <AlertTitle>Error</AlertTitle>
-                This is an error alert — <strong>check it out!</strong>
-              </Alert>
-            </>
-          ) : null} */}
         </div>
       )}
     </>

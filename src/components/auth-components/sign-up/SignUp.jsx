@@ -1,31 +1,59 @@
-import "./EditProfile.css";
-import { useState } from "react";
+import "./SignUp.css";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import EditIcon from "@mui/icons-material/Edit";
+import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 import {
-  Avatar,
   Typography,
-  IconButton,
+  Avatar,
   Button,
-  OutlinedInput,
-  InputLabel,
   InputAdornment,
+  TextField,
   FormHelperText,
   FormControl,
+  InputLabel,
+  OutlinedInput,
+  IconButton,
+  Link,
   Box,
   Grid,
   CircularProgress,
-  Card,
 } from "@mui/material";
+import { useState, forwardRef, useEffect } from "react";
+import { IMaskInput } from "react-imask";
+import { useAuth } from "../../../shared/auth/AuthContext";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import EditIcon from "@mui/icons-material/Edit";
-// import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import { useAuth } from "../../../../shared/auth/AuthContext";
 
-const EditProfile = () => {
+const Copyright = (props) => {
+  return (
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      {...props}
+    >
+      {"Copyright © "}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
+  );
+};
+
+const defaultTheme = createTheme();
+
+const SignUp = () => {
+  let navigate = useNavigate();
   let auth = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState({
+    textmask: "2134124124",
+  });
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -34,6 +62,27 @@ const EditProfile = () => {
   const [street, setStreet] = useState("");
   const [number, setNumber] = useState(0);
   const [zipCode, setZipCode] = useState("");
+
+  const TextMaskCustom = forwardRef(function TextMaskCustom(props, ref) {
+    const { onChange, ...other } = props;
+    return (
+      <IMaskInput
+        {...other}
+        mask="(#00) 000-0000"
+        definitions={{
+          "#": /[1-9]/,
+        }}
+        inputRef={ref}
+        onAccept={(value) => onChange({ target: { name: props.name, value } })}
+        overwrite
+      />
+    );
+  });
+
+  TextMaskCustom.propTypes = {
+    name: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+  };
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -58,7 +107,11 @@ const EditProfile = () => {
   };
 
   const handlePhoneNumber = (e) => {
-    setPhoneNumber(e.target.value);
+    e.preventDefault();
+    setPhoneNumber({
+      ...phoneNumber,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleEmail = (e) => {
@@ -83,27 +136,38 @@ const EditProfile = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log({
-      email: email,
-      username: userName,
-      password: password,
-      phone: phoneNumber,
+    auth.handleSignUp({
+      email: "John@gmail.com",
+      username: "johnd",
+      password: "m38rmF$",
       name: {
-        firstname: firstName,
-        lastname: lastName,
+        firstname: "John",
+        lastname: "Doe",
       },
       address: {
-        city: city,
-        street: street,
-        number: number,
-        zipcode: zipCode,
+        city: "kilcoole",
+        street: "7835 new road",
+        number: 3,
+        zipcode: "12926-3874",
+        geolocation: {
+          lat: "-37.3159",
+          long: "81.1496",
+        },
       },
+      phone: "1-570-236-7033",
     });
+    console.log(auth.user);
   };
 
+  useEffect(() => {
+    if (auth.user && !auth.loading) {
+      navigate("/");
+    }
+  }, [auth.user, auth.loading, navigate]);
+
   return (
-    <>
-      <Card>
+    <ThemeProvider theme={defaultTheme}>
+      <Grid container>
         <Grid
           sx={{
             backgroundImage:
@@ -113,28 +177,22 @@ const EditProfile = () => {
             backgroundPosition: "center",
           }}
         />
-        <Grid
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+        <Grid>
           <Box
             sx={{
+              my: 8,
+              mx: 4,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              justifyContent: "center",
-              padding: "15px",
+              width: "100%",
             }}
           >
             <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-              {/* <LockOutlinedIcon /> */}
+              <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Edit Profile
+              Sign Up
             </Typography>
             <Box
               component="form"
@@ -241,18 +299,19 @@ const EditProfile = () => {
                   <FormHelperText> Example@gmail.com </FormHelperText>
                 </FormControl>
                 <FormControl>
-                  <InputLabel htmlFor="outlined-adornment-Phone-number">
-                    Phone Number
-                  </InputLabel>
-                  <OutlinedInput
-                    value={phoneNumber}
-                    onChange={handlePhoneNumber}
-                    id="outlined-adornment-Phone-number"
-                    type="tel"
-                    size="small"
-                    label="Phone Number"
-                    color="secondary"
-                  />
+                  <FormControl variant="standard">
+                    <TextField
+                      size="small"
+                      InputProps={{ inputComponent: TextMaskCustom }}
+                      name="phoneNumber"
+                      onChange={() => handlePhoneNumber}
+                      value={phoneNumber.textmask}
+                      id="formatted-text-mask-input"
+                      label="Phone Number"
+                      variant="outlined"
+                      helperText="(100) 000-0000"
+                    />
+                  </FormControl>
                 </FormControl>
               </div>
               <div className="location">
@@ -333,7 +392,7 @@ const EditProfile = () => {
                 disabled={auth.loading}
                 startIcon={<EditIcon fontSize="small" />}
               >
-                Edit
+                Sign Up
                 {auth.loading && (
                   <CircularProgress
                     size={24}
@@ -344,11 +403,25 @@ const EditProfile = () => {
                 )}
               </Button>
             </Box>
+
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="#" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
+            </Grid>
+            <Copyright sx={{ mt: 5 }} />
           </Box>
         </Grid>
-      </Card>
-    </>
+      </Grid>
+    </ThemeProvider>
   );
 };
 
-export default EditProfile;
+export default SignUp;

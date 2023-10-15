@@ -18,9 +18,9 @@ import Profile from "./components/navbar/profile/profile-page/Profile";
 import NotFound from "./components/not-found/NotFound";
 import { SnackbarProvider } from "notistack";
 import Footer from "./components/footer/Footer";
-import Login from "./components/auth-components/login/Login";
 import PrivateRoutes from "./components/route/private-routes/PrivateRoutes";
-
+import Login from "./components/auth-components/sign-in/Login";
+import SignUp from "./components/auth-components/sign-up/SignUp";
 const App = () => {
   const [open, setOpen] = useState(false);
 
@@ -59,7 +59,7 @@ const App = () => {
             path="electronics"
             element={<Category categoryPages={"electronics"} />}
           />
-
+          <Route path="signup" element={<SignUp />} />
           <Route path="login" element={<Login />} />
 
           <Route

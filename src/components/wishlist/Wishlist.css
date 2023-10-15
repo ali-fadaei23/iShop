@@ -17,3 +17,7 @@
   align-items: center;
   justify-content: center;
 }
+
+.MuiPaper-root.card-wishlist {
+  padding: 10px;
+}
