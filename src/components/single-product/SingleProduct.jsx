@@ -46,7 +46,7 @@ const SingleProduct = () => {
   const { enqueueSnackbar } = useSnackbar();
   const { cartItems, setCartItems, setWishlist } = useContext(Context);
   const [singleProduct, setSingleProduct] = useState({});
-  const [size, setSize] = useState("");
+  const [size, setSize] = useState("S");
   let { productId } = useParams();
 
   useEffect(() => {
@@ -182,54 +182,25 @@ const SingleProduct = () => {
                   </Typography>
                   {singleProduct.category === "electronics" ? null : (
                     <div>
-                      <FormControl required sx={{ m: 1, minWidth: 120 }}>
-                        {!error ? (
-                          <>
-                            <InputLabel id="demo-simple-select-helper-label">
-                              Size
-                            </InputLabel>
-                            <Select
-                              labelId="demo-simple-select-helper-label"
-                              id="demo-simple-select-helper"
-                              value={size}
-                              label="Size"
-                              onChange={handleSize}
-                            >
-                              <MenuItem value="a">
-                                <em>None</em>
-                              </MenuItem>
-                              <MenuItem value={"S"}>S</MenuItem>
-                              <MenuItem value={"M"}>M</MenuItem>
-                              <MenuItem value={"L"}>L</MenuItem>
-                              <MenuItem value={"XL"}>XL</MenuItem>
-                            </Select>
-                          </>
-                        ) : (
-                          <>
-                            <InputLabel
-                              error
-                              id="demo-simple-select-helper-label"
-                            >
-                              Size
-                            </InputLabel>
-                            <Select
-                              error
-                              labelId="demo-simple-select-helper-label"
-                              id="demo-simple-select-helper"
-                              value={size}
-                              label="Size"
-                              onChange={handleSize}
-                            >
-                              <MenuItem value="a">
-                                <em>None</em>
-                              </MenuItem>
-                              <MenuItem value={"S"}>S</MenuItem>
-                              <MenuItem value={"M"}>M</MenuItem>
-                              <MenuItem value={"L"}>L</MenuItem>
-                              <MenuItem value={"XL"}>XL</MenuItem>
-                            </Select>
-                          </>
-                        )}
+                      <FormControl sx={{ m: 1, minWidth: 120 }}>
+                        <>
+                          <InputLabel id="demo-simple-select-helper-label">
+                            Size
+                          </InputLabel>
+                          <Select
+                            labelId="demo-simple-select-helper-label"
+                            id="demo-simple-select-helper"
+                            value={size}
+                            label="Size"
+                            onChange={handleSize}
+                            size="small"
+                          >
+                            <MenuItem value={"S"}>S</MenuItem>
+                            <MenuItem value={"M"}>M</MenuItem>
+                            <MenuItem value={"L"}>L</MenuItem>
+                            <MenuItem value={"XL"}>XL</MenuItem>
+                          </Select>
+                        </>
                       </FormControl>
                     </div>
                   )}
