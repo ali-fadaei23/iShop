@@ -1,3 +1,4 @@
+import "./Slider.css";
 import Slider from "react-slick";
 import MenClothes from "../../assets/img/men-clothes.jpg";
 import WomenClothes from "../../assets/img/women-clothes.jpg";

@@ -11,6 +11,7 @@ root.render(
   <ProvideAuth>
     <ContextProvider>
       <React.StrictMode>
+
         <HashRouter >
           <App />
         </HashRouter>

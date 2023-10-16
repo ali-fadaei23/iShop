@@ -33,9 +33,9 @@ const App = () => {
   };
 
   return (
-    <Router>
-      <Navbar index handleOpenCart={handleOpen} />
+    // <Router>
       <>
+      <Navbar index handleOpenCart={handleOpen} />
         <Cart openDrawerOrder={open} handleCloseCart={handleClose} />
 
         <Routes>
@@ -78,9 +78,9 @@ const App = () => {
 
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </>
       <Footer />
-    </Router>
+      </>
+    // </Router>
   );
 };
 
