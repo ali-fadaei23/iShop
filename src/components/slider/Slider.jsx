@@ -1,10 +1,8 @@
-import "./Slider.css";
 import Slider from "react-slick";
 import MenClothes from "../../assets/img/men-clothes.jpg";
 import WomenClothes from "../../assets/img/women-clothes.jpg";
 import Jewerly from "../../assets/img/jewerly.jpg";
 import Digital from "../../assets/img/electronics.jpg";
-import { height } from "@mui/system";
 
 const SliderShop = () => {
   const settings = {

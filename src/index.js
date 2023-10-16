@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import { ContextProvider } from "./shared/context/Context";
 import { ProvideAuth } from './shared/auth/AuthContext';
+import { HashRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ProvideAuth>
     <ContextProvider>
       <React.StrictMode>
-        <App />
+        <HashRouter >
+          <App />
+        </HashRouter>
       </React.StrictMode>
     </ContextProvider>
   </ProvideAuth>
