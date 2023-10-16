@@ -21,10 +21,9 @@ const AlertModal = ({ open, close }) => {
         open={open}
         TransitionComponent={Transition}
         keepMounted
-        // onClose={close}
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle>{"Use Google's location service?"}</DialogTitle>
+        <DialogTitle>{"Message!"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
             Since this is not a real store, the registration process is done in

@@ -4,6 +4,7 @@ import MenClothes from "../../assets/img/men-clothes.jpg";
 import WomenClothes from "../../assets/img/women-clothes.jpg";
 import Jewerly from "../../assets/img/jewerly.jpg";
 import Digital from "../../assets/img/electronics.jpg";
+import { height } from "@mui/system";
 
 const SliderShop = () => {
   const settings = {
@@ -22,39 +23,19 @@ const SliderShop = () => {
   };
 
   return (
-    <div>
+    <div style={{ width: "100vw", height: "90vh" }}>
       <Slider {...settings}>
-        <div style={{ width: "100vw" }}>
-          <img
-            style={{ width: "100%" }}
-            alt="mens clothes"
-            title="img-slider"
-            src={MenClothes}
-          />
+        <div className="slider-content mens-clothes">
+          <img alt="mens clothes" title="img-slider" src={MenClothes} />
         </div>
-        <div style={{ width: "100vw" }}>
-          <img
-            style={{ width: "100%" }}
-            alt="womens clothes"
-            title="img-slider"
-            src={WomenClothes}
-          />
+        <div className="slider-content womens-clothes">
+          <img alt="womens clothes" title="img-slider" src={WomenClothes} />
         </div>
-        <div style={{ width: "100vw" }}>
-          <img
-            style={{ width: "100%" }}
-            alt="womens clothes"
-            title="img-slider"
-            src={Jewerly}
-          />
+        <div className="slider-content jewerly">
+          <img alt="jewerly" title="img-slider" src={Jewerly} />
         </div>
-        <div style={{ width: "100vw" }}>
-          <img
-            style={{ width: "100%" }}
-            alt="womens clothes"
-            title="img-slider"
-            src={Digital}
-          />
+        <div className="slider-content digital">
+          <img alt="digital" title="img-slider" src={Digital} />
         </div>
       </Slider>
     </div>

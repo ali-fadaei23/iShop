@@ -41,7 +41,6 @@ const SingleProduct = () => {
   let auth = useAuth();
   const [showBtn, setShowBtn] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
   const { cartItems, setCartItems, setWishlist } = useContext(Context);
   const [singleProduct, setSingleProduct] = useState({});
@@ -50,7 +49,6 @@ const SingleProduct = () => {
 
   useEffect(() => {
     (async () => {
-      // setLoading(true);
       const response = await fetch(
         `https://fakestoreapi.com/products/${productId}`
       );
@@ -80,16 +78,12 @@ const SingleProduct = () => {
 
   const addToCart = (variant) => {
     if (auth.user && size) {
-      setError(false);
       setCartItems((prev) => reducer(...prev, cart));
     } else if (!size && singleProduct.category !== "electronics") {
       enqueueSnackbar("Please select a size!", { variant });
-      setError(true);
     } else if (auth.user && singleProduct.category === "electronics") {
-      setError(false);
       setCartItems((prev) => reducer(...prev, cart));
     } else {
-      setError(true);
       enqueueSnackbar("You must log in!", { variant });
     }
   };

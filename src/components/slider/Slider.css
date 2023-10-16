@@ -1,5 +1,22 @@
-.slick-arrow {
+/* .slick-arrow {
   color: black;
+}
+*/
+
+.slider-content {
+  width: 100%;
+  height: 90vh;
+}
+
+.slider-content img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.slider-content img[alt="jewerly"] {
+  object-position: center;
 }
 
 .slick-next {
@@ -11,4 +28,31 @@
   margin-left: 50px;
   display: flex;
   z-index: 1;
+}
+
+.slick-dots {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
+  color: #272210;
+}
+
+.slick-dots li.slick-active button::before {
+  /* color: royalblue; */
+  color: #272210;
+}
+
+.slick-dots li button::before {
+  font-size: 15px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: "•";
+  text-align: center;
+  opacity: 0.27;
+  color: #272210;
 }
