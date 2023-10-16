@@ -20,7 +20,7 @@ import {
   Grid,
   CircularProgress,
 } from "@mui/material";
-import { useState, forwardRef, useEffect } from "react";
+import { useState, forwardRef } from "react";
 import { IMaskInput } from "react-imask";
 import { useAuth } from "../../../shared/auth/AuthContext";
 import Visibility from "@mui/icons-material/Visibility";

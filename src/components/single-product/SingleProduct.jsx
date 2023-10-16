@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./SingleProduct.css";
 import { Context } from "../../shared/context/Context";
 import {
@@ -39,7 +39,6 @@ const reducer = (...arr) => {
 
 const SingleProduct = () => {
   let auth = useAuth();
-  const navigate = useNavigate();
   const [showBtn, setShowBtn] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
