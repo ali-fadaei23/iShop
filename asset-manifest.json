@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.267f0ef7.css",
-    "main.js": "/static/js/main.ed029ed5.js",
-    "static/media/electronics.jpg": "/static/media/electronics.eed3de39440de7aafd73.jpg",
-    "static/media/women-clothes.jpg": "/static/media/women-clothes.6fc9a154cafc87fffd54.jpg",
-    "static/media/men-clothes.jpg": "/static/media/men-clothes.d872d88d75edec4662f6.jpg",
-    "static/media/jewerly.jpg": "/static/media/jewerly.13ddd56ca88adb51a15c.jpg",
-    "static/media/404.png": "/static/media/404.716bf181616f0c401d55.png",
-    "static/media/empty-cart-yellow.png": "/static/media/empty-cart-yellow.72e00edc7adc1466c1a7.png",
-    "index.html": "/index.html",
-    "main.267f0ef7.css.map": "/static/css/main.267f0ef7.css.map",
-    "main.ed029ed5.js.map": "/static/js/main.ed029ed5.js.map"
+    "main.css": "/Shopping-react/static/css/main.267f0ef7.css",
+    "main.js": "/Shopping-react/static/js/main.2a2661a0.js",
+    "static/media/electronics.jpg": "/Shopping-react/static/media/electronics.eed3de39440de7aafd73.jpg",
+    "static/media/women-clothes.jpg": "/Shopping-react/static/media/women-clothes.6fc9a154cafc87fffd54.jpg",
+    "static/media/men-clothes.jpg": "/Shopping-react/static/media/men-clothes.d872d88d75edec4662f6.jpg",
+    "static/media/jewerly.jpg": "/Shopping-react/static/media/jewerly.13ddd56ca88adb51a15c.jpg",
+    "static/media/404.png": "/Shopping-react/static/media/404.716bf181616f0c401d55.png",
+    "static/media/empty-cart-yellow.png": "/Shopping-react/static/media/empty-cart-yellow.72e00edc7adc1466c1a7.png",
+    "index.html": "/Shopping-react/index.html",
+    "main.267f0ef7.css.map": "/Shopping-react/static/css/main.267f0ef7.css.map",
+    "main.2a2661a0.js.map": "/Shopping-react/static/js/main.2a2661a0.js.map"
   },
   "entrypoints": [
     "static/css/main.267f0ef7.css",
-    "static/js/main.ed029ed5.js"
+    "static/js/main.2a2661a0.js"
   ]
 }
