@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import ProductList from "../product-list/ProductList";
 // import { Context } from "../../shared/context/Context";
 import { Typography, Backdrop, CircularProgress } from "@mui/material";
+import Slider from "../slider/Slider";
+import SliderShop from "../slider/Slider";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -33,6 +35,9 @@ const Home = () => {
         </div>
       ) : (
         <div className="main">
+          <div>
+            <SliderShop />
+          </div>
           <Typography
             variant="h1"
             textAlign={"center"}

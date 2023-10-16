@@ -25,6 +25,7 @@ import { IMaskInput } from "react-imask";
 import { useAuth } from "../../../shared/auth/AuthContext";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import AlertModal from "./alert-modal/AlertModal";
 
 const Copyright = (props) => {
   return (
@@ -54,14 +55,14 @@ const SignUp = () => {
   const [phoneNumber, setPhoneNumber] = useState({
     textmask: "2134124124",
   });
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [firstName, setFirstName] = useState("1123123123");
+  const [lastName, setLastName] = useState("123123123");
   const [email, setEmail] = useState("");
-  const [userName, setUserName] = useState("");
-  const [city, setCity] = useState("");
-  const [street, setStreet] = useState("");
+  const [userName, setUserName] = useState("123123123");
+  const [city, setCity] = useState("123123");
+  const [street, setStreet] = useState("33333");
   const [number, setNumber] = useState(0);
-  const [zipCode, setZipCode] = useState("");
+  const [zipCode, setZipCode] = useState("23123123123");
 
   const TextMaskCustom = forwardRef(function TextMaskCustom(props, ref) {
     const { onChange, ...other } = props;
@@ -156,18 +157,19 @@ const SignUp = () => {
       },
       phone: "1-570-236-7033",
     });
-    console.log(auth.user);
   };
 
-  useEffect(() => {
-    if (auth.user && !auth.loading) {
-      navigate("/");
+  const handleCloseModal = () => {
+    auth.setOpenModal(false);
+    if (auth.openModal) {
+      navigate("/login");
     }
-  }, [auth.user, auth.loading, navigate]);
+  };
 
   return (
     <ThemeProvider theme={defaultTheme}>
       <Grid container>
+        <AlertModal open={auth.openModal} close={handleCloseModal} />
         <Grid
           sx={{
             backgroundImage:

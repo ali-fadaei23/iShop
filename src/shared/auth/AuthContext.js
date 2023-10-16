@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext } from "react";
 import * as jose from 'jose'
-// import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const authContext = createContext()
 
@@ -14,6 +14,7 @@ export const useAuth = () => {
 }
 
 const useProvideAuth = () => {
+    const [openModal, setOpenModal] = useState(false);
     const [userInfo, setUserInfo] = useState(null)
     const [user, setUser] = useState(null)
     const [userId, setUserId] = useState(null)
@@ -68,13 +69,14 @@ const useProvideAuth = () => {
             setErrors([])
             setLoading(true)
             const responseSignUp = await signUp(signUpData)
-            setUser(responseSignUp)
+            setOpenModal(true)
+            console.log(responseSignUp, "=======> Success Sign Up <=======");
             setLoading(false)
         } catch (error) {
             setErrors(error)
         }
-        
-       
+
+
     }
 
     const signOut = async () => {
@@ -92,7 +94,7 @@ const useProvideAuth = () => {
     }
 
     return {
-        handleSignUp, handleLogin, userId, user, userInfo, signOut, signUp, errors, loading
+        openModal, setOpenModal, handleSignUp, handleLogin, userId, user, userInfo, signOut, signUp, errors, loading
     }
 
 

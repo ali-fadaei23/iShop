@@ -1,0 +1,14 @@
+.slick-arrow {
+  color: black;
+}
+
+.slick-next {
+  margin-right: 50px;
+  color: black;
+}
+
+.slick-prev {
+  margin-left: 50px;
+  display: flex;
+  z-index: 1;
+}
