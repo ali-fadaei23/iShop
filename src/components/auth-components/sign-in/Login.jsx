@@ -1,6 +1,8 @@
 import "./Login.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "../../../shared/auth/AuthContext";
 import { useNavigate } from "react-router-dom";
 import {
   Typography,
@@ -13,9 +15,7 @@ import {
   Grid,
   CircularProgress,
 } from "@mui/material";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useAuth } from "../../../shared/auth/AuthContext";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
 const Copyright = (props) => {
   return (

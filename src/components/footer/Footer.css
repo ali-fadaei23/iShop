@@ -1,9 +1,7 @@
 .footer-position {
-
   display: flex;
   z-index: 1;
 }
-
 
 .box-footer {
   width: 100%;
@@ -25,6 +23,7 @@
   text-decoration: none;
   color: inherit;
 }
+
 /* link developer */
 .MuiSvgIcon-root.github-icon {
   font-size: 80px;

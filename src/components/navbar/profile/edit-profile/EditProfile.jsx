@@ -1,5 +1,6 @@
 import "./EditProfile.css";
 import { useState } from "react";
+import { useAuth } from "../../../../shared/auth/AuthContext";
 import {
   Avatar,
   Typography,
@@ -18,8 +19,6 @@ import {
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import EditIcon from "@mui/icons-material/Edit";
-// import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import { useAuth } from "../../../../shared/auth/AuthContext";
 
 const EditProfile = () => {
   let auth = useAuth();
@@ -130,9 +129,7 @@ const EditProfile = () => {
               padding: "15px",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-              {/* <LockOutlinedIcon /> */}
-            </Avatar>
+            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }} />
             <Typography component="h1" variant="h5">
               Edit Profile
             </Typography>
@@ -162,8 +159,6 @@ const EditProfile = () => {
                     Last Name
                   </InputLabel>
                   <OutlinedInput
-                    // startAdornment={
-                    // }
                     value={lastName}
                     onChange={handleLastName}
                     id="outlined-adornment-lastname"
@@ -180,8 +175,6 @@ const EditProfile = () => {
                     User Name
                   </InputLabel>
                   <OutlinedInput
-                    // startAdornment={
-                    // }
                     value={userName}
                     onChange={handleUserName}
                     id="outlined-adornment-username"
@@ -197,8 +190,6 @@ const EditProfile = () => {
                       Password
                     </InputLabel>
                     <OutlinedInput
-                      //   startAdornment={
-                      //   }
                       value={password}
                       onChange={handlePassword}
                       id="outlined-adornment-password"
@@ -228,8 +219,6 @@ const EditProfile = () => {
                     Email
                   </InputLabel>
                   <OutlinedInput
-                    // startAdornment={
-                    // }
                     value={email}
                     onChange={handleEmail}
                     id="outlined-adornment-email"
@@ -262,8 +251,6 @@ const EditProfile = () => {
                       City
                     </InputLabel>
                     <OutlinedInput
-                      // startAdornment={
-                      // }
                       value={city}
                       onChange={handleCity}
                       id="outlined-adornment-city"
@@ -278,8 +265,6 @@ const EditProfile = () => {
                       Street
                     </InputLabel>
                     <OutlinedInput
-                      // startAdornment={
-                      // }
                       value={street}
                       onChange={handleStreet}
                       id="outlined-adornment-street"
@@ -296,8 +281,6 @@ const EditProfile = () => {
                       Number
                     </InputLabel>
                     <OutlinedInput
-                      // startAdornment={
-                      // }
                       value={number}
                       onChange={handleNumber}
                       id="outlined-adornment-number"
@@ -312,8 +295,6 @@ const EditProfile = () => {
                       ZipCode
                     </InputLabel>
                     <OutlinedInput
-                      // startAdornment={
-                      // }
                       value={zipCode}
                       onChange={handleZipCode}
                       id="outlined-adornment-zip-code"

@@ -1,4 +1,11 @@
 import "./Navbar.css";
+import { useEffect, useContext } from "react";
+import { Context } from "../../shared/context/Context";
+import { Link } from "react-router-dom";
+import { useAuth } from "../../shared/auth/AuthContext";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import CategoryList from "../category/category-list/CategoryList";
+import ProfileList from "./profile/profile-list/ProfileList";
 import {
   AppBar,
   Box,
@@ -14,14 +21,6 @@ import {
 } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-// import AccountBoxIcon from "@mui/icons-material/AccountBox";
-import CategoryList from "../category/category-list/CategoryList";
-import { useEffect, useContext } from "react";
-import { Context } from "../../shared/context/Context";
-import { Link } from "react-router-dom";
-import ProfileList from "./profile/profile-list/ProfileList";
-import { useAuth } from "../../shared/auth/AuthContext";
 
 function ScrollTop({ children, window }) {
   const trigger = useScrollTrigger({
@@ -30,7 +29,6 @@ function ScrollTop({ children, window }) {
     threshold: 100,
   });
 
-  // const anchor = document.getElementById("back-to-top-anchor");
   const handleClick = (e) => {
     const anchor = (e.target.ownerDocument || document).querySelector(
       "#back-to-top-anchor"

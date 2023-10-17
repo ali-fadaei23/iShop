@@ -1,5 +1,7 @@
 import "./Slider.css";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import MenClothes from "../../assets/img/men-clothes.jpg";
 import WomenClothes from "../../assets/img/women-clothes.jpg";
 import Jewerly from "../../assets/img/jewerly.jpg";

@@ -1,10 +1,10 @@
+import "./ProfileList.css";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../../../shared/auth/AuthContext";
 import {
   Box,
-  //   List,
-  //   ListItem,
-  //   ListItemButton,
   ListItemIcon,
-  //   ListItemText,
   Divider,
   Avatar,
   Menu,
@@ -14,10 +14,7 @@ import {
 } from "@mui/material";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import Logout from "@mui/icons-material/Logout";
-import "./ProfileList.css";
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../../../shared/auth/AuthContext";
+
 const ProfileList = () => {
   let auth = useAuth();
   const navigate = useNavigate();
@@ -31,6 +28,7 @@ const ProfileList = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   //  handle btn Sign Out
   const handleSignOut = () => {
     auth.signOut();

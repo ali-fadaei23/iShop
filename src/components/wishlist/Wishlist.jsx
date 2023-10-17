@@ -1,20 +1,7 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  // Card,
-  // CardMedia,
-  // CardContent,
-  // CardActions,
-  // Button,
-  // ButtonGroup,
-} from "@mui/material";
-// import AddIcon from "@mui/icons-material/Add";
-// import TurnedInIcon from "@mui/icons-material/TurnedIn";
-// import RemoveIcon from "@mui/icons-material/Remove";
 import "./Wishlist.css";
-import { Context } from "../../shared/context/Context";
 import { useContext } from "react";
+import { Context } from "../../shared/context/Context";
+import { Box, Card, CardContent } from "@mui/material";
 import ProductItem from "../product-item/ProductItem";
 import EmptyWishlist from "../../assets/img/empty-wishlist.png";
 

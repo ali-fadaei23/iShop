@@ -1,4 +1,5 @@
 import "./AlertModal.css";
+import { forwardRef } from "react";
 import {
   Button,
   Dialog,
@@ -8,7 +9,6 @@ import {
   DialogTitle,
   Slide,
 } from "@mui/material";
-import { forwardRef } from "react";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;

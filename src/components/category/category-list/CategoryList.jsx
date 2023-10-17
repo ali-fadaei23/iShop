@@ -1,5 +1,5 @@
-import CategoryItem from "../category-item/CategoryItem";
 import "./CategoryList.css";
+import CategoryItem from "../category-item/CategoryItem";
 
 const CategoryList = ({ categories }) => {
   return (

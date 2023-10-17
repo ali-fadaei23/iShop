@@ -1,7 +1,9 @@
-import { useContext, useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import "./SingleProduct.css";
+import { useContext, useState, useEffect } from "react";
 import { Context } from "../../shared/context/Context";
+import { useParams } from "react-router-dom";
+import { useSnackbar } from "notistack";
+import { useAuth } from "../../shared/auth/AuthContext";
 import {
   ButtonGroup,
   Card,
@@ -24,8 +26,6 @@ import AddIcon from "@mui/icons-material/Add";
 import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { useSnackbar } from "notistack";
-import { useAuth } from "../../shared/auth/AuthContext";
 
 const reducer = (...arr) => {
   const res = [];
@@ -281,7 +281,6 @@ const SingleProduct = () => {
                   <div>
                     <Typography sx={{ margin: 1 }}>{count}</Typography>
                   </div>
-
                   <Button
                     id="increase"
                     aria-label="increase"

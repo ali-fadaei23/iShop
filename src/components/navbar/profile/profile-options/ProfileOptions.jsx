@@ -1,4 +1,10 @@
 import "./ProfileOptions.css";
+import { useContext, useState } from "react";
+import { Context } from "../../../../shared/context/Context";
+import PropTypes from "prop-types";
+import EditProfile from "../edit-profile/EditProfile";
+import Wishlist from "../../../wishlist/Wishlist";
+import OrderNotFound from "../../../../assets/img/empty-cart-yellow.png";
 import {
   Box,
   Tabs,
@@ -8,12 +14,6 @@ import {
   CardMedia,
   CardContent,
 } from "@mui/material";
-import PropTypes from "prop-types";
-import { useContext, useState } from "react";
-import EditProfile from "../edit-profile/EditProfile";
-import Wishlist from "../../../wishlist/Wishlist";
-import { Context } from "../../../../shared/context/Context";
-import OrderNotFound from "../../../../assets/img/empty-cart-yellow.png";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

@@ -15,6 +15,7 @@
   width: 100vw;
   height: 100vh;
 }
+
 /* wishlist */
 .btn-wishlist {
   display: flex;
@@ -23,6 +24,7 @@
   align-items: center;
   justify-content: flex-end;
 }
+
 /* Price */
 .MuiTypography-root.MuiTypography-h2.MuiTypography-gutterBottom {
   width: 100%;
@@ -34,12 +36,12 @@
 }
 
 /* Add and Remove */
-
 #reduce {
   width: 3px;
   border: 1px solid;
   border-radius: 50%;
 }
+
 #reduce:hover {
   width: 3px;
   border: 3px solid slateblue;

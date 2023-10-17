@@ -1,17 +1,14 @@
 import "./Home.css";
 import { useEffect, useState } from "react";
-import ProductList from "../product-list/ProductList";
-// import { Context } from "../../shared/context/Context";
-import { Typography, Backdrop, CircularProgress } from "@mui/material";
-import Slider from "../slider/Slider";
 import SliderShop from "../slider/Slider";
+import ProductList from "../product-list/ProductList";
+import { Typography, Backdrop, CircularProgress } from "@mui/material";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [loadingProduct, setLoadingProduct] = useState(true);
 
   useEffect(() => {
-    // setLoadingProduct(true);
     const sendRequest = async () => {
       const response = await fetch("https://fakestoreapi.com/products");
 
@@ -48,7 +45,6 @@ const Home = () => {
           <div className="product">
             <ProductList products={products} />
           </div>
-          {/* <Footer /> */}
         </div>
       )}
     </>

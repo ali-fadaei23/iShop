@@ -1,5 +1,5 @@
-import ProductItem from "../product-item/ProductItem";
 import "./ProductList.css";
+import ProductItem from "../product-item/ProductItem";
 import { SnackbarProvider } from "notistack";
 
 const ProductList = ({ products }) => {

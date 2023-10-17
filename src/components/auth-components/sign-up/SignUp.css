@@ -1,24 +1,24 @@
 .MuiGrid-root.MuiGrid-container.css-1jrn2fe-MuiGrid-root {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .MuiGrid-root.css-11lq3yg-MuiGrid-root {
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .MuiGrid-root.css-vj1n65-MuiGrid-root {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  /* FormControlLabel */
-  .MuiTypography-root.MuiFormControlLabel-label.css-ahj2mt-MuiTypography-root {
-    font-size: small;
-    font-weight: 400;
-  }
-  
+.MuiGrid-root.css-11lq3yg-MuiGrid-root {
+  display: flex;
+  justify-content: center;
+}
+
+.MuiGrid-root.css-vj1n65-MuiGrid-root {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FormControlLabel */
+.MuiTypography-root.MuiFormControlLabel-label.css-ahj2mt-MuiTypography-root {
+  font-size: small;
+  font-weight: 400;
+}

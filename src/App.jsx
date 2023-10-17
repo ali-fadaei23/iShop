@@ -1,13 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  // Redirect,
-  // useHistory,
-  // useLocation,
-} from "react-router-dom";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Home from "./components/main/Home";
 import Navbar from "./components/navbar/Navbar";
 import Category from "./components/category/category-pages/Category";
@@ -21,6 +14,7 @@ import Footer from "./components/footer/Footer";
 import PrivateRoutes from "./components/route/private-routes/PrivateRoutes";
 import Login from "./components/auth-components/sign-in/Login";
 import SignUp from "./components/auth-components/sign-up/SignUp";
+
 const App = () => {
   const [open, setOpen] = useState(false);
 
@@ -33,19 +27,16 @@ const App = () => {
   };
 
   return (
-    // <Router>
+    <Router>
       <>
-      <Navbar index handleOpenCart={handleOpen} />
+        <Navbar index handleOpenCart={handleOpen} />
         <Cart openDrawerOrder={open} handleCloseCart={handleClose} />
-
         <Routes>
           <Route path="/" element={<Home />} />
-
           <Route element={<PrivateRoutes />}>
             <Route path="profile/:userId" element={<Profile />} />
             <Route path="wishlist/:userId" element={<Wishlist />} />
           </Route>
-
           <Route
             path={`products/:productId`}
             element={
@@ -54,19 +45,16 @@ const App = () => {
               </SnackbarProvider>
             }
           />
-
           <Route
             path="electronics"
             element={<Category categoryPages={"electronics"} />}
           />
           <Route path="signup" element={<SignUp />} />
           <Route path="login" element={<Login />} />
-
           <Route
             path="jewelery"
             element={<Category categoryPages={"jewelery"} />}
           />
-
           <Route
             path="men's clothing"
             element={<Category categoryPages={"men's clothing"} />}
@@ -75,12 +63,11 @@ const App = () => {
             path="women's clothing"
             element={<Category categoryPages={"women's clothing"} />}
           />
-
           <Route path="*" element={<NotFound />} />
         </Routes>
-      <Footer />
+        <Footer />
       </>
-    // </Router>
+    </Router>
   );
 };
 

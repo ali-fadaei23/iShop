@@ -1,8 +1,7 @@
+import "./Category.css";
+import { useEffect, useState } from "react";
 import ProductList from "../../product-list/ProductList";
 import { Typography, Backdrop, CircularProgress } from "@mui/material";
-import "./Category.css";
-// import { Context } from "../../../shared/context/Context";
-import { useEffect, useState } from "react";
 
 const Category = ({ categoryPages }) => {
   const [category, setCategory] = useState([]);
@@ -10,7 +9,6 @@ const Category = ({ categoryPages }) => {
 
   useEffect(() => {
     const sendRequest = async () => {
-      // setLoadingCategory(true);
       const response = await fetch(
         `https://fakestoreapi.com/products/category/${categoryPages}`
       );
@@ -21,6 +19,7 @@ const Category = ({ categoryPages }) => {
     };
     sendRequest();
   }, [categoryPages, setLoadingCategory]);
+
   return (
     <>
       {loadingCategory ? (

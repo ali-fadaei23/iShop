@@ -1,9 +1,11 @@
 import "./SignUp.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import EditIcon from "@mui/icons-material/Edit";
-import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import { useState, forwardRef } from "react";
+import { IMaskInput } from "react-imask";
+import { useAuth } from "../../../shared/auth/AuthContext";
+import { useNavigate } from "react-router-dom";
+import AlertModal from "./alert-modal/AlertModal";
 import {
   Typography,
   Avatar,
@@ -20,12 +22,10 @@ import {
   Grid,
   CircularProgress,
 } from "@mui/material";
-import { useState, forwardRef } from "react";
-import { IMaskInput } from "react-imask";
-import { useAuth } from "../../../shared/auth/AuthContext";
+import EditIcon from "@mui/icons-material/Edit";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import AlertModal from "./alert-modal/AlertModal";
 
 const Copyright = (props) => {
   return (
@@ -222,8 +222,6 @@ const SignUp = () => {
                     Last Name
                   </InputLabel>
                   <OutlinedInput
-                    // startAdornment={
-                    // }
                     value={lastName}
                     onChange={handleLastName}
                     id="outlined-adornment-lastname"
@@ -240,8 +238,6 @@ const SignUp = () => {
                     User Name
                   </InputLabel>
                   <OutlinedInput
-                    // startAdornment={
-                    // }
                     value={userName}
                     onChange={handleUserName}
                     id="outlined-adornment-username"
@@ -257,8 +253,6 @@ const SignUp = () => {
                       Password
                     </InputLabel>
                     <OutlinedInput
-                      //   startAdornment={
-                      //   }
                       value={password}
                       onChange={handlePassword}
                       id="outlined-adornment-password"
@@ -288,8 +282,6 @@ const SignUp = () => {
                     Email
                   </InputLabel>
                   <OutlinedInput
-                    // startAdornment={
-                    // }
                     value={email}
                     onChange={handleEmail}
                     id="outlined-adornment-email"
@@ -323,8 +315,6 @@ const SignUp = () => {
                       City
                     </InputLabel>
                     <OutlinedInput
-                      // startAdornment={
-                      // }
                       value={city}
                       onChange={handleCity}
                       id="outlined-adornment-city"
@@ -339,8 +329,6 @@ const SignUp = () => {
                       Street
                     </InputLabel>
                     <OutlinedInput
-                      // startAdornment={
-                      // }
                       value={street}
                       onChange={handleStreet}
                       id="outlined-adornment-street"
@@ -357,8 +345,6 @@ const SignUp = () => {
                       Number
                     </InputLabel>
                     <OutlinedInput
-                      // startAdornment={
-                      // }
                       value={number}
                       onChange={handleNumber}
                       id="outlined-adornment-number"
@@ -373,8 +359,6 @@ const SignUp = () => {
                       ZipCode
                     </InputLabel>
                     <OutlinedInput
-                      // startAdornment={
-                      // }
                       value={zipCode}
                       onChange={handleZipCode}
                       id="outlined-adornment-zip-code"

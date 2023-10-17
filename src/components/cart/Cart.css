@@ -22,7 +22,6 @@
 }
 
 /* Cart Container */
-
 .MuiPaper-root.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
   width: 550px;
   z-index: 2;
@@ -43,7 +42,6 @@
 }
 
 /* Total Price */
-
 .MuiTypography-root.MuiTypography-h6.css-1bpcvbx-MuiTypography-root {
   font-weight: bold;
   font-size: x-large;
@@ -53,7 +51,6 @@
 }
 
 /* img */
-
 .MuiCardMedia-root.MuiCardMedia-media.MuiCardMedia-img.css-lo17od-MuiCardMedia-root.img-cart {
   margin-left: 20px;
 }

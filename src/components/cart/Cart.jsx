@@ -1,23 +1,19 @@
 import "./Cart.css";
+import { Context } from "../../shared/context/Context";
+import { useContext } from "react";
 import OrderNotFound from "../../assets/img/empty-cart-yellow.png";
 import {
-  // Box,
   Button,
   Drawer,
   Card,
   CardMedia,
   ButtonGroup,
   CardContent,
-  // Stepper,
-  // Step,
-  // StepLabel,
   Typography,
   CardActions,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { Context } from "../../shared/context/Context";
-import { useContext } from "react";
 
 const Cart = ({ openDrawerOrder, handleCloseCart }) => {
   const { cartItems, setCartItems } = useContext(Context);
@@ -74,6 +70,48 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
   //   setActiveStep(0);
   // };
 
+  //  <Box sx={{ width: "100%", margin: 3 }}>
+  //             <Stepper activeStep={activeStep}>
+  //               {steps.map((label, index) => {
+  //                 const stepProps = {};
+  //                 const labelProps = {};
+
+  //                 if (isStepSkipped(index)) {
+  //                   stepProps.completed = false;
+  //                 }
+  //                 return (
+  //                   <Step key={label} {...stepProps}>
+  //                     <StepLabel {...labelProps}>{label}</StepLabel>
+  //                   </Step>
+  //                 );
+  //               })}
+  //             </Stepper>
+  //             {activeStep === steps.length ? (
+  //               <>
+  //                 <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+  //                   <Box sx={{ flex: "1 1 auto" }} />
+  //                 </Box>
+  //               </>
+  //             ) : (
+  //               <>
+  //                 <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+  //                   <Button
+  //                     color="inherit"
+  //                     disabled={activeStep === 0}
+  //                     onClick={handleBack}
+  //                     sx={{ mr: 1 }}
+  //                   >
+  //                     Back
+  //                   </Button>
+  //                   <Box sx={{ flex: "1 1 auto" }} />
+  //                   <Button onClick={handleNext}>
+  //                     {activeStep === steps.length - 1 ? "Finish" : "Next"}
+  //                   </Button>
+  //                 </Box>
+  //               </>
+  //             )}
+  //           </Box>
+
   const removeAtCart = (id) => {
     setCartItems((prev) => {
       const state = prev.map((v) => ({ ...v }));
@@ -106,47 +144,6 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
     >
       {cartItems.length > 0 ? (
         <>
-          {/* <Box sx={{ width: "100%", margin: 3 }}>
-            <Stepper activeStep={activeStep}>
-              {steps.map((label, index) => {
-                const stepProps = {};
-                const labelProps = {};
-
-                if (isStepSkipped(index)) {
-                  stepProps.completed = false;
-                }
-                return (
-                  <Step key={label} {...stepProps}>
-                    <StepLabel {...labelProps}>{label}</StepLabel>
-                  </Step>
-                );
-              })}
-            </Stepper>
-            {activeStep === steps.length ? (
-              <>
-                <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-                  <Box sx={{ flex: "1 1 auto" }} />
-                </Box>
-              </>
-            ) : (
-              <>
-                <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-                  <Button
-                    color="inherit"
-                    disabled={activeStep === 0}
-                    onClick={handleBack}
-                    sx={{ mr: 1 }}
-                  >
-                    Back
-                  </Button>
-                  <Box sx={{ flex: "1 1 auto" }} />
-                  <Button onClick={handleNext}>
-                    {activeStep === steps.length - 1 ? "Finish" : "Next"}
-                  </Button>
-                </Box>
-              </>
-            )}
-          </Box> */}
           <div style={{ textAlign: "left", marginLeft: "20px" }}>
             <Typography
               gutterBottom
