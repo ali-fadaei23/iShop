@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import { ContextProvider } from "./shared/context/Context";
 import { ProvideAuth } from './shared/auth/AuthContext';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,9 +12,11 @@ root.render(
     <ContextProvider>
       <React.StrictMode>
 
-        <HashRouter >
+        <Router>
+
           <App />
-        </HashRouter>
+        </Router>
+
       </React.StrictMode>
     </ContextProvider>
   </ProvideAuth>
