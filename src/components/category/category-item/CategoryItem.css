@@ -1,16 +1,32 @@
-.MuiButtonBase-root.css-1q39md6-MuiButtonBase-root-MuiButton-root {
-  font-weight: 900;
-  color: cornflowerblue;
-  border-radius: 30px;
+.MuiButtonBase-root.nav-link:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  background: #000;
+  left: 45%;
+  height: 2px;
+  bottom: 0;
+  transition: all 0.3s;
+  opacity: 0.7;
 }
 
-.MuiButtonBase-root.css-1q39md6-MuiButtonBase-root-MuiButton-root:hover {
-  font-weight: 900;
-  background-color: cornflowerblue;
-  border-radius: 30px;
-  color: white;
+.MuiButtonBase-root.nav-link:hover:before {
+  width: 100%;
+  left: 0;
 }
 
-.btn-category {
+.MuiButtonBase-root.css-fedct1-MuiButtonBase-root-MuiButton-root.nav-link:hover {
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* .MuiButtonBase-root.btn-category-nav:hover {
+  padding: 6px;
+  width: 100%;
+  color: orange;
+  font-size: 1rem;
+} */
+
+.btn-categories {
   text-decoration: none;
 }

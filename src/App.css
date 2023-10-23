@@ -1,3 +1,9 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 #root {
   margin-top: auto;
 }
@@ -7,22 +13,9 @@ html {
   box-sizing: border-box;
 }
 
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 /* btn transform */
 .MuiButtonBase-root.MuiButton-root {
   text-transform: capitalize;
-}
-
-.main-app {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin: auto;
 }
 
 .product {
@@ -47,17 +40,14 @@ body {
   text-align: left;
 }
 
+/* 
 .MuiCardActions-root.MuiCardActions-spacing {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-}
-
-.MuiCardMedia-root.MuiCardMedia-media {
-  margin: 0 auto;
-}
+} */
 
 /* Loading */
 .MuiBackdrop-root.css-1ji7omv-MuiBackdrop-root {

@@ -1,14 +1,20 @@
-.MuiBox-root.css-pil7kl {
+/* .MuiBox-root.css-pil7kl {
   width: 300px;
   margin: 10px;
   display: flex;
   flex-direction: column;
   background-color: burlywood;
   border-radius: 5px;
-}
+} */
 
-.MuiStepper-root.MuiStepper-horizontal {
+/* .MuiStepper-root.MuiStepper-horizontal {
   margin-top: 5px;
+} */
+
+.order-img {
+  display: flex;
+  width: 20%;
+  height: 100%;
 }
 
 .img-empty-cart {
@@ -22,12 +28,12 @@
 }
 
 /* Cart Container */
-.MuiPaper-root.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+/* .MuiPaper-root.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
   width: 550px;
   z-index: 2;
-}
+} */
 
-.MuiCard-root.cart.css-2qzc5r-MuiPaper-root-MuiCard-root {
+/* .MuiCard-root.cart.css-2qzc5r-MuiPaper-root-MuiCard-root {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -35,22 +41,22 @@
   width: auto;
   margin: 0;
   margin-bottom: 20px;
-}
+} */
 
-.MuiCardMedia-root.MuiCardMedia-img.css-lo17od-MuiCardMedia-root {
+/* .MuiCardMedia-root.MuiCardMedia-img.css-lo17od-MuiCardMedia-root {
   width: 110px;
-}
+} */
 
 /* Total Price */
-.MuiTypography-root.MuiTypography-h6.css-1bpcvbx-MuiTypography-root {
+/* .MuiTypography-root.MuiTypography-h6.css-1bpcvbx-MuiTypography-root {
   font-weight: bold;
   font-size: x-large;
   margin: 0;
   margin-top: 15px;
   color: cornflowerblue;
-}
+} */
 
 /* img */
-.MuiCardMedia-root.MuiCardMedia-media.MuiCardMedia-img.css-lo17od-MuiCardMedia-root.img-cart {
+/* .MuiCardMedia-root.MuiCardMedia-media.MuiCardMedia-img.css-lo17od-MuiCardMedia-root.img-cart {
   margin-left: 20px;
-}
+} */

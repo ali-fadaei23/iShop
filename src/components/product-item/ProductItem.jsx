@@ -44,17 +44,44 @@ const ProductItem = ({ product }) => {
   };
 
   return (
-    <Card className="card card-product" sx={{ marginBottom: 20, width: 300 }}>
+    <Card
+      className="card card-product"
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "flex-start",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        margin: "10px",
+        marginBottom: "40px",
+        width: 300,
+      }}
+    >
       <CardActionArea>
         <Link className="link-products" to={`/products/${product.id}`}>
           <CardMedia
             component="img"
             alt="green iguana"
-            sx={{ width: 140, height: 180 }}
+            sx={{
+              width: 140,
+              height: 180,
+              objectFit: "contain",
+              marginTop: "10px",
+            }}
             image={product.image}
             title={product.title}
           />
-          <CardContent className="text">
+          <CardContent
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              textAlign: "justify",
+              justifyContent: "center",
+              width: "100%",
+            }}
+            className="text"
+          >
             <Typography
               gutterBottom
               variant="caption"
@@ -82,9 +109,20 @@ const ProductItem = ({ product }) => {
           </CardContent>
         </Link>
       </CardActionArea>
-      <CardActions>
+      <CardActions
+        sx={{ width: "100%", display: "flex", justifyContent: "center" }}
+      >
         <div className="btn-product">
-          <IconButton onClick={addToWishlist}>
+          <IconButton
+            sx={{
+              fontSize: "medium",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+            onClick={addToWishlist}
+          >
             {showBtn ? (
               <TurnedInIcon fontSize="small" />
             ) : (

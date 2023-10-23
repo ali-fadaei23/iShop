@@ -9,12 +9,21 @@ const Wishlist = () => {
   const { wishlist } = useContext(Context);
   return (
     <>
-      <Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "inherit",
+          justifyContent: "center",
+          flexWrap: "wrap",
+        }}
+      >
         <Card
           sx={{
             overflow: "auto",
             height: "550px",
             margin: "0 100px",
+            padding: "10px",
           }}
           className="card-wishlist"
         >

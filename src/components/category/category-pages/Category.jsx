@@ -24,10 +24,7 @@ const Category = ({ categoryPages }) => {
     <>
       {loadingCategory ? (
         <div>
-          <Backdrop
-            sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-            open={loadingCategory}
-          >
+          <Backdrop sx={{ color: "#fff" }} open={loadingCategory}>
             <CircularProgress color="inherit" />
           </Backdrop>
         </div>

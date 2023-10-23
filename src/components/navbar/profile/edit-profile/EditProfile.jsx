@@ -105,15 +105,6 @@ const EditProfile = () => {
       <Card>
         <Grid
           sx={{
-            backgroundImage:
-              "url(https://source.unsplash.com/random?wallpapers)",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <Grid
-          sx={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -141,10 +132,14 @@ const EditProfile = () => {
             >
               <div className="form-family">
                 <FormControl>
-                  <InputLabel htmlFor="outlined-adornment-firstname">
+                  <InputLabel
+                    className="label-input-edit"
+                    htmlFor="outlined-adornment-firstname"
+                  >
                     First Name
                   </InputLabel>
                   <OutlinedInput
+                    className="input-edit"
                     value={firstName}
                     onChange={handleFirstName}
                     id="outlined-adornment-firstname"
@@ -155,10 +150,14 @@ const EditProfile = () => {
                   />
                 </FormControl>
                 <FormControl>
-                  <InputLabel htmlFor="outlined-adornment-lastname">
+                  <InputLabel
+                    className="label-input-edit"
+                    htmlFor="outlined-adornment-lastname"
+                  >
                     Last Name
                   </InputLabel>
                   <OutlinedInput
+                    className="input-edit"
                     value={lastName}
                     onChange={handleLastName}
                     id="outlined-adornment-lastname"
@@ -171,10 +170,14 @@ const EditProfile = () => {
               </div>
               <div className="user-password">
                 <FormControl>
-                  <InputLabel htmlFor="outlined-adornment-username">
+                  <InputLabel
+                    className="label-input-edit"
+                    htmlFor="outlined-adornment-username"
+                  >
                     User Name
                   </InputLabel>
                   <OutlinedInput
+                    className="input-edit"
                     value={userName}
                     onChange={handleUserName}
                     id="outlined-adornment-username"
@@ -186,10 +189,14 @@ const EditProfile = () => {
                 </FormControl>
                 <FormControl>
                   <div className="password password-profile">
-                    <InputLabel htmlFor="outlined-adornment-password">
+                    <InputLabel
+                      className="label-input-edit"
+                      htmlFor="outlined-adornment-password"
+                    >
                       Password
                     </InputLabel>
                     <OutlinedInput
+                      className="input-edit"
                       value={password}
                       onChange={handlePassword}
                       id="outlined-adornment-password"
@@ -215,10 +222,14 @@ const EditProfile = () => {
               </div>
               <div style={{ marginTop: "25px" }}>
                 <FormControl>
-                  <InputLabel htmlFor="outlined-adornment-email">
+                  <InputLabel
+                    className="label-input-edit"
+                    htmlFor="outlined-adornment-email"
+                  >
                     Email
                   </InputLabel>
                   <OutlinedInput
+                    className="input-edit"
                     value={email}
                     onChange={handleEmail}
                     id="outlined-adornment-email"
@@ -230,10 +241,14 @@ const EditProfile = () => {
                   <FormHelperText> Example@gmail.com </FormHelperText>
                 </FormControl>
                 <FormControl>
-                  <InputLabel htmlFor="outlined-adornment-Phone-number">
+                  <InputLabel
+                    className="label-input-edit"
+                    htmlFor="outlined-adornment-Phone-number"
+                  >
                     Phone Number
                   </InputLabel>
                   <OutlinedInput
+                    className="input-edit"
                     value={phoneNumber}
                     onChange={handlePhoneNumber}
                     id="outlined-adornment-Phone-number"
@@ -247,10 +262,14 @@ const EditProfile = () => {
               <div className="location">
                 <div className="location-row">
                   <FormControl sx={{ width: "100%", marginTop: "25px" }}>
-                    <InputLabel htmlFor="outlined-adornment-city">
+                    <InputLabel
+                      className="label-input-edit"
+                      htmlFor="outlined-adornment-city"
+                    >
                       City
                     </InputLabel>
                     <OutlinedInput
+                      className="input-edit"
                       value={city}
                       onChange={handleCity}
                       id="outlined-adornment-city"
@@ -261,10 +280,14 @@ const EditProfile = () => {
                     />
                   </FormControl>
                   <FormControl sx={{ width: "100%", marginTop: "25px" }}>
-                    <InputLabel htmlFor="outlined-adornment-street">
+                    <InputLabel
+                      className="label-input-edit"
+                      htmlFor="outlined-adornment-street"
+                    >
                       Street
                     </InputLabel>
                     <OutlinedInput
+                      className="input-edit"
                       value={street}
                       onChange={handleStreet}
                       id="outlined-adornment-street"
@@ -277,10 +300,14 @@ const EditProfile = () => {
                 </div>
                 <div className="location-row">
                   <FormControl sx={{ width: "100%", marginTop: "25px" }}>
-                    <InputLabel htmlFor="outlined-adornment-number">
+                    <InputLabel
+                      className="label-input-edit"
+                      htmlFor="outlined-adornment-number"
+                    >
                       Number
                     </InputLabel>
                     <OutlinedInput
+                      className="input-edit"
                       value={number}
                       onChange={handleNumber}
                       id="outlined-adornment-number"
@@ -291,10 +318,14 @@ const EditProfile = () => {
                     />
                   </FormControl>
                   <FormControl sx={{ width: "100%", marginTop: "25px" }}>
-                    <InputLabel htmlFor="outlined-adornment-zip-code">
+                    <InputLabel
+                      className="label-input-edit"
+                      htmlFor="outlined-adornment-zip-code"
+                    >
                       ZipCode
                     </InputLabel>
                     <OutlinedInput
+                      className="input-edit"
                       value={zipCode}
                       onChange={handleZipCode}
                       id="outlined-adornment-zip-code"
@@ -310,7 +341,12 @@ const EditProfile = () => {
                 type="submit"
                 variant="contained"
                 fullWidth
-                sx={{ mt: 3, mb: 2 }}
+                sx={{
+                  mt: 3,
+                  mb: 2,
+                  fontWeight: "bold",
+                  fontSize: "small",
+                }}
                 disabled={auth.loading}
                 startIcon={<EditIcon fontSize="small" />}
               >

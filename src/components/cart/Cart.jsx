@@ -148,7 +148,13 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
             <Typography
               gutterBottom
               variant="h6"
-              sx={{ color: "tomato", marginTop: 5 }}
+              sx={{
+                fontWeight: "bold",
+                fontSize: "x-large",
+                margin: 0,
+                marginTop: "15px",
+                color: "cornflowerblue",
+              }}
               component="div"
             >
               Order Items: {totalItems}
@@ -156,7 +162,13 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
             <Typography
               gutterBottom
               variant="h6"
-              sx={{ color: "tomato", marginTop: 5 }}
+              sx={{
+                fontWeight: "bold",
+                fontSize: "x-large",
+                margin: 0,
+                marginTop: "15px",
+                color: "cornflowerblue",
+              }}
               component="div"
             >
               Total Price: {totalPrice + "$"}
@@ -166,31 +178,57 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
             {cartItems.map((item, index) => {
               return (
                 <div key={index} style={{ margin: "0 15px" }}>
-                  <Card className="cart" sx={{ marginBottom: 20, width: 300 }}>
-                    <CardMedia
-                      className="img-cart"
-                      component="img"
-                      alt="green iguana"
-                      sx={{ width: 200 }}
-                      image={item.image}
-                      title={item.title}
-                    />
-                    <CardContent className="text">
-                      <Typography
-                        gutterBottom
-                        variant="caption"
-                        sx={{ color: "darkblue" }}
-                        component="div"
-                      >
-                        Category: {item.category}
-                      </Typography>
+                  <Card
+                    className="cart"
+                    sx={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                      justifyContent: "flex-start",
+                      flexWrap: "nowrap",
+                      width: "500px",
+                      height: "110px",
+                      margin: 0,
+                      marginBottom: "20px",
+                    }}
+                  >
+                    <div className="order-img">
+                      <CardMedia
+                        className="img-cart"
+                        component="img"
+                        alt="green iguana"
+                        sx={{
+                          objectFit: "contain",
+                          padding: "10px",
+                          width: "110px",
+                        }}
+                        image={item.image}
+                        title={item.title}
+                      />
+                    </div>
+                    <CardContent
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "flex-start",
+                        textAlign: "left",
+                        height: "100%",
+                        width: "100%",
+                        justifyContent: "center",
+                      }}
+                      className="text"
+                    >
                       <Typography
                         gutterBottom
                         variant="body1"
-                        sx={{ color: "darkblue" }}
+                        sx={{
+                          color: "darkblue",
+                          fontSize: "x-small",
+                          fontWeight: "bold",
+                        }}
                         component="div"
                       >
-                        Title: {item.title}
+                        {item.title}
                       </Typography>
                       {item.category === "electronics" ? (
                         ""
@@ -198,7 +236,11 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                         <Typography
                           gutterBottom
                           variant="body1"
-                          sx={{ color: "darkblue" }}
+                          sx={{
+                            color: "darkblue",
+                            fontSize: "x-small",
+                            fontWeight: "bold",
+                          }}
                           component="div"
                         >
                           Size: {item.size}
@@ -207,24 +249,31 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
 
                       <Typography
                         gutterBottom
-                        variant="body1"
-                        sx={{ color: "darkblue" }}
-                        component="div"
-                      >
-                        Count: {item.num}
-                      </Typography>
-
-                      <Typography
-                        gutterBottom
                         variant="h6"
-                        sx={{ color: "tomato", marginTop: 5 }}
+                        sx={{
+                          color: "cornflowerblue",
+                          fontSize: "medium",
+                          fontWeight: "bold",
+                          margin: 0,
+                        }}
                         component="div"
                       >
-                        Price: {item.price + " $"}
+                        {item.price + " $"}
                       </Typography>
                     </CardContent>
-                    <CardActions>
-                      <ButtonGroup className="btn-add-remove">
+                    <CardActions
+                      sx={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "flex-end",
+                      }}
+                    >
+                      <ButtonGroup
+                        sx={{ display: "flex", alignItems: " center" }}
+                        className="btn-add-remove"
+                      >
                         <Button
                           id="reduce"
                           aria-label="reduce"

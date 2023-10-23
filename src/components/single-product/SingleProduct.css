@@ -1,11 +1,11 @@
 /* card */
-.MuiPaper-root.MuiPaper-rounded.css-1y5u69t-MuiPaper-root-MuiCard-root {
+/* .MuiPaper-root.MuiPaper-rounded.css-1y5u69t-MuiPaper-root-MuiCard-root {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 70%;
-}
+} */
 
 .container-card {
   display: flex;
@@ -14,6 +14,31 @@
   justify-content: center;
   width: 100vw;
   height: 100vh;
+  margin-top: 30px;
+}
+
+.datail-img {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 220px;
+}
+
+.detail-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  padding: 15px;
+}
+
+.description {
+  margin: 20px 0;
+}
+
+.rating-container {
 }
 
 /* wishlist */
@@ -26,54 +51,73 @@
 }
 
 /* Price */
-.MuiTypography-root.MuiTypography-h2.MuiTypography-gutterBottom {
+/* .MuiTypography-root.MuiTypography-h2.MuiTypography-gutterBottom {
   width: 100%;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   font-weight: bold;
-}
+} */
 
 /* Add and Remove */
 #reduce {
-  width: 3px;
   border: 1px solid;
   border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  padding: 0;
 }
 
 #reduce:hover {
-  width: 3px;
+  /* width: 30px; */
+  /* height: 30px;
+  min-height: 30px; */
+  /* min-width: 30px; */
   border: 3px solid slateblue;
   border-radius: 50%;
   color: darkslateblue;
+  padding: 0;
 }
 
 #increase {
-  width: 3px;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
   border: 1px solid;
   border-radius: 50%;
+  padding: 0;
 }
 
 #increase:hover {
   color: darkslateblue;
   border: 3px solid slateblue;
   border-radius: 50%;
+  padding: 0;
+  /* width: 30px; */
+  /* height: 30px;
+  min-height: 30px; */
+  /* min-width: 30px; */
 }
 
 .btn-product {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   width: 50%;
+  height: 100%;
+  margin-right: 10px;
 }
 
-.btn-add-remove {
+/* .btn-add-remove {
   font-size: small;
-}
+} */
 
-.btn-add.css-sghohy-MuiButtonBase-root-MuiButton-root {
+/* .btn-add.css-sghohy-MuiButtonBase-root-MuiButton-root {
   background-color: slateblue;
   font-weight: 900;
   text-align: center;
@@ -81,7 +125,7 @@
   width: 100px;
   height: 40px;
   overflow: hidden;
-}
+} */
 
 .rating {
   display: flex;
@@ -90,13 +134,13 @@
   justify-content: center;
 }
 
-.MuiTypography-root.rate-text {
+/* .MuiTypography-root.rate-text {
   margin-left: 10px;
-}
+} */
 
-.MuiTypography-root.count {
+/* .MuiTypography-root.count {
   margin-left: 5px;
-}
+} */
 
 .MuiTypography-root.rate {
   font-weight: 900;

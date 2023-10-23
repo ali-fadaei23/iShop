@@ -6,13 +6,21 @@ const CategoryItem = ({ category }) => {
   return (
     <>
       <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-        <Link to={category} className="btn btn-category">
+        <Link to={category} className="btn btn-categories">
           <Button
+            className="btn-category-nav nav-link"
             key={category}
             sx={{
-              my: 2,
-              color: "white",
-              display: "block",
+              textAlign: "center",
+              display: "inline-block",
+              cursor: "pointer",
+              position: "relative",
+              overflow: "hidden",
+              padding: "6px",
+              width: "100%",
+              color: "black",
+              fontSize: "1rem",
+              backgroundColor: "transparent",
             }}
           >
             {category}

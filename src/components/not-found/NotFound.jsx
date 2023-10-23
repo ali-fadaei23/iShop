@@ -12,7 +12,9 @@ const NotFound = () => {
           alt="Not Found Page"
           loading="lazy"
         />
-        <Typography>Oops,we can't find the page you'r looking for!</Typography>
+        <Typography sx={{ fontSize: "x-large", color: "darkslateblue" }}>
+          Oops,we can't find the page you'r looking for!
+        </Typography>
       </div>
     </>
   );

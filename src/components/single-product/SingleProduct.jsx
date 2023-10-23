@@ -126,16 +126,23 @@ const SingleProduct = () => {
     <>
       {loading ? (
         <div>
-          <Backdrop
-            sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-            open={loading}
-          >
+          <Backdrop sx={{ color: "#fff" }} open={loading}>
             <CircularProgress color="inherit" />
           </Backdrop>
         </div>
       ) : (
         <div className="container-card">
-          <Card className="card card-product" sx={{ marginBottom: 20 }}>
+          <Card
+            className="card card-product"
+            sx={{
+              marginBottom: 5,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column",
+              width: "70%",
+            }}
+          >
             <div className="btn-wishlist">
               <IconButton onClick={addToWishlist}>
                 {showBtn ? (
@@ -151,7 +158,11 @@ const SingleProduct = () => {
                   <CardMedia
                     component="img"
                     alt="green iguana"
-                    sx={{ width: 200, height: 240 }}
+                    sx={{
+                      objectFit: "contain",
+                      padding: "10px",
+                      width: "220px",
+                    }}
                     image={singleProduct.image}
                     title={singleProduct.title}
                   />
@@ -168,14 +179,20 @@ const SingleProduct = () => {
                   <Typography
                     gutterBottom
                     variant="body1"
-                    sx={{ color: "darkblue" }}
+                    sx={{
+                      fontSize: "large",
+                      fontWeight: "bold",
+                      color: "royalblue",
+                    }}
                     component="div"
                   >
                     {singleProduct.title}
                   </Typography>
                   {singleProduct.category === "electronics" ? null : (
                     <div>
-                      <FormControl sx={{ m: 1, minWidth: 120 }}>
+                      <FormControl
+                        sx={{ minWidth: 120, marginLeft: 0, marginTop: "30px" }}
+                      >
                         <>
                           <InputLabel id="demo-simple-select-helper-label">
                             Size
@@ -199,61 +216,92 @@ const SingleProduct = () => {
                   )}
                 </div>
               </div>
-
-              <Typography variant="body2" color="text.secondary">
-                {singleProduct.description}
-              </Typography>
-              <Typography
-                gutterBottom
-                variant="caption"
-                sx={{ color: "CaptionText" }}
-                component="div"
-              >
-                Rating:
-              </Typography>
-
-              <div className="rating">
-                <Stack spacing={1}>
-                  <Rating
-                    name="half-rating-read"
-                    value={
-                      singleProduct.rating === undefined
-                        ? 0
-                        : singleProduct.rating["rate"]
-                    }
-                    precision={0.1}
-                    readOnly
-                  />
-                </Stack>
-                <Typography
-                  className="rate rate-text"
-                  gutterBottom
-                  sx={{ color: "CaptionText" }}
-                  component="div"
-                >
-                  {singleProduct.rating === undefined
-                    ? 0
-                    : singleProduct.rating["rate"]}
-                </Typography>
-                <Typography
-                  className="rate count"
-                  gutterBottom
-                  sx={{ color: "CaptionText" }}
-                  component="div"
-                >
-                  ({" "}
-                  {singleProduct.rating === undefined
-                    ? 0
-                    : singleProduct.rating["count"]}
-                  {" user "})
+              <div className="description">
+                <Typography variant="body2" color="text.secondary">
+                  {singleProduct.description}
                 </Typography>
               </div>
+              <div className="rating-container">
+                <Typography
+                  gutterBottom
+                  sx={{
+                    fontWeight: "bold",
+                    fontSize: "small",
+                    color: "royalblue",
+                  }}
+                  component="div"
+                >
+                  Rating:
+                </Typography>
+
+                <div className="rating">
+                  <Stack spacing={1}>
+                    <Rating
+                      name="half-rating-read"
+                      value={
+                        singleProduct.rating === undefined
+                          ? 0
+                          : singleProduct.rating["rate"]
+                      }
+                      precision={0.1}
+                      readOnly
+                    />
+                  </Stack>
+                  <Typography
+                    className="rate rate-text"
+                    gutterBottom
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "small",
+                      color: "royalblue",
+                      marginLeft: "10px",
+                    }}
+                    component="div"
+                  >
+                    {singleProduct.rating === undefined
+                      ? 0
+                      : singleProduct.rating["rate"]}
+                  </Typography>
+                  <Typography
+                    className="rate count"
+                    gutterBottom
+                    sx={{
+                      marginLeft: "5px",
+                      fontWeight: "bold",
+                      fontSize: "small",
+                      color: "royalblue",
+                    }}
+                    component="div"
+                  >
+                    ({" "}
+                    {singleProduct.rating === undefined
+                      ? 0
+                      : singleProduct.rating["count"]}
+                    {" user "})
+                  </Typography>
+                </div>
+              </div>
             </CardContent>
-            <CardActions>
+            <CardActions
+              sx={{
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
               <Typography
                 gutterBottom
                 variant="h2"
-                sx={{ color: "tomato" }}
+                sx={{
+                  color: "royalblue",
+                  width: "100%",
+                  margin: 0,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                  fontWeight: "bold",
+                }}
                 component="span"
               >
                 {"$ " + singleProduct.price}
@@ -261,6 +309,15 @@ const SingleProduct = () => {
               {count <= 0 ? (
                 <div className="btn-product">
                   <Button
+                    sx={{
+                      backgroundColor: "slateblue",
+                      fontWeight: "900",
+                      textAlign: "center",
+                      fontSize: "x-small",
+                      width: "100px",
+                      height: "40px",
+                      overflow: "hidden",
+                    }}
                     className="btn-add"
                     variant="contained"
                     startIcon={<AddIcon fontSize="small" />}
@@ -270,7 +327,14 @@ const SingleProduct = () => {
                   </Button>
                 </div>
               ) : (
-                <ButtonGroup className="btn-add-remove">
+                <ButtonGroup
+                  sx={{
+                    fontSize: "small",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                  className="btn-add-remove"
+                >
                   <Button
                     id="reduce"
                     aria-label="reduce"

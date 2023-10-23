@@ -1,5 +1,5 @@
 import "./SignUp.css";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import PropTypes from "prop-types";
 import { useState, forwardRef } from "react";
 import { IMaskInput } from "react-imask";
@@ -44,8 +44,6 @@ const Copyright = (props) => {
     </Typography>
   );
 };
-
-const defaultTheme = createTheme();
 
 const SignUp = () => {
   let navigate = useNavigate();
@@ -167,7 +165,7 @@ const SignUp = () => {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider>
       <Grid container>
         <AlertModal open={auth.openModal} close={handleCloseModal} />
         <Grid

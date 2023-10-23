@@ -80,7 +80,7 @@ const ProfileOptions = () => {
         value={value}
         onChange={handleChangeTab}
         aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: "divider" }}
+        sx={{ borderRight: 1, borderColor: "divider", height: "100%" }}
       >
         <Tab label="Profile" {...a11yProps(0)} />
         <Tab label="Wishlist" {...a11yProps(1)} />

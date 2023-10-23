@@ -23,10 +23,7 @@ const Home = () => {
     <>
       {loadingProduct ? (
         <div>
-          <Backdrop
-            sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-            open={loadingProduct}
-          >
+          <Backdrop sx={{ color: "#fff" }} open={loadingProduct}>
             <CircularProgress color="inherit" />
           </Backdrop>
         </div>

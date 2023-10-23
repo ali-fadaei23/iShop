@@ -5,10 +5,21 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 
 const Footer = () => {
   return (
-    <div className="box footer-position">
+    <div className="box">
       <div className="box-footer">
-        <Container maxWidth="sm">
-          <Typography variant="body1">
+        <Container
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-end",
+            justifyContent: "center",
+          }}
+          maxWidth="sm"
+        >
+          <Typography
+            sx={{ fontSize: "x-large", color: "royalblue", fontWeight: "bold" }}
+            variant="body1"
+          >
             Designed by ali hosseiny fadaei.{" "}
             <Link className="github" to={"https://github.com/ali-fadaei23"}>
               <GitHubIcon className="github-icon" />

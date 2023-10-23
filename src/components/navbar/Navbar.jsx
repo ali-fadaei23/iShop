@@ -21,6 +21,7 @@ import {
 } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
+import Logo from "../../assets/img/logo.png";
 
 function ScrollTop({ children, window }) {
   const trigger = useScrollTrigger({
@@ -96,29 +97,35 @@ const Navbar = ({ handleOpenCart }, props) => {
         <AppBar
           className="navbar"
           color="inherit"
-          sx={{ display: "flex", alignItems: "center" }}
+          sx={{ display: "flex", alignItems: "center", zIndex: 1 }}
         >
           <Toolbar sx={{ width: "100%" }}>
-            <Link to={"/"} title="Home">
-              <IconButton size="large">
-                <LocalMallIcon fontSize="30px" className="icon" />
-              </IconButton>
-            </Link>
-            <Badge
-              color="secondary"
-              badgeContent={cartItems.length}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-            >
-              <IconButton aria-label="cart" onClick={handleOpenCart}>
-                <ShoppingCartIcon className="icon" />
-              </IconButton>
-            </Badge>
+            <div className="container-main-logo">
+              <Link to={"/"} title="Home">
+                {/* <LocalMallIcon fontSize="30px" className="icon" /> */}
+                <img src={Logo} alt="Logo" className="logo" />
+              </Link>
+            </div>
             <div className="categories">
               <CategoryList categories={categoryItem} />
             </div>
+            {cartItems.length > 0 ? (
+              <Badge
+                color="secondary"
+                badgeContent={cartItems.length}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+              >
+                <IconButton aria-label="cart" onClick={handleOpenCart}>
+                  <ShoppingCartIcon
+                    sx={{ color: "cornflowerblue" }}
+                    className="icon"
+                  />
+                </IconButton>
+              </Badge>
+            ) : null}
             {auth.user ? (
               <ProfileList />
             ) : (
@@ -127,9 +134,16 @@ const Navbar = ({ handleOpenCart }, props) => {
                   <Button
                     className="btn-login"
                     sx={{
-                      my: 2,
-                      color: "white",
-                      display: "block",
+                      textAlign: "center",
+                      display: "inline-block",
+                      cursor: "pointer",
+                      position: "relative",
+                      overflow: "hidden",
+                      padding: "6px",
+                      width: "100%",
+                      color: "black",
+                      fontSize: "1rem",
+                      backgroundColor: "transparent",
                     }}
                   >
                     Sign In
