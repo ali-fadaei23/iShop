@@ -1,12 +1,9 @@
-/* .MuiPaper-root.navbar {
-  z-index: 1;
-} */
 /* login btn */
 .MuiButtonBase-root.btn-login:before {
   content: "";
   position: absolute;
   width: 0;
-  background: #000;
+  background: #cc8b2b;
   left: 45%;
   height: 2px;
   bottom: 0;
@@ -19,7 +16,7 @@
   left: 0;
 }
 
-.MuiButtonBase-root.css-fedct1-MuiButtonBase-root-MuiButton-root.btn-login:hover {
+.MuiButtonBase-root.btn-login:hover {
   background-color: transparent;
   border-radius: 0;
 }

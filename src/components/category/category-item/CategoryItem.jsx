@@ -18,7 +18,7 @@ const CategoryItem = ({ category }) => {
               overflow: "hidden",
               padding: "6px",
               width: "100%",
-              color: "black",
+              color: "#202020",
               fontSize: "1rem",
               backgroundColor: "transparent",
             }}

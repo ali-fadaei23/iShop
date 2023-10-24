@@ -103,7 +103,7 @@
   /* min-width: 30px; */
 }
 
-.btn-product {
+/* .btn-product {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -111,7 +111,7 @@
   width: 50%;
   height: 100%;
   margin-right: 10px;
-}
+} */
 
 /* .btn-add-remove {
   font-size: small;

@@ -17,7 +17,7 @@ const Footer = () => {
           maxWidth="sm"
         >
           <Typography
-            sx={{ fontSize: "x-large", color: "royalblue", fontWeight: "bold" }}
+            sx={{ fontSize: "x-large", color: "#202020", fontWeight: "bold" }}
             variant="body1"
           >
             Designed by ali hosseiny fadaei.{" "}
@@ -36,9 +36,9 @@ export const Copyright = () => {
   return (
     <Typography variant="body2" color="text.secondary">
       {"Copyright © "}
-      Your Website
+      Shopping Site
       <Link className="link-site" to={"/"}>
-        RZR
+        iShop
       </Link>
       {new Date().getFullYear()}
       {"."}

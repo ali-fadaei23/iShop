@@ -20,7 +20,6 @@ import {
   Button,
 } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import LocalMallIcon from "@mui/icons-material/LocalMall";
 import Logo from "../../assets/img/logo.png";
 
 function ScrollTop({ children, window }) {
@@ -141,7 +140,7 @@ const Navbar = ({ handleOpenCart }, props) => {
                       overflow: "hidden",
                       padding: "6px",
                       width: "100%",
-                      color: "black",
+                      color: "#202020",
                       fontSize: "1rem",
                       backgroundColor: "transparent",
                     }}

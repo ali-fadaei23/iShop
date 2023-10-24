@@ -44,12 +44,13 @@
 } */
 
 .MuiSvgIcon-root.github-icon {
-  color: royalblue;
-  font-size: 100px;
+  color: #202020;
+
+  font-size: 130px;
 }
 
 .github-icon:hover {
-  color: indigo;
+  color: #000;
 }
 
 .link-site {
@@ -58,11 +59,11 @@
   color: initial;
   margin: 0 10px;
   font-weight: bold;
-  color: royalblue;
+  color: #202020;
 }
 
 .link-site:hover {
-  color: indigo;
+  color: #000;
   text-decoration: none;
   font-size: larger;
   margin: 0 10px;

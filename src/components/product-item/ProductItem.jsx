@@ -85,7 +85,7 @@ const ProductItem = ({ product }) => {
             <Typography
               gutterBottom
               variant="caption"
-              sx={{ color: "CaptionText" }}
+              sx={{ color: "#C02819" }}
               component="div"
             >
               {product.category}
@@ -93,7 +93,7 @@ const ProductItem = ({ product }) => {
             <Typography
               gutterBottom
               variant="body1"
-              sx={{ color: "darkblue" }}
+              sx={{ color: "#202020" }}
               component="div"
             >
               {product.title}
@@ -101,7 +101,12 @@ const ProductItem = ({ product }) => {
             <Typography
               gutterBottom
               variant="caption"
-              sx={{ color: "tomato", marginTop: 1 }}
+              sx={{
+                color: "#fff",
+                backgroundColor: "#202020",
+                padding: " 2px 7px",
+                borderRadius: "35px",
+              }}
               component="div"
             >
               {"$ " + product.price}
@@ -112,7 +117,18 @@ const ProductItem = ({ product }) => {
       <CardActions
         sx={{ width: "100%", display: "flex", justifyContent: "center" }}
       >
-        <div className="btn-product">
+        <button class="learn-more" onClick={addToWishlist}>
+          <span class="circle" aria-hidden="true">
+            {showBtn ? (
+              <TurnedInIcon className="icon wishlist" fontSize="small" />
+            ) : (
+              <TurnedInNotIcon className="icon wishlist" fontSize="small" />
+            )}
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+
+        {/* <div className="btn-product">
           <IconButton
             sx={{
               fontSize: "medium",
@@ -123,14 +139,9 @@ const ProductItem = ({ product }) => {
             }}
             onClick={addToWishlist}
           >
-            {showBtn ? (
-              <TurnedInIcon fontSize="small" />
-            ) : (
-              <TurnedInNotIcon fontSize="small" />
-            )}
             {" Wishlist"}
           </IconButton>
-        </div>
+        </div> */}
       </CardActions>
     </Card>
   );

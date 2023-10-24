@@ -28,9 +28,9 @@ html {
 }
 
 .MuiTypography-root.MuiTypography-h1 {
-  font-size: 110px;
+  font-size: 150px;
   font-weight: 900;
-  color: royalblue;
+  color: #cc8b2b;
 }
 
 .MuiCardContent-root.text {
