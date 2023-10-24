@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/iShop/static/css/main.acc1e3f7.css",
-    "main.js": "/iShop/static/js/main.40dbaab7.js",
+    "main.js": "/iShop/static/js/main.3ab935ac.js",
     "static/media/electronics.jpg": "/iShop/static/media/electronics.4186e554c7ec2785ec08.jpg",
     "static/media/jewerly.jpg": "/iShop/static/media/jewerly.300b4162375410685307.jpg",
     "static/media/men-clothes.jpg": "/iShop/static/media/men-clothes.2641aa71ba98506aa827.jpg",
@@ -16,10 +16,10 @@
     "static/media/slick.woff": "/iShop/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/iShop/index.html",
     "main.acc1e3f7.css.map": "/iShop/static/css/main.acc1e3f7.css.map",
-    "main.40dbaab7.js.map": "/iShop/static/js/main.40dbaab7.js.map"
+    "main.3ab935ac.js.map": "/iShop/static/js/main.3ab935ac.js.map"
   },
   "entrypoints": [
     "static/css/main.acc1e3f7.css",
-    "static/js/main.40dbaab7.js"
+    "static/js/main.3ab935ac.js"
   ]
 }
