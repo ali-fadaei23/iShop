@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import AlertModal from "./alert-modal/AlertModal";
 import {
   Typography,
-  Avatar,
   InputAdornment,
   TextField,
   FormHelperText,
@@ -15,33 +14,12 @@ import {
   InputLabel,
   OutlinedInput,
   IconButton,
-  Link,
   Box,
   Grid,
   CircularProgress,
 } from "@mui/material";
-import SignUpShopImage from "../../../assets/img/sign-up.png";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-
-const Copyright = (props) => {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-};
 
 const SignUp = () => {
   let navigate = useNavigate();

@@ -11,7 +11,6 @@ import {
   MenuItem,
   Tooltip,
   IconButton,
-  Typography,
 } from "@mui/material";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import Logout from "@mui/icons-material/Logout";

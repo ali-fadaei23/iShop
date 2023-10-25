@@ -13,7 +13,7 @@ import {
   CircularProgress,
 } from "@mui/material";
 import LoginShopImage from "../../../assets/img/login.png";
-import ShopImage from "../../../assets/img/alice.png";
+// import ShopImage from "../../../assets/img/alice.png";
 
 const Login = () => {
   let navigate = useNavigate();

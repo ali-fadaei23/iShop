@@ -2,7 +2,7 @@ import "./Home.css";
 import { useEffect, useState } from "react";
 import SliderShop from "../slider/Slider";
 import ProductList from "../product-list/ProductList";
-import { Typography, Backdrop, CircularProgress } from "@mui/material";
+import { Typography } from "@mui/material";
 
 const Home = () => {
   const [products, setProducts] = useState([]);

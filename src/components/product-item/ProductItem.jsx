@@ -7,7 +7,6 @@ import {
   CardMedia,
   CardActions,
   CardContent,
-  CardActionArea,
   Typography,
 } from "@mui/material";
 import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";

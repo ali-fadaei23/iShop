@@ -62,11 +62,11 @@ button.learn-more .circle {
   position: relative;
   display: flex;
   justify-content: center;
-  margin: 0;
   width: 3rem;
   height: 3rem;
   background: #282936;
   border-radius: 1.625rem;
+  margin: 5px 0 0 5px;
 }
 
 button.learn-more .circle .icon {
