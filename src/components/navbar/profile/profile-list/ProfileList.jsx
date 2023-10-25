@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import Logout from "@mui/icons-material/Logout";
+import AvatarIcon from "../../../../assets/img/avatar.png";
 
 const ProfileList = () => {
   let auth = useAuth();
@@ -43,7 +44,10 @@ const ProfileList = () => {
   return (
     <div>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
-        <Tooltip title="Account settings">
+        <Tooltip
+          sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+          title="Account settings"
+        >
           <IconButton
             onClick={handleClick}
             size="small"
@@ -52,10 +56,11 @@ const ProfileList = () => {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32, bgcolor: "steelblue" }}>
-              A
-            </Avatar>
+            <img width={48} height={48} src={AvatarIcon} alt="Avatar" />
           </IconButton>
+          {/* <div className="userinfo">
+            <Typography>{auth.userInfo.username}</Typography>
+          </div> */}
         </Tooltip>
       </Box>
       <Menu

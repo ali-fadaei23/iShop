@@ -49,10 +49,12 @@ button {
   font-size: inherit;
   font-family: inherit;
 }
+
 button.learn-more {
   width: 12rem;
   height: auto;
 }
+
 button.learn-more .circle {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: relative;
@@ -64,6 +66,7 @@ button.learn-more .circle {
   background: #282936;
   border-radius: 1.625rem;
 }
+
 button.learn-more .circle .icon {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
@@ -76,6 +79,7 @@ button.learn-more .circle .icon {
   justify-content: center;
   color: #fff;
 }
+
 button.learn-more:hover .circle .icon {
   transition: all 0.6s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
@@ -105,15 +109,13 @@ button.learn-more .button-text {
   text-align: center;
   text-transform: uppercase;
 }
+
 button:hover .circle {
   width: 100%;
   margin-right: auto;
   transition: all 0.4;
 }
-button:hover .circle .icon.arrow {
-  background: #fff;
-  transform: translate(1rem, 0);
-}
+
 button:hover .button-text {
   color: #fff;
 }

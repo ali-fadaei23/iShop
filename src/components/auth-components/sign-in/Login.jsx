@@ -5,8 +5,6 @@ import { useAuth } from "../../../shared/auth/AuthContext";
 import { useNavigate } from "react-router-dom";
 import {
   Typography,
-  Avatar,
-  Button,
   TextField,
   FormControlLabel,
   Checkbox,
@@ -14,20 +12,7 @@ import {
   Grid,
   CircularProgress,
 } from "@mui/material";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-
-const Copyright = (props) => {
-  return (
-    <Typography variant="body2" color="slateblue" align="center" {...props}>
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-};
+import LoginShopImage from "../../../assets/img/login.png";
 
 const Login = () => {
   let navigate = useNavigate();
@@ -55,7 +40,23 @@ const Login = () => {
   }, [auth.user, auth.loading, navigate]);
 
   return (
-    <Grid sx={{ display: "flex", justifyContent: "center" }} container>
+    <Grid
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+      container
+    >
+      <div className="container-shop">
+        <div className="container-shop-img">
+          <img
+            className="img-shop-login"
+            src={LoginShopImage}
+            alt="Login Shop"
+          />
+        </div>
+      </div>
       <Grid
         sx={{
           width: "50%",
@@ -74,10 +75,7 @@ const Login = () => {
             width: "50%",
           }}
         >
-          <Avatar sx={{ m: 1 }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography sx={{ fontSize: "60px" }} component="h1" variant="h5">
             Sign in
           </Typography>
           <Box
@@ -99,6 +97,7 @@ const Login = () => {
               name="username"
               autoComplete="User Name"
               autoFocus
+              sx={{ borderRadius: "30px" }}
             />
             <TextField
               size="small"
@@ -120,33 +119,33 @@ const Login = () => {
               }
               label="Remember me"
             />
-            <Button
-              type="submit"
-              variant="contained"
-              fullWidth
-              sx={{ mt: 3, mb: 2 }}
-              disabled={auth.loading}
-            >
-              Accept terms
-              {auth.loading && (
-                <CircularProgress
-                  size={24}
-                  sx={{
-                    position: "absolute",
-                  }}
-                />
-              )}
-            </Button>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <button
+                type="submit"
+                class="learn-more-login"
+                disabled={auth.loading}
+              >
+                <span class="circle-login" aria-hidden="true">
+                  {auth.loading && (
+                    <CircularProgress
+                      size={24}
+                      sx={{
+                        position: "absolute",
+                      }}
+                    />
+                  )}
+                </span>
+                <span class="button-text-login">Sign In</span>
+              </button>
+            </div>
 
             <Grid container>
-              <Grid item xs>
-                <Link to={"/login"}>Forgot password?</Link>
-              </Grid>
               <Grid item>
-                <Link to={"/signup"}>{"Don't have an account? Sign Up"}</Link>
+                <Link style={{ color: "#202020" }} to={"/signup"}>
+                  {"Don't have an account? Sign Up"}
+                </Link>
               </Grid>
             </Grid>
-            <Copyright sx={{ mt: 5 }} />
           </Box>
         </Box>
       </Grid>

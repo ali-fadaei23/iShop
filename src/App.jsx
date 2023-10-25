@@ -27,7 +27,7 @@ const App = () => {
   };
 
   return (
-    <Router>
+    <Router basename="/iShop">
       <>
         <Navbar index handleOpenCart={handleOpen} />
         <Cart openDrawerOrder={open} handleCloseCart={handleClose} />

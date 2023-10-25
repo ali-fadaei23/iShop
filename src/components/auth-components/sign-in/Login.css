@@ -1,29 +1,75 @@
-/* .MuiGrid-root.MuiGrid-container.css-1jrn2fe-MuiGrid-root {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
+.img-shop-login {
+  width: 400px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 20px;
+  margin-bottom: -275px;
+  padding: 10px;
+}
 
-/* .MuiGrid-root.css-11lq3yg-MuiGrid-root {
-  display: flex;
-  justify-content: center;
-} */
+.container-shop {
+  height: 100%;
+  width: 30%;
+}
 
-/* .MuiBox-root.css-1y8ugea {
-  width: 50%;
-  align-items: center;
-} */
+.container-shop-img {
+  position: relative;
+}
 
-/* .MuiGrid-root.css-vj1n65-MuiGrid-root {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
-/* FormControlLabel */
-/* .MuiTypography-root.MuiFormControlLabel-label.css-ahj2mt-MuiTypography-root {
+#username-label,
+#password-label {
   font-size: small;
   font-weight: 400;
-} */
+}
+
+.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-fullWidth.MuiInputBase-formControl.css-z416xi-MuiInputBase-root-MuiOutlinedInput-root {
+  border-radius: 30px;
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+button.learn-more-login {
+  width: 12rem;
+  height: auto;
+  margin: 10px 0;
+}
+
+button.learn-more-login .circle-login {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  height: 3rem;
+  background: #282936;
+  border-radius: 1.625rem;
+}
+
+button.learn-more-login .button-text-login {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
