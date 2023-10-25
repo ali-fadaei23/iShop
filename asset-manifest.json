@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/iShop/static/css/main.acc1e3f7.css",
-    "main.js": "/iShop/static/js/main.3ab935ac.js",
+    "main.css": "/iShop/static/css/main.1da3540b.css",
+    "main.js": "/iShop/static/js/main.3449142a.js",
     "static/media/electronics.jpg": "/iShop/static/media/electronics.4186e554c7ec2785ec08.jpg",
     "static/media/jewerly.jpg": "/iShop/static/media/jewerly.300b4162375410685307.jpg",
     "static/media/men-clothes.jpg": "/iShop/static/media/men-clothes.2641aa71ba98506aa827.jpg",
     "static/media/women-clothes.jpg": "/iShop/static/media/women-clothes.801b212119bd1b3397e3.jpg",
+    "static/media/login.png": "/iShop/static/media/login.d4e999404fb823c387e9.png",
     "static/media/FonartoLight-BWxv3.ttf": "/iShop/static/media/FonartoLight-BWxv3.c85b32557be66b7a338e.ttf",
     "static/media/404.png": "/iShop/static/media/404.716bf181616f0c401d55.png",
+    "static/media/avatar.png": "/iShop/static/media/avatar.58d1fbac469bf86f4175.png",
     "static/media/empty-cart-yellow.png": "/iShop/static/media/empty-cart-yellow.72e00edc7adc1466c1a7.png",
     "static/media/logo.png": "/iShop/static/media/logo.14561e6099b7e1af6688.png",
     "static/media/slick.svg": "/iShop/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -15,11 +17,11 @@
     "static/media/slick.ttf": "/iShop/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/iShop/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/iShop/index.html",
-    "main.acc1e3f7.css.map": "/iShop/static/css/main.acc1e3f7.css.map",
-    "main.3ab935ac.js.map": "/iShop/static/js/main.3ab935ac.js.map"
+    "main.1da3540b.css.map": "/iShop/static/css/main.1da3540b.css.map",
+    "main.3449142a.js.map": "/iShop/static/js/main.3449142a.js.map"
   },
   "entrypoints": [
-    "static/css/main.acc1e3f7.css",
-    "static/js/main.3ab935ac.js"
+    "static/css/main.1da3540b.css",
+    "static/js/main.3449142a.js"
   ]
 }
