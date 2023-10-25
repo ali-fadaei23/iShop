@@ -1,11 +1,12 @@
 .img-shop-login {
-  width: 400px;
+  width: 380px;
   position: absolute;
   bottom: 0;
   right: 0;
   margin-right: 20px;
-  margin-bottom: -275px;
-  padding: 10px;
+  margin-bottom: -280px;
+  padding: 20px;
+  padding-right: 0;
 }
 
 .container-shop {

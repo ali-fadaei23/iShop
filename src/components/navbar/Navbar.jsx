@@ -96,7 +96,12 @@ const Navbar = ({ handleOpenCart }, props) => {
         <AppBar
           className="navbar"
           color="inherit"
-          sx={{ display: "flex", alignItems: "center", zIndex: 1 }}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            zIndex: 1,
+            height: "70px",
+          }}
         >
           <Toolbar sx={{ width: "100%" }}>
             <div className="container-main-logo">

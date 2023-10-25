@@ -174,26 +174,22 @@ const SignUp = () => {
       <AlertModal open={auth.openModal} close={handleCloseModal} />
       <Grid
         sx={{
-          width: "100%",
+          width: "40%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          marginTop: "25px",
         }}
       >
         <Box
           sx={{
-            my: 8,
-            mx: 4,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            width: "100%",
+            width: "60%",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography sx={{ fontSize: "60px" }} component="h1" variant="h5">
             Sign Up
           </Typography>
           <Box
@@ -202,7 +198,7 @@ const SignUp = () => {
             onSubmit={handleSubmit}
             sx={{ mt: 1 }}
           >
-            <div className="form-family">
+            <div className="form-family-signup">
               <FormControl
                 sx={{ width: "245px", marginTop: "20px", marginRight: "15px" }}
               >
@@ -242,7 +238,7 @@ const SignUp = () => {
                 />
               </FormControl>
             </div>
-            <div className="user-password">
+            <div className="user-password-signup">
               <FormControl
                 sx={{ width: "245px", marginTop: "20px", marginRight: "15px" }}
               >
@@ -264,7 +260,7 @@ const SignUp = () => {
                 />
               </FormControl>
               <FormControl sx={{ width: "245px", marginTop: "20px" }}>
-                <div className="password password-profile">
+                <div className="password password-profile-signup">
                   <InputLabel
                     sx={{ top: "-5px", fontSize: "small", fontWeight: "400" }}
                     htmlFor="outlined-adornment-password"
@@ -296,7 +292,7 @@ const SignUp = () => {
                 </div>
               </FormControl>
             </div>
-            <div className="email-tel" style={{ marginTop: "20px" }}>
+            <div className="email-tel-signup" style={{ marginTop: "20px" }}>
               <FormControl
                 sx={{ width: "245px", marginTop: "10px", marginRight: "15px" }}
               >
@@ -335,8 +331,8 @@ const SignUp = () => {
                 />
               </FormControl>
             </div>
-            <div className="location">
-              <div className="location-row">
+            <div className="location-signup">
+              <div className="location-signup-row">
                 <FormControl
                   sx={{
                     width: "245px",
@@ -380,7 +376,7 @@ const SignUp = () => {
                   />
                 </FormControl>
               </div>
-              <div className="location-row">
+              <div className="location-signup-row">
                 <FormControl
                   sx={{
                     width: "245px",
@@ -444,34 +440,7 @@ const SignUp = () => {
                 <span class="button-text-sign-up">Sign In</span>
               </button>
             </div>
-            {/* <Button
-              type="submit"
-              variant="contained"
-              fullWidth
-              sx={{ mt: 3, mb: 2 }}
-              disabled={auth.loading}
-              startIcon={<EditIcon fontSize="small" />}
-            >
-              Sign Up
-              {auth.loading && (
-                <CircularProgress
-                  size={24}
-                  sx={{
-                    position: "absolute",
-                  }}
-                />
-              )}
-            </Button> */}
           </Box>
-
-          <Grid container>
-            <Grid item>
-              <Link href="login" variant="body2">
-                {"have an account? Login"}
-              </Link>
-            </Grid>
-          </Grid>
-          <Copyright sx={{ mt: 5 }} />
         </Box>
       </Grid>
       {/* <div className="container-shop-signup">

@@ -13,6 +13,7 @@ import {
   CircularProgress,
 } from "@mui/material";
 import LoginShopImage from "../../../assets/img/login.png";
+import ShopImage from "../../../assets/img/alice.png";
 
 const Login = () => {
   let navigate = useNavigate();
@@ -59,7 +60,7 @@ const Login = () => {
       </div>
       <Grid
         sx={{
-          width: "50%",
+          width: "40%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -72,7 +73,7 @@ const Login = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            width: "50%",
+            width: "60%",
           }}
         >
           <Typography sx={{ fontSize: "60px" }} component="h1" variant="h5">
@@ -139,7 +140,14 @@ const Login = () => {
               </button>
             </div>
 
-            <Grid container>
+            <Grid
+              sx={{
+                marginTop: "30px",
+                display: "flex",
+                justifyContent: "center;",
+              }}
+              container
+            >
               <Grid item>
                 <Link style={{ color: "#202020" }} to={"/signup"}>
                   {"Don't have an account? Sign Up"}

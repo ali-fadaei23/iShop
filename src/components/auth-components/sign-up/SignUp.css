@@ -12,42 +12,32 @@
   padding-right: 35px;
 }
 
-/* .form-family {
-  display: flex;
-  flex-direction: row;
-  width: 50%;
+/* .user-password-signup {
+  margin-top: 5px;
 }
 
-.user-password {
-  display: flex;
-  flex-direction: row;
-  width: 50%;
+.email-tel-signup {
+  margin-top: 5px;
 }
 
-.email-tel {
-  display: flex;
-  flex-direction: row;
-  width: 50%;
-}
 
-.location {
+ */
+.location-signup-row {
+  margin-top: 5px;
   display: flex;
   flex-direction: row;
-  width: 50%;
-} */
+}
 
 .img-shop-signup {
-  width: 400px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-right: 20px;
-  margin-bottom: -290px;
+  width: 330px;
+  margin-left: 40px;
+  margin-top: 25px;
 }
 
-.container-shop {
+.container-shop-signup {
   height: 100%;
   width: 30%;
+  margin-left: 100px;
 }
 
 .container-signup-img {

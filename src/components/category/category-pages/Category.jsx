@@ -23,10 +23,13 @@ const Category = ({ categoryPages }) => {
   return (
     <>
       {loadingCategory ? (
-        <div>
-          <Backdrop sx={{ color: "#fff" }} open={loadingCategory}>
-            <CircularProgress color="inherit" />
-          </Backdrop>
+        <div className="container-loading">
+          <div class="wrap">
+            <div class="loading">
+              <div class="bounceball"></div>
+              <div class="text">NOW LOADING</div>
+            </div>
+          </div>
         </div>
       ) : (
         <div className={`${categoryPages} category-container`}>

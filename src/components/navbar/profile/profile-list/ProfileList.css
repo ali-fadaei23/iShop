@@ -3,6 +3,10 @@
   color: inherit;
 }
 
+#account:hover {
+  background-color: transparent;
+}
+
 /* .MuiAvatar-root.MuiAvatar-circular {
   background-color: slateblue;
 } */
@@ -10,4 +14,17 @@
 .link-profile {
   text-decoration: none;
   color: inherit;
+}
+
+.label-account {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.userinfo {
+  height: 100%;
+  width: 100%;
 }

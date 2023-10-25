@@ -50,98 +50,82 @@ const ProductItem = ({ product }) => {
         flexDirection: "row",
         alignItems: "flex-start",
         flexWrap: "wrap",
-        justifyContent: "center",
+        justifyContent: "flex-start",
         margin: "10px",
         marginBottom: "40px",
         width: 300,
+        height: "auto",
       }}
     >
-      <CardActionArea>
-        <Link className="link-products" to={`/products/${product.id}`}>
-          <CardMedia
-            component="img"
-            alt="green iguana"
-            sx={{
-              width: 140,
-              height: 180,
-              objectFit: "contain",
-              marginTop: "10px",
-            }}
-            image={product.image}
-            title={product.title}
-          />
-          <CardContent
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              textAlign: "justify",
-              justifyContent: "center",
-              width: "100%",
-            }}
-            className="text"
+      <button class="learn-more" onClick={addToWishlist}>
+        <span class="circle" aria-hidden="true">
+          {showBtn ? (
+            <TurnedInIcon className="icon wishlist" fontSize="small" />
+          ) : (
+            <TurnedInNotIcon className="icon wishlist" fontSize="small" />
+          )}
+        </span>
+        {/* <span class="button-text">Wishlist</span> */}
+      </button>
+
+      <Link className="link-products" to={`/products/${product.id}`}>
+        <CardMedia
+          component="img"
+          alt="green iguana"
+          sx={{
+            width: 140,
+            height: 180,
+            objectFit: "contain",
+            marginTop: "10px",
+          }}
+          image={product.image}
+          title={product.title}
+        />
+        <CardContent
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            textAlign: "justify",
+            justifyContent: "center",
+            width: "100%",
+          }}
+          className="text"
+        >
+          <Typography
+            gutterBottom
+            variant="caption"
+            sx={{ color: "#C02819" }}
+            component="div"
           >
-            <Typography
-              gutterBottom
-              variant="caption"
-              sx={{ color: "#C02819" }}
-              component="div"
-            >
-              {product.category}
-            </Typography>
-            <Typography
-              gutterBottom
-              variant="body1"
-              sx={{ color: "#202020" }}
-              component="div"
-            >
-              {product.title}
-            </Typography>
-            <Typography
-              gutterBottom
-              variant="caption"
-              sx={{
-                color: "#fff",
-                backgroundColor: "#202020",
-                padding: " 2px 7px",
-                borderRadius: "35px",
-              }}
-              component="div"
-            >
-              {"$ " + product.price}
-            </Typography>
-          </CardContent>
-        </Link>
-      </CardActionArea>
+            {product.category}
+          </Typography>
+          <Typography
+            gutterBottom
+            variant="body1"
+            sx={{ color: "#202020" }}
+            component="div"
+          >
+            {product.title}
+          </Typography>
+          <Typography
+            gutterBottom
+            variant="caption"
+            sx={{
+              color: "#fff",
+              backgroundColor: "#202020",
+              padding: " 2px 7px",
+              borderRadius: "35px",
+            }}
+            component="div"
+          >
+            {"$ " + product.price}
+          </Typography>
+        </CardContent>
+      </Link>
       <CardActions
         sx={{ width: "100%", display: "flex", justifyContent: "center" }}
-      >
-        <button class="learn-more" onClick={addToWishlist}>
-          <span class="circle" aria-hidden="true">
-            {showBtn ? (
-              <TurnedInIcon className="icon wishlist" fontSize="small" />
-            ) : (
-              <TurnedInNotIcon className="icon wishlist" fontSize="small" />
-            )}
-          </span>
-          <span class="button-text">Learn More</span>
-        </button>
-
-        {/* <div className="btn-product">
-          <IconButton
-            sx={{
-              fontSize: "medium",
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "flex-end",
-            }}
-            onClick={addToWishlist}
-          >
-            {" Wishlist"}
-          </IconButton>
-        </div> */}
-      </CardActions>
+      ></CardActions>
     </Card>
   );
 };

@@ -11,6 +11,7 @@ import {
   MenuItem,
   Tooltip,
   IconButton,
+  Typography,
 } from "@mui/material";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import Logout from "@mui/icons-material/Logout";
@@ -42,27 +43,44 @@ const ProfileList = () => {
   }, [navigate, auth.user]);
 
   return (
-    <div>
-      <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
-        <Tooltip
-          sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
-          title="Account settings"
+    <div style={{ height: "100%" }}>
+      {auth.user && auth.userInfo ? (
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            textAlign: "center",
+            height: "100%",
+          }}
         >
-          <IconButton
-            onClick={handleClick}
-            size="small"
-            sx={{ ml: 2 }}
-            aria-controls={open ? "account-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
+          <Tooltip
+            title="Account settings"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              height: "100%",
+            }}
           >
-            <img width={48} height={48} src={AvatarIcon} alt="Avatar" />
-          </IconButton>
-          {/* <div className="userinfo">
-            <Typography>{auth.userInfo.username}</Typography>
-          </div> */}
-        </Tooltip>
-      </Box>
+            <IconButton
+              onClick={handleClick}
+              size="small"
+              sx={{ ml: 2, height: "100%" }}
+              id="account"
+              aria-controls={open ? "account-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+            >
+              <img width={80} height={80} src={AvatarIcon} alt="Avatar" />
+            </IconButton>
+            <div className="userinfo">
+              <label className="label-account" htmlFor="account">
+                {auth.userInfo.username}
+              </label>
+            </div>
+          </Tooltip>
+        </Box>
+      ) : null}
       <Menu
         anchorEl={anchorEl}
         id="account-menu"

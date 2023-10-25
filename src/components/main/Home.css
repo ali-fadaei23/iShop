@@ -4,3 +4,60 @@
   flex-wrap: wrap;
   margin: auto;
 }
+
+.container-loading {
+  width: 100vw;
+  height: 90vh;
+}
+
+.bounceball {
+  position: relative;
+  display: inline-block;
+  height: 37px;
+  width: 15px;
+}
+
+.bounceball:before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #202020;
+  transform-origin: 50%;
+  animation: bounce 500ms alternate infinite ease;
+}
+
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text {
+  color: #cc8b2b;
+  display: inline-block;
+  margin-left: 30px;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+@keyframes bounce {
+  0% {
+    top: 30px;
+    height: 5px;
+    border-radius: 60px 60px 20px 20px;
+    transform: scaleX(2);
+  }
+  35% {
+    height: 15px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
+}
