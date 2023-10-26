@@ -221,7 +221,12 @@ const SignUp = () => {
                 sx={{ width: "245px", marginTop: "20px", marginRight: "15px" }}
               >
                 <InputLabel
-                  sx={{ top: "-5px", fontSize: "small", fontWeight: "400" }}
+                  sx={{
+                    top: "-5px",
+                    fontSize: "small",
+                    fontWeight: "400",
+                    marginLeft: "5px",
+                  }}
                   htmlFor="outlined-adornment-username"
                 >
                   User Name
@@ -240,7 +245,12 @@ const SignUp = () => {
               <FormControl sx={{ width: "245px", marginTop: "20px" }}>
                 <div className="password password-profile-signup">
                   <InputLabel
-                    sx={{ top: "-5px", fontSize: "small", fontWeight: "400" }}
+                    sx={{
+                      top: "-5px",
+                      fontSize: "small",
+                      fontWeight: "400",
+                      marginLeft: "1px",
+                    }}
                     htmlFor="outlined-adornment-password"
                   >
                     Password
@@ -270,12 +280,15 @@ const SignUp = () => {
                 </div>
               </FormControl>
             </div>
-            <div className="email-tel-signup" style={{ marginTop: "20px" }}>
-              <FormControl
-                sx={{ width: "245px", marginTop: "10px", marginRight: "15px" }}
-              >
+            <div className="email-tel-signup" style={{ marginTop: "25px" }}>
+              <FormControl sx={{ width: "245px", marginRight: "15px" }}>
                 <InputLabel
-                  sx={{ top: "-5px", fontSize: "small", fontWeight: "400" }}
+                  sx={{
+                    top: "-5px",
+                    fontSize: "small",
+                    fontWeight: "400",
+                    marginLeft: "5px",
+                  }}
                   htmlFor="outlined-adornment-email"
                 >
                   Email
@@ -293,20 +306,34 @@ const SignUp = () => {
                 <FormHelperText> Example@gmail.com </FormHelperText>
               </FormControl>
               <FormControl
-                sx={{ width: "245px", marginTop: "10px", borderRadius: "30px" }}
-                variant="standard"
+                sx={{
+                  width: "245px",
+                }}
               >
-                <TextField
-                  size="small"
-                  InputProps={{ inputComponent: TextMaskCustom }}
+                <InputLabel
+                  sx={{
+                    top: "-5px",
+                    fontSize: "small",
+                    fontWeight: "400",
+                    marginLeft: "5px",
+                  }}
+                  htmlFor="formatted-text-mask-input"
+                >
+                  Phone Number
+                </InputLabel>
+                <OutlinedInput
+                  inputComponent={TextMaskCustom}
+                  sx={{ borderRadius: "30px" }}
                   name="phoneNumber"
                   onChange={() => handlePhoneNumber}
                   value={phoneNumber.textmask}
+                  type="tell"
+                  size="small"
                   id="formatted-text-mask-input"
                   label="Phone Number"
-                  variant="outlined"
-                  helperText="(100) 000-0000"
+                  color="secondary"
                 />
+                <FormHelperText> {"(100) 000-0000"} </FormHelperText>
               </FormControl>
             </div>
             <div className="location-signup">
@@ -319,7 +346,12 @@ const SignUp = () => {
                   }}
                 >
                   <InputLabel
-                    sx={{ top: "-5px", fontSize: "small", fontWeight: "400" }}
+                    sx={{
+                      top: "-5px",
+                      fontSize: "small",
+                      fontWeight: "400",
+                      marginLeft: "5px",
+                    }}
                     htmlFor="outlined-adornment-city"
                   >
                     City
@@ -337,7 +369,12 @@ const SignUp = () => {
                 </FormControl>
                 <FormControl sx={{ width: "245px", marginTop: "25px" }}>
                   <InputLabel
-                    sx={{ top: "-5px", fontSize: "small", fontWeight: "400" }}
+                    sx={{
+                      top: "-5px",
+                      fontSize: "small",
+                      fontWeight: "400",
+                      marginLeft: "5px",
+                    }}
                     htmlFor="outlined-adornment-street"
                   >
                     Street
@@ -363,7 +400,12 @@ const SignUp = () => {
                   }}
                 >
                   <InputLabel
-                    sx={{ top: "-5px", fontSize: "small", fontWeight: "400" }}
+                    sx={{
+                      top: "-5px",
+                      fontSize: "small",
+                      fontWeight: "400",
+                      marginLeft: "5px",
+                    }}
                     htmlFor="outlined-adornment-number"
                   >
                     Number
@@ -381,7 +423,12 @@ const SignUp = () => {
                 </FormControl>
                 <FormControl sx={{ width: "245px", marginTop: "20px" }}>
                   <InputLabel
-                    sx={{ top: "-5px", fontSize: "small", fontWeight: "400" }}
+                    sx={{
+                      top: "-5px",
+                      fontSize: "small",
+                      fontWeight: "400",
+                      marginLeft: "5px",
+                    }}
                     htmlFor="outlined-adornment-zip-code"
                   >
                     ZipCode

@@ -11,6 +11,9 @@ import {
   Box,
   Grid,
   CircularProgress,
+  FormControl,
+  InputLabel,
+  OutlinedInput,
 } from "@mui/material";
 import LoginShopImage from "../../../assets/img/login.png";
 // import ShopImage from "../../../assets/img/alice.png";
@@ -85,7 +88,54 @@ const Login = () => {
             onSubmit={handleSubmit}
             sx={{ mt: 1 }}
           >
-            <TextField
+            <FormControl sx={{ width: "280px", marginTop: "20px" }}>
+              <InputLabel
+                sx={{ top: "-5px", fontSize: "small", fontWeight: "400", marginLeft: '5px' }}
+                htmlFor="username"
+              >
+                First Name
+              </InputLabel>
+              <OutlinedInput
+                sx={{ borderRadius: "30px" }}
+                value={userName}
+                onChange={handleUserName}
+                type="text"
+                size="small"
+                margin="normal"
+                required
+                fullWidth
+                id="username"
+                label="User Name"
+                color="secondary"
+                autoComplete="User Name"
+                autoFocus
+              />
+            </FormControl>
+            <FormControl sx={{ width: "280px", marginTop: "20px" }}>
+              <InputLabel
+                sx={{ top: "-5px", fontSize: "small", fontWeight: "400", marginLeft: '5px' }}
+                htmlFor="outlined-adornment-lastname"
+              >
+                Last Name
+              </InputLabel>
+              <OutlinedInput
+                sx={{ borderRadius: "30px" }}
+                value={password}
+                onChange={handlePassword}
+                id="password"
+                type="password"
+                size="small"
+                color="secondary"
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                autoComplete="current-password"
+              />
+            </FormControl>
+
+            {/* <TextField
               size="small"
               value={userName}
               onChange={handleUserName}
@@ -98,9 +148,9 @@ const Login = () => {
               name="username"
               autoComplete="User Name"
               autoFocus
-              sx={{ borderRadius: "30px" }}
-            />
-            <TextField
+            /> */}
+
+            {/* <TextField
               size="small"
               value={password}
               onChange={handlePassword}
@@ -112,7 +162,7 @@ const Login = () => {
               type="password"
               id="password"
               autoComplete="current-password"
-            />
+            /> */}
             <FormControlLabel
               sx={{ fontSize: "small", fontWeight: "400" }}
               control={

@@ -24,7 +24,12 @@
   font-weight: 400;
 }
 
-.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-fullWidth.MuiInputBase-formControl.css-z416xi-MuiInputBase-root-MuiOutlinedInput-root {
+.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-sizeSmall.MuiInputBase-fullWidth.MuiInputBase-formControl.css-z416xi-MuiInputBase-root-MuiOutlinedInput-root {
+  border-radius: 30px;
+}
+
+#username,
+#password {
   border-radius: 30px;
 }
 
