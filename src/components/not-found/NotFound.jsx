@@ -77,17 +77,26 @@ const NotFound = () => {
               <br />
               That's an error
             </h2>
-            <div>
-              <Typography
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              {/* <Typography
                 sx={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  width: "50%",
                 }}
                 variant="h6"
               >
-                This is wrong. This page does no longer exist, or it never had.{" "}
-              </Typography>
+                We're sorry, the page you were looking for isn't found here. The
+                link you followed may either be broken or no longer exists.
+                Please try again, or take a look at our.
+              </Typography> */}
             </div>
           </div>
         </div>
