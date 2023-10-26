@@ -3,13 +3,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  height: 90%;
   width: 100%;
 }
 
-/* .MuiCardMedia-root.MuiCardMedia-media.MuiCardMedia-img {
-  object-fit: contain;
-} */
+.MuiCardContent-root.content:last-child {
+  padding-bottom: 10px;
+}
 
 /* .MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.card {
   display: flex;
@@ -51,52 +51,25 @@ button {
   font-family: inherit;
 }
 
-button.learn-more {
-  width: auto;
+button.learn-more-login {
+  width: 12rem;
   height: auto;
-  margin: 5px 5px 0 0;
+  margin: 10px 0;
 }
 
-button.learn-more .circle {
+button.learn-more-login .circle-login {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: relative;
   display: flex;
   justify-content: center;
-  width: 3rem;
+  margin: 0;
+  width: 100%;
   height: 3rem;
   background: #282936;
   border-radius: 1.625rem;
-  margin: 5px 0 0 5px;
 }
 
-button.learn-more .circle .icon {
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  margin-right: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  color: #fff;
-}
-
-button.learn-more:hover .circle .icon {
-  /* transition: all 0.6s cubic-bezier(0.65, 0, 0.076, 1);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin-right: 110px;
-  opacity: 1; */
-  color: #fff;
-}
-
-/* button.learn-more .button-text {
+button.learn-more-login .button-text-login {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
@@ -104,15 +77,9 @@ button.learn-more:hover .circle .icon {
   right: 0;
   bottom: 0;
   padding: 0.75rem 0;
-  color: #282936;
+  color: #fff;
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
   text-transform: uppercase;
-} */
-
-button:hover .circle {
-  /* width: 100%;
-  margin-right: auto; */
-  transition: all 0.4;
 }

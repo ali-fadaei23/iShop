@@ -90,7 +90,12 @@ const Login = () => {
           >
             <FormControl sx={{ width: "280px", marginTop: "20px" }}>
               <InputLabel
-                sx={{ top: "-5px", fontSize: "small", fontWeight: "400", marginLeft: '5px' }}
+                sx={{
+                  top: "-5px",
+                  fontSize: "small",
+                  fontWeight: "400",
+                  marginLeft: "5px",
+                }}
                 htmlFor="username"
               >
                 First Name
@@ -113,7 +118,12 @@ const Login = () => {
             </FormControl>
             <FormControl sx={{ width: "280px", marginTop: "20px" }}>
               <InputLabel
-                sx={{ top: "-5px", fontSize: "small", fontWeight: "400", marginLeft: '5px' }}
+                sx={{
+                  top: "-5px",
+                  fontSize: "small",
+                  fontWeight: "400",
+                  marginLeft: "5px",
+                }}
                 htmlFor="outlined-adornment-lastname"
               >
                 Last Name
@@ -135,34 +145,6 @@ const Login = () => {
               />
             </FormControl>
 
-            {/* <TextField
-              size="small"
-              value={userName}
-              onChange={handleUserName}
-              margin="normal"
-              required
-              fullWidth
-              id="username"
-              type="text"
-              label="User Name"
-              name="username"
-              autoComplete="User Name"
-              autoFocus
-            /> */}
-
-            {/* <TextField
-              size="small"
-              value={password}
-              onChange={handlePassword}
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            /> */}
             <FormControlLabel
               sx={{ fontSize: "small", fontWeight: "400" }}
               control={
