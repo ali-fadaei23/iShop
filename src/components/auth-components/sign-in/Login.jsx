@@ -86,7 +86,12 @@ const Login = () => {
             component="form"
             noValidate
             onSubmit={handleSubmit}
-            sx={{ mt: 1 }}
+            sx={{
+              mt: 1,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
           >
             <FormControl sx={{ width: "280px", marginTop: "20px" }}>
               <InputLabel
@@ -98,7 +103,7 @@ const Login = () => {
                 }}
                 htmlFor="username"
               >
-                First Name
+                Username
               </InputLabel>
               <OutlinedInput
                 sx={{ borderRadius: "30px" }}
@@ -126,7 +131,7 @@ const Login = () => {
                 }}
                 htmlFor="outlined-adornment-lastname"
               >
-                Last Name
+                Password
               </InputLabel>
               <OutlinedInput
                 sx={{ borderRadius: "30px" }}
@@ -155,7 +160,7 @@ const Login = () => {
             <div style={{ display: "flex", justifyContent: "center" }}>
               <button
                 type="submit"
-                class="learn-more-login"
+                class="button-login"
                 disabled={auth.loading}
               >
                 <span class="circle-login" aria-hidden="true">
