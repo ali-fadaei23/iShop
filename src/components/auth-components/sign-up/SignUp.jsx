@@ -237,7 +237,7 @@ const SignUp = () => {
                   id="outlined-adornment-username"
                   type="text"
                   size="small"
-                  label="User Name"
+                  label="Username"
                   color="secondary"
                 />
               </FormControl>
@@ -448,7 +448,7 @@ const SignUp = () => {
             <div style={{ display: "flex", justifyContent: "center" }}>
               <button
                 type="submit"
-                class="learn-more-sign-up"
+                class="button-sign-up"
                 disabled={auth.loading}
               >
                 <span class="circle-sign-up" aria-hidden="true">
@@ -467,15 +467,6 @@ const SignUp = () => {
           </Box>
         </Box>
       </Grid>
-      {/* <div className="container-shop-signup">
-        <div className="container-signup-img">
-          <img
-            className="img-shop-signup"
-            src={SignUpShopImage}
-            alt="Sign Up Shop"
-          />
-        </div>
-      </div> */}
     </Grid>
   );
 };
