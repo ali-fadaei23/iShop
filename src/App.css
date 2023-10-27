@@ -33,12 +33,12 @@ html {
   color: #cc8b2b;
 }
 
-.MuiCardContent-root.text {
+/* .MuiCardContent-root.text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-}
+} */
 
 /* 
 .MuiCardActions-root.MuiCardActions-spacing {

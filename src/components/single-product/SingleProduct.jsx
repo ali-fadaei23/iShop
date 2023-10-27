@@ -26,6 +26,7 @@ import AddIcon from "@mui/icons-material/Add";
 import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import RemoveIcon from "@mui/icons-material/Remove";
+import AddShoppingCartRoundedIcon from "@mui/icons-material/AddShoppingCartRounded";
 
 const reducer = (...arr) => {
   const res = [];
@@ -125,237 +126,276 @@ const SingleProduct = () => {
   return (
     <>
       {loading ? (
-        <div>
-          <Backdrop sx={{ color: "#fff" }} open={loading}>
-            <CircularProgress color="inherit" />
-          </Backdrop>
+        <div className="container-loading">
+          <div class="wrap">
+            <div class="loading">
+              <div class="bounceball"></div>
+              <div class="text">NOW LOADING</div>
+            </div>
+          </div>
         </div>
       ) : (
-        <div className="container-card">
-          <Card
-            className="card card-product"
-            sx={{
-              marginBottom: 5,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-              width: "70%",
-            }}
-          >
-            <div className="btn-wishlist">
-              <IconButton onClick={addToWishlist}>
-                {showBtn ? (
-                  <TurnedInIcon fontSize="small" />
-                ) : (
-                  <TurnedInNotIcon fontSize="small" />
-                )}
-              </IconButton>
-            </div>
-            <CardContent className="text">
-              <div className="detail-product">
-                <div className="datail-img">
-                  <CardMedia
-                    component="img"
-                    alt="green iguana"
-                    sx={{
-                      objectFit: "contain",
-                      padding: "10px",
-                      width: "220px",
-                    }}
-                    image={singleProduct.image}
-                    title={singleProduct.title}
-                  />
-                </div>
-                <div className="datail-text">
-                  <Typography
-                    gutterBottom
-                    variant="caption"
-                    sx={{ color: "CaptionText" }}
-                    component="div"
-                  >
-                    {singleProduct.category}
-                  </Typography>
-                  <Typography
-                    gutterBottom
-                    variant="body1"
-                    sx={{
-                      fontSize: "large",
-                      fontWeight: "bold",
-                      color: "royalblue",
-                    }}
-                    component="div"
-                  >
-                    {singleProduct.title}
-                  </Typography>
-                  {singleProduct.category === "electronics" ? null : (
-                    <div>
-                      <FormControl
-                        sx={{ minWidth: 120, marginLeft: 0, marginTop: "30px" }}
-                      >
-                        <>
-                          <InputLabel id="demo-simple-select-helper-label">
-                            Size
-                          </InputLabel>
-                          <Select
-                            labelId="demo-simple-select-helper-label"
-                            id="demo-simple-select-helper"
-                            value={size}
-                            label="Size"
-                            onChange={handleSize}
-                            size="small"
-                          >
-                            <MenuItem value={"S"}>S</MenuItem>
-                            <MenuItem value={"M"}>M</MenuItem>
-                            <MenuItem value={"L"}>L</MenuItem>
-                            <MenuItem value={"XL"}>XL</MenuItem>
-                          </Select>
-                        </>
-                      </FormControl>
-                    </div>
-                  )}
-                </div>
-              </div>
-              <div className="description">
-                <Typography variant="body2" color="text.secondary">
-                  {singleProduct.description}
-                </Typography>
-              </div>
-              <div className="rating-container">
-                <Typography
-                  gutterBottom
-                  sx={{
-                    fontWeight: "bold",
-                    fontSize: "small",
-                    color: "royalblue",
-                  }}
-                  component="div"
-                >
-                  Rating:
-                </Typography>
-
-                <div className="rating">
-                  <Stack spacing={1}>
-                    <Rating
-                      name="half-rating-read"
-                      value={
-                        singleProduct.rating === undefined
-                          ? 0
-                          : singleProduct.rating["rate"]
-                      }
-                      precision={0.1}
-                      readOnly
-                    />
-                  </Stack>
-                  <Typography
-                    className="rate rate-text"
-                    gutterBottom
-                    sx={{
-                      fontWeight: "bold",
-                      fontSize: "small",
-                      color: "royalblue",
-                      marginLeft: "10px",
-                    }}
-                    component="div"
-                  >
-                    {singleProduct.rating === undefined
-                      ? 0
-                      : singleProduct.rating["rate"]}
-                  </Typography>
-                  <Typography
-                    className="rate count"
-                    gutterBottom
-                    sx={{
-                      marginLeft: "5px",
-                      fontWeight: "bold",
-                      fontSize: "small",
-                      color: "royalblue",
-                    }}
-                    component="div"
-                  >
-                    ({" "}
-                    {singleProduct.rating === undefined
-                      ? 0
-                      : singleProduct.rating["count"]}
-                    {" user "})
-                  </Typography>
-                </div>
-              </div>
-            </CardContent>
-            <CardActions
+        <div className="container-single-product">
+          <div className="container-card">
+            <Card
+              className="card card-product"
               sx={{
-                width: "100%",
-                height: "100%",
+                marginBottom: 5,
                 display: "flex",
                 alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+                width: "70%",
+                overflow: "visible",
               }}
             >
-              <Typography
-                gutterBottom
-                variant="h2"
+              <CardContent
                 sx={{
-                  color: "royalblue",
                   width: "100%",
-                  margin: 0,
+                  display: " flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                }}
+              >
+                <div className="btn-wishlist">
+                  <IconButton sx={{ color: "#202020" }} onClick={addToWishlist}>
+                    {showBtn ? (
+                      <TurnedInIcon fontSize="small" />
+                    ) : (
+                      <TurnedInNotIcon fontSize="small" />
+                    )}
+                  </IconButton>
+                </div>
+                <div className="detail-product">
+                  <div className="datail-img">
+                    <CardMedia
+                      component="img"
+                      alt="green iguana"
+                      sx={{
+                        objectFit: "contain",
+                        padding: "10px",
+                        width: "50%",
+                      }}
+                      image={singleProduct.image}
+                      title={singleProduct.title}
+                    />
+                  </div>
+                  <div className="datail-text">
+                    <Typography
+                      gutterBottom
+                      variant="caption"
+                      sx={{ color: "CaptionText", fontFamily: "Raleway" }}
+                      component="div"
+                    >
+                      {singleProduct.category}
+                    </Typography>
+                    <Typography
+                      gutterBottom
+                      variant="body1"
+                      sx={{
+                        fontSize: "x-large",
+                        fontWeight: "bold",
+                        color: "#202020",
+                      }}
+                      component="div"
+                    >
+                      {singleProduct.title}
+                    </Typography>
+                    {singleProduct.category === "electronics" ? null : (
+                      <div>
+                        <FormControl
+                          sx={{
+                            minWidth: 120,
+                            marginLeft: 0,
+                            marginTop: "30px",
+                          }}
+                        >
+                          <>
+                            <InputLabel
+                              sx={{
+                                top: "-5px",
+                                fontSize: "small",
+                                fontWeight: "400",
+                                marginLeft: "1px",
+                              }}
+                              id="demo-simple-select-helper-label"
+                            >
+                              Size
+                            </InputLabel>
+                            <Select
+                              sx={{ borderRadius: "30px" }}
+                              labelId="demo-simple-select-helper-label"
+                              id="demo-simple-select-helper"
+                              value={size}
+                              label="Size"
+                              onChange={handleSize}
+                              size="small"
+                            >
+                              <MenuItem value={"S"}>S</MenuItem>
+                              <MenuItem value={"M"}>M</MenuItem>
+                              <MenuItem value={"L"}>L</MenuItem>
+                              <MenuItem value={"XL"}>XL</MenuItem>
+                            </Select>
+                          </>
+                        </FormControl>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div className="description">
+                  <Typography
+                    sx={{
+                      fontFamily: "Raleway",
+                      fontWeight: "500",
+                      fontSize: "1.1rem",
+                    }}
+                    variant="body2"
+                    color="text.secondary"
+                  >
+                    {singleProduct.description}
+                  </Typography>
+                </div>
+                <div className="rating-container">
+                  <Typography
+                    gutterBottom
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "small",
+                      color: "#202020",
+                    }}
+                    component="div"
+                  >
+                    Rating:
+                  </Typography>
+
+                  <div className="rating">
+                    <Stack spacing={1}>
+                      <Rating
+                        name="half-rating-read"
+                        value={
+                          singleProduct.rating === undefined
+                            ? 0
+                            : singleProduct.rating["rate"]
+                        }
+                        precision={0.1}
+                        readOnly
+                      />
+                    </Stack>
+                    <Typography
+                      className="rate rate-text"
+                      gutterBottom
+                      sx={{
+                        fontWeight: "bold",
+                        fontSize: "small",
+                        color: "#202020",
+                        marginLeft: "10px",
+                      }}
+                      component="div"
+                    >
+                      {singleProduct.rating === undefined
+                        ? 0
+                        : singleProduct.rating["rate"]}
+                    </Typography>
+                    <Typography
+                      className="rate count"
+                      gutterBottom
+                      sx={{
+                        marginLeft: "5px",
+                        fontWeight: "bold",
+                        fontSize: "small",
+                        color: "#202020",
+                      }}
+                      component="div"
+                    >
+                      ({" "}
+                      {singleProduct.rating === undefined
+                        ? 0
+                        : singleProduct.rating["count"]}
+                      {" user "})
+                    </Typography>
+                  </div>
+                </div>
+              </CardContent>
+              <CardActions
+                sx={{
+                  width: "100%",
+                  height: "100%",
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "flex-start",
-                  fontWeight: "bold",
                 }}
-                component="span"
               >
-                {"$ " + singleProduct.price}
-              </Typography>
-              {count <= 0 ? (
-                <div className="btn-product">
-                  <Button
-                    sx={{
-                      backgroundColor: "slateblue",
-                      fontWeight: "900",
-                      textAlign: "center",
-                      fontSize: "x-small",
-                      width: "100px",
-                      height: "40px",
-                      overflow: "hidden",
-                    }}
-                    className="btn-add"
-                    variant="contained"
-                    startIcon={<AddIcon fontSize="small" />}
-                    onClick={() => addToCart("error")}
-                  >
-                    Buy
-                  </Button>
-                </div>
-              ) : (
-                <ButtonGroup
+                <Typography
+                  gutterBottom
+                  variant="h2"
                   sx={{
-                    fontSize: "small",
+                    color: "#282936",
+                    width: "100%",
+                    margin: 0,
                     display: "flex",
                     alignItems: "center",
+                    justifyContent: "flex-start",
+                    fontWeight: "bold",
+                    fontSize: "3rem",
                   }}
-                  className="btn-add-remove"
+                  component="span"
                 >
-                  <Button
-                    id="reduce"
-                    aria-label="reduce"
-                    onClick={removeAtCart}
-                  >
-                    <RemoveIcon fontSize="small" />
-                  </Button>
-                  <div>
-                    <Typography sx={{ margin: 1 }}>{count}</Typography>
+                  {"$ " + singleProduct.price}
+                </Typography>
+                {count <= 0 ? (
+                  <div className="btn-product">
+                    <Button
+                      sx={{
+                        backgroundColor: "#202020",
+                        fontWeight: "900",
+                        borderRadius: "30px",
+                        textAlign: "center",
+                        fontSize: "medium",
+                        width: "max-content",
+                        height: "3rem",
+                        overflow: "hidden",
+                        marginRight: "20px",
+                      }}
+                      className="btn-add"
+                      variant="contained"
+                      startIcon={
+                        <AddShoppingCartRoundedIcon fontSize="small" />
+                      }
+                      onClick={() => addToCart("error")}
+                    >
+                      Add To Cart
+                    </Button>
                   </div>
-                  <Button
-                    id="increase"
-                    aria-label="increase"
-                    onClick={() => addToCart("error")}
+                ) : (
+                  <ButtonGroup
+                    sx={{
+                      fontSize: "small",
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                    className="btn-add-remove"
                   >
-                    <AddIcon fontSize="small" />
-                  </Button>
-                </ButtonGroup>
-              )}
-            </CardActions>
-          </Card>
+                    <Button
+                      id="reduce"
+                      aria-label="reduce"
+                      onClick={removeAtCart}
+                    >
+                      <RemoveIcon fontSize="small" />
+                    </Button>
+                    <div>
+                      <Typography sx={{ margin: 1 }}>{count}</Typography>
+                    </div>
+                    <Button
+                      id="increase"
+                      aria-label="increase"
+                      onClick={() => addToCart("error")}
+                    >
+                      <AddIcon fontSize="small" />
+                    </Button>
+                  </ButtonGroup>
+                )}
+              </CardActions>
+            </Card>
+          </div>
         </div>
       )}
     </>

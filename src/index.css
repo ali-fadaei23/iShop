@@ -3,6 +3,11 @@
   src: url(./assets/fonts/FonartoLight-BWxv3.ttf);
 }
 
+@font-face {
+  font-family: Raleway;
+  src: url(./assets/fonts/Raleway-VariableFont_wght.ttf);
+}
+
 body {
-  font-family: Fonarto !important;
+  font-family: Fonarto;
 }

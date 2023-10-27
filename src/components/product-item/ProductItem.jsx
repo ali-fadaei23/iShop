@@ -61,8 +61,8 @@ const ProductItem = ({ product }) => {
           component="img"
           alt="green iguana"
           sx={{
-            width: 140,
-            height: 180,
+            width: "50%",
+            height: "160px",
             objectFit: "contain",
             marginTop: "10px",
           }}
@@ -74,7 +74,7 @@ const ProductItem = ({ product }) => {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
-            textAlign: "justify",
+            textAlign: "left",
             justifyContent: "center",
             width: "100%",
             margin: 0,
@@ -84,7 +84,7 @@ const ProductItem = ({ product }) => {
           <Typography
             gutterBottom
             variant="caption"
-            sx={{ color: "#202020" }}
+            sx={{ color: "CaptionText", fontFamily: "Raleway" }}
             component="div"
           >
             {product.category}
@@ -92,7 +92,7 @@ const ProductItem = ({ product }) => {
           <Typography
             gutterBottom
             variant="body1"
-            sx={{ color: "#202020" }}
+            sx={{ color: "#202020", fontSize: "1.2rem" }}
             component="div"
           >
             {product.title}
@@ -105,6 +105,7 @@ const ProductItem = ({ product }) => {
               backgroundColor: "#cc8b2b",
               padding: " 2px 7px",
               borderRadius: "35px",
+              fontSize: "0.85rem",
             }}
             component="div"
           >
@@ -116,24 +117,24 @@ const ProductItem = ({ product }) => {
         sx={{ width: "100%", display: "flex", justifyContent: "center" }}
         >
         </CardActions> */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-start",
-            width: "100%",
-            margin: "5px 0 0 5px",
-          }}
-        >
-          <button onClick={addToWishlist} class="learn-more-wishlist">
-            <span class="circle" aria-hidden="true">
-              {showBtn ? (
-                <TurnedInIcon className="icon wishlist" fontSize="small" />
-              ) : (
-                <TurnedInNotIcon className="icon wishlist" fontSize="small" />
-              )}
-            </span>
-          </button>
-        </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-start",
+          width: "100%",
+          margin: "5px 0 0 5px",
+        }}
+      >
+        <button onClick={addToWishlist} class="learn-more-wishlist">
+          <span class="circle" aria-hidden="true">
+            {showBtn ? (
+              <TurnedInIcon className="icon wishlist" fontSize="small" />
+            ) : (
+              <TurnedInNotIcon className="icon wishlist" fontSize="small" />
+            )}
+          </span>
+        </button>
+      </div>
 
       {/* <button class="learn-more" onClick={addToWishlist}>
           <span class="circle" aria-hidden="true">

@@ -12,8 +12,11 @@ import { ProvideAuth } from './shared/auth/AuthContext';
 
 const Theme = createTheme({
   typography: {
-    fontFamily: "Fonarto"
-  },
+    fontFamily: ["Fonarto", "Raleway"].join(","),
+  }
+
+
+
 });
 
 
