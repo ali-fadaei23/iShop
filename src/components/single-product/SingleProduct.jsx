@@ -371,26 +371,35 @@ const SingleProduct = () => {
                       fontSize: "small",
                       display: "flex",
                       alignItems: "center",
+                      backgroundColor: "#202020",
+                      padding: " 5px",
+                      borderRadius: "30px",
+                      height: "3rem",
+                      width: "9rem",
                     }}
                     className="btn-add-remove"
                   >
-                    <Button
-                      id="reduce"
-                      aria-label="reduce"
-                      onClick={removeAtCart}
-                    >
-                      <RemoveIcon fontSize="small" />
-                    </Button>
-                    <div>
-                      <Typography sx={{ margin: 1 }}>{count}</Typography>
+                    <div className="buttons-quantity">
+                      <Button
+                        id="reduce"
+                        aria-label="reduce"
+                        onClick={removeAtCart}
+                      >
+                        <RemoveIcon fontSize="small" />
+                      </Button>
+                      <div>
+                        <Typography sx={{ margin: "10px 16px", color: "#fff" }}>
+                          {count}
+                        </Typography>
+                      </div>
+                      <Button
+                        id="increase"
+                        aria-label="increase"
+                        onClick={() => addToCart("error")}
+                      >
+                        <AddIcon fontSize="small" />
+                      </Button>
                     </div>
-                    <Button
-                      id="increase"
-                      aria-label="increase"
-                      onClick={() => addToCart("error")}
-                    >
-                      <AddIcon fontSize="small" />
-                    </Button>
                   </ButtonGroup>
                 )}
               </CardActions>

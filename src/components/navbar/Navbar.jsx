@@ -21,6 +21,7 @@ import {
 } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Logo from "../../assets/img/logo.png";
+import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 
 function ScrollTop({ children, window }) {
   const trigger = useScrollTrigger({
@@ -122,10 +123,15 @@ const Navbar = ({ handleOpenCart }, props) => {
                   horizontal: "right",
                 }}
               >
-                <IconButton aria-label="cart" onClick={handleOpenCart}>
-                  <ShoppingCartIcon
+                <IconButton
+                  sx={{ backgroundColor: "#202020", color: "#cc8b2b" }}
+                  aria-label="cart"
+                  onClick={handleOpenCart}
+                >
+                  <ShoppingCartRoundedIcon
                     sx={{ color: "cornflowerblue" }}
                     className="icon"
+                    fontSize="medium"
                   />
                 </IconButton>
               </Badge>

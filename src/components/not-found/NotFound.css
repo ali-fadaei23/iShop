@@ -108,6 +108,21 @@
   margin: 30px 0;
 }
 
+.back-home:hover {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  /* position: relative;
+  display: flex;
+  justify-content: center;
+  width: 15%;
+  height: 3rem; */
+  background: #282936;
+  border-radius: 1.625rem;
+  /* align-items: center; */
+  color: #cc8b2b;
+  /* text-decoration: none;
+  margin: 30px 0; */
+}
+
 @media (max-width: 767px) {
   .error .clip .shadow {
     height: 100px;

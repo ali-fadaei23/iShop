@@ -90,47 +90,39 @@
   font-weight: bold;
 } */
 
+.buttons-quantity {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 /* Add and Remove */
 #reduce {
-  border: 1px solid;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  min-width: 30px;
-  min-height: 30px;
-  padding: 0;
+  border: 0;
+  color: #fff;
+  width: 40px;
+  height: 40px;
 }
 
 #reduce:hover {
-  /* width: 30px; */
-  /* height: 30px;
-  min-height: 30px; */
-  /* min-width: 30px; */
-  border: 3px solid slateblue;
-  border-radius: 50%;
-  color: darkslateblue;
   padding: 0;
+  border: 0;
+  color: #cc8b2b;
 }
 
 #increase {
-  width: 30px;
-  height: 30px;
-  min-width: 30px;
-  min-height: 30px;
-  border: 1px solid;
-  border-radius: 50%;
-  padding: 0;
+  border: 0;
+  color: #fff;
+  width: 40px;
+  height: 40px;
 }
 
 #increase:hover {
-  color: darkslateblue;
-  border: 3px solid slateblue;
-  border-radius: 50%;
   padding: 0;
-  /* width: 30px; */
-  /* height: 30px;
-  min-height: 30px; */
-  /* min-width: 30px; */
+  border: 0;
+  color: #cc8b2b;
 }
 
 /* .btn-product {
