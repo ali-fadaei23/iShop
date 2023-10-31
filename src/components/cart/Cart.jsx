@@ -1,7 +1,7 @@
 import "./Cart.css";
 import { Context } from "../../shared/context/Context";
 import { useContext } from "react";
-import OrderNotFound from "../../assets/img/empty-cart-yellow.png";
+import OrderNotFound from "../../assets/img/empty_cart.png";
 import {
   Button,
   Drawer,
@@ -271,6 +271,44 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                       }}
                     >
                       <ButtonGroup
+                        sx={{
+                          fontSize: "small",
+                          display: "flex",
+                          alignItems: "center",
+                          backgroundColor: "#202020",
+                          padding: " 5px",
+                          borderRadius: "30px",
+                          height: "3rem",
+                          width: "9rem",
+                        }}
+                        className="btn-add-remove"
+                      >
+                        <div className="buttons-quantity">
+                          <Button
+                            id="reduce"
+                            aria-label="reduce"
+                            onClick={() => removeAtCart(item.id)}
+                          >
+                            <RemoveIcon fontSize="small" />
+                          </Button>
+                          <div>
+                            <Typography
+                              sx={{ margin: "10px 16px", color: "#fff" }}
+                            >
+                              {item.num}
+                            </Typography>
+                          </div>
+                          <Button
+                            id="increase"
+                            aria-label="increase"
+                            onClick={() => addToCart(item)}
+                          >
+                            <AddIcon fontSize="small" />
+                          </Button>
+                        </div>
+                      </ButtonGroup>
+
+                      {/* <ButtonGroup
                         sx={{ display: "flex", alignItems: " center" }}
                         className="btn-add-remove"
                       >
@@ -292,7 +330,7 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                         >
                           <AddIcon fontSize="small" />
                         </Button>
-                      </ButtonGroup>
+                      </ButtonGroup> */}
                     </CardActions>
                   </Card>
                 </div>

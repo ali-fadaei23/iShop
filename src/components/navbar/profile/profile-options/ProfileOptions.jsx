@@ -4,7 +4,7 @@ import { Context } from "../../../../shared/context/Context";
 import PropTypes from "prop-types";
 import EditProfile from "../edit-profile/EditProfile";
 import Wishlist from "../../../wishlist/Wishlist";
-import OrderNotFound from "../../../../assets/img/empty-cart-yellow.png";
+import OrderNotFound from "../../../../assets/img/empty_cart.png";
 import {
   Box,
   Tabs,

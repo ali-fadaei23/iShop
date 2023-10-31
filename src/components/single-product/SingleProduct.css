@@ -108,6 +108,7 @@
 
 #reduce:hover {
   padding: 0;
+  background-color: transparent;
   border: 0;
   color: #cc8b2b;
 }
@@ -121,6 +122,7 @@
 
 #increase:hover {
   padding: 0;
+  background-color: transparent;
   border: 0;
   color: #cc8b2b;
 }

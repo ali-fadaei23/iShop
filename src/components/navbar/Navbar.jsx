@@ -22,6 +22,17 @@ import {
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Logo from "../../assets/img/logo.png";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to("progress", {
+  value: 100,
+  scrollTrigger: {
+    scrub: 0.5,
+  },
+});
 
 function ScrollTop({ children, window }) {
   const trigger = useScrollTrigger({
@@ -92,6 +103,7 @@ const Navbar = ({ handleOpenCart }, props) => {
 
   return (
     <>
+      <progress max={100} value={0}></progress>
       <CssBaseline />
       <HideOnScroll {...props}>
         <AppBar
