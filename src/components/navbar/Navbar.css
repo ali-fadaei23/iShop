@@ -21,10 +21,16 @@
   border-radius: 0;
 }
 
+.MuiButtonBase-root.cart-btn:hover {
+  background-color: transparent;
+}
+
 /* Add order badge */
 .MuiBadge-badge.MuiBadge-standard {
   top: 8px;
   right: 5px;
+  background-color: #202020;
+  color: #fff;
 }
 
 .container-main-logo {
