@@ -114,32 +114,7 @@ const Navbar = ({ handleOpenCart }, props) => {
             <div className="categories">
               <CategoryList categories={categoryItem} />
             </div>
-            {cartItems.length > 0 ? (
-              <Badge
-                color="secondary"
-                badgeContent={cartItems.length}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-              >
-                <IconButton
-                className="cart-btn"
-                  sx={{
-                    backgroundColor: "transparent",
-                    borderRadius: 0,
-                  }}
-                  aria-label="cart"
-                  onClick={handleOpenCart}
-                >
-                  <ShoppingCartRoundedIcon
-                    sx={{ color: "#cc8b2b" }}
-                    className="icon cart-icon"
-                    fontSize="medium"
-                  />
-                </IconButton>
-              </Badge>
-            ) : null}
+
             {auth.user ? (
               <ProfileList />
             ) : (
@@ -165,6 +140,33 @@ const Navbar = ({ handleOpenCart }, props) => {
                 </Link>
               </div>
             )}
+            {cartItems.length > 0 ? (
+              <Badge
+                color="secondary"
+                badgeContent={cartItems.length}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+              >
+                <IconButton
+                  className="cart-btn"
+                  sx={{
+                    backgroundColor: "transparent",
+                    borderRadius: 0,
+                    marginLeft: "10px"
+                  }}
+                  aria-label="cart"
+                  onClick={handleOpenCart}
+                >
+                  <ShoppingCartRoundedIcon
+                    sx={{ color: "#cc8b2b" }}
+                    className="icon cart-icon"
+                    fontSize="medium"
+                  />
+                </IconButton>
+              </Badge>
+            ) : null}
           </Toolbar>
         </AppBar>
       </HideOnScroll>
