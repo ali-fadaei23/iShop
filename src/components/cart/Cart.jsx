@@ -150,10 +150,10 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
               variant="h6"
               sx={{
                 fontWeight: "bold",
-                fontSize: "x-large",
+                color: "#202020",
+                fontSize: "large",
                 margin: 0,
                 marginTop: "15px",
-                color: "cornflowerblue",
               }}
               component="div"
             >
@@ -164,10 +164,11 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
               variant="h6"
               sx={{
                 fontWeight: "bold",
-                fontSize: "x-large",
+                color: "#202020",
+                fontSize: "large",
                 margin: 0,
-                marginTop: "15px",
-                color: "cornflowerblue",
+                marginTop: "5px",
+                marginBottom: "15px"
               }}
               component="div"
             >
@@ -186,8 +187,8 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                       alignItems: "center",
                       justifyContent: "flex-start",
                       flexWrap: "nowrap",
-                      width: "500px",
-                      height: "110px",
+                      width: "520px",
+                      height: "120px",
                       margin: 0,
                       marginBottom: "20px",
                     }}
@@ -222,8 +223,8 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                         gutterBottom
                         variant="body1"
                         sx={{
-                          color: "darkblue",
-                          fontSize: "x-small",
+                          color: "#202020",
+                          fontSize: "medium",
                           fontWeight: "bold",
                         }}
                         component="div"
@@ -237,8 +238,8 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                           gutterBottom
                           variant="body1"
                           sx={{
-                            color: "darkblue",
-                            fontSize: "x-small",
+                            color: "#202020",
+                            fontSize: "medium",
                             fontWeight: "bold",
                           }}
                           component="div"
@@ -251,8 +252,8 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                         gutterBottom
                         variant="h6"
                         sx={{
-                          color: "cornflowerblue",
-                          fontSize: "medium",
+                          color: "#202020",
+                          fontSize: "large",
                           fontWeight: "bold",
                           margin: 0,
                         }}
@@ -263,7 +264,7 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                     </CardContent>
                     <CardActions
                       sx={{
-                        width: "100%",
+                        width: "75%",
                         display: "flex",
                         flexDirection: "row",
                         alignItems: "center",

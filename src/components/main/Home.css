@@ -1,3 +1,25 @@
+progress {
+  position: fixed;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border: none;
+  background: transparent;
+  color: #cc8b2b;
+}
+
+progress::-webkit-progress-bar,
+::-moz-progress-bar {
+  background: linear-gradient(
+    90deg,
+    hsla(38, 81%, 52%, 1) 90%,
+    rgb(231, 231, 231) 100%
+  );
+}
+
 .main {
   display: flex;
   flex-direction: column;
