@@ -20,7 +20,6 @@ import {
 } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Logo from "../../assets/img/logo.png";
-import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import CartIcon from "../../assets/img/cart.png";
 
 function ScrollTop({ children, window }) {
@@ -163,6 +162,7 @@ const Navbar = ({ handleOpenCart }, props) => {
                     height: "100%",
                   }}
                   aria-label="cart"
+                  onChange={handleOpenCart}
                   onClick={handleOpenCart}
                 >
                   <span style={{ display: "flex", marginLeft: "10px" }}>

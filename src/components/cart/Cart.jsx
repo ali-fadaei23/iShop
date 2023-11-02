@@ -147,13 +147,13 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
   };
 
   return (
-    <Drawer
-      sx={{ minWidth: 450 }}
-      open={openDrawerOrder}
-      onClose={handleCloseCart}
-    >
+    <>
       {cartItems.length > 0 ? (
-        <>
+        <Drawer
+          sx={{ minWidth: 450 }}
+          open={openDrawerOrder}
+          onClose={handleCloseCart}
+        >
           <div style={{ textAlign: "left", marginLeft: "20px" }}>
             <Typography
               gutterBottom
@@ -368,18 +368,70 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
               );
             })}
           </div>
-        </>
+        </Drawer>
       ) : (
-        <div className="empty-cart">
-          <img
-            className="img-empty-cart"
-            src={OrderNotFound}
-            alt="Empty Cart"
-            loading="lazy"
-          />
-        </div>
+        <Drawer
+          sx={{ minWidth: 450 }}
+          open={openDrawerOrder}
+          onClose={handleCloseCart}
+        >
+          <div
+            style={{ textAlign: "left", marginLeft: "20px", width: "550px" }}
+          >
+            <Typography
+              gutterBottom
+              variant="h6"
+              sx={{
+                fontWeight: "bold",
+                color: "#202020",
+                fontSize: "large",
+                margin: 0,
+                marginTop: "15px",
+              }}
+              component="div"
+            >
+              Order Items: {totalItems}
+            </Typography>
+            <Typography
+              gutterBottom
+              variant="h6"
+              sx={{
+                fontWeight: "bold",
+                color: "#202020",
+                fontSize: "large",
+                margin: 0,
+                marginTop: "5px",
+                marginBottom: "15px",
+              }}
+              component="div"
+            >
+              Total Price: {totalPrice + "$"}
+            </Typography>
+          </div>
+          <div className="empty-cart" style={{ height: "100%" }}>
+            <Typography
+              gutterBottom
+              sx={{
+                height: "100%",
+                width: "100%",
+                display: " flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontWeight: "bold",
+                fontSize: "xxx-large",
+                color: "#808080",
+                margin: 0,
+                marginTop: "5px",
+                marginBottom: "15px",
+              }}
+              component="div"
+            >
+              Empty Cart!
+            </Typography>
+          </div>
+        </Drawer>
       )}
-    </Drawer>
+    </>
   );
 };
 

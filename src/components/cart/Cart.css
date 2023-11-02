@@ -1,3 +1,21 @@
+/* content drawer */
+/* .MuiPaper-root
+  .MuiPaper-elevation.MuiPaper-elevation16.MuiPaper-root
+  .MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper
+  .MuiDrawer-paperAnchorLeft.MuiDrawer-paperAnchorLeft
+  .MuiDrawer-paperAnchorLeft.css-4t3x6l-MuiPaper-root-MuiDrawer-paper
+  .css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+  width: 550px;
+} */
+
+.empty-cart {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* .MuiBox-root.css-pil7kl {
   width: 300px;
   margin: 10px;
@@ -11,21 +29,7 @@
   margin-top: 5px;
 } */
 
-.order-img {
-  display: flex;
-  width: 20%;
-  height: 100%;
-}
 
-.img-empty-cart {
-  width: 360px;
-  padding: 30px;
-  margin: 10px;
-}
-
-.empty-cart {
-  margin: auto;
-}
 
 /* Cart Container */
 /* .MuiPaper-root.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
