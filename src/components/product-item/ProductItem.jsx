@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import {
   Card,
   CardMedia,
-  CardActions,
   CardContent,
   Typography,
 } from "@mui/material";
@@ -113,10 +112,6 @@ const ProductItem = ({ product }) => {
           </Typography>
         </CardContent>
       </Link>
-      {/* <CardActions
-        sx={{ width: "100%", display: "flex", justifyContent: "center" }}
-        >
-        </CardActions> */}
       <div
         style={{
           display: "flex",
@@ -135,17 +130,6 @@ const ProductItem = ({ product }) => {
           </span>
         </button>
       </div>
-
-      {/* <button class="learn-more" onClick={addToWishlist}>
-          <span class="circle" aria-hidden="true">
-            {showBtn ? (
-              <TurnedInIcon className="icon wishlist" fontSize="small" />
-            ) : (
-              <TurnedInNotIcon className="icon wishlist" fontSize="small" />
-            )}
-          </span>
-          <span class="button-text">Wishlist</span>
-        </button> */}
     </Card>
   );
 };

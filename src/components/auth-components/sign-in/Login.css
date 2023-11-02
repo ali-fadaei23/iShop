@@ -33,7 +33,11 @@
   border-radius: 30px;
 }
 
-button {
+/* .btn-login {
+  text-transform: uppercase;
+} */
+
+/* button {
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -45,13 +49,13 @@ button {
   padding: 0;
   font-size: inherit;
   font-family: inherit;
-}
+} */
 
-.button-login {
+/* .button-login {
   margin: 10px 0;
-}
+} */
 
-.button-login .button-text-login {
+/* .button-login .button-text-login {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: relative;
   display: flex;
@@ -66,9 +70,9 @@ button {
   width: 12rem;
   height: auto;
   margin: 10px 0;
-}
+} */
 
-.button-login .button-text-login:hover {
+/* .button-login .button-text-login:hover {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   padding: 0.75rem 0;
   font-weight: 700;
@@ -78,4 +82,23 @@ button {
   color: #cc8b2b;
   background-color: #202020;
   border-radius: 1.625rem;
+} */
+
+.css-1w036o7-MuiButtonBase-root-MuiButton-root.button-login {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  background-color: "#202020";
+  height: 3rem;
+  width: 12rem;
+  font-size: inherit;
+  border-radius: 1.625rem;
+  font-weight: 700;
+}
+
+.css-1450fpw-MuiButtonBase-root-MuiButton-root.button-login:hover {
+  background-color: #202020;
+  color: #cc8b2b;
+  border-radius: 1.625rem;
+  font-size: inherit;
+  font-weight: 700;
 }

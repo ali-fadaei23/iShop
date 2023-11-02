@@ -5,7 +5,7 @@ import { useAuth } from "../../../shared/auth/AuthContext";
 import { useNavigate } from "react-router-dom";
 import {
   Typography,
-  TextField,
+  Button,
   FormControlLabel,
   Checkbox,
   Box,
@@ -15,6 +15,7 @@ import {
   InputLabel,
   OutlinedInput,
 } from "@mui/material";
+// import LoadingButton from "@mui/lab/LoadingButton";
 import LoginShopImage from "../../../assets/img/login.png";
 // import ShopImage from "../../../assets/img/alice.png";
 
@@ -158,23 +159,32 @@ const Login = () => {
               label="Remember me"
             />
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <button
+              <Button
                 type="submit"
-                class="button-login"
+                variant="contained"
+                sx={{
+                  mt: 3,
+                  mb: 2,
+                  backgroundColor: "#202020",
+                  height: "3rem",
+                  width: " 12rem",
+                  fontSize: "inherit",
+                  borderRadius: "1.625rem",
+                  fontWeight: "700",
+                }}
+                className="button-login"
                 disabled={auth.loading}
               >
-                <span class="circle-login" aria-hidden="true">
-                  {auth.loading && (
-                    <CircularProgress
-                      size={24}
-                      sx={{
-                        position: "absolute",
-                      }}
-                    />
-                  )}
-                </span>
-                <span class="button-text-login">Sign In</span>
-              </button>
+                Sign In
+                {auth.loading && (
+                  <CircularProgress
+                    size={24}
+                    sx={{
+                      position: "absolute",
+                    }}
+                  />
+                )}
+              </Button>
             </div>
 
             <Grid

@@ -53,3 +53,36 @@ ul.slick-dots li button::before {
   opacity: 0.27;
   color: #202020;
 }
+
+.slick-arrow.slick-prev,
+.slick-arrow.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: #202020;
+  border-radius: 30px;
+  height: 3rem;
+  width: 3rem;
+}
+
+.slick-arrow.slick-prev:hover,
+.slick-arrow.slick-next:hover {
+  color: #202020;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: #fff;
+}
+
+.slick-arrow.slick-prev::before,
+.slick-arrow.slick-next::before {
+  content: " ";
+}

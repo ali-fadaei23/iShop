@@ -7,6 +7,49 @@ import WomenClothes from "../../assets/img/women-clothes.jpg";
 import Jewerly from "../../assets/img/jewerly.jpg";
 import Digital from "../../assets/img/electronics.jpg";
 
+import KeyboardDoubleArrowRightRoundedIcon from "@mui/icons-material/KeyboardDoubleArrowRightRounded";
+import KeyboardDoubleArrowLeftRoundedIcon from "@mui/icons-material/KeyboardDoubleArrowLeftRounded";
+
+function NextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "flex",
+        alignItems: " center",
+        justifyContent: "center",
+      }}
+      onClick={onClick}
+    >
+      <span>
+        <KeyboardDoubleArrowRightRoundedIcon />
+      </span>
+    </div>
+  );
+}
+
+function PrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "flex",
+        alignItems: " center",
+        justifyContent: "center",
+      }}
+      onClick={onClick}
+    >
+      <span>
+        <KeyboardDoubleArrowLeftRoundedIcon />
+      </span>
+    </div>
+  );
+}
+
 const SliderShop = () => {
   const settings = {
     dots: true,
@@ -20,7 +63,9 @@ const SliderShop = () => {
     swipeToSlide: true,
     // vertical: true,
     adaptiveHeight: true,
-    arrow: true,
+    arrow: false,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   return (

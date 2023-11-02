@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import "./NotFound.css";
 // import NotFoundImage from "../../assets/img/404.png";
-import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {

@@ -50,36 +50,3 @@ button {
   font-size: inherit;
   font-family: inherit;
 }
-
-button.learn-more-login {
-  width: 12rem;
-  height: auto;
-  margin: 10px 0;
-}
-
-button.learn-more-login .circle-login {
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  width: 100%;
-  height: 3rem;
-  background: #282936;
-  border-radius: 1.625rem;
-}
-
-button.learn-more-login .button-text-login {
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0.75rem 0;
-  color: #fff;
-  font-weight: 700;
-  line-height: 1.6;
-  text-align: center;
-  text-transform: uppercase;
-}

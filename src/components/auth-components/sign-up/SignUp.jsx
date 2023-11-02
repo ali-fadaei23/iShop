@@ -13,6 +13,7 @@ import {
   InputLabel,
   OutlinedInput,
   IconButton,
+  Button,
   Box,
   Grid,
   CircularProgress,
@@ -446,23 +447,32 @@ const SignUp = () => {
               </div>
             </div>
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <button
+              <Button
                 type="submit"
-                class="button-sign-up"
+                variant="contained"
+                sx={{
+                  mt: 3,
+                  mb: 2,
+                  backgroundColor: "#202020",
+                  height: "3rem",
+                  width: " 12rem",
+                  fontSize: "inherit",
+                  borderRadius: "1.625rem",
+                  fontWeight: "700",
+                }}
+                className="button-login"
                 disabled={auth.loading}
               >
-                <span class="circle-sign-up" aria-hidden="true">
-                  {auth.loading && (
-                    <CircularProgress
-                      size={24}
-                      sx={{
-                        position: "absolute",
-                      }}
-                    />
-                  )}
-                </span>
-                <span class="button-text-sign-up">Sign In</span>
-              </button>
+                Sign Up
+                {auth.loading && (
+                  <CircularProgress
+                    size={24}
+                    sx={{
+                      position: "absolute",
+                    }}
+                  />
+                )}
+              </Button>
             </div>
           </Box>
         </Box>

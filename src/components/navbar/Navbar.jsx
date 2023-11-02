@@ -3,7 +3,6 @@ import { useEffect, useContext } from "react";
 import { Context } from "../../shared/context/Context";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../shared/auth/AuthContext";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CategoryList from "../category/category-list/CategoryList";
 import ProfileList from "./profile/profile-list/ProfileList";
 import {
