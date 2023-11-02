@@ -23,7 +23,8 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
   }, 0);
 
   const totalPrice = cartItems.reduce((prevValue, currValue) => {
-    return prevValue + currValue.price * currValue.num;
+    const tPrice = prevValue + currValue.price * currValue.num;
+    return Math.round(tPrice * 100) / 100;
   }, 0);
 
   // const steps = ["Add To Cart", "Payment"];
@@ -122,6 +123,15 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
     });
   };
 
+  // const deleteOrder = (id) => {
+  //   setCartItems((prev) => {
+  //     const state = prev.map((v) => ({ ...v }));
+  //     const i = state.findIndex((v) => v.id === id);
+  //     if (state[i]?.num > 1) state.splice(i, 1);
+  //     return state;
+  //   });
+  // };
+
   const reducer = (...arr) => {
     const res = [];
     arr.forEach((v) => {
@@ -168,7 +178,7 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                 fontSize: "large",
                 margin: 0,
                 marginTop: "5px",
-                marginBottom: "15px"
+                marginBottom: "15px",
               }}
               component="div"
             >
@@ -274,10 +284,10 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                       <ButtonGroup
                         sx={{
                           fontSize: "small",
+                          padding: " 5px",
                           display: "flex",
                           alignItems: "center",
                           backgroundColor: "#202020",
-                          padding: " 5px",
                           borderRadius: "30px",
                           height: "3rem",
                           width: "9rem",
@@ -308,6 +318,26 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                           </Button>
                         </div>
                       </ButtonGroup>
+                      {/* {item.num > 1 ? (
+                        <Button
+                          onClick={() => deleteOrder(item.id)}
+                          variant="contained"
+                          sx={{
+                            backgroundColor: "#202020",
+                            height: "3rem",
+                            width: " 9rem",
+                            fontSize: "small",
+                            padding: " 5px",
+                            borderRadius: "1.625rem",
+                            flexDirection: "column",
+                            marginTop: "5px",
+                            fontWeight: "700",
+                          }}
+                          className="button-delete-cart"
+                        >
+                          Delete Order
+                        </Button>
+                      ) : null} */}
 
                       {/* <ButtonGroup
                         sx={{ display: "flex", alignItems: " center" }}

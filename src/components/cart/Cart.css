@@ -60,3 +60,11 @@
 /* .MuiCardMedia-root.MuiCardMedia-media.MuiCardMedia-img.css-lo17od-MuiCardMedia-root.img-cart {
   margin-left: 20px;
 } */
+
+.css-fz0hsy-MuiButtonBase-root-MuiButton-root.button-delete-cart:hover {
+  background-color: #202020;
+  color: #cc8b2b;
+  border-radius: 1.625rem;
+  font-size: inherit;
+  font-weight: 700;
+}
