@@ -21,6 +21,7 @@ import {
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Logo from "../../assets/img/logo.png";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
+import CartIcon from "../../assets/img/cart.png";
 
 function ScrollTop({ children, window }) {
   const trigger = useScrollTrigger({
@@ -141,6 +142,12 @@ const Navbar = ({ handleOpenCart }, props) => {
             )}
             {cartItems.length > 0 ? (
               <Badge
+                sx={{
+                  height: " 100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
                 color="secondary"
                 badgeContent={cartItems.length}
                 anchorOrigin={{
@@ -153,16 +160,14 @@ const Navbar = ({ handleOpenCart }, props) => {
                   sx={{
                     backgroundColor: "transparent",
                     borderRadius: 0,
-                    marginLeft: "10px"
+                    height: "100%",
                   }}
                   aria-label="cart"
                   onClick={handleOpenCart}
                 >
-                  <ShoppingCartRoundedIcon
-                    sx={{ color: "#cc8b2b" }}
-                    className="icon cart-icon"
-                    fontSize="medium"
-                  />
+                  <span style={{ display: "flex", marginLeft: "10px" }}>
+                    <img src={CartIcon} alt="Cart" width={55} />
+                  </span>
                 </IconButton>
               </Badge>
             ) : null}

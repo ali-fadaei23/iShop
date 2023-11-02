@@ -27,10 +27,10 @@
 
 /* Add order badge */
 .MuiBadge-badge.MuiBadge-standard {
-  top: 8px;
-  right: 5px;
-  background-color: #202020;
-  color: #fff;
+  top: 15px;
+  right: 10px;
+  background-color: #cc8b2b;
+  color: #202020;
 }
 
 .container-main-logo {
