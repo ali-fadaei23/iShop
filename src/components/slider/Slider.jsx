@@ -6,9 +6,8 @@ import MenClothes from "../../assets/img/men-clothes.jpg";
 import WomenClothes from "../../assets/img/women-clothes.jpg";
 import Jewerly from "../../assets/img/jewerly.jpg";
 import Digital from "../../assets/img/electronics.jpg";
-
-import KeyboardDoubleArrowRightRoundedIcon from "@mui/icons-material/KeyboardDoubleArrowRightRounded";
-import KeyboardDoubleArrowLeftRoundedIcon from "@mui/icons-material/KeyboardDoubleArrowLeftRounded";
+import EastRoundedIcon from "@mui/icons-material/EastRounded";
+import WestRoundedIcon from "@mui/icons-material/WestRounded";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -24,7 +23,7 @@ function NextArrow(props) {
       onClick={onClick}
     >
       <span>
-        <KeyboardDoubleArrowRightRoundedIcon />
+        <EastRoundedIcon />
       </span>
     </div>
   );
@@ -44,7 +43,7 @@ function PrevArrow(props) {
       onClick={onClick}
     >
       <span>
-        <KeyboardDoubleArrowLeftRoundedIcon />
+        <WestRoundedIcon />
       </span>
     </div>
   );
