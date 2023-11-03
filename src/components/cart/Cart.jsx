@@ -154,36 +154,60 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
           open={openDrawerOrder}
           onClose={handleCloseCart}
         >
-          <div style={{ textAlign: "left", marginLeft: "20px" }}>
-            <Typography
-              gutterBottom
-              variant="h6"
-              sx={{
-                fontWeight: "bold",
-                color: "#202020",
-                fontSize: "large",
-                margin: 0,
-                marginTop: "15px",
-              }}
-              component="div"
-            >
-              Order Items: {totalItems}
-            </Typography>
-            <Typography
-              gutterBottom
-              variant="h6"
-              sx={{
-                fontWeight: "bold",
-                color: "#202020",
-                fontSize: "large",
-                margin: 0,
-                marginTop: "5px",
-                marginBottom: "15px",
-              }}
-              component="div"
-            >
-              Total Price: {totalPrice + "$"}
-            </Typography>
+          <div className="order-detail">
+            <div style={{ width: "50%" }}>
+              <Typography
+                gutterBottom
+                sx={{
+                  fontWeight: "bold",
+                  color: "#202020",
+                  fontSize: "large",
+                  margin: 0,
+                  marginTop: "15px",
+                }}
+                component="div"
+              >
+                Order Items: {totalItems}
+              </Typography>
+              <Typography
+                gutterBottom
+                variant="h6"
+                sx={{
+                  fontWeight: "bold",
+                  color: "#202020",
+                  fontSize: "large",
+                  margin: 0,
+                  marginTop: "5px",
+                  marginBottom: "15px",
+                }}
+                component="div"
+              >
+                Total Price: {totalPrice + "$"}
+              </Typography>
+            </div>
+            <div className="btn-continue-cart">
+              <Button
+                sx={{
+                  backgroundColor: "#202020",
+                  fontWeight: "900",
+                  borderRadius: "30px",
+                  textAlign: "center",
+                  fontSize: "medium",
+                  width: "max-content",
+                  height: "3rem",
+                  overflow: "hidden",
+                  marginRight: "20px",
+                }}
+                className="btn-continue"
+                variant="contained"
+                // startIcon={
+                //   <AddShoppingCartRoundedIcon fontSize="small" />
+                // }
+                // onClick={() => addToCart()}
+              >
+                Proceed To Checkout
+              </Button>
+            </div>
           </div>
           <div>
             {cartItems.map((item, index) => {
@@ -227,14 +251,13 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                         width: "100%",
                         justifyContent: "center",
                       }}
-                      className="text"
                     >
                       <Typography
                         gutterBottom
                         variant="body1"
                         sx={{
                           color: "#202020",
-                          fontSize: "medium",
+                          fontSize: "13px",
                           fontWeight: "bold",
                         }}
                         component="div"

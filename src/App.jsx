@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Home from "./components/main/Home";
 import Navbar from "./components/navbar/Navbar";
@@ -14,25 +14,12 @@ import Footer from "./components/footer/Footer";
 import PrivateRoutes from "./components/route/private-routes/PrivateRoutes";
 import Login from "./components/auth-components/sign-in/Login";
 import SignUp from "./components/auth-components/sign-up/SignUp";
-import { Context } from "./shared/context/Context";
 
 const App = () => {
   const [open, setOpen] = useState(false);
-  const { cartItems } = useContext(Context);
-  const handleOpen = () => {
-    setOpen(true);
-  };
 
-  // useEffect(() => {
-  //   if (cartItems.length < 1) {
-
-  //     handleClose();
-  //   }
-  // }, [cartItems.length]);
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <Router basename="/iShop">

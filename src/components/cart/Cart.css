@@ -8,6 +8,34 @@
   width: 550px;
 } */
 
+.order-detail {
+  text-align: left;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  padding: 25px 0;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.MuiButtonBase-root.MuiButton-root.css-c7m806-MuiButtonBase-root-MuiButton-root.btn-continue:hover {
+  color: #cc8b2b;
+  background-color: #202020;
+}
+
+.btn-continue-cart {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-img {
+  display: flex;
+  width: 20%;
+  height: 100%;
+}
+
 .empty-cart {
   height: 100%;
   width: 100%;
@@ -28,8 +56,6 @@
 /* .MuiStepper-root.MuiStepper-horizontal {
   margin-top: 5px;
 } */
-
-
 
 /* Cart Container */
 /* .MuiPaper-root.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
