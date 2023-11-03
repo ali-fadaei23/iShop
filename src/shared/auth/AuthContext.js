@@ -69,7 +69,7 @@ const useProvideAuth = () => {
             setLoading(true)
             const responseSignUp = await signUp(signUpData)
             setOpenModal(true)
-            console.log(responseSignUp, "=======> Success Sign Up <=======");
+            console.log(responseSignUp, "  Success Sign Up");
             setLoading(false)
         } catch (error) {
             setErrors(error)
@@ -82,21 +82,19 @@ const useProvideAuth = () => {
         const response = await fetch(`https://fakestoreapi.com/users/${userId}`, {
             method: "DELETE",
         })
-        console.log(userId, user);
 
         if (response.ok) {
             setUser(null)
-        }
-        if (userId === null) {
+            setUserInfo(null)
+            setUserId(null)
             setUser(null)
+
         }
     }
 
     return {
         openModal, setOpenModal, handleSignUp, handleLogin, userId, user, userInfo, signOut, signUp, errors, loading
     }
-
-
 }
 
 

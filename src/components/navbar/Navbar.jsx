@@ -76,8 +76,8 @@ const HideOnScroll = ({ children, window }, props) => {
 
 const Navbar = ({ handleOpenCart }, props) => {
   let auth = useAuth();
-  const { cartItems, categoryItem, setCategoryItem } = useContext(Context);
-
+  const { cartItems, setCartItems, categoryItem, setCategoryItem } =
+    useContext(Context);
   useEffect(() => {
     const sendRequest = async () => {
       const response = await fetch(
@@ -88,6 +88,10 @@ const Navbar = ({ handleOpenCart }, props) => {
     };
     sendRequest();
   }, [setCategoryItem]);
+
+  useEffect(() => {
+    setCartItems([]);
+  }, [auth.userId, auth.user, setCartItems]);
 
   return (
     <>

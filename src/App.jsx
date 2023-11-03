@@ -14,8 +14,10 @@ import Footer from "./components/footer/Footer";
 import PrivateRoutes from "./components/route/private-routes/PrivateRoutes";
 import Login from "./components/auth-components/sign-in/Login";
 import SignUp from "./components/auth-components/sign-up/SignUp";
+import { useAuth } from "./shared/auth/AuthContext";
 
 const App = () => {
+  let auth = useAuth();
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);

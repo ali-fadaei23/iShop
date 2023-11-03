@@ -1,7 +1,8 @@
 import "./ProfileList.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../../shared/auth/AuthContext";
+import { Context } from "../../../../shared/context/Context";
 import {
   Box,
   ListItemIcon,
@@ -17,7 +18,7 @@ import Logout from "@mui/icons-material/Logout";
 import AvatarIcon from "../../../../assets/img/avatar.png";
 
 const ProfileList = () => {
-  let auth = useAuth();
+  let { userId, signOut, user, userInfo } = useAuth();
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -32,18 +33,13 @@ const ProfileList = () => {
 
   //  handle btn Sign Out
   const handleSignOut = () => {
-    auth.signOut();
+    signOut();
+    // setCartItems([]);
   };
-
-  useEffect(() => {
-    if (auth.user === null) {
-      navigate("/");
-    }
-  }, [navigate, auth.user]);
 
   return (
     <div style={{ height: "100%" }}>
-      {auth.user && auth.userInfo ? (
+      {user && userInfo ? (
         <Box
           sx={{
             display: "flex",
@@ -74,7 +70,7 @@ const ProfileList = () => {
             </IconButton>
             <div className="userinfo">
               <label className="label-account" htmlFor="account">
-                {auth.userInfo.username}
+                {userInfo.username}
               </label>
             </div>
           </Tooltip>
@@ -117,7 +113,7 @@ const ProfileList = () => {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <Link className="link-profile" to={`/profile/${auth.userId}`}>
+        <Link className="link-profile" to={`/profile/${userId}`}>
           <MenuItem onClick={handleClose}>
             <Avatar /> Profile
           </MenuItem>
@@ -126,7 +122,7 @@ const ProfileList = () => {
           <Avatar /> My account
         </MenuItem>
         <Divider />
-        <Link className="link-wishlist" to={`/wishlist/${auth.userId}`}>
+        <Link className="link-wishlist" to={`/wishlist/${userId}`}>
           <MenuItem>
             <ListItemIcon>
               <TurnedInIcon fontSize="small" />

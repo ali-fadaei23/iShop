@@ -1,13 +1,3 @@
-/* content drawer */
-/* .MuiPaper-root
-  .MuiPaper-elevation.MuiPaper-elevation16.MuiPaper-root
-  .MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper
-  .MuiDrawer-paperAnchorLeft.MuiDrawer-paperAnchorLeft
-  .MuiDrawer-paperAnchorLeft.css-4t3x6l-MuiPaper-root-MuiDrawer-paper
-  .css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
-  width: 550px;
-} */
-
 .order-detail {
   text-align: left;
   margin-left: 20px;
@@ -43,53 +33,6 @@
   align-items: center;
   justify-content: center;
 }
-
-/* .MuiBox-root.css-pil7kl {
-  width: 300px;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  background-color: burlywood;
-  border-radius: 5px;
-} */
-
-/* .MuiStepper-root.MuiStepper-horizontal {
-  margin-top: 5px;
-} */
-
-/* Cart Container */
-/* .MuiPaper-root.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
-  width: 550px;
-  z-index: 2;
-} */
-
-/* .MuiCard-root.cart.css-2qzc5r-MuiPaper-root-MuiCard-root {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: nowrap;
-  width: auto;
-  margin: 0;
-  margin-bottom: 20px;
-} */
-
-/* .MuiCardMedia-root.MuiCardMedia-img.css-lo17od-MuiCardMedia-root {
-  width: 110px;
-} */
-
-/* Total Price */
-/* .MuiTypography-root.MuiTypography-h6.css-1bpcvbx-MuiTypography-root {
-  font-weight: bold;
-  font-size: x-large;
-  margin: 0;
-  margin-top: 15px;
-  color: cornflowerblue;
-} */
-
-/* img */
-/* .MuiCardMedia-root.MuiCardMedia-media.MuiCardMedia-img.css-lo17od-MuiCardMedia-root.img-cart {
-  margin-left: 20px;
-} */
 
 .css-fz0hsy-MuiButtonBase-root-MuiButton-root.button-delete-cart:hover {
   background-color: #202020;
