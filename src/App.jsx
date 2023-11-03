@@ -15,6 +15,7 @@ import PrivateRoutes from "./components/route/private-routes/PrivateRoutes";
 import Login from "./components/auth-components/sign-in/Login";
 import SignUp from "./components/auth-components/sign-up/SignUp";
 import { useAuth } from "./shared/auth/AuthContext";
+import ShippingTime from "./components/proceed-to-checkout/shipping-time/ShippingTime";
 
 const App = () => {
   let auth = useAuth();
@@ -60,6 +61,7 @@ const App = () => {
             path="women's clothing"
             element={<Category categoryPages={"women's clothing"} />}
           />
+          <Route path="checkout/shipping" element={<ShippingTime />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

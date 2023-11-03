@@ -1,0 +1,36 @@
+.name-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.MuiStepLabel-label.Mui-active.css-16wf7cf-MuiStepLabel-label {
+  font-weight: bold;
+  font-size: large;
+  color: #202020;
+}
+
+.MuiStepLabel-label.Mui-completed.css-16wf7cf-MuiStepLabel-label {
+  font-weight: bold;
+  font-size: large;
+  color: #202020;
+}
+
+.MuiSvgIcon-root.Mui-active.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root {
+  fill: currentColor;
+  font-size: 2.5rem;
+  /* color: #cc8b2b; */
+  color: #202020;
+}
+
+.MuiSvgIcon-root.Mui-completed.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root {
+  fill: currentColor;
+  font-size: 2.5rem;
+  color: #cc8b2b;
+}
+
+.MuiSvgIcon-root.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root {
+  fill: currentColor;
+  font-size: 2.5rem;
+}
