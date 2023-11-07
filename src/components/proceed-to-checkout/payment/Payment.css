@@ -1,0 +1,32 @@
+.container-payment {
+  width: 100%;
+  margin: 2rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.payment-method {
+  width: 70%;
+}
+
+.radio-payment {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.radio-btn {
+  margin: 10px 5px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.container-detail-order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

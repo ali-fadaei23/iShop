@@ -102,7 +102,7 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
             </div>
             <div className="btn-continue-cart">
               <Link
-                to={"checkout/shipping"}
+                to={"checkout/shipping-payment"}
                 style={{ textDecoration: "none" }}
               >
                 <Button

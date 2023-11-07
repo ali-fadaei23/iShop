@@ -61,7 +61,7 @@ const App = () => {
             path="women's clothing"
             element={<Category categoryPages={"women's clothing"} />}
           />
-          <Route path="checkout/shipping" element={<ShippingTime />} />
+          <Route path="checkout/shipping-payment" element={<ShippingTime />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
