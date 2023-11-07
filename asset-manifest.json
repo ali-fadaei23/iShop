@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/iShop/static/css/main.ad62e355.css",
-    "main.js": "/iShop/static/js/main.84c2fb5a.js",
+    "main.css": "/iShop/static/css/main.912e938c.css",
+    "main.js": "/iShop/static/js/main.f99b28ad.js",
     "static/media/electronics.jpg": "/iShop/static/media/electronics.4186e554c7ec2785ec08.jpg",
     "static/media/jewerly.jpg": "/iShop/static/media/jewerly.300b4162375410685307.jpg",
     "static/media/men-clothes.jpg": "/iShop/static/media/men-clothes.2641aa71ba98506aa827.jpg",
@@ -10,18 +10,22 @@
     "static/media/Raleway-VariableFont_wght.ttf": "/iShop/static/media/Raleway-VariableFont_wght.e14d84ccec6be3ff19e3.ttf",
     "static/media/empty_cart.png": "/iShop/static/media/empty_cart.7c471f3a853455f340c6.png",
     "static/media/FonartoLight-BWxv3.ttf": "/iShop/static/media/FonartoLight-BWxv3.c85b32557be66b7a338e.ttf",
+    "static/media/cart.png": "/iShop/static/media/cart.d6728bc1e71299eea0bc.png",
     "static/media/avatar.png": "/iShop/static/media/avatar.58d1fbac469bf86f4175.png",
     "static/media/logo.png": "/iShop/static/media/logo.14561e6099b7e1af6688.png",
+    "static/media/payment-spot.svg": "/iShop/static/media/payment-spot.ca6c1d86b7ab9d73153b1dc3eac683fd.svg",
+    "static/media/payment-internet.svg": "/iShop/static/media/payment-internet.e7622b295d6ccf2c5d545cc57175ea7e.svg",
     "static/media/slick.svg": "/iShop/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/iShop/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/iShop/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/iShop/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/cryptocurrency.svg": "/iShop/static/media/cryptocurrency.64301c476e2520790c80874d240897a8.svg",
     "index.html": "/iShop/index.html",
-    "main.ad62e355.css.map": "/iShop/static/css/main.ad62e355.css.map",
-    "main.84c2fb5a.js.map": "/iShop/static/js/main.84c2fb5a.js.map"
+    "main.912e938c.css.map": "/iShop/static/css/main.912e938c.css.map",
+    "main.f99b28ad.js.map": "/iShop/static/js/main.f99b28ad.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad62e355.css",
-    "static/js/main.84c2fb5a.js"
+    "static/css/main.912e938c.css",
+    "static/js/main.f99b28ad.js"
   ]
 }
