@@ -46,42 +46,59 @@ MyFormControlLabel.propTypes = {
 
 function UseRadioGroup() {
   return (
-    <RadioGroup name="use-radio-group" defaultValue="first">
+    <RadioGroup
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "flex-start",
+      }}
+      name="use-radio-group"
+      defaultValue="first"
+    >
       <div className="radio-btn">
-        <div className="radio-payment internet-payment">
-          <MyFormControlLabel
-            value={"Internet Payment"}
-            label={"Internet Payment"}
-            control={<Radio />}
-          />
-          <div>
-            <img width={48} src={PaymentInternet} alt="payment" />
+        <Card sx={{ width: "100%" }}>
+          <div className="radio-payment internet-payment">
+            <div className="img-payment img-internet-payment">
+              <img width={48} src={PaymentInternet} alt="payment" />
+            </div>
+            <div className="line"></div>
+            <MyFormControlLabel
+              value={"Internet Payment"}
+              label={"Internet Payment"}
+              control={<Radio />}
+            />
           </div>
-        </div>
+        </Card>
       </div>
       <div className="radio-btn">
-        <div className="radio-payment payment-spot">
-          <MyFormControlLabel
-            value="Payment On The Spot"
-            label="Payment On The Spot"
-            control={<Radio />}
-          />
-          <div>
-            <img width={48} src={PaymentSpot} alt="payment" />
+        <Card sx={{ width: "100%" }}>
+          <div className="radio-payment payment-spot">
+            <div className="img-payment img-payment-spot">
+              <img width={48} src={PaymentSpot} alt="payment" />
+            </div>
+            <div className="line"></div>
+            <MyFormControlLabel
+              value="Payment On The Spot"
+              label="Payment On The Spot"
+              control={<Radio />}
+            />
           </div>
-        </div>
+        </Card>
       </div>
       <div className="radio-btn">
-        <div className="radio-payment cryptocurrency">
-          <MyFormControlLabel
-            value="Cryptocurrency"
-            label="Cryptocurrency"
-            control={<Radio />}
-          />
-          <div>
-            <img width={48} src={Cryptocurrency} alt="payment" />
+        <Card sx={{ width: "100%" }}>
+          <div className="radio-payment cryptocurrency">
+            <div className="img-payment img-cryptocurrency">
+              <img width={48} src={Cryptocurrency} alt="payment" />
+            </div>
+            <div className="line"></div>
+            <MyFormControlLabel
+              value="Cryptocurrency"
+              label="Cryptocurrency"
+              control={<Radio />}
+            />
           </div>
-        </div>
+        </Card>
       </div>
     </RadioGroup>
   );
@@ -123,13 +140,9 @@ const Payment = () => {
             <Typography>Payment Method</Typography>
           </div>
 
-          <Card>
-            <CardActions>
-              <div>
-                <UseRadioGroup />
-              </div>
-            </CardActions>
-          </Card>
+          <div className="container-option-payment">
+            <UseRadioGroup />
+          </div>
         </div>
         <Card
           sx={{
@@ -175,14 +188,14 @@ const Payment = () => {
                     overflow: "hidden",
                     marginRight: "20px",
                   }}
-                  className="btn-continue"
+                  className="btn-gateway"
                   variant="contained"
                   // startIcon={
                   //   <AddShoppingCartRoundedIcon fontSize="small" />
                   // }
                   // onClick={() => addToCart()}
                 >
-                 Payment Gateway
+                  Payment Gateway
                 </Button>
               </Link>
             </div>

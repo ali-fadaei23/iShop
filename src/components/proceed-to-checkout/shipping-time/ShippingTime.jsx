@@ -254,7 +254,7 @@ const ShippingTime = () => {
                         overflow: "hidden",
                         marginRight: "20px",
                       }}
-                      className="btn-continue"
+                      className="btn-address"
                       variant="contained"
                       // startIcon={
                       //   <AddShoppingCartRoundedIcon fontSize="small" />
@@ -288,7 +288,7 @@ const ShippingTime = () => {
                   overflow: "hidden",
                   marginRight: "20px",
                 }}
-                className="btn-continue"
+                className="btn-payment"
                 variant="contained"
                 // startIcon={
                 //   <AddShoppingCartRoundedIcon fontSize="small" />

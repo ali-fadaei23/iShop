@@ -8,7 +8,7 @@
   justify-content: flex-start;
 }
 
-.MuiButtonBase-root.MuiButton-root.css-c7m806-MuiButtonBase-root-MuiButton-root.btn-continue:hover {
+.MuiButtonBase-root.MuiButton-root.btn-continue:hover {
   color: #cc8b2b;
   background-color: #202020;
 }
@@ -34,10 +34,10 @@
   justify-content: center;
 }
 
-.css-fz0hsy-MuiButtonBase-root-MuiButton-root.button-delete-cart:hover {
+/* .MuiButtonBase-root.MuiButton-root.button-delete-cart:hover {
   background-color: #202020;
   color: #cc8b2b;
   border-radius: 1.625rem;
   font-size: inherit;
   font-weight: 700;
-}
+} */

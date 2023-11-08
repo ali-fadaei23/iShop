@@ -34,3 +34,13 @@
   fill: currentColor;
   font-size: 2.5rem;
 }
+
+.MuiButtonBase-root.MuiButton-root.btn-address:hover {
+  color: #cc8b2b;
+  background-color: #202020;
+}
+
+.MuiButtonBase-root.MuiButton-root.btn-payment:hover {
+  color: #cc8b2b;
+  background-color: #202020;
+}
