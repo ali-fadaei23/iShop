@@ -25,12 +25,12 @@
 .title-shipping-time-payment {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: baseline;
   justify-content: flex-start;
 }
 
 .icon-title {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .MuiStepLabel-label.Mui-active.css-16wf7cf-MuiStepLabel-label {

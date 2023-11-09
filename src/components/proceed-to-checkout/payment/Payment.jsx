@@ -15,10 +15,10 @@ import RadioGroup, { useRadioGroup } from "@mui/material/RadioGroup";
 import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
-import PaymentRoundedIcon from "@mui/icons-material/PaymentRounded";
-import PaymentInternet from "../../../assets/img/payment-internet.svg";
-import Cryptocurrency from "../../../assets/img/cryptocurrency.svg";
-import PaymentSpot from "../../../assets/img/payment-spot.svg";
+import { ReactComponent as CryptoIcon } from "../../../assets/img/cryptocurrency.svg";
+import { ReactComponent as PaymentSpotIcon } from "../../../assets/img/payment-spot.svg";
+import { ReactComponent as PaymentInternetIcon } from "../../../assets/img/payment-internet.svg";
+import { ReactComponent as PaymentMethodIcon } from "../../../assets/img/payment-method.svg";
 
 const StyledFormControlLabel = styled((props) => (
   <FormControlLabel {...props} />
@@ -56,10 +56,10 @@ function UseRadioGroup() {
       defaultValue="first"
     >
       <div className="radio-btn">
-        <Card sx={{ width: "350px" }}>
+        <Card sx={{ width: "600px" }}>
           <div className="radio-payment internet-payment">
             <div className="img-payment img-internet-payment">
-              <img width={48} src={PaymentInternet} alt="payment" />
+              <PaymentInternetIcon />
             </div>
             <div className="line"></div>
             <MyFormControlLabel
@@ -71,10 +71,10 @@ function UseRadioGroup() {
         </Card>
       </div>
       <div className="radio-btn">
-        <Card sx={{ width: "350px" }}>
+        <Card sx={{ width: "600px" }}>
           <div className="radio-payment payment-spot">
             <div className="img-payment img-payment-spot">
-              <img width={48} src={PaymentSpot} alt="payment" />
+              <PaymentSpotIcon />
             </div>
             <div className="line"></div>
             <MyFormControlLabel
@@ -86,10 +86,10 @@ function UseRadioGroup() {
         </Card>
       </div>
       <div className="radio-btn">
-        <Card sx={{ width: "350px" }}>
+        <Card sx={{ width: "600px" }}>
           <div className="radio-payment cryptocurrency">
             <div className="img-payment img-cryptocurrency">
-              <img width={48} src={Cryptocurrency} alt="payment" />
+              <CryptoIcon />
             </div>
             <div className="line"></div>
             <MyFormControlLabel
@@ -136,7 +136,7 @@ const Payment = () => {
     <>
       <div className="container-payment">
         <div className="payment-method">
-          <div>
+          <div className="title-shipping-time-payment title-section-payment-method">
             <Typography
               sx={{
                 fontWeight: "bold",
@@ -146,6 +146,9 @@ const Payment = () => {
             >
               Payment Method
             </Typography>
+            <div className="icon-title payment-method-icon">
+              <PaymentMethodIcon />
+            </div>
           </div>
 
           <div className="container-option-payment">
