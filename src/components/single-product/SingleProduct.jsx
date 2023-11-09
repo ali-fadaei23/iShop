@@ -21,10 +21,10 @@ import {
   Select,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
-import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddShoppingCartRoundedIcon from "@mui/icons-material/AddShoppingCartRounded";
+import { ReactComponent as AddWishlist } from "../../assets/img/add-wishlist.svg";
+import { ReactComponent as RemoveWishlist } from "../../assets/img/remove-wishlist.svg";
 
 const reducer = (...arr) => {
   const res = [];
@@ -157,11 +157,7 @@ const SingleProduct = () => {
               >
                 <div className="btn-wishlist">
                   <IconButton sx={{ color: "#202020" }} onClick={addToWishlist}>
-                    {showBtn ? (
-                      <TurnedInIcon fontSize="small" />
-                    ) : (
-                      <TurnedInNotIcon fontSize="small" />
-                    )}
+                    {showBtn ? <RemoveWishlist fill="#cc8b2b" /> : <AddWishlist />}
                   </IconButton>
                 </div>
                 <div className="detail-product">

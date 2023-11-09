@@ -5,6 +5,34 @@
   padding: 20px;
 }
 
+.container-shipping-time {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.container-delivery-address {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.title-shipping-time-payment {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.icon-title {
+  margin-left: 10px;
+}
+
 .MuiStepLabel-label.Mui-active.css-16wf7cf-MuiStepLabel-label {
   font-weight: bold;
   font-size: large;

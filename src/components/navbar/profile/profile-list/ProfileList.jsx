@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import Logout from "@mui/icons-material/Logout";
-import AvatarIcon from "../../../../assets/img/avatar.png";
+import { ReactComponent as AvatarIcon } from "../../../../assets/img/avatar.svg";
 
 const ProfileList = () => {
   let { userId, signOut, user, userInfo } = useAuth();
@@ -66,7 +66,7 @@ const ProfileList = () => {
               aria-haspopup="true"
               aria-expanded={open ? "true" : undefined}
             >
-              <img width={80} height={80} src={AvatarIcon} alt="Avatar" />
+              <AvatarIcon />
             </IconButton>
             <div className="userinfo">
               <label className="label-account" htmlFor="account">

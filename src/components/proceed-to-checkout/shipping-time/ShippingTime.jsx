@@ -21,6 +21,8 @@ import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import Payment from "../payment/Payment";
+import { ReactComponent as AddressIcon } from "../../../assets/img/address.svg";
+import { ReactComponent as TimeFrameIcon } from "../../../assets/img/time-frame.svg";
 
 const StyledFormControlLabel = styled((props) => (
   <FormControlLabel {...props} />
@@ -221,57 +223,100 @@ const ShippingTime = () => {
       )}
       {activeStep <= 0 ? (
         <>
-          <div>
-            <Card>
-              <CardContent>
-                <div>
-                  <Typography>Delivery Address</Typography>
-                </div>
-                <div>
-                  <Typography>{`${userInfo.address.city},${userInfo.address.street},${userInfo.address.number},${userInfo.address.zipcode}`}</Typography>
-                </div>
-                <div>
-                  <Typography>
-                    {`${userInfo.name.firstname} ${userInfo.name.lastname}`}
-                  </Typography>
-                </div>
-              </CardContent>
-              <CardActions>
-                <div className="btn-continue-cart">
-                  <Link
-                    to={"checkout/shipping"}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <Button
+          <div className="container-shipping-time">
+            <div className="container-delivery-address">
+              <Card
+                sx={{
+                  display: " flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "50%",
+                }}
+              >
+                <CardContent sx={{ width: "100%" }}>
+                  <div className="title-shipping-time-payment title-section-address">
+                    <Typography
                       sx={{
-                        backgroundColor: "#202020",
-                        fontWeight: "900",
-                        borderRadius: "30px",
-                        textAlign: "center",
-                        fontSize: "medium",
-                        width: "max-content",
-                        height: "3rem",
-                        overflow: "hidden",
-                        marginRight: "20px",
+                        fontWeight: "bold",
+                        fontSize: "1.4rem",
+                        marginBottom: "0.5rem",
                       }}
-                      className="btn-address"
-                      variant="contained"
-                      // startIcon={
-                      //   <AddShoppingCartRoundedIcon fontSize="small" />
-                      // }
-                      // onClick={() => addToCart()}
                     >
-                      Edit Address
-                    </Button>
-                  </Link>
-                </div>
-              </CardActions>
-            </Card>
-          </div>
-          <div>
-            <BasicTabs />
+                      Delivery Address
+                    </Typography>
+                    <div className="icon-title address-icon">
+                      <AddressIcon />
+                    </div>
+                  </div>
+                  <div>
+                    <Typography>{`${userInfo.address.city},${userInfo.address.street},${userInfo.address.number},${userInfo.address.zipcode}`}</Typography>
+                  </div>
+                  <div>
+                    <Typography>
+                      {`${userInfo.name.firstname} ${userInfo.name.lastname}`}
+                    </Typography>
+                  </div>
+                </CardContent>
+                <CardActions
+                  sx={{
+                    justifyContent: "flex-end",
+                    width: "50%",
+                    height: "100%",
+                    marginRight: "5px",
+                  }}
+                >
+                  <div className="btn-continue-cart">
+                    <Link
+                      to={"checkout/shipping"}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <Button
+                        sx={{
+                          backgroundColor: "#202020",
+                          fontWeight: "900",
+                          borderRadius: "30px",
+                          textAlign: "center",
+                          fontSize: "medium",
+                          width: "max-content",
+                          height: "3rem",
+                          overflow: "hidden",
+                          marginRight: "20px",
+                        }}
+                        className="btn-address"
+                        variant="contained"
+                        // startIcon={
+                        //   <AddShoppingCartRoundedIcon fontSize="small" />
+                        // }
+                        // onClick={() => addToCart()}
+                      >
+                        Edit Address
+                      </Button>
+                    </Link>
+                  </div>
+                </CardActions>
+              </Card>
+            </div>
             <div>
-              <Typography>Shipping cost: Free</Typography>
+              <Card>
+                <CardContent>
+                  <div className="title-shipping-time-payment title-section-time-frame">
+                    <Typography
+                      sx={{
+                        fontWeight: "bold",
+                        fontSize: "1.4rem",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      Choose A Time Frame
+                    </Typography>
+                    <div className="icon-title time-frame-icon">
+                      <TimeFrameIcon />
+                    </div>
+                  </div>
+                  <BasicTabs />
+                </CardContent>
+              </Card>
             </div>
           </div>
           <div className="btn-continue-cart">

@@ -122,7 +122,7 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                   // startIcon={
                   //   <AddShoppingCartRoundedIcon fontSize="small" />
                   // }
-                  // onClick={() => addToCart()}
+                  onClick={handleCloseCart}
                 >
                   Proceed To Checkout
                 </Button>

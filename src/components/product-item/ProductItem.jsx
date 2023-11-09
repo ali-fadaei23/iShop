@@ -2,14 +2,11 @@ import "./ProductItem.css";
 import { useContext, useState } from "react";
 import { Context } from "../../shared/context/Context";
 import { Link } from "react-router-dom";
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-} from "@mui/material";
+import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
+import { ReactComponent as AddWishlist } from "../../assets/img/add-wishlist.svg";
+import { ReactComponent as RemoveWishlist } from "../../assets/img/remove-wishlist.svg";
 
 const ProductItem = ({ product }) => {
   const { setWishlist } = useContext(Context);
@@ -122,11 +119,7 @@ const ProductItem = ({ product }) => {
       >
         <button onClick={addToWishlist} class="learn-more-wishlist">
           <span class="circle" aria-hidden="true">
-            {showBtn ? (
-              <TurnedInIcon className="icon wishlist" fontSize="small" />
-            ) : (
-              <TurnedInNotIcon className="icon wishlist" fontSize="small" />
-            )}
+            {showBtn ? <RemoveWishlist fill="#cc8b2b" /> : <AddWishlist />}
           </span>
         </button>
       </div>

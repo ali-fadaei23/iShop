@@ -56,7 +56,7 @@ function UseRadioGroup() {
       defaultValue="first"
     >
       <div className="radio-btn">
-        <Card sx={{ width: "100%" }}>
+        <Card sx={{ width: "350px" }}>
           <div className="radio-payment internet-payment">
             <div className="img-payment img-internet-payment">
               <img width={48} src={PaymentInternet} alt="payment" />
@@ -71,7 +71,7 @@ function UseRadioGroup() {
         </Card>
       </div>
       <div className="radio-btn">
-        <Card sx={{ width: "100%" }}>
+        <Card sx={{ width: "350px" }}>
           <div className="radio-payment payment-spot">
             <div className="img-payment img-payment-spot">
               <img width={48} src={PaymentSpot} alt="payment" />
@@ -86,7 +86,7 @@ function UseRadioGroup() {
         </Card>
       </div>
       <div className="radio-btn">
-        <Card sx={{ width: "100%" }}>
+        <Card sx={{ width: "350px" }}>
           <div className="radio-payment cryptocurrency">
             <div className="img-payment img-cryptocurrency">
               <img width={48} src={Cryptocurrency} alt="payment" />
@@ -137,7 +137,15 @@ const Payment = () => {
       <div className="container-payment">
         <div className="payment-method">
           <div>
-            <Typography>Payment Method</Typography>
+            <Typography
+              sx={{
+                fontWeight: "bold",
+                fontSize: "1.4rem",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Payment Method
+            </Typography>
           </div>
 
           <div className="container-option-payment">

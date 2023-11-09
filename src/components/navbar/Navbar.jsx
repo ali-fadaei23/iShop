@@ -20,7 +20,7 @@ import {
 } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Logo from "../../assets/img/logo.png";
-import CartIcon from "../../assets/img/cart.png";
+import { ReactComponent as CartIcon } from "../../assets/img/cart.svg";
 
 function ScrollTop({ children, window }) {
   const trigger = useScrollTrigger({
@@ -110,7 +110,6 @@ const Navbar = ({ handleOpenCart }, props) => {
           <Toolbar sx={{ width: "100%" }}>
             <div className="container-main-logo">
               <Link to={"/"} title="Home">
-                {/* <LocalMallIcon fontSize="30px" className="icon" /> */}
                 <img src={Logo} alt="Logo" className="logo" />
               </Link>
             </div>
@@ -170,7 +169,7 @@ const Navbar = ({ handleOpenCart }, props) => {
                   onClick={handleOpenCart}
                 >
                   <span style={{ display: "flex", marginLeft: "10px" }}>
-                    <img src={CartIcon} alt="Cart" width={55} />
+                    <CartIcon />
                   </span>
                 </IconButton>
               </Badge>
