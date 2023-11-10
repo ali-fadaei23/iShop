@@ -50,8 +50,14 @@ MyFormControlLabel.propTypes = {
 
 function UseRadioGroup() {
   const timeFrame = ["9 To 13", "13 To 15", "15 To 18", "18 To 21"];
+  const [selected, setSelected] = useState(timeFrame[0]);
+  const handleRadioButton = (e) => setSelected(e.target.value);
   return (
-    <RadioGroup name="use-radio-group" defaultValue="9 To 13">
+    <RadioGroup
+      name="use-radio-group"
+      onChange={handleRadioButton}
+      defaultValue={selected}
+    >
       {timeFrame.map((item, index) => {
         return (
           <MyFormControlLabel
