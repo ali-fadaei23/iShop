@@ -82,7 +82,7 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                 }}
                 component="div"
               >
-                Order Items: {totalItems}
+                Total Commodity: {totalItems}
               </Typography>
               <Typography
                 gutterBottom

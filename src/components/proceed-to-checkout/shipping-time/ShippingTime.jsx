@@ -1,5 +1,5 @@
 import "./ShippingTime.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../../../shared/auth/AuthContext";
 import {
   Box,
@@ -48,17 +48,14 @@ MyFormControlLabel.propTypes = {
   value: PropTypes.any,
 };
 
-function UseRadioGroup() {
-  const timeFrame = ["9 To 13", "13 To 15", "15 To 18", "18 To 21"];
-  const [selected, setSelected] = useState(timeFrame[0]);
-  const handleRadioButton = (e) => setSelected(e.target.value);
+function UseRadioGroup({ times, timeFrame, handleChangeTimeFrame }) {
   return (
     <RadioGroup
       name="use-radio-group"
-      onChange={handleRadioButton}
-      defaultValue={selected}
+      onChange={handleChangeTimeFrame}
+      defaultValue={timeFrame}
     >
-      {timeFrame.map((item, index) => {
+      {times.map((item, index) => {
         return (
           <MyFormControlLabel
             key={index}
@@ -105,8 +102,45 @@ function a11yProps(index) {
   };
 }
 
-function BasicTabs() {
-  const [value, setValue] = useState(0);
+function BasicTabs({
+  daysWeek,
+  handleChangeDaySend,
+  daySend,
+  timeFrame,
+  handleChangeTimeFrame,
+  times,
+}) {
+  return (
+    <>
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Tabs
+          value={daySend}
+          onChange={handleChangeDaySend}
+          aria-label="basic tabs example"
+        >
+          {daysWeek.map((item, index) => {
+            return <Tab key={index} label={item} {...a11yProps(index)} />;
+          })}
+        </Tabs>
+      </Box>
+      {daysWeek.map((item, index) => {
+        return (
+          <CustomTabPanel key={index} value={daySend} index={index}>
+            <UseRadioGroup
+              timeFrame={timeFrame}
+              handleChangeTimeFrame={handleChangeTimeFrame}
+              times={times}
+            />
+          </CustomTabPanel>
+        );
+      })}
+    </>
+  );
+}
+
+const ShippingTime = () => {
+  const timeFrame = ["9 To 13", "13 To 15", "15 To 18", "18 To 21"];
+
   const dWeek = [
     "Monday",
     "Tuesday",
@@ -116,40 +150,18 @@ function BasicTabs() {
     "Saturday",
     "Sunday",
   ];
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  return (
-    <>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="basic tabs example"
-        >
-          {dWeek.map((item, index) => {
-            return <Tab key={index} label={item} {...a11yProps(index)} />;
-          })}
-        </Tabs>
-      </Box>
-      {dWeek.map((item, index) => {
-        return (
-          <CustomTabPanel key={index} value={value} index={index}>
-            <UseRadioGroup />
-          </CustomTabPanel>
-        );
-      })}
-    </>
-  );
-}
-
-const ShippingTime = () => {
   let { userId, user, userInfo } = useAuth();
   const steps = ["Shipping Time", "Payment"];
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
+  const [value, setValue] = useState(0);
+  const [selectedTime, setSelectedTime] = useState(timeFrame[0]);
+
+  const handleRadioButton = (e) => setSelectedTime(e.target.value);
+
+  const handleChange = (e, newValue) => {
+    setValue(newValue);
+  };
 
   // const isStepOptional = (step) => {
   //   return step === 1;
@@ -320,7 +332,14 @@ const ShippingTime = () => {
                       <TimeFrameIcon />
                     </div>
                   </div>
-                  <BasicTabs />
+                  <BasicTabs
+                    daySend={value}
+                    handleChangeDaySend={handleChange}
+                    daysWeek={dWeek}
+                    times={timeFrame}
+                    handleChangeTimeFrame={handleRadioButton}
+                    timeFrame={selectedTime}
+                  />
                 </CardContent>
               </Card>
             </div>
@@ -352,7 +371,7 @@ const ShippingTime = () => {
           </div>
         </>
       ) : (
-        <Payment />
+        <Payment timeFrame={selectedTime} daySend={value} daysWeek={dWeek} />
       )}
     </>
   );

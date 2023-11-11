@@ -1,6 +1,7 @@
 import "./Payment.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useAuth } from "../../../shared/auth/AuthContext";
+import { Context } from "../../../shared/context/Context";
 import {
   Box,
   Card,
@@ -130,8 +131,19 @@ CustomTabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-const Payment = () => {
-  // let { userInfo } = useAuth();
+const Payment = ({ timeFrame, daySend, daysWeek }) => {
+  const { cartItems } = useContext(Context);
+  let { userInfo } = useAuth();
+
+  const totalItems = cartItems.reduce((prevItem, currItem) => {
+    return prevItem + currItem.num;
+  }, 0);
+
+  const totalPrice = cartItems.reduce((prevValue, currValue) => {
+    const tPrice = prevValue + currValue.price * currValue.num;
+    return Math.round(tPrice * 100) / 100;
+  }, 0);
+
   return (
     <>
       <div className="container-payment">
@@ -165,11 +177,28 @@ const Payment = () => {
         >
           <CardContent>
             <div className="container-detail-order">
-              <div>
-                <Typography>Total Commodity: {"15"}</Typography>
+              <div className="title-shipping-time-payment">
+                <Typography
+                  sx={{
+                    fontWeight: "bold",
+                    fontSize: "1.4rem",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  Order Summary
+                </Typography>
               </div>
               <div>
-                <Typography>Total Price: {"200$"}</Typography>
+                <div>
+                  {" "}
+                  <Typography>{`${daysWeek[daySend]}, ${timeFrame}, ${userInfo.name.firstname} ${userInfo.name.lastname}`}</Typography>
+                </div>
+              </div>
+              <div>
+                <Typography>{`Total Commodity: ${totalItems}`}</Typography>
+              </div>
+              <div>
+                <Typography>{`Total Price: ${totalPrice}$`}</Typography>
               </div>
               <div>
                 <Typography>Shipping Cost: {"Free"}</Typography>
