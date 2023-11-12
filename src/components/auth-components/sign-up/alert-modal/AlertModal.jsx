@@ -14,7 +14,7 @@ const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const AlertModal = ({ open, close }) => {
+const AlertModal = ({ open, close, text }) => {
   return (
     <>
       <Dialog
@@ -26,9 +26,7 @@ const AlertModal = ({ open, close }) => {
         <DialogTitle>{"Message!"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            Since this is not a real store, the registration process is done in
-            a simulated way. This message indicates that your registration
-            process was successful, but you cannot use this username to log in.
+            {text}
           </DialogContentText>
         </DialogContent>
         <DialogActions>

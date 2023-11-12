@@ -22,6 +22,10 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 const SignUp = () => {
+  const textSignUp = ` Since this is not a real store, the registration process is done in
+  a simulated way. This message indicates that your registration
+  process was successful, but you cannot use this username to log in.`;
+
   let navigate = useNavigate();
   let auth = useAuth();
   const [showPassword, setShowPassword] = useState(false);
@@ -149,7 +153,11 @@ const SignUp = () => {
       }}
       container
     >
-      <AlertModal open={auth.openModal} close={handleCloseModal} />
+      <AlertModal
+        text={textSignUp}
+        open={auth.openModal}
+        close={handleCloseModal}
+      />
       <Grid
         sx={{
           width: "40%",

@@ -14,7 +14,10 @@ import {
   Tabs,
   Tab,
   FormControlLabel,
+  FormControl,
+  InputLabel,
   Radio,
+  OutlinedInput,
 } from "@mui/material";
 import RadioGroup, { useRadioGroup } from "@mui/material/RadioGroup";
 import PropTypes from "prop-types";
@@ -140,7 +143,6 @@ function BasicTabs({
 
 const ShippingTime = () => {
   const timeFrame = ["9 To 13", "13 To 15", "15 To 18", "18 To 21"];
-
   const dWeek = [
     "Monday",
     "Tuesday",
@@ -156,6 +158,16 @@ const ShippingTime = () => {
   const [skipped, setSkipped] = useState(new Set());
   const [value, setValue] = useState(0);
   const [selectedTime, setSelectedTime] = useState(timeFrame[0]);
+  const [address, setAddress] = useState("");
+  const [showInputAddress, setShowInputAddress] = useState(false);
+
+  const handleAddress = (e) => {
+    setAddress(e.target.value);
+  };
+
+  const handleInputAddress = () => {
+    setShowInputAddress(true);
+  };
 
   const handleRadioButton = (e) => setSelectedTime(e.target.value);
 
@@ -275,6 +287,38 @@ const ShippingTime = () => {
                       {`${userInfo.name.firstname} ${userInfo.name.lastname}`}
                     </Typography>
                   </div>
+                  {showInputAddress ? (
+                    <div>
+                      <FormControl sx={{ width: "280px", marginTop: "20px" }}>
+                        <InputLabel
+                          sx={{
+                            top: "-5px",
+                            fontSize: "small",
+                            fontWeight: "400",
+                            marginLeft: "5px",
+                          }}
+                          htmlFor="delivery-address"
+                        >
+                          Delivery Address
+                        </InputLabel>
+                        <OutlinedInput
+                          sx={{ borderRadius: "30px" }}
+                          value={address}
+                          onChange={handleAddress}
+                          type="text"
+                          size="small"
+                          margin="normal"
+                          required
+                          fullWidth
+                          id="delivery-address"
+                          label="Delivery Address"
+                          color="secondary"
+                          autoComplete="Delivery Address"
+                          autoFocus
+                        />
+                      </FormControl>
+                    </div>
+                  ) : null}
                 </CardContent>
                 <CardActions
                   sx={{
@@ -285,32 +329,27 @@ const ShippingTime = () => {
                   }}
                 >
                   <div className="btn-continue-cart">
-                    <Link
-                      to={"checkout/shipping"}
-                      style={{ textDecoration: "none" }}
+                    <Button
+                      sx={{
+                        backgroundColor: "#202020",
+                        fontWeight: "900",
+                        borderRadius: "30px",
+                        textAlign: "center",
+                        fontSize: "medium",
+                        width: "max-content",
+                        height: "3rem",
+                        overflow: "hidden",
+                        marginRight: "20px",
+                      }}
+                      className="btn-address"
+                      variant="contained"
+                      // startIcon={
+                      //   <AddShoppingCartRoundedIcon fontSize="small" />
+                      // }
+                      onClick={handleInputAddress}
                     >
-                      <Button
-                        sx={{
-                          backgroundColor: "#202020",
-                          fontWeight: "900",
-                          borderRadius: "30px",
-                          textAlign: "center",
-                          fontSize: "medium",
-                          width: "max-content",
-                          height: "3rem",
-                          overflow: "hidden",
-                          marginRight: "20px",
-                        }}
-                        className="btn-address"
-                        variant="contained"
-                        // startIcon={
-                        //   <AddShoppingCartRoundedIcon fontSize="small" />
-                        // }
-                        // onClick={() => addToCart()}
-                      >
-                        Edit Address
-                      </Button>
-                    </Link>
+                      Edit Address
+                    </Button>
                   </div>
                 </CardActions>
               </Card>

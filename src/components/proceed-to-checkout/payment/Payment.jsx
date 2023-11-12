@@ -1,5 +1,5 @@
 import "./Payment.css";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useAuth } from "../../../shared/auth/AuthContext";
 import { Context } from "../../../shared/context/Context";
 import {
@@ -15,11 +15,12 @@ import {
 import RadioGroup, { useRadioGroup } from "@mui/material/RadioGroup";
 import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as CryptoIcon } from "../../../assets/img/cryptocurrency.svg";
 import { ReactComponent as PaymentSpotIcon } from "../../../assets/img/payment-spot.svg";
 import { ReactComponent as PaymentInternetIcon } from "../../../assets/img/payment-internet.svg";
 import { ReactComponent as PaymentMethodIcon } from "../../../assets/img/payment-method.svg";
+import AlertModal from "../../auth-components/sign-up/alert-modal/AlertModal";
 
 const StyledFormControlLabel = styled((props) => (
   <FormControlLabel {...props} />
@@ -132,8 +133,36 @@ CustomTabPanel.propTypes = {
 };
 
 const Payment = ({ timeFrame, daySend, daysWeek }) => {
+  const textPayment = `ali hosseini fadaei`;
   const { cartItems } = useContext(Context);
-  let { userInfo } = useAuth();
+  let { userInfo, setOpenModal, openModal, setCartItems } = useAuth();
+  let navigate = useNavigate();
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+
+    setCartItems((prev) => {
+      const state = prev.map((v) => ({ ...v }));
+      if (openModal) state.splice();
+      return state;
+    });
+
+    if (openModal) {
+      navigate("/");
+    }
+  };
+
+  const handleOrder = () => {
+    setOpenModal(true);
+  };
+
+  useEffect(() => {
+    console.log(cartItems, "useEffect");
+  }, [cartItems, setCartItems]);
+
+  if (cartItems.length <= 0) {
+    console.log(cartItems);
+  }
 
   const totalItems = cartItems.reduce((prevItem, currItem) => {
     return prevItem + currItem.num;
@@ -147,6 +176,11 @@ const Payment = ({ timeFrame, daySend, daysWeek }) => {
   return (
     <>
       <div className="container-payment">
+        <AlertModal
+          text={textPayment}
+          open={openModal}
+          close={handleCloseModal}
+        />
         <div className="payment-method">
           <div className="title-shipping-time-payment title-section-payment-method">
             <Typography
@@ -215,7 +249,7 @@ const Payment = ({ timeFrame, daySend, daysWeek }) => {
             }}
           >
             <div className="btn-continue-cart">
-              <Link to={"checkout/shipping"} style={{ textDecoration: "none" }}>
+              <Link style={{ textDecoration: "none" }}>
                 <Button
                   sx={{
                     backgroundColor: "#202020",
@@ -233,7 +267,7 @@ const Payment = ({ timeFrame, daySend, daysWeek }) => {
                   // startIcon={
                   //   <AddShoppingCartRoundedIcon fontSize="small" />
                   // }
-                  // onClick={() => addToCart()}
+                  onClick={handleOrder}
                 >
                   Payment Gateway
                 </Button>
