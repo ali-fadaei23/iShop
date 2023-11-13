@@ -14,7 +14,7 @@ const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const AlertModal = ({ open, close, text }) => {
+const AlertModal = ({ open, close, text, textBtn }) => {
   return (
     <>
       <Dialog
@@ -30,7 +30,7 @@ const AlertModal = ({ open, close, text }) => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={close}>Forward to login</Button>
+          <Button onClick={close}>{textBtn}</Button>
         </DialogActions>
       </Dialog>
     </>

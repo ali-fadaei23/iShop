@@ -157,6 +157,7 @@ const SignUp = () => {
         text={textSignUp}
         open={auth.openModal}
         close={handleCloseModal}
+        textBtn={"Forward To Login Page"}
       />
       <Grid
         sx={{

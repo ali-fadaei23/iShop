@@ -1,5 +1,5 @@
 import "./ShippingTime.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAuth } from "../../../shared/auth/AuthContext";
 import {
   Box,
@@ -328,7 +328,7 @@ const ShippingTime = () => {
                     marginRight: "5px",
                   }}
                 >
-                  <div className="btn-continue-cart">
+                  <div className="btn-edit-address">
                     <Button
                       sx={{
                         backgroundColor: "#202020",

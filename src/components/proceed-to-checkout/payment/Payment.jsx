@@ -133,21 +133,17 @@ CustomTabPanel.propTypes = {
 };
 
 const Payment = ({ timeFrame, daySend, daysWeek }) => {
-  const textPayment = `ali hosseini fadaei`;
-  const { cartItems } = useContext(Context);
-  let { userInfo, setOpenModal, openModal, setCartItems } = useAuth();
+  const textPayment = `Since this is not a real store, the payment process in this store is simulated.
+  This message indicates that your order has been successfully completed.`;
+  const { cartItems, setCartItems } = useContext(Context);
+  let { userInfo, setOpenModal, openModal } = useAuth();
   let navigate = useNavigate();
 
   const handleCloseModal = () => {
     setOpenModal(false);
 
-    setCartItems((prev) => {
-      const state = prev.map((v) => ({ ...v }));
-      if (openModal) state.splice();
-      return state;
-    });
-
     if (openModal) {
+      setCartItems([]);
       navigate("/");
     }
   };
@@ -180,6 +176,7 @@ const Payment = ({ timeFrame, daySend, daysWeek }) => {
           text={textPayment}
           open={openModal}
           close={handleCloseModal}
+          textBtn={"Forward To Home Page"}
         />
         <div className="payment-method">
           <div className="title-shipping-time-payment title-section-payment-method">

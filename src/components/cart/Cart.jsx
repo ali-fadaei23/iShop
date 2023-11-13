@@ -1,7 +1,7 @@
 import "./Cart.css";
 import { Context } from "../../shared/context/Context";
 import { useContext } from "react";
-import OrderNotFound from "../../assets/img/empty_cart.png";
+// import OrderNotFound from "../../assets/img/empty_cart.png";
 import {
   Button,
   Drawer,
