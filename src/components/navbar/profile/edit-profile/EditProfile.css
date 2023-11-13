@@ -1,10 +1,14 @@
 .user-password {
-  margin-top: 25px;
+  margin-top: 10px;
   display: flex;
 }
 
 .password {
   width: 245px;
+}
+
+.email-phone {
+  margin-top: 10px;
 }
 
 /* input label Edit */
@@ -44,4 +48,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.MuiButtonBase-root.MuiButton-root.button-edit-user-info {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  background-color: "#202020";
+  height: 3rem;
+  width: 12rem;
+  font-size: inherit;
+  border-radius: 1.625rem;
+  font-weight: 700;
+}
+
+.MuiButtonBase-root.MuiButton-root.button-edit-user-info:hover {
+  background-color: #202020;
+  color: #cc8b2b;
+  border-radius: 1.625rem;
+  font-size: inherit;
+  font-weight: 700;
 }

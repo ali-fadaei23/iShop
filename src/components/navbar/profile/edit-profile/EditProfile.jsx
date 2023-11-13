@@ -120,8 +120,7 @@ const EditProfile = () => {
               padding: "15px",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }} />
-            <Typography component="h1" variant="h5">
+            <Typography sx={{ fontSize: "60px" }} component="h1" variant="h5">
               Edit Profile
             </Typography>
             <Box
@@ -131,7 +130,13 @@ const EditProfile = () => {
               sx={{ mt: 1 }}
             >
               <div className="form-family">
-                <FormControl>
+                <FormControl
+                  sx={{
+                    width: "245px",
+                    marginTop: "15px",
+                    marginRight: "15px",
+                  }}
+                >
                   <InputLabel
                     className="label-input-edit"
                     htmlFor="outlined-adornment-firstname"
@@ -149,7 +154,7 @@ const EditProfile = () => {
                     color="secondary"
                   />
                 </FormControl>
-                <FormControl>
+                <FormControl sx={{ width: "245px", marginTop: "15px" }}>
                   <InputLabel
                     className="label-input-edit"
                     htmlFor="outlined-adornment-lastname"
@@ -169,7 +174,13 @@ const EditProfile = () => {
                 </FormControl>
               </div>
               <div className="user-password">
-                <FormControl>
+                <FormControl
+                  sx={{
+                    width: "245px",
+                    marginTop: "15px",
+                    marginRight: "15px",
+                  }}
+                >
                   <InputLabel
                     className="label-input-edit"
                     htmlFor="outlined-adornment-username"
@@ -187,7 +198,7 @@ const EditProfile = () => {
                     color="secondary"
                   />
                 </FormControl>
-                <FormControl>
+                <FormControl sx={{ width: "245px", marginTop: "15px" }}>
                   <div className="password password-profile">
                     <InputLabel
                       className="label-input-edit"
@@ -220,8 +231,14 @@ const EditProfile = () => {
                   </div>
                 </FormControl>
               </div>
-              <div style={{ marginTop: "25px" }}>
-                <FormControl>
+              <div className="email-phone">
+                <FormControl
+                  sx={{
+                    width: "245px",
+                    marginTop: "15px",
+                    marginRight: "15px",
+                  }}
+                >
                   <InputLabel
                     className="label-input-edit"
                     htmlFor="outlined-adornment-email"
@@ -240,7 +257,12 @@ const EditProfile = () => {
                   />
                   <FormHelperText> Example@gmail.com </FormHelperText>
                 </FormControl>
-                <FormControl>
+                <FormControl
+                  sx={{
+                    width: "245px",
+                    marginTop: "15px",
+                  }}
+                >
                   <InputLabel
                     className="label-input-edit"
                     htmlFor="outlined-adornment-Phone-number"
@@ -261,7 +283,13 @@ const EditProfile = () => {
               </div>
               <div className="location">
                 <div className="location-row">
-                  <FormControl sx={{ width: "100%", marginTop: "25px" }}>
+                  <FormControl
+                    sx={{
+                      width: "245px",
+                      marginTop: "15px",
+                      marginRight: "15px",
+                    }}
+                  >
                     <InputLabel
                       className="label-input-edit"
                       htmlFor="outlined-adornment-city"
@@ -279,7 +307,13 @@ const EditProfile = () => {
                       color="secondary"
                     />
                   </FormControl>
-                  <FormControl sx={{ width: "100%", marginTop: "25px" }}>
+                  <FormControl
+                    sx={{
+                      width: "245px",
+                      marginTop: "15px",
+                      marginRight: "15px",
+                    }}
+                  >
                     <InputLabel
                       className="label-input-edit"
                       htmlFor="outlined-adornment-street"
@@ -299,7 +333,13 @@ const EditProfile = () => {
                   </FormControl>
                 </div>
                 <div className="location-row">
-                  <FormControl sx={{ width: "100%", marginTop: "25px" }}>
+                  <FormControl
+                    sx={{
+                      width: "245px",
+                      marginTop: "25px",
+                      marginRight: "15px",
+                    }}
+                  >
                     <InputLabel
                       className="label-input-edit"
                       htmlFor="outlined-adornment-number"
@@ -317,7 +357,13 @@ const EditProfile = () => {
                       color="secondary"
                     />
                   </FormControl>
-                  <FormControl sx={{ width: "100%", marginTop: "25px" }}>
+                  <FormControl
+                    sx={{
+                      width: "245px",
+                      marginTop: "25px",
+                      marginRight: "15px",
+                    }}
+                  >
                     <InputLabel
                       className="label-input-edit"
                       htmlFor="outlined-adornment-zip-code"
@@ -337,29 +383,34 @@ const EditProfile = () => {
                   </FormControl>
                 </div>
               </div>
-              <Button
-                type="submit"
-                variant="contained"
-                fullWidth
-                sx={{
-                  mt: 3,
-                  mb: 2,
-                  fontWeight: "bold",
-                  fontSize: "small",
-                }}
-                disabled={auth.loading}
-                startIcon={<EditIcon fontSize="small" />}
-              >
-                Edit
-                {auth.loading && (
-                  <CircularProgress
-                    size={24}
-                    sx={{
-                      position: "absolute",
-                    }}
-                  />
-                )}
-              </Button>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{
+                    mt: 3,
+                    mb: 2,
+                    backgroundColor: "#202020",
+                    height: "3rem",
+                    width: " 12rem",
+                    fontSize: "inherit",
+                    borderRadius: "1.625rem",
+                    fontWeight: "700",
+                  }}
+                  className="button-edit-user-info"
+                  disabled={auth.loading}
+                >
+                  Edit User Info
+                  {auth.loading && (
+                    <CircularProgress
+                      size={24}
+                      sx={{
+                        position: "absolute",
+                      }}
+                    />
+                  )}
+                </Button>
+              </div>
             </Box>
           </Box>
         </Grid>

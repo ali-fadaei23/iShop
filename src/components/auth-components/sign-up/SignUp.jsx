@@ -251,7 +251,7 @@ const SignUp = () => {
                   color="secondary"
                 />
               </FormControl>
-              <FormControl sx={{ width: "245px", marginTop: "20px" }}>
+              <FormControl sx={{ width: "245px", marginTop: "15px" }}>
                 <div className="password password-profile-signup">
                   <InputLabel
                     sx={{
