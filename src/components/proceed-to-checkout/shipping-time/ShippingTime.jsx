@@ -152,7 +152,8 @@ const ShippingTime = () => {
     "Saturday",
     "Sunday",
   ];
-  let { userId, user, userInfo } = useAuth();
+  // userId, user, 
+  let { userInfo } = useAuth();
   const steps = ["Shipping Time", "Payment"];
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());

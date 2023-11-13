@@ -1,5 +1,5 @@
 import "./Payment.css";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect} from "react";
 import { useAuth } from "../../../shared/auth/AuthContext";
 import { Context } from "../../../shared/context/Context";
 import {
