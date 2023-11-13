@@ -37,7 +37,7 @@ function TabPanel(props) {
             alignItems: "center",
           }}
         >
-          <Typography>{children}</Typography>
+          <Typography sx={{width: "100%"}}>{children}</Typography>
         </Box>
       )}
     </div>
@@ -86,7 +86,7 @@ const ProfileOptions = () => {
         <Tab label="Wishlist" {...a11yProps(1)} />
         <Tab label="Order" {...a11yProps(2)} />
       </Tabs>
-      <TabPanel value={value} index={0}>
+      <TabPanel   value={value} index={0}>
         <EditProfile />
       </TabPanel>
       <TabPanel value={value} index={1}>

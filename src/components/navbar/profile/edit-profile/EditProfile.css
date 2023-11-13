@@ -1,70 +1,21 @@
-.user-password {
-  margin-top: 10px;
-  display: flex;
-}
-
-.password {
-  width: 245px;
-}
-
-.email-phone {
-  margin-top: 10px;
-}
-
-/* input label Edit */
-.MuiFormLabel-root.label-input-edit {
-  top: -5px;
-  height: 100%;
-}
-
-/* input Edit */
-.MuiInputBase-root.input-edit {
-  margin-right: 10px;
-}
-
-.location {
-  width: 100%;
-}
-
-/* btn edit */
-/* .btn-update.css-sghohy-MuiButtonBase-root-MuiButton-root {
-  width: 20%;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: small;
+/* .bg-profile {
+  background-image: url("../../../../assets/img/profile_background.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 } */
 
-.location-row {
+/* .card-info {
+  background-image: url("../../../../assets/img/Simple\ Shiny.svg");
+} */
+
+.container-text-detail-info {
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
 }
 
-.btn-submit {
-  width: 100%;
-  margin-top: 30px;
+.position-detail {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.MuiButtonBase-root.MuiButton-root.button-edit-user-info {
-  margin-top: 20px;
-  margin-bottom: 15px;
-  background-color: "#202020";
-  height: 3rem;
-  width: 12rem;
-  font-size: inherit;
-  border-radius: 1.625rem;
-  font-weight: 700;
-}
-
-.MuiButtonBase-root.MuiButton-root.button-edit-user-info:hover {
-  background-color: #202020;
-  color: #cc8b2b;
-  border-radius: 1.625rem;
-  font-size: inherit;
-  font-weight: 700;
 }

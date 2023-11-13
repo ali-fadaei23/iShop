@@ -80,7 +80,7 @@ const Login = () => {
             width: "60%",
           }}
         >
-          <Typography sx={{ fontSize: "60px" }} component="h1" variant="h5">
+          <Typography sx={{ fontSize: "60px",fontWeight: "bold" }} component="h1" variant="h5">
             Sign in
           </Typography>
           <Box
@@ -97,10 +97,8 @@ const Login = () => {
             <FormControl sx={{ width: "280px", marginTop: "20px" }}>
               <InputLabel
                 sx={{
-                  top: "-5px",
                   fontSize: "small",
                   fontWeight: "400",
-                  marginLeft: "5px",
                 }}
                 htmlFor="username"
               >
@@ -125,10 +123,8 @@ const Login = () => {
             <FormControl sx={{ width: "280px", marginTop: "20px" }}>
               <InputLabel
                 sx={{
-                  top: "-5px",
                   fontSize: "small",
                   fontWeight: "400",
-                  marginLeft: "5px",
                 }}
                 htmlFor="outlined-adornment-lastname"
               >

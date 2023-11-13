@@ -176,7 +176,7 @@ const SignUp = () => {
             width: "60%",
           }}
         >
-          <Typography sx={{ fontSize: "60px" }} component="h1" variant="h5">
+          <Typography sx={{ fontSize: "60px",fontWeight: "bold" }} component="h1" variant="h5">
             Sign Up
           </Typography>
           <Box
@@ -190,7 +190,10 @@ const SignUp = () => {
                 sx={{ width: "245px", marginTop: "20px", marginRight: "15px" }}
               >
                 <InputLabel
-                  sx={{ top: "-5px", fontSize: "small", fontWeight: "400" }}
+                  sx={{
+                    fontSize: "small",
+                    fontWeight: "400",
+                  }}
                   htmlFor="outlined-adornment-firstname"
                 >
                   First Name
@@ -208,7 +211,10 @@ const SignUp = () => {
               </FormControl>
               <FormControl sx={{ width: "245px", marginTop: "20px" }}>
                 <InputLabel
-                  sx={{ top: "-5px", fontSize: "small", fontWeight: "400" }}
+                  sx={{
+                    fontSize: "small",
+                    fontWeight: "400",
+                  }}
                   htmlFor="outlined-adornment-lastname"
                 >
                   Last Name
@@ -231,10 +237,8 @@ const SignUp = () => {
               >
                 <InputLabel
                   sx={{
-                    top: "-5px",
                     fontSize: "small",
                     fontWeight: "400",
-                    marginLeft: "5px",
                   }}
                   htmlFor="outlined-adornment-username"
                 >
@@ -255,10 +259,8 @@ const SignUp = () => {
                 <div className="password password-profile-signup">
                   <InputLabel
                     sx={{
-                      top: "-5px",
                       fontSize: "small",
                       fontWeight: "400",
-                      marginLeft: "1px",
                     }}
                     htmlFor="outlined-adornment-password"
                   >
@@ -293,10 +295,8 @@ const SignUp = () => {
               <FormControl sx={{ width: "245px", marginRight: "15px" }}>
                 <InputLabel
                   sx={{
-                    top: "-5px",
                     fontSize: "small",
                     fontWeight: "400",
-                    marginLeft: "5px",
                   }}
                   htmlFor="outlined-adornment-email"
                 >
@@ -321,10 +321,8 @@ const SignUp = () => {
               >
                 <InputLabel
                   sx={{
-                    top: "-5px",
                     fontSize: "small",
                     fontWeight: "400",
-                    marginLeft: "5px",
                   }}
                   htmlFor="formatted-text-mask-input"
                 >
@@ -356,10 +354,8 @@ const SignUp = () => {
                 >
                   <InputLabel
                     sx={{
-                      top: "-5px",
                       fontSize: "small",
                       fontWeight: "400",
-                      marginLeft: "5px",
                     }}
                     htmlFor="outlined-adornment-city"
                   >
@@ -379,10 +375,8 @@ const SignUp = () => {
                 <FormControl sx={{ width: "245px", marginTop: "25px" }}>
                   <InputLabel
                     sx={{
-                      top: "-5px",
                       fontSize: "small",
                       fontWeight: "400",
-                      marginLeft: "5px",
                     }}
                     htmlFor="outlined-adornment-street"
                   >
@@ -410,10 +404,8 @@ const SignUp = () => {
                 >
                   <InputLabel
                     sx={{
-                      top: "-5px",
                       fontSize: "small",
                       fontWeight: "400",
-                      marginLeft: "5px",
                     }}
                     htmlFor="outlined-adornment-number"
                   >
@@ -433,10 +425,8 @@ const SignUp = () => {
                 <FormControl sx={{ width: "245px", marginTop: "20px" }}>
                   <InputLabel
                     sx={{
-                      top: "-5px",
                       fontSize: "small",
                       fontWeight: "400",
-                      marginLeft: "5px",
                     }}
                     htmlFor="outlined-adornment-zip-code"
                   >
