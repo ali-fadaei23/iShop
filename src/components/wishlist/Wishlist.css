@@ -21,3 +21,8 @@
 /* .MuiPaper-root.card-wishlist {
   padding: 10px;
 } */
+
+.wishlist-items {
+  display: flex;
+  flex-direction: row;
+}

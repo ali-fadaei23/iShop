@@ -76,7 +76,7 @@ const ProfileOptions = () => {
       <Tabs
         className="tabs-profile"
         orientation="vertical"
-        variant="scrollable"
+        // variant="scrollable"
         value={value}
         onChange={handleChangeTab}
         aria-label="Vertical tabs example"

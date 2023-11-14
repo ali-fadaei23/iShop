@@ -9,6 +9,10 @@
   background-image: url("../../../../assets/img/Simple\ Shiny.svg");
 } */
 
+.container-personal-info {
+  margin-left: 20px;
+}
+
 .container-text-detail-info {
   width: 100%;
   display: flex;
