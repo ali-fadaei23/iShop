@@ -1,18 +1,18 @@
 import "./ProfileOptions.css";
-import { useContext, useState } from "react";
-import { Context } from "../../../../shared/context/Context";
+import {  useState } from "react";
+// import { Context } from "../../../../shared/context/Context";
 import PropTypes from "prop-types";
 import ProfileDetail from "../detail-profile/ProfileDetail";
 import Wishlist from "../../../wishlist/Wishlist";
-import OrderNotFound from "../../../../assets/img/empty_cart.png";
+// import OrderNotFound from "../../../../assets/img/empty_cart.png";
 import {
   Box,
   Tabs,
   Tab,
   Typography,
-  Card,
-  CardMedia,
-  CardContent,
+  // Card,
+  // CardMedia,
+  // CardContent,
 } from "@mui/material";
 
 function TabPanel(props) {
@@ -58,7 +58,7 @@ function a11yProps(index) {
 }
 
 const ProfileOptions = () => {
-  const { cartItems } = useContext(Context);
+  // const { cartItems } = useContext(Context);
   const [value, setValue] = useState(0);
 
   const handleChangeTab = (event, newValue) => {

@@ -13,6 +13,42 @@ html {
   box-sizing: border-box;
 }
 
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+progress {
+  position: fixed;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border: none;
+  background: transparent;
+  color: #cc8b2b;
+}
+
+progress::-webkit-progress-bar,
+::-moz-progress-bar {
+  background: linear-gradient(
+    90deg,
+    hsla(38, 81%, 52%, 1) 90%,
+    rgb(231, 231, 231) 100%
+  );
+}
+
 /* btn transform */
 .MuiButtonBase-root.MuiButton-root {
   text-transform: capitalize;
@@ -32,22 +68,6 @@ html {
   font-weight: 900;
   color: #cc8b2b;
 }
-
-/* .MuiCardContent-root.text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-} */
-
-/* 
-.MuiCardActions-root.MuiCardActions-spacing {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-} */
 
 /* Loading */
 .MuiBackdrop-root.css-1ji7omv-MuiBackdrop-root {

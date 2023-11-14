@@ -12,16 +12,6 @@
   padding-right: 35px;
 }
 
-/* .user-password-signup {
-  margin-top: 5px;
-}
-
-.email-tel-signup {
-  margin-top: 5px;
-}
-
-
- */
 .location-signup-row {
   margin-top: 5px;
   display: flex;
@@ -43,20 +33,6 @@
 .container-signup-img {
   position: relative;
 }
-
-/* button {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  border: 0;
-  vertical-align: middle;
-  text-decoration: none;
-  background: transparent;
-  padding: 0;
-  font-size: inherit;
-  font-family: inherit;
-} */
 
 .button-sign-up {
   margin: 10px 0;

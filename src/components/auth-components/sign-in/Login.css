@@ -33,57 +33,6 @@
   border-radius: 30px;
 }
 
-/* .btn-login {
-  text-transform: uppercase;
-} */
-
-/* button {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  border: 0;
-  vertical-align: middle;
-  text-decoration: none;
-  background: transparent;
-  padding: 0;
-  font-size: inherit;
-  font-family: inherit;
-} */
-
-/* .button-login {
-  margin: 10px 0;
-} */
-
-/* .button-login .button-text-login {
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  position: relative;
-  display: flex;
-  justify-content: center;
-  color: #fff;
-  padding: 0.75rem 0;
-  font-weight: 700;
-  line-height: 1.6;
-  text-transform: uppercase;
-  background: #202020;
-  border-radius: 1.625rem;
-  width: 12rem;
-  height: auto;
-  margin: 10px 0;
-} */
-
-/* .button-login .button-text-login:hover {
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  padding: 0.75rem 0;
-  font-weight: 700;
-  line-height: 1.6;
-  text-align: center;
-  text-transform: uppercase;
-  color: #cc8b2b;
-  background-color: #202020;
-  border-radius: 1.625rem;
-} */
-
 .MuiButtonBase-root.MuiButton-root.button-login {
   margin-top: 20px;
   margin-bottom: 15px;

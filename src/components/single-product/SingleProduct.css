@@ -1,26 +1,9 @@
-/* card */
-/* .MuiPaper-root.MuiPaper-rounded.css-1y5u69t-MuiPaper-root-MuiCard-root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 70%;
-} */
-
 .MuiButtonBase-root.MuiButton-root.btn-add:hover {
   color: #cc8b2b;
   background-color: #202020;
 }
 
 .container-single-product {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  margin-top: 30px; */
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,16 +63,6 @@
   justify-content: flex-end;
 }
 
-/* Price */
-/* .MuiTypography-root.MuiTypography-h2.MuiTypography-gutterBottom {
-  width: 100%;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-weight: bold;
-} */
-
 .buttons-quantity {
   display: flex;
   flex-direction: row;
@@ -127,30 +100,6 @@
   color: #cc8b2b;
 }
 
-/* .btn-product {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  width: 50%;
-  height: 100%;
-  margin-right: 10px;
-} */
-
-/* .btn-add-remove {
-  font-size: small;
-} */
-
-/* .btn-add.css-sghohy-MuiButtonBase-root-MuiButton-root {
-  background-color: slateblue;
-  font-weight: 900;
-  text-align: center;
-  font-size: x-small;
-  width: 100px;
-  height: 40px;
-  overflow: hidden;
-} */
-
 .rating {
   display: flex;
   flex-direction: row;
@@ -158,14 +107,6 @@
   justify-content: flex-start;
   width: 100%;
 }
-
-/* .MuiTypography-root.rate-text {
-  margin-left: 10px;
-} */
-
-/* .MuiTypography-root.count {
-  margin-left: 5px;
-} */
 
 .MuiTypography-root.rate {
   font-weight: 900;

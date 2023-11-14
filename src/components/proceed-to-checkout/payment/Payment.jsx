@@ -15,14 +15,11 @@ import {
 import RadioGroup, { useRadioGroup } from "@mui/material/RadioGroup";
 import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ReactComponent as CryptoIcon } from "../../../assets/img/cryptocurrency.svg";
 import { ReactComponent as PaymentSpotIcon } from "../../../assets/img/payment-spot.svg";
 import { ReactComponent as PaymentInternetIcon } from "../../../assets/img/payment-internet.svg";
 import { ReactComponent as PaymentMethodIcon } from "../../../assets/img/payment-method.svg";
-// import CryptoIcon from "../../../assets/img/cryptocurrency.svg";
-// import PaymentSpotIcon from "../../../assets/img/payment-spot.svg";
-// import PaymentInternetIcon from "../../../assets/img/payment-internet.svg";
 import AlertModal from "../../auth-components/sign-up/alert-modal/AlertModal";
 
 const StyledFormControlLabel = styled((props) => (
@@ -255,9 +252,6 @@ const Payment = ({ timeFrame, daySend, daysWeek }) => {
                 }}
                 className="btn-gateway"
                 variant="contained"
-                // startIcon={
-                //   <AddShoppingCartRoundedIcon fontSize="small" />
-                // }
                 onClick={handleOrder}
               >
                 Payment Gateway
@@ -266,9 +260,6 @@ const Payment = ({ timeFrame, daySend, daysWeek }) => {
           </CardActions>
         </Card>
       </div>
-      {/* <div>
-        <Typography>Shipping cost: Free</Typography>
-      </div> */}
     </>
   );
 };
