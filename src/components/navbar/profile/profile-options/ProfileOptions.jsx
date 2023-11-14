@@ -2,7 +2,7 @@ import "./ProfileOptions.css";
 import { useContext, useState } from "react";
 import { Context } from "../../../../shared/context/Context";
 import PropTypes from "prop-types";
-import EditProfile from "../edit-profile/EditProfile";
+import ProfileDetail from "../detail-profile/ProfileDetail";
 import Wishlist from "../../../wishlist/Wishlist";
 import OrderNotFound from "../../../../assets/img/empty_cart.png";
 import {
@@ -37,7 +37,7 @@ function TabPanel(props) {
             alignItems: "center",
           }}
         >
-          <Typography sx={{width: "100%"}}>{children}</Typography>
+          <Typography sx={{ width: "100%" }}>{children}</Typography>
         </Box>
       )}
     </div>
@@ -86,8 +86,8 @@ const ProfileOptions = () => {
         <Tab label="Wishlist" {...a11yProps(1)} />
         <Tab label="Order" {...a11yProps(2)} />
       </Tabs>
-      <TabPanel   value={value} index={0}>
-        <EditProfile />
+      <TabPanel value={value} index={0}>
+        <ProfileDetail />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Wishlist />

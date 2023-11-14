@@ -1,4 +1,4 @@
-import "./EditProfile.css";
+import "./ProfileDetail.css";
 // import { useState } from "react";
 import { useAuth } from "../../../../shared/auth/AuthContext";
 import {
@@ -20,7 +20,7 @@ import {
 // import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import BgProfile from "../../../../assets/img/profile_background.svg";
 
-const EditProfile = () => {
+const ProfileDetail = () => {
   let { userInfo } = useAuth();
   // const [showPassword, setShowPassword] = useState(false);
   // const [password, setPassword] = useState("");
@@ -559,4 +559,4 @@ const EditProfile = () => {
   );
 };
 
-export default EditProfile;
+export default ProfileDetail;

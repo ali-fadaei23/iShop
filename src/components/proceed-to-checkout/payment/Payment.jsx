@@ -1,5 +1,5 @@
 import "./Payment.css";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useAuth } from "../../../shared/auth/AuthContext";
 import { Context } from "../../../shared/context/Context";
 import {
@@ -20,6 +20,9 @@ import { ReactComponent as CryptoIcon } from "../../../assets/img/cryptocurrency
 import { ReactComponent as PaymentSpotIcon } from "../../../assets/img/payment-spot.svg";
 import { ReactComponent as PaymentInternetIcon } from "../../../assets/img/payment-internet.svg";
 import { ReactComponent as PaymentMethodIcon } from "../../../assets/img/payment-method.svg";
+// import CryptoIcon from "../../../assets/img/cryptocurrency.svg";
+// import PaymentSpotIcon from "../../../assets/img/payment-spot.svg";
+// import PaymentInternetIcon from "../../../assets/img/payment-internet.svg";
 import AlertModal from "../../auth-components/sign-up/alert-modal/AlertModal";
 
 const StyledFormControlLabel = styled((props) => (
@@ -46,7 +49,8 @@ MyFormControlLabel.propTypes = {
   value: PropTypes.any,
 };
 
-function UseRadioGroup() {
+function UseRadioGroup({ payMethod, handlePayMethod, titleMethods }) {
+  console.log(payMethod);
   return (
     <RadioGroup
       sx={{
@@ -55,53 +59,25 @@ function UseRadioGroup() {
         justifyContent: "flex-start",
       }}
       name="use-radio-group"
-      defaultValue="first"
+      onChange={handlePayMethod}
     >
-      <div className="radio-btn">
-        <Card sx={{ width: "600px" }}>
-          <div className="radio-payment internet-payment">
-            <div className="img-payment img-internet-payment">
-              <PaymentInternetIcon />
-            </div>
-            <div className="line"></div>
-            <MyFormControlLabel
-              value={"Internet Payment"}
-              label={"Internet Payment"}
-              control={<Radio />}
-            />
+      {titleMethods.map((item, index) => {
+        return (
+          <div key={index} className="radio-btn">
+            <Card sx={{ width: "600px" }}>
+              <div className="radio-payment">
+                <div className="img-payment">{item.icon}</div>
+                <div className="line"></div>
+                <MyFormControlLabel
+                  value={item.title}
+                  label={item.title}
+                  control={<Radio />}
+                />
+              </div>
+            </Card>
           </div>
-        </Card>
-      </div>
-      <div className="radio-btn">
-        <Card sx={{ width: "600px" }}>
-          <div className="radio-payment payment-spot">
-            <div className="img-payment img-payment-spot">
-              <PaymentSpotIcon />
-            </div>
-            <div className="line"></div>
-            <MyFormControlLabel
-              value="Payment On The Spot"
-              label="Payment On The Spot"
-              control={<Radio />}
-            />
-          </div>
-        </Card>
-      </div>
-      <div className="radio-btn">
-        <Card sx={{ width: "600px" }}>
-          <div className="radio-payment cryptocurrency">
-            <div className="img-payment img-cryptocurrency">
-              <CryptoIcon />
-            </div>
-            <div className="line"></div>
-            <MyFormControlLabel
-              value="Cryptocurrency"
-              label="Cryptocurrency"
-              control={<Radio />}
-            />
-          </div>
-        </Card>
-      </div>
+        );
+      })}
     </RadioGroup>
   );
 }
@@ -133,6 +109,20 @@ CustomTabPanel.propTypes = {
 };
 
 const Payment = ({ timeFrame, daySend, daysWeek }) => {
+  const paymentMethod = [
+    { title: "Internet Payment", icon: <PaymentInternetIcon /> },
+    { title: "Payment On The Spot", icon: <PaymentSpotIcon /> },
+    { title: "Cryptocurrency", icon: <CryptoIcon /> },
+  ];
+  const [payMethod, setPayMethod] = useState({});
+  const [disabled, setDisabled] = useState(false);
+
+  const handlePayMethod = (e) => {
+    const method = paymentMethod.find((v) => v.title === e.target.value);
+    setPayMethod(method);
+    setDisabled(true);
+  };
+
   const textPayment = `Since this is not a real store, the payment process in this store is simulated.
   This message indicates that your order has been successfully completed.`;
   const { cartItems, setCartItems } = useContext(Context);
@@ -195,7 +185,11 @@ const Payment = ({ timeFrame, daySend, daysWeek }) => {
           </div>
 
           <div className="container-option-payment">
-            <UseRadioGroup />
+            <UseRadioGroup
+              payMethod={payMethod}
+              handlePayMethod={handlePayMethod}
+              titleMethods={paymentMethod}
+            />
           </div>
         </div>
         <Card
@@ -246,29 +240,28 @@ const Payment = ({ timeFrame, daySend, daysWeek }) => {
             }}
           >
             <div className="btn-continue-cart">
-              <Link style={{ textDecoration: "none" }}>
-                <Button
-                  sx={{
-                    backgroundColor: "#202020",
-                    fontWeight: "900",
-                    borderRadius: "30px",
-                    textAlign: "center",
-                    fontSize: "medium",
-                    width: "max-content",
-                    height: "3rem",
-                    overflow: "hidden",
-                    marginRight: "20px",
-                  }}
-                  className="btn-gateway"
-                  variant="contained"
-                  // startIcon={
-                  //   <AddShoppingCartRoundedIcon fontSize="small" />
-                  // }
-                  onClick={handleOrder}
-                >
-                  Payment Gateway
-                </Button>
-              </Link>
+              <Button
+                disabled={!disabled}
+                sx={{
+                  backgroundColor: "#202020",
+                  fontWeight: "900",
+                  borderRadius: "30px",
+                  textAlign: "center",
+                  fontSize: "medium",
+                  width: "max-content",
+                  height: "3rem",
+                  overflow: "hidden",
+                  marginRight: "20px",
+                }}
+                className="btn-gateway"
+                variant="contained"
+                // startIcon={
+                //   <AddShoppingCartRoundedIcon fontSize="small" />
+                // }
+                onClick={handleOrder}
+              >
+                Payment Gateway
+              </Button>
             </div>
           </CardActions>
         </Card>
