@@ -76,7 +76,7 @@ const ProfileOptions = () => {
       <Tabs
         className="tabs-profile"
         orientation="vertical"
-        // variant="scrollable"
+        variant="scrollable"
         value={value}
         onChange={handleChangeTab}
         aria-label="Vertical tabs example"
@@ -84,7 +84,7 @@ const ProfileOptions = () => {
       >
         <Tab label="Profile" {...a11yProps(0)} />
         <Tab label="Wishlist" {...a11yProps(1)} />
-        <Tab label="Order" {...a11yProps(2)} />
+        {/* <Tab label="Order" {...a11yProps(2)} /> */}
       </Tabs>
       <TabPanel value={value} index={0}>
         <ProfileDetail />
@@ -92,7 +92,7 @@ const ProfileOptions = () => {
       <TabPanel value={value} index={1}>
         <Wishlist />
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      {/* <TabPanel value={value} index={2}>
         {cartItems.length > 0 ? (
           <div>
             {cartItems.map((item, index) => {
@@ -165,7 +165,7 @@ const ProfileOptions = () => {
             />
           </div>
         )}
-      </TabPanel>
+      </TabPanel> */}
     </Box>
   );
 };

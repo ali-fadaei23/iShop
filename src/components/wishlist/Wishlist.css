@@ -1,11 +1,3 @@
-/* .MuiBox-root.css-0 {
-  display: flex;
-  flex-direction: row;
-  align-items: inherit;
-  justify-content: center;
-  flex-wrap: wrap;
-} */
-
 .img-empty-wishlist {
   width: 340px;
 }
@@ -17,10 +9,6 @@
   align-items: center;
   justify-content: center;
 }
-
-/* .MuiPaper-root.card-wishlist {
-  padding: 10px;
-} */
 
 .wishlist-items {
   display: flex;
