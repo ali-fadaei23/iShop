@@ -15,9 +15,7 @@ import {
   InputLabel,
   OutlinedInput,
 } from "@mui/material";
-// import LoadingButton from "@mui/lab/LoadingButton";
 import LoginShopImage from "../../../assets/img/login.png";
-// import ShopImage from "../../../assets/img/alice.png";
 
 const Login = () => {
   let navigate = useNavigate();
@@ -80,7 +78,11 @@ const Login = () => {
             width: "60%",
           }}
         >
-          <Typography sx={{ fontSize: "60px",fontWeight: "bold" }} component="h1" variant="h5">
+          <Typography
+            sx={{ fontSize: "60px", fontWeight: "bold" }}
+            component="h1"
+            variant="h5"
+          >
             Sign in
           </Typography>
           <Box

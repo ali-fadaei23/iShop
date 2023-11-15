@@ -152,7 +152,7 @@ const ShippingTime = () => {
     "Saturday",
     "Sunday",
   ];
-  // userId, user, 
+
   let { userInfo } = useAuth();
   const steps = ["Shipping Time", "Payment"];
   const [activeStep, setActiveStep] = useState(0);
@@ -175,10 +175,6 @@ const ShippingTime = () => {
   const handleChange = (e, newValue) => {
     setValue(newValue);
   };
-
-  // const isStepOptional = (step) => {
-  //   return step === 1;
-  // };
 
   const isStepSkipped = (step) => {
     return skipped.has(step);
@@ -344,9 +340,6 @@ const ShippingTime = () => {
                       }}
                       className="btn-address"
                       variant="contained"
-                      // startIcon={
-                      //   <AddShoppingCartRoundedIcon fontSize="small" />
-                      // }
                       onClick={handleInputAddress}
                     >
                       Edit Address
@@ -400,10 +393,6 @@ const ShippingTime = () => {
                 }}
                 className="btn-payment"
                 variant="contained"
-                // startIcon={
-                //   <AddShoppingCartRoundedIcon fontSize="small" />
-                // }
-                // onClick={() => addToCart()}
               >
                 Payment
               </Button>

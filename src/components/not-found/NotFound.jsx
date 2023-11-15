@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import "./NotFound.css";
-// import NotFoundImage from "../../assets/img/404.png";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {
@@ -82,21 +81,7 @@ const NotFound = () => {
                 alignItems: "center",
                 justifyContent: "center",
               }}
-            >
-              {/* <Typography
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: "50%",
-                }}
-                variant="h6"
-              >
-                We're sorry, the page you were looking for isn't found here. The
-                link you followed may either be broken or no longer exists.
-                Please try again, or take a look at our.
-              </Typography> */}
-            </div>
+            ></div>
           </div>
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>

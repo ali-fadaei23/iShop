@@ -116,24 +116,24 @@ const SignUp = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     auth.handleSignUp({
-      email: "John@gmail.com",
-      username: "johnd",
-      password: "m38rmF$",
+      email: email,
+      username: userName,
+      password: password,
       name: {
-        firstname: "John",
-        lastname: "Doe",
+        firstname: firstName,
+        lastname: lastName,
       },
       address: {
-        city: "kilcoole",
-        street: "7835 new road",
-        number: 3,
-        zipcode: "12926-3874",
+        city: city,
+        street: street,
+        number: number,
+        zipcode: zipCode,
         geolocation: {
           lat: "-37.3159",
           long: "81.1496",
         },
       },
-      phone: "1-570-236-7033",
+      phone: phoneNumber,
     });
   };
 
@@ -176,7 +176,11 @@ const SignUp = () => {
             width: "60%",
           }}
         >
-          <Typography sx={{ fontSize: "60px",fontWeight: "bold" }} component="h1" variant="h5">
+          <Typography
+            sx={{ fontSize: "60px", fontWeight: "bold" }}
+            component="h1"
+            variant="h5"
+          >
             Sign Up
           </Typography>
           <Box

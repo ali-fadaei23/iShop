@@ -1,7 +1,6 @@
 import "./Cart.css";
 import { Context } from "../../shared/context/Context";
 import { useContext } from "react";
-// import OrderNotFound from "../../assets/img/empty_cart.png";
 import {
   Button,
   Drawer,
@@ -37,15 +36,6 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
       return state;
     });
   };
-
-  // const deleteOrder = (id) => {
-  //   setCartItems((prev) => {
-  //     const state = prev.map((v) => ({ ...v }));
-  //     const i = state.findIndex((v) => v.id === id);
-  //     if (state[i]?.num > 1) state.splice(i, 1);
-  //     return state;
-  //   });
-  // };
 
   const reducer = (...arr) => {
     const res = [];
@@ -119,9 +109,6 @@ const Cart = ({ openDrawerOrder, handleCloseCart }) => {
                   }}
                   className="btn-continue"
                   variant="contained"
-                  // startIcon={
-                  //   <AddShoppingCartRoundedIcon fontSize="small" />
-                  // }
                   onClick={handleCloseCart}
                 >
                   Proceed To Checkout

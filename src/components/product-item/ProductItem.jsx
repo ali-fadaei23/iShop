@@ -3,8 +3,6 @@ import { useContext, useState } from "react";
 import { Context } from "../../shared/context/Context";
 import { Link } from "react-router-dom";
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
-import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
-import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import { ReactComponent as AddWishlist } from "../../assets/img/add-wishlist.svg";
 import { ReactComponent as RemoveWishlist } from "../../assets/img/remove-wishlist.svg";
 

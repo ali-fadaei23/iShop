@@ -1,8 +1,7 @@
 import "./ProfileList.css";
-import { useEffect, useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useAuth } from "../../../../shared/auth/AuthContext";
-import { Context } from "../../../../shared/context/Context";
 import {
   Box,
   ListItemIcon,
@@ -19,7 +18,6 @@ import { ReactComponent as AvatarIcon } from "../../../../assets/img/avatar.svg"
 
 const ProfileList = () => {
   let { userId, signOut, user, userInfo } = useAuth();
-  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -34,7 +32,6 @@ const ProfileList = () => {
   //  handle btn Sign Out
   const handleSignOut = () => {
     signOut();
-    // setCartItems([]);
   };
 
   return (
