@@ -1,31 +1,35 @@
 {
   "files": {
-    "main.css": "/iShop/static/css/main.912e938c.css",
-    "main.js": "/iShop/static/js/main.f99b28ad.js",
+    "main.css": "/iShop/static/css/main.557adc00.css",
+    "main.js": "/iShop/static/js/main.e5d51f01.js",
     "static/media/electronics.jpg": "/iShop/static/media/electronics.4186e554c7ec2785ec08.jpg",
     "static/media/jewerly.jpg": "/iShop/static/media/jewerly.300b4162375410685307.jpg",
     "static/media/men-clothes.jpg": "/iShop/static/media/men-clothes.2641aa71ba98506aa827.jpg",
     "static/media/women-clothes.jpg": "/iShop/static/media/women-clothes.801b212119bd1b3397e3.jpg",
     "static/media/login.png": "/iShop/static/media/login.d4e999404fb823c387e9.png",
     "static/media/Raleway-VariableFont_wght.ttf": "/iShop/static/media/Raleway-VariableFont_wght.e14d84ccec6be3ff19e3.ttf",
-    "static/media/empty_cart.png": "/iShop/static/media/empty_cart.7c471f3a853455f340c6.png",
     "static/media/FonartoLight-BWxv3.ttf": "/iShop/static/media/FonartoLight-BWxv3.c85b32557be66b7a338e.ttf",
-    "static/media/cart.png": "/iShop/static/media/cart.d6728bc1e71299eea0bc.png",
-    "static/media/avatar.png": "/iShop/static/media/avatar.58d1fbac469bf86f4175.png",
     "static/media/logo.png": "/iShop/static/media/logo.14561e6099b7e1af6688.png",
-    "static/media/payment-spot.svg": "/iShop/static/media/payment-spot.ca6c1d86b7ab9d73153b1dc3eac683fd.svg",
-    "static/media/payment-internet.svg": "/iShop/static/media/payment-internet.e7622b295d6ccf2c5d545cc57175ea7e.svg",
     "static/media/slick.svg": "/iShop/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/iShop/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/iShop/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/cryptocurrency.svg": "/iShop/static/media/cryptocurrency.74a7544698e2c7664ade95953e1fdc15.svg",
+    "static/media/payment-spot.svg": "/iShop/static/media/payment-spot.8c823b46851465659a7370705bec02bb.svg",
     "static/media/slick.woff": "/iShop/static/media/slick.295183786cd8a1389865.woff",
-    "static/media/cryptocurrency.svg": "/iShop/static/media/cryptocurrency.64301c476e2520790c80874d240897a8.svg",
+    "static/media/payment-method.svg": "/iShop/static/media/payment-method.42c4f42d66d089ccc28a6174dfbb50e3.svg",
+    "static/media/cart.svg": "/iShop/static/media/cart.c0c604e91a5588c6debdc87f70bfc2e6.svg",
+    "static/media/payment-internet.svg": "/iShop/static/media/payment-internet.d6ee25dc7e950c6b19e33d25de7e4cfa.svg",
+    "static/media/add-wishlist.svg": "/iShop/static/media/add-wishlist.8628378ee9cffa5f9f92b8b1fecb41bd.svg",
+    "static/media/remove-wishlist.svg": "/iShop/static/media/remove-wishlist.af1669c3f17cf44eb8558578faea80bd.svg",
+    "static/media/address.svg": "/iShop/static/media/address.4e0de197f1b3389d8a46a74ce6ae08d7.svg",
+    "static/media/avatar.svg": "/iShop/static/media/avatar.6bb3ffceb15e0e41500a44f57d62fbb7.svg",
+    "static/media/time-frame.svg": "/iShop/static/media/time-frame.69a924c34f21ccc1599502855065321c.svg",
     "index.html": "/iShop/index.html",
-    "main.912e938c.css.map": "/iShop/static/css/main.912e938c.css.map",
-    "main.f99b28ad.js.map": "/iShop/static/js/main.f99b28ad.js.map"
+    "main.557adc00.css.map": "/iShop/static/css/main.557adc00.css.map",
+    "main.e5d51f01.js.map": "/iShop/static/js/main.e5d51f01.js.map"
   },
   "entrypoints": [
-    "static/css/main.912e938c.css",
-    "static/js/main.f99b28ad.js"
+    "static/css/main.557adc00.css",
+    "static/js/main.e5d51f01.js"
   ]
 }
