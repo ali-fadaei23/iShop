@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Home from "./components/main/Home";
 import Navbar from "./components/navbar/Navbar";
@@ -14,11 +14,9 @@ import Footer from "./components/footer/Footer";
 import PrivateRoutes from "./components/route/private-routes/PrivateRoutes";
 import Login from "./components/auth-components/sign-in/Login";
 import SignUp from "./components/auth-components/sign-up/SignUp";
-import { useAuth } from "./shared/auth/AuthContext";
 import ShippingTime from "./components/proceed-to-checkout/shipping-time/ShippingTime";
 
 const App = () => {
-  let auth = useAuth();
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
