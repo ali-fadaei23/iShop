@@ -86,7 +86,7 @@ const ProductItem = ({ product }) => {
           <Typography
             gutterBottom
             variant="body1"
-            sx={{ color: "#202020", fontSize: "1.2rem" }}
+            sx={{ color: "#202020", fontSize: "1rem" }}
             component="div"
           >
             {product.title}
