@@ -39,7 +39,7 @@ const CopyToClipboard = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          margin: "2rem",
+          margin: "3rem",
           padding: "0.9rem",
         }}
       >
