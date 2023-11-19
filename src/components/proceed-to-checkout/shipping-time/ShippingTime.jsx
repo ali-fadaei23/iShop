@@ -64,7 +64,7 @@ function UseRadioGroup({ times, timeFrame, handleChangeTimeFrame }) {
             key={index}
             value={item}
             label={item}
-            control={<Radio />}
+            control={<Radio className="radio-btn" />}
           />
         );
       })}
@@ -122,7 +122,14 @@ function BasicTabs({
           aria-label="basic tabs example"
         >
           {daysWeek.map((item, index) => {
-            return <Tab key={index} label={item} {...a11yProps(index)} />;
+            return (
+              <Tab
+                className="tab-time"
+                key={index}
+                label={item}
+                {...a11yProps(index)}
+              />
+            );
           })}
         </Tabs>
       </Box>
@@ -217,7 +224,9 @@ const ShippingTime = () => {
             }
             return (
               <Step key={label} {...stepProps}>
-                <StepLabel {...labelProps}>{label}</StepLabel>
+                <StepLabel className="step-label" {...labelProps}>
+                  {label}
+                </StepLabel>
               </Step>
             );
           })}
@@ -258,6 +267,7 @@ const ShippingTime = () => {
                   justifyContent: "center",
                   alignItems: "center",
                   width: "50%",
+                  margin: "1.5rem 2rem",
                 }}
               >
                 <CardContent sx={{ width: "100%" }}>
@@ -355,6 +365,7 @@ const ShippingTime = () => {
                   justifyContent: "center",
                   alignItems: "center",
                   width: "50%",
+                  margin: "1rem 2rem",
                 }}
               >
                 <CardContent>
