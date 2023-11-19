@@ -5,6 +5,15 @@
   padding: 20px;
 }
 
+.container-stepper {
+  padding: 1rem 0;
+  background: url(../../../assets/img/Simple\ Shiny.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -7rem;
+}
+
 .container-shipping-time {
   display: flex;
   align-items: flex-start;
@@ -100,9 +109,12 @@
 
 .MuiButtonBase-root.MuiRadio-root.MuiRadio-colorPrimary.PrivateSwitchBase-root.Mui-checked.MuiRadio-root.MuiRadio-colorPrimary.radio-btn {
   color: #cc8b2b;
-
 }
 
 .MuiTypography-root.MuiTypography-body1.MuiFormControlLabel-label.css-1l7cgwj-MuiTypography-root {
   color: #202020;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-sizeMedium.MuiButton-colorInherit.Mui-disabled.back-btn-stepper {
+  color: #808080;
 }

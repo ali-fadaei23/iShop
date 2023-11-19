@@ -203,7 +203,7 @@ const ShippingTime = () => {
 
   return (
     <>
-      <div>
+      <div className="container-stepper">
         <div className="name-brand">
           <Typography
             sx={{ fontSize: " 70px", fontWeight: "bold", color: "#202020" }}
@@ -231,31 +231,59 @@ const ShippingTime = () => {
             );
           })}
         </Stepper>
-      </div>
-      {activeStep === steps.length ? (
-        <>
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Box sx={{ flex: "1 1 auto" }} />
-          </Box>
-        </>
-      ) : (
-        <>
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Button
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
+        {activeStep === steps.length ? (
+          <>
+            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+              <Box sx={{ flex: "1 1 auto" }} />
+            </Box>
+          </>
+        ) : (
+          <>
+            <Box
+              sx={{ display: "flex", flexDirection: "row", paddingTop: "5rem" }}
             >
-              Back
-            </Button>
-            <Box sx={{ flex: "1 1 auto" }} />
-            <Button onClick={handleNext}>
-              {activeStep === steps.length - 1 ? "Finish" : "Next"}
-            </Button>
-          </Box>
-        </>
-      )}
+              <Button
+                color="inherit"
+                disabled={activeStep === 0}
+                onClick={handleBack}
+                sx={{
+                  backgroundColor: "#202020",
+                  color: "#cc8b2b",
+                  fontWeight: "900",
+                  borderRadius: "30px",
+                  textAlign: "center",
+                  fontSize: "medium",
+                  width: "5rem",
+                  height: "2.3rem",
+                  overflow: "hidden",
+                  marginLeft: "1.5rem",
+                }}
+                className="back-btn-stepper"
+              >
+                Back
+              </Button>
+              <Box sx={{ flex: "1 1 auto" }} />
+              <Button
+                sx={{
+                  backgroundColor: "#202020",
+                  color: "#cc8b2b",
+                  fontWeight: "900",
+                  borderRadius: "30px",
+                  textAlign: "center",
+                  fontSize: "medium",
+                  width: "5rem",
+                  height: "2.3rem",
+                  overflow: "hidden",
+                  marginRight: "1.5rem",
+                }}
+                onClick={handleNext}
+              >
+                {activeStep === steps.length - 1 ? "Finish" : "Next"}
+              </Button>
+            </Box>
+          </>
+        )}
+      </div>
       {activeStep <= 0 ? (
         <>
           <div className="container-shipping-time">
