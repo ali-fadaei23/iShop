@@ -9,6 +9,7 @@ import { ReactComponent as RemoveWishlist } from "../../assets/img/remove-wishli
 const ProductItem = ({ product }) => {
   const { setWishlist } = useContext(Context);
   const [showBtn, setShowBtn] = useState(false);
+  const [showAdded, setShowAdded] = useState(false);
 
   // Wishlist
   const wishlistCard = {
@@ -18,6 +19,7 @@ const ProductItem = ({ product }) => {
     title: product.title,
     price: product.price,
     description: product.description,
+    added: showAdded,
   };
 
   const addToWishlist = () => {
@@ -29,12 +31,13 @@ const ProductItem = ({ product }) => {
         state.splice(i, 1);
       } else {
         setShowBtn(true);
+        setShowAdded(true);
         return [...prev, wishlistCard];
       }
+
       return state;
     });
   };
-
   return (
     <Card
       className="card card-product"
@@ -115,9 +118,13 @@ const ProductItem = ({ product }) => {
           margin: "5px 0 0 5px",
         }}
       >
-        <button onClick={addToWishlist} class="learn-more-wishlist">
+        <button onClick={addToWishlist} class="button-wishlist">
           <span class="circle" aria-hidden="true">
-            {showBtn ? <RemoveWishlist fill="#cc8b2b" /> : <AddWishlist />}
+            {showBtn && showAdded ? (
+              <RemoveWishlist fill="#cc8b2b" />
+            ) : (
+              <AddWishlist />
+            )}
           </span>
         </button>
       </div>
