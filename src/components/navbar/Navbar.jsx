@@ -168,9 +168,10 @@ const Navbar = ({ handleOpenCart }, props) => {
                   onChange={handleOpenCart}
                   onClick={handleOpenCart}
                 >
-                  <span style={{ display: "flex", marginLeft: "10px" }}>
+                  <span className="typcn typcn-shopping-cart blue"></span>
+                  {/* <span style={{ display: "flex", marginLeft: "10px" }}>
                     <CartIcon />
-                  </span>
+                  </span> */}
                 </IconButton>
               </Badge>
             ) : null}

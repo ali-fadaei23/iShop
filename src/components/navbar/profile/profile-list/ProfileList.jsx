@@ -54,21 +54,25 @@ const ProfileList = () => {
               height: "100%",
             }}
           >
-            <IconButton
-              onClick={handleClick}
-              size="small"
-              sx={{ ml: 2, height: "100%" }}
-              id="account"
-              aria-controls={open ? "account-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
-            >
-              <AvatarIcon />
-            </IconButton>
-            <div className="userinfo">
-              <label className="label-account" htmlFor="account">
-                {userInfo.username}
-              </label>
+            <div className="container-account">
+              <IconButton
+                onClick={handleClick}
+                size="small"
+                sx={{ ml: 2, height: "100%" }}
+                id="account"
+                aria-controls={open ? "account-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+              >
+                <div>
+                  <span className="typcn account typcn-user blue"></span>
+                </div>
+              </IconButton>
+              <div className="userinfo">
+                <label className="label-account" htmlFor="account">
+                  {userInfo.username}
+                </label>
+              </div>
             </div>
           </Tooltip>
         </Box>
@@ -111,28 +115,42 @@ const ProfileList = () => {
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
         <Link className="link-profile" to={`/profile/${userId}`}>
-          <MenuItem onClick={handleClose}>
-            <Avatar /> Profile
-          </MenuItem>
+          <div className="container-profile">
+            <MenuItem
+              className="menu-profile"
+              sx={{ fontWeight: "bold" }}
+              onClick={handleClose}
+            >
+              <div>
+                <span className="typcn typcn-user blue"></span>
+              </div>
+              Profile
+            </MenuItem>
+          </div>
         </Link>
-        <MenuItem onClick={handleClose}>
-          <Avatar /> My account
-        </MenuItem>
         <Divider />
         <Link className="link-wishlist" to={`/wishlist/${userId}`}>
-          <MenuItem>
-            <ListItemIcon>
-              <TurnedInIcon fontSize="small" />
-            </ListItemIcon>
-            Wishlist
-          </MenuItem>
+          <div className="container-wishlist">
+            <MenuItem sx={{ fontWeight: "bold" }}>
+              <ListItemIcon>
+                <div>
+                  <span className="typcn typcn-bookmark"></span>
+                </div>
+              </ListItemIcon>
+              Wishlist
+            </MenuItem>
+          </div>
         </Link>
-        <MenuItem onClick={handleSignOut}>
-          <ListItemIcon>
-            <Logout fontSize="small" />
-          </ListItemIcon>
-          Sign Out
-        </MenuItem>
+        <div className="container-signout">
+          <MenuItem sx={{ fontWeight: "bold" }} onClick={handleSignOut}>
+            <ListItemIcon>
+              <div>
+                <span className="typcn typcn-eject"></span>
+              </div>
+            </ListItemIcon>
+            Sign Out
+          </MenuItem>
+        </div>
       </Menu>
     </div>
   );

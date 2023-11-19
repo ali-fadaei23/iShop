@@ -1,3 +1,37 @@
+.container-account:hover .account {
+  color: #cc8b2b;
+  font-size: 3.3rem;
+}
+
+
+.typcn-user {
+  font-size: 2.8rem;
+  color: #202020;
+  transition: 0.5s;
+}
+
+.typcn-bookmark {
+  font-size: 1.5rem;
+  color: #202020;
+  transition: 0.5s;
+}
+
+.typcn-eject {
+  font-size: 1.5rem;
+  color: #202020;
+  transition: 0.5s;
+}
+
+.container-signout:hover .typcn-eject {
+  font-size: 1.8rem;
+  color: #cc8b2b;
+}
+
+.container-wishlist:hover .typcn-bookmark {
+  font-size: 1.8rem;
+  color: #cc8b2b;
+}
+
 .link-wishlist {
   text-decoration: none;
   color: inherit;

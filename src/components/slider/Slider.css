@@ -1,3 +1,11 @@
+.typcn-arrow-left {
+  font-size: 2rem;
+}
+
+.typcn-arrow-right {
+  font-size: 2rem;
+}
+
 .slider-content {
   width: 100%;
   height: 90vh;
@@ -79,7 +87,7 @@ ul.slick-dots li button::before {
   cursor: pointer;
   border: none;
   outline: none;
-  background: #fff;
+  background: #cc8b2b;
 }
 
 .slick-arrow.slick-prev::before,

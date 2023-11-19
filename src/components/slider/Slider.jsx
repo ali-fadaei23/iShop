@@ -22,9 +22,7 @@ function NextArrow(props) {
       }}
       onClick={onClick}
     >
-      <span>
-        <EastRoundedIcon />
-      </span>
+      <span className="typcn typcn-arrow-right"></span>
     </div>
   );
 }
@@ -42,9 +40,7 @@ function PrevArrow(props) {
       }}
       onClick={onClick}
     >
-      <span>
-        <WestRoundedIcon />
-      </span>
+      <span className="typcn typcn-arrow-left"></span>
     </div>
   );
 }
