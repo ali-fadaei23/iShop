@@ -42,13 +42,6 @@
   justify-content: center;
 }
 
-.title-shipping-time-payment {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: flex-start;
-}
-
 .icon-title {
   margin-left: 5px;
 }
@@ -116,5 +109,5 @@
 }
 
 .MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-sizeMedium.MuiButton-colorInherit.Mui-disabled.back-btn-stepper {
-  color: #808080;
+  color: #9c9c9c;
 }

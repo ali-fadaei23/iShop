@@ -68,7 +68,7 @@ function UseRadioGroup({ payMethod, handlePayMethod, titleMethods }) {
                 <MyFormControlLabel
                   value={item.title}
                   label={item.title}
-                  control={<Radio />}
+                  control={<Radio className="radio-btn" />}
                 />
               </div>
             </Card>
@@ -189,76 +189,78 @@ const Payment = ({ timeFrame, daySend, daysWeek }) => {
             />
           </div>
         </div>
-        <Card
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            width: "20%",
-          }}
-        >
-          <CardContent>
-            <div className="container-detail-order">
-              <div className="title-shipping-time-payment">
-                <Typography
-                  sx={{
-                    fontWeight: "bold",
-                    fontSize: "1.4rem",
-                    marginBottom: "0.5rem",
-                  }}
-                >
-                  Order Summary
-                </Typography>
-              </div>
-              <div>
-                <div>
+        <div className="container-order-summary">
+          <Card
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              width: "50%",
+              height: "auto",
+            }}
+          >
+            <CardContent sx={{ width: "100%" }}>
+              <div className="container-detail-order">
+                <div className="title-shipping-time-payment">
+                  <Typography
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "1.4rem",
+                      marginBottom: "0.5rem",
+                    }}
+                  >
+                    Order Summary
+                  </Typography>
+                </div>
+                <div className="text-order-detail">
                   {" "}
                   <Typography>{`${daysWeek[daySend]}, ${timeFrame}, ${userInfo.name.firstname} ${userInfo.name.lastname}`}</Typography>
                 </div>
+                <div className="text-order-detail">
+                  <Typography>{`Total Commodity: ${totalItems}`}</Typography>
+                </div>
+                <div className="text-order-detail">
+                  <Typography>{`Total Price: ${totalPrice}$`}</Typography>
+                </div>
+                <div className="text-order-detail">
+                  <Typography>Shipping Cost: {"Free"}</Typography>
+                </div>
               </div>
-              <div>
-                <Typography>{`Total Commodity: ${totalItems}`}</Typography>
+            </CardContent>
+            <CardActions
+              sx={{
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                alignItems: "flex-end",
+                justifyContent: "center",
+                marginBottom: "10px",
+              }}
+            >
+              <div className="btn-continue-cart">
+                <Button
+                  disabled={!disabled}
+                  sx={{
+                    backgroundColor: "#202020",
+                    fontWeight: "900",
+                    borderRadius: "30px",
+                    textAlign: "center",
+                    fontSize: "medium",
+                    width: "max-content",
+                    height: "3rem",
+                    overflow: "hidden",
+                    marginRight: "20px",
+                  }}
+                  className="btn-gateway"
+                  variant="contained"
+                  onClick={handleOrder}
+                >
+                  Payment Gateway
+                </Button>
               </div>
-              <div>
-                <Typography>{`Total Price: ${totalPrice}$`}</Typography>
-              </div>
-              <div>
-                <Typography>Shipping Cost: {"Free"}</Typography>
-              </div>
-            </div>
-          </CardContent>
-          <CardActions
-            sx={{
-              height: "100%",
-              display: "flex",
-              alignItems: "flex-end",
-              justifyContent: "center",
-              marginBottom: "10px",
-            }}
-          >
-            <div className="btn-continue-cart">
-              <Button
-                disabled={!disabled}
-                sx={{
-                  backgroundColor: "#202020",
-                  fontWeight: "900",
-                  borderRadius: "30px",
-                  textAlign: "center",
-                  fontSize: "medium",
-                  width: "max-content",
-                  height: "3rem",
-                  overflow: "hidden",
-                  marginRight: "20px",
-                }}
-                className="btn-gateway"
-                variant="contained"
-                onClick={handleOrder}
-              >
-                Payment Gateway
-              </Button>
-            </div>
-          </CardActions>
-        </Card>
+            </CardActions>
+          </Card>
+        </div>
       </div>
     </>
   );

@@ -6,6 +6,14 @@
   align-items: flex-start;
 }
 
+.container-order-summary {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: flex-start;
+  margin-top: 3rem;
+}
+
 .payment-method {
   width: 50%;
 }
@@ -53,4 +61,19 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.title-shipping-time-payment {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.text-order-detail {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
