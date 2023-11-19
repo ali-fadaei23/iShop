@@ -14,6 +14,10 @@
   height: 100%;
 }
 
+.container-time-frame {
+  width: 100%;
+}
+
 .container-delivery-address {
   width: 100%;
   display: flex;

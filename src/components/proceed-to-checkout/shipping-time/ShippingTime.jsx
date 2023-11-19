@@ -14,10 +14,10 @@ import {
   Tabs,
   Tab,
   FormControlLabel,
-  FormControl,
-  InputLabel,
+  // FormControl,
+  // InputLabel,
   Radio,
-  OutlinedInput,
+  // OutlinedInput,
 } from "@mui/material";
 import RadioGroup, { useRadioGroup } from "@mui/material/RadioGroup";
 import PropTypes from "prop-types";
@@ -159,16 +159,15 @@ const ShippingTime = () => {
   const [skipped, setSkipped] = useState(new Set());
   const [value, setValue] = useState(0);
   const [selectedTime, setSelectedTime] = useState(timeFrame[0]);
-  const [address, setAddress] = useState("");
-  const [showInputAddress, setShowInputAddress] = useState(false);
 
-  const handleAddress = (e) => {
-    setAddress(e.target.value);
-  };
-
-  const handleInputAddress = () => {
-    setShowInputAddress(true);
-  };
+  // const [address, setAddress] = useState("");
+  // const [showInputAddress, setShowInputAddress] = useState(false);
+  // const handleAddress = (e) => {
+  //   setAddress(e.target.value);
+  // };
+  // const handleInputAddress = () => {
+  //   setShowInputAddress(true);
+  // };
 
   const handleRadioButton = (e) => setSelectedTime(e.target.value);
 
@@ -279,11 +278,11 @@ const ShippingTime = () => {
                   <div>
                     <Typography>{`${userInfo.address.city},${userInfo.address.street},${userInfo.address.number},${userInfo.address.zipcode}`}</Typography>
                   </div>
-                  <div>
+                  {/* <div>
                     <Typography>
                       {`${userInfo.name.firstname} ${userInfo.name.lastname}`}
                     </Typography>
-                  </div>
+                  </div> 
                   {showInputAddress ? (
                     <div>
                       <FormControl sx={{ width: "280px", marginTop: "20px" }}>
@@ -315,7 +314,7 @@ const ShippingTime = () => {
                         />
                       </FormControl>
                     </div>
-                  ) : null}
+                  ) : null} */}
                 </CardContent>
                 <CardActions
                   sx={{
@@ -325,7 +324,7 @@ const ShippingTime = () => {
                     marginRight: "5px",
                   }}
                 >
-                  <div className="btn-edit-address">
+                  {/* <div className="btn-edit-address">
                     <Button
                       sx={{
                         backgroundColor: "#202020",
@@ -344,12 +343,20 @@ const ShippingTime = () => {
                     >
                       Edit Address
                     </Button>
-                  </div>
+                  </div> */}
                 </CardActions>
               </Card>
             </div>
-            <div>
-              <Card>
+            <div className="container-time-frame">
+              <Card
+                sx={{
+                  display: " flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "50%",
+                }}
+              >
                 <CardContent>
                   <div className="title-shipping-time-payment title-section-time-frame">
                     <Typography

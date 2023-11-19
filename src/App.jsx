@@ -32,6 +32,10 @@ const App = () => {
           <Route element={<PrivateRoutes />}>
             <Route path="profile/:userId" element={<Profile />} />
             <Route path="wishlist/:userId" element={<Wishlist />} />
+            <Route
+              path="checkout/shipping-payment"
+              element={<ShippingTime />}
+            />
           </Route>
           <Route
             path={`products/:productId`}
@@ -59,7 +63,6 @@ const App = () => {
             path="women's clothing"
             element={<Category categoryPages={"women's clothing"} />}
           />
-          <Route path="checkout/shipping-payment" element={<ShippingTime />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
