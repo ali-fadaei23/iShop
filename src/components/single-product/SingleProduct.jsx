@@ -106,17 +106,23 @@ const SingleProduct = () => {
     description: singleProduct.description,
   };
 
-  const addToWishlist = () => {
+  const addToWishlist = (variant) => {
     setWishlist((prev) => {
       const state = prev.map((u) => ({ ...u }));
       const i = state.findIndex((v) => v.id === wishlistCard.id);
       if (state[i]?.id === wishlistCard.id) {
         setShowBtn(false);
         state.splice(i, 1);
+      } else if (!auth.user) {
+        enqueueSnackbar("You must log in!", { variant });
       } else {
         setShowBtn(true);
         return [...prev, wishlistCard];
       }
+
+      if (!auth.user) {
+      }
+
       return state;
     });
   };
@@ -156,8 +162,15 @@ const SingleProduct = () => {
                 }}
               >
                 <div className="btn-wishlist">
-                  <IconButton sx={{ color: "#202020" }} onClick={addToWishlist}>
-                    {showBtn ? <RemoveWishlist fill="#cc8b2b" /> : <AddWishlist />}
+                  <IconButton
+                    sx={{ color: "#202020" }}
+                    onClick={() => addToWishlist("error")}
+                  >
+                    {showBtn ? (
+                      <RemoveWishlist fill="#cc8b2b" />
+                    ) : (
+                      <AddWishlist />
+                    )}
                   </IconButton>
                 </div>
                 <div className="detail-product">

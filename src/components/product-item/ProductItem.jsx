@@ -1,12 +1,16 @@
 import "./ProductItem.css";
 import { useContext, useState } from "react";
 import { Context } from "../../shared/context/Context";
+import { useSnackbar } from "notistack";
+import { useAuth } from "../../shared/auth/AuthContext";
 import { Link } from "react-router-dom";
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 import { ReactComponent as AddWishlist } from "../../assets/img/add-wishlist.svg";
 import { ReactComponent as RemoveWishlist } from "../../assets/img/remove-wishlist.svg";
 
 const ProductItem = ({ product }) => {
+  let auth = useAuth();
+  const { enqueueSnackbar } = useSnackbar();
   const { setWishlist } = useContext(Context);
   const [showBtn, setShowBtn] = useState(false);
   const [showAdded, setShowAdded] = useState(false);
@@ -22,13 +26,15 @@ const ProductItem = ({ product }) => {
     added: showAdded,
   };
 
-  const addToWishlist = () => {
+  const addToWishlist = (variant) => {
     setWishlist((prev) => {
       const state = prev.map((u) => ({ ...u }));
       const i = state.findIndex((v) => v.id === wishlistCard.id);
       if (state[i]?.id === wishlistCard.id) {
         setShowBtn(false);
         state.splice(i, 1);
+      } else if (!auth.user) {
+        enqueueSnackbar("You must log in!", { variant });
       } else {
         setShowBtn(true);
         setShowAdded(true);
@@ -118,7 +124,7 @@ const ProductItem = ({ product }) => {
           margin: "5px 0 0 5px",
         }}
       >
-        <button onClick={addToWishlist} class="button-wishlist">
+        <button onClick={() => addToWishlist("error")} class="button-wishlist">
           <span class="circle" aria-hidden="true">
             {showBtn && showAdded ? (
               <RemoveWishlist fill="#cc8b2b" />
