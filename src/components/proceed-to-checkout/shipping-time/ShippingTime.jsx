@@ -423,27 +423,6 @@ const ShippingTime = () => {
               </Card>
             </div>
           </div>
-          <div className="btn-continue-cart">
-            <Link to={"checkout/shipping"} style={{ textDecoration: "none" }}>
-              <Button
-                sx={{
-                  backgroundColor: "#202020",
-                  fontWeight: "900",
-                  borderRadius: "30px",
-                  textAlign: "center",
-                  fontSize: "medium",
-                  width: "max-content",
-                  height: "3rem",
-                  overflow: "hidden",
-                  marginRight: "20px",
-                }}
-                className="btn-payment"
-                variant="contained"
-              >
-                Payment
-              </Button>
-            </Link>
-          </div>
         </>
       ) : (
         <Payment timeFrame={selectedTime} daySend={value} daysWeek={dWeek} />

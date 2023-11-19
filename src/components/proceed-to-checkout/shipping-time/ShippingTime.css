@@ -110,4 +110,10 @@
 
 .MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-sizeMedium.MuiButton-colorInherit.Mui-disabled.back-btn-stepper {
   color: #9c9c9c;
+  opacity: 0.5;
+}
+
+.css-1ap1up .MuiFormControlLabel-label {
+  color: #202020;
+  font-weight: bold;
 }
